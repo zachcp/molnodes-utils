@@ -1,0 +1,30 @@
+[project]
+name = "molnodes"
+version = "0.1.0"
+description = "Add a short description here"
+authors = ["Zachary Charlop-Powers <zach.charlop.powers@gmail.com>"]
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[dependencies]
+python = "==3.11"
+
+[pypi-dependencies]
+ipython = "*"
+bpy = "*"
+geometry_script = { git = "https://github.com/zachcp/geometry-script.git" }
+nodetopython = { git = "https://github.com/zachcp/NodeToPython.git", branch = "v32" }
+molecularnodes = { git = "https://github.com/BradyAJohnston/MolecularNodes.git" }
+
+
+[tasks]
+# run pixi launch to open the system blender and connect to it
+launch-blender = "/Applications/Blender.app/Contents/MacOS/Blender --background --python scripts/blender_interop/blender_socket_server.py"
+# run pixi launch to open the system blender and connect to it
+launch-blender-live = "/Applications/Blender.app/Contents/MacOS/Blender --python scripts/blender_interop/blender_socket_server.py"
+# send a file for eval in Blender
+send-to-blender = "python scripts/blender_interop/send_to_blender.py"
+# kill background blender
+kill-blender = "pkill -f blender --background"
+# convert MolecularNodes
+convert-MN = "python scripts/convert_MN/convert_MolecularNodes.py"
