@@ -13,13 +13,12 @@ Motivation:
   - main need: be able to create Nodes programatically and connect them together with code.
 
 
-  Approach:
+Approach:
 
-    - load all deps and the environment in code. used pixi for its awesomeness.
-    - try to convert all of the MN nodes to code with the idea that that opens up CI/CD etc.
-    - create some simple end-to-end viz that can be invoked as a pixi task
-    - create some more complicated viz that links nodes together.
-
+  - load all deps and the environment in code. used pixi for its awesomeness.
+  - try to convert all of the MN nodes to code with the idea that that opens up CI/CD etc.
+  - create some simple end-to-end viz that can be invoked as a pixi task
+  - create some more complicated viz that links nodes together.
 
 
 ```sh
