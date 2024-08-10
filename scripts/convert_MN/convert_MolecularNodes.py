@@ -16,23 +16,20 @@ try:
 except:
     pass
 
-
 def fix_name(name):
-    replace_chars = ['.','(',')',',','+']
+    #_hbond(i_-_1,j)_and_hbond(j,i_+_1)
+    replace_chars = ['.','(',')',',','+','-',' ']
     for char in replace_chars:
         name = name.replace(char, "_")
-    #_hbond(i_-_1,j)_and_hbond(j,i_+_1)
-    #name= name.lower()
     return name
-
 
 def convert_Molecular_Nodes_to_python(
     blendfile="assets/MN_data_file_4.2.blend",
     output_dir="molnodes/molnodes",
-    version=(4, 2, 0),
-):
+    version=(4, 2, 0)):
     """
-    using NodetoPython to create python classes for each GemoetryNodeTree in MolecularNodes
+
+    Using NodetoPython to create python classes for each GemoetryNodeTree in MolecularNodes
 
     # geometry_nodes_object = create_geometry_nodes_object()
     # print(f"Created Geometry Nodes object: {geometry_nodes_object.name}")
@@ -68,28 +65,36 @@ def convert_Molecular_Nodes_to_python(
     for node in molecular_nodes:
         name = fix_name(node.name)
         pathname = name.lower()
+
+        if '2' in name or '3' in name:
+            pathname = "_" + pathname
+
         print(f"Saving Node: {name}")
         try:
             # print(f"- {node.bl_description} (ID: {name})")
             bpy.context.scene.ntp_options.dir_path = temp_dir
-            # bpy.context.scene.ntp_options.description = "Test Description"
             bpy.ops.node.ntp_geo_nodes(geo_nodes_group_name=node.name)
-            zip_path = os.path.join(temp_dir, f"{name}.zip")
+
+            zip_path = os.path.join(temp_dir, f"{pathname}.zip")
+
+            print(zip_path)
             if os.path.exists(zip_path):
                 with zipfile.ZipFile(zip_path, "r") as zip_ref:
                     zip_ref.extract(f"{pathname}/__init__.py", temp_dir)
                     os.rename(
-                        os.path.join(temp_dir, name, "__init__.py"),
+                        os.path.join(temp_dir, pathname, "__init__.py"),
                         f"{output_dir}/{name}.py",
                     )
+            else:
+                raise IOError(f"path does not exist for {name}, {pathname}")
             # we want to aggregate the tidy name, `name`, as well as the name used by the nodes
             classes.append((name, pathname, node.name))
         except:
-            raise ValueError(f"Issue with {name}")
-    shutil.rmtree(temp_dir)
+            raise ValueError(f"Issue with {name}, {pathname}")
+    #shutil.rmtree(temp_dir)
 
     with open(f'{output_dir}/__init__.py', 'w') as f:
         for name, pathname, nodename in classes:
-            f.write(f"from {name} import {name}\n")
+            f.write(f"from {pathname} import {name}\n")
 
 convert_Molecular_Nodes_to_python()
