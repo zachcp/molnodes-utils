@@ -18,7 +18,12 @@ except:
 
 
 def fix_name(name):
-    return name.replace(".", "_").replace(" ", "_").lower()
+    replace_chars = ['.','(',')',',','+']
+    for char in replace_chars:
+        name = name.replace(char, "_")
+    #_hbond(i_-_1,j)_and_hbond(j,i_+_1)
+    #name= name.lower()
+    return name
 
 
 def convert_Molecular_Nodes_to_python(
@@ -62,6 +67,8 @@ def convert_Molecular_Nodes_to_python(
     classes = []
     for node in molecular_nodes:
         name = fix_name(node.name)
+        pathname = name.lower()
+        print(f"Saving Node: {name}")
         try:
             # print(f"- {node.bl_description} (ID: {name})")
             bpy.context.scene.ntp_options.dir_path = temp_dir
@@ -70,19 +77,19 @@ def convert_Molecular_Nodes_to_python(
             zip_path = os.path.join(temp_dir, f"{name}.zip")
             if os.path.exists(zip_path):
                 with zipfile.ZipFile(zip_path, "r") as zip_ref:
-                    zip_ref.extract(f"{name}/__init__.py", temp_dir)
+                    zip_ref.extract(f"{pathname}/__init__.py", temp_dir)
                     os.rename(
                         os.path.join(temp_dir, name, "__init__.py"),
                         f"{output_dir}/{name}.py",
                     )
             # we want to aggregate the tidy name, `name`, as well as the name used by the nodes
-            classes.append((name, node.name))
+            classes.append((name, pathname, node.name))
         except:
             raise ValueError(f"Issue with {name}")
     shutil.rmtree(temp_dir)
 
     with open(f'{output_dir}/__init__.py', 'w') as f:
-        for name, nodename in classes:
-            f.write(f"from {name} import {nodename}\n")
+        for name, pathname, nodename in classes:
+            f.write(f"from {name} import {name}\n")
 
 convert_Molecular_Nodes_to_python()
