@@ -10,6 +10,7 @@ platforms = ["osx-arm64"]
 python = "==3.11"
 
 [pypi-dependencies]
+build = "*"
 ipython = "*"
 bpy = "*"
 geometry_script = { git = "https://github.com/zachcp/geometry-script.git" }
@@ -28,3 +29,6 @@ send-to-blender = "python scripts/blender_interop/send_to_blender.py"
 kill-blender = "pkill -f blender --background"
 # convert MolecularNodes
 convert-MN = "python scripts/convert_MN/convert_MolecularNodes.py"
+# convert MolecularNodes
+# build-wheel = "cd molnodes && pip install build && python -m build"
+build-wheel = "cd molnodes && python -m build"

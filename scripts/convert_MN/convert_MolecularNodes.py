@@ -25,7 +25,7 @@ def get_Molecular_Nodes():
 
 def convert_Molecular_Nodes_to_python(
     blendfile="assets/MN_data_file_4.2.blend",
-    output_dir="molnodes/nodes"):
+    output_dir="molnodes/molnodes"):
     #
     # geometry_nodes_object = create_geometry_nodes_object()
     # print(f"Created Geometry Nodes object: {geometry_nodes_object.name}")
