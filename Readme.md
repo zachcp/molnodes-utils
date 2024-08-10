@@ -32,5 +32,7 @@ pixi run convert-MN
 pixi run launch-blender-live
 
 # in terminal 2
+pixi run send-to-blender scripts/00_script.py
+pixi run send-to-blender scripts/01_script.py
 pixi run send-to-blender scripts/examples/city-builder.py
 ```
