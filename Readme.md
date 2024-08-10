@@ -22,10 +22,6 @@ Approach:
 
 
 ```sh
-## Build Molecular Node Nodes
-# this will convert each GeometryNode class found in assets/MN_data_file_4.2.blend to a pythonclas
-pixi run convert-MN
-
 
 ## Examples of Sending Code to the Blender Repl
 # in terminal 1
@@ -35,4 +31,11 @@ pixi run launch-blender-live
 pixi run send-to-blender scripts/00_script.py
 pixi run send-to-blender scripts/01_script.py
 pixi run send-to-blender scripts/examples/city-builder.py
+
+
+## Build Molecular Node Nodes
+# this will convert each GeometryNode class found in assets/MN_data_file_4.2.blend to a pythonclas
+pixi run convert-MN
+# create a python wheel of MolecularNodes nodes
+pixi run build-wheel
 ```
