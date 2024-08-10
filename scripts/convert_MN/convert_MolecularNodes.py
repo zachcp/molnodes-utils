@@ -67,7 +67,9 @@ def convert_Molecular_Nodes_to_python(
         pathname = name.lower()
 
         if '2' in name or '3' in name:
-            pathname = "_" + pathname
+            if not 'style' in name.lower():
+                pathname = "_" + pathname
+                name = "_" + name
 
         print(f"Saving Node: {name}")
         try:
@@ -83,7 +85,7 @@ def convert_Molecular_Nodes_to_python(
                     zip_ref.extract(f"{pathname}/__init__.py", temp_dir)
                     os.rename(
                         os.path.join(temp_dir, pathname, "__init__.py"),
-                        f"{output_dir}/{name}.py",
+                        f"{output_dir}/{pathname}.py",
                     )
             else:
                 raise IOError(f"path does not exist for {name}, {pathname}")
@@ -96,5 +98,9 @@ def convert_Molecular_Nodes_to_python(
     with open(f'{output_dir}/__init__.py', 'w') as f:
         for name, pathname, nodename in classes:
             f.write(f"from {pathname} import {name}\n")
+        f.write("\n__all__ = [\n")
+        for name, pathname, nodename in classes:
+            f.write(f'\t"{name}",\n')
+        f.write("]\n")
 
 convert_Molecular_Nodes_to_python()
