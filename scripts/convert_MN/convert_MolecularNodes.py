@@ -96,11 +96,24 @@ def convert_Molecular_Nodes_to_python(
     #shutil.rmtree(temp_dir)
 
     with open(f'{output_dir}/__init__.py', 'w') as f:
+        # imports
         for name, pathname, nodename in classes:
             f.write(f"from {pathname} import {name}\n")
+        # all statement
         f.write("\n__all__ = [\n")
         for name, pathname, nodename in classes:
             f.write(f'\t"{name}",\n')
         f.write("]\n")
+        # register function
+        f.write(f'\n')
+        f.write(f'def register():\n')
+        for name, pathname, nodename in classes:
+            f.write(f'\tbpy.utils.register_class({name}),\n')
+        # unregister function
+        f.write(f'\n')
+        f.write(f'def unregister():\n')
+        for name, pathname, nodename in classes:
+            f.write(f'\tbpy.utils.unregister_class({name}),\n')
+
 
 convert_Molecular_Nodes_to_python()

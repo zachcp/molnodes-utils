@@ -1,0 +1,180 @@
+(ns torus-pattern
+  "Creates a torus pattern with randomly colored materials."
+  (:import bpy math))
+
+(def object (.. bpy/ops -object))
+(def materials (.. bpy/data -materials))
+(def mesh (.. bpy/ops -mesh))
+
+
+(defn clear-mesh-objects []
+  (.select-all object ** :action "DESELECT")
+  (.select-by-type object ** :type "MESH")
+  (.delete object))
+
+(clear-mesh-objects)
+
+(defn create-random-material []
+  (let [mat (.new materials ** :name "RandomMaterial")
+        _ (set! (.-use-nodes mat) true)
+        bsdf (aget (.. mat -node-tree -nodes) "Principled BSDF")]
+
+    (set! (-> bsdf .-inputs (aget "Base Color") .-default-value)
+          [(rand) (rand) (rand) 1])
+    mat))
+
+(defn create-torus [radius tube-radius location segments]
+  (.primitive-torus-add mesh **
+                        :major-radius radius
+                        :minor-radius tube-radius
+                        :location location
+                        :major-segments segments
+                        :minor-segments segments)
+  (let [obj (.. bpy/context -object)
+        material (create-random-material)]
+    (-> obj .-data .-materials (.append material))))
+
+#_(create-torus 5, 5, [0 0 0] 48)
+
+(defn create-pattern [{:keys [layers-num radius tube-radius]
+                       :or {layers-num 2
+                            radius 2
+                            tube-radius 0.2}}]
+  (let [angle-step (/ math/pi 4)]
+    (dotimes [i layers-num]
+      (let [layer-radius (* radius (inc i))
+            objects-num (* 12 (inc i))]
+        (dotimes [j objects-num]
+          (let [angle (* j angle-step)
+                x (* layer-radius (math/cos angle))
+                y (* layer-radius (math/sin angle))
+                z (* i 0.5)]
+            (create-torus (/ radius 2) tube-radius [x y z] 48)))))))
+
+(create-pattern {:layers-num 5})
+
+
+
+;; -------------------------------------------------------------------
+
+
+;; (bpy.ops.node/add_node "INVOKE_DEFAULT" ** :type "GeometryNodeGroup" :use_transform true)    
+;; (set! (.. bpy/context .-area .-type) "NODE_EDITOR")
+;; (set! (-> bpy/context .-area .-type) "NODE_EDITOR")
+;; (-> bpy .-context .area .type) 
+;; (bpy.data.screens/get "Layout")
+;; (-> bpy/context .-area)
+;; (.. bpy/context bpy.context.area.type)
+;; (.-area (bpy.data.screens/get "Layout"))
+;; (python/getattr (.. bpy/context) "area")
+
+
+;; (defn set-node-editor-tree [node-tree]
+;;   (doseq [area (get-areas-of-type "NODE_EDITOR")]
+;;     (doseq [space (py/get-attr area "spaces")]
+;;       (when (= (py/get-attr space "type") "NODE_EDITOR")
+;;         (py/setattr space "node_tree" node-tree)
+;;         (py/call (py/get-attr area "tag_redraw"))))))
+
+
+;; (defn set-node-editor-tree [node-tree]
+;;   (doseq [area (get-areas-of-type "NODE_EDITOR")]
+;;     (doseq [space (.-spaces area)]
+;;       (when (= (.-type space) "NODE_EDITOR")
+;;         (set! (.. spacenode -node_tree) exampletree)
+;;           ;; (.tag_redraw area)
+;;         ))))
+
+
+
+(defn load-pdb [code]
+  (do
+    (set! (.. bpy/context -scene -MN_pdb_code) code)
+    (bpy.ops.mn/import_wwpdb)))
+
+
+(defn mol-by-name [objname]
+  (bpy.data.objects/get objname))
+
+
+(defn geom-node-by-name [name]
+  ^bpy.types.GeometryNodeTree
+  (let [node (mol-by-name name)
+        node_group  (-> node .-modifiers .-active .-node-group)]
+    node_group))
+
+
+;; (defn get-areas-of-type [area-type]
+;;   (let [areas (.. bpy/context -screen -areas)
+;;         type_areas (filter #(= area-type (.-type %)) areas)]
+;;     (first type_areas)))
+
+
+;; (defn set-node-editor-tree [node-tree]
+;;   (let [area (get-areas-of-type "NODE_EDITOR")]
+;;     (doseq [space (.-spaces area)]
+;;       (when (= (.-type space) "NODE_EDITOR")
+;;         (set! (.. space -node_tree) node-tree)
+;;         (print "in")))))
+
+
+;; (defn add-node [name nodetype]
+;;   (let [node (mol-by-name name)
+;;         nodetree  (geom-node-by-name name)
+;;         nodes (.-nodes nodetree)]
+;;     ;; Update context
+;;     (set-node-editor-tree nodetree)
+;;     (bpy.ops.mn/add_custom_node_group "INVOKE_DEFAULT" ** type "GeometryNodeGroup" :use_transform true)))
+
+
+(defn set-node-editor-context [node-tree]
+  (when-let [area (get-node-editor-area)]
+    (let [old-type (py/get-attr (py/get-attr bpy "context" "area") "type")
+          old-space (py/get-attr (py/get-attr bpy "context" "space_data") "type")]
+      ; Set the context to the Node Editor
+      (py/setattr (py/get-attr bpy "context" "area") "type" "NODE_EDITOR")
+      (py/setattr (py/get-attr bpy "context" "space_data") "type" "NODE_EDITOR")
+      (py/setattr (py/get-attr bpy "context" "space_data") "node_tree" node-tree)
+
+      ; Run your operator here, for example:
+      (py/call (py/get-attr bpy "ops" "node" "add_node") :type "NodeGroupInput")
+
+      ; Restore the original context
+      (py/setattr (py/get-attr bpy "context" "area") "type" old-type)
+      (py/setattr (py/get-attr bpy "context" "space_data") "type" old-space))))
+
+; Example usage
+(let [obj (py/get-attr (py/get-attr bpy "context") "active_object")
+      modifier (py/get-attr obj "modifiers" "active")]
+  (when (and modifier (= (py/get-attr modifier "type") "NODES"))
+    (let [node-tree (py/get-attr modifier "node_group")]
+      (set-node-editor-context node-tree))))
+
+
+(comment
+  ;; Works
+  (add-node "1FAP" "GeometryNodeMeshCircle")
+  (add-node "1FAP" "Separate Polymers")
+  (add-node "1FAP" "MN_Separate_Polymer")
+  (add-node "1FAP" "MolecularNodeSeparatePolymer")
+  (load-pdb "1FAP")
+  (load-pdb "7VDV")
+  (mol-by-name "1FAP")
+  (geom-node-by-name "1FAP")
+
+  (def fap (mol-by-name "1FAP"))
+  (def a1 (get-areas-of-type "NODE_EDITOR"))
+  (def space1 (.-spaces a1))
+  (def spacenode (first space1))
+  (def exampletree (geom-node-by-name "1FAP"))
+
+ 
+  (let [nodes (.-nodes exampletree)
+        newnode (.new nodes "GeometryNodeGroup")
+        node_group (bpy.data.node_groups/get "MN_dna_double_helix")
+        new_node.location = ((rand), (rand)) 
+        ]
+
+  )
+  
+  )
