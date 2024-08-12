@@ -30,6 +30,11 @@ basilisp = "*"
 launch-blender = "/Applications/Blender.app/Contents/MacOS/Blender --background --python scripts/blender_interop/blender_socket_server.py"
 # run pixi launch to open the system blender and connect to it
 launch-blender-live = "/Applications/Blender.app/Contents/MacOS/Blender --python scripts/blender_interop/blender_socket_server.py"
+
+# get an interactive basilisp repl
+# doesn't allow bytecode connection
+# launch-blender-basilisp = "/Applications/Blender.app/Contents/MacOS/Blender --python scripts/blender_interop/start_basilisp_nrepl.py"
+
 # send a file for eval in Blender
 send-to-blender = "python scripts/blender_interop/send_to_blender.py"
 # kill background blender

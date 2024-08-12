@@ -33,8 +33,12 @@ pixi run send-to-blender scripts/01_script.py
 pixi run send-to-blender scripts/examples/city-builder.py
 
 
+# alternative using basilsp
+# this will create an nrepl server to your open Blender
+pixi run launch-blender-basilisp
+
 ## Build Molecular Node Nodes
-# this will convert each GeometryNode class found in assets/MN_data_file_4.2.blend to a pythonclas
+# this will convert each GeometryNode class found in assets/MN_data_file_4.2.blend to a pythonclass
 pixi run convert-MN
 # create a python wheel of MolecularNodes nodes
 pixi run build-wheel
