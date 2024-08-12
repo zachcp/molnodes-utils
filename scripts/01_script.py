@@ -11,8 +11,6 @@ def repeat_grid(geometry: Geometry, width: Int, height: Int):
     return g.instance_on_points(instance=geometry)
 
 
-
-
 # Clear existing objects
 bpy.ops.object.select_all(action="SELECT")
 bpy.ops.object.delete()

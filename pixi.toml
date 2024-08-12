@@ -8,15 +8,22 @@ platforms = ["osx-arm64"]
 
 [dependencies]
 python = "==3.11"
+ffmpeg-python = "*"
+ffmpeg = "*"
+opencv = "*"
+numpy = "<2.0"
+ipython = "*"
 
 [pypi-dependencies]
-build = "*"
-ipython = "*"
 bpy = "*"
+blendersynth = "*"
+biotite = "==0.40.0"
 geometry_script = { git = "https://github.com/zachcp/geometry-script.git" }
 nodetopython = { git = "https://github.com/zachcp/NodeToPython.git", branch = "v32" }
 molecularnodes = { git = "https://github.com/BradyAJohnston/MolecularNodes.git" }
-
+opencv-python = "*"
+platformdirs = "*"
+basilisp = "*"
 
 [tasks]
 # run pixi launch to open the system blender and connect to it
@@ -32,3 +39,8 @@ convert-MN = "python scripts/convert_MN/convert_MolecularNodes.py"
 # convert MolecularNodes
 # build-wheel = "cd molnodes && pip install build && python -m build"
 build-wheel = "cd molnodes && python -m build"
+build = "*"
+ipython = "*"
+bpy = "*"
+blendersynth = "*"
+platformdirs = "*"
