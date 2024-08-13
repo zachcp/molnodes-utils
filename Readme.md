@@ -43,3 +43,8 @@ pixi run convert-MN
 # create a python wheel of MolecularNodes nodes
 pixi run build-wheel
 ```
+
+from basilisp_blender.nrepl import server_start
+
+shutdown_fn = server_start(nrepl_port_filepath="<project-root-path>/.nrepl-port")
+/Users/zcpowers/Desktop/molnodes/.nrepl-port
