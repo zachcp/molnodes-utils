@@ -1,66 +1,8 @@
-(ns torus-pattern
-  "Creates a torus pattern with randomly colored materials."
+(ns molnodes
+  "Utilitis for workign with Moecular Nodes via basilisp-repl"
   (:import bpy math pathlib)
-  ;;  (:import [bl_ext.blender_org.molecularnodes :as molnodes])
   (:require
    [basilisp.string :as string]))
-
-
-(def object (.. bpy/ops -object))
-(def materials (.. bpy/data -materials))
-(def mesh (.. bpy/ops -mesh))
-(def libs (.. bpy/data -libraries))
-
-
-(defn clear-mesh-objects []
-  (.select-all object ** :action "DESELECT")
-  (.select-by-type object ** :type "MESH")
-  (.delete object))
-
-(clear-mesh-objects)
-
-(defn create-random-material []
-  (let [mat (.new materials ** :name "RandomMaterial")
-        _ (set! (.-use-nodes mat) true)
-        bsdf (aget (.. mat -node-tree -nodes) "Principled BSDF")]
-
-    (set! (-> bsdf .-inputs (aget "Base Color") .-default-value)
-          [(rand) (rand) (rand) 1])
-    mat))
-
-(defn create-torus [radius tube-radius location segments]
-  (.primitive-torus-add mesh **
-                        :major-radius radius
-                        :minor-radius tube-radius
-                        :location location
-                        :major-segments segments
-                        :minor-segments segments)
-  (let [obj (.. bpy/context -object)
-        material (create-random-material)]
-    (-> obj .-data .-materials (.append material))))
-
-#_(create-torus 5, 5, [0 0 0] 48)
-
-(defn create-pattern [{:keys [layers-num radius tube-radius]
-                       :or {layers-num 2
-                            radius 2
-                            tube-radius 0.2}}]
-  (let [angle-step (/ math/pi 4)]
-    (dotimes [i layers-num]
-      (let [layer-radius (* radius (inc i))
-            objects-num (* 12 (inc i))]
-        (dotimes [j objects-num]
-          (let [angle (* j angle-step)
-                x (* layer-radius (math/cos angle))
-                y (* layer-radius (math/sin angle))
-                z (* i 0.5)]
-            (create-torus (/ radius 2) tube-radius [x y z] 48)))))))
-
-#_(create-pattern {:layers-num 5})
-
-
-
-;; -------------------------------------------------------------------
 
 
 (def molecular-node-types
@@ -139,46 +81,121 @@
    :mn-world-scale ".MN_world_scale"
    :sample-atom-value ".SampleAtomValue"
    :sec-struct-counter ".sec_struct_counter"
-   :selective-scale ".selective_scale"})
+   :selective-scale ".selective_scale"
+   :seperate-polymers "Separate Polymers"
+;;    Offset Boolean
+;;    Offset Color
+;;    Offset Float
+;;    Offset Integer
+;;    Offset Vector
+;;    Point Distance
+;;    Point Edge Angle
+;;    Points of Edge
+;;    Res Group ID
+;;    Res Info
+;;    Residue Mask
+;;    Sample Mix Float
+;;    Sample Mix Vector
+;;    Sample Nearest Atoms
+;;    Select Atomic Number
+;;    Select Attribute
+;;    Select Bonded
+;;    Select Chain_
+;;    Select Cube
+;;    Select Element
+;;    Select Entity_
+;;    Select Ligand_
+;;    Select Proximity
+;;    Select Res ID
+;;    Select Res ID Range
+;;    Select Res ID_
+;;    Select Res Name
+;;    Select Res Whole
+;;    Select Segment_
+;;    Select Sphere
+;;    Self Sample Proximity
+;;    Separate Atoms
+;;    Separate Polymers
+;;    Set Color
+;;    Starfile Instances
+;;    Style Ball and Stick
+;;    Style Cartoon
+;;    Style Density Surface
+;;    Style Density Wire
+;;    Style Preset 1
+;;    Style Preset 2
+;;    Style Preset 3
+;;    Style Preset 4
+;;    Style Ribbon
+;;    Style Spheres
+;;    Style Sticks
+;;    Style Surface
+;;    Select Res ID
+;;    Select Res ID Range
+;;    Select Res ID_
+;;    Select Res Name
+;;    Select Res Whole
+;;    Select Segment_
+;;    Select Sphere
+;;    Self Sample Proximity
+;;    Separate Atoms
+;;    Separate Polymers
+;;    Set Color
+;;    Starfile Instances
+;;    Style Ball and Stick
+;;    Style Cartoon
+;;    Style Density Surface
+;;    Style Density Wire
+;;    Style Preset 1
+;;    Style Preset 2
+;;    Style Preset 3
+;;    Style Preset 4
+;;    Style Ribbon
+;;    Style Spheres
+;;    Style Sticks
+;;    Style Surface
+   })
 
-(defn locate-molnodes-file []
+
+(defn- locate-molnodes-file []
   "locate the molecularnodes blenderfile"
   (let [package "molecularnodes"
         prefix "MN_"
         extensions-path (pathlib/Path (bpy.utils/user_resource "EXTENSIONS"))
         blend-files (python/list (.rglob extensions-path (str "**/" package "/**/" prefix "*.blend")))]
-    ;; (println extensions-path)
     (str (first blend-files))))
 
+
 (defn load-node-groups []
+  "This will make the MolecularNode nodegroups available for use"
   (let [blendfile (locate-molnodes-file)]
     (with [[data-from data-to] (bpy.data.libraries/load blendfile)]
           (doseq [node (.-node-groups data-from)]
             (.append (.-node-groups data-to) node)))))
-  
+
 
 (defn get-current-nodegroups   []
   "set of nodegroups in the workspace"
-  (into #{}  (for [node (bpy.data.node_groups/values)] (.-name node))))
+  (into #{} (for [node (bpy.data.node_groups/values)] (.-name node))))
 
 
-;; note: it would be nice to specify the node type here
 (defn load-pdb [code]
+  "primary way to load a PDB file"
   (do
     (set! (.. bpy/context -scene -MN_pdb_code) code)
     (set! (.. bpy/context -scene -MN_import_style) "cartoon")
     (bpy.ops.mn/import_wwpdb)))
 
 
-(defn mol-by-name [objname]
+(defn- mol-by-name [objname]
   (bpy.data.objects/get objname))
 
 
 (defn geom-node-by-name [name]
   ^bpy.types.GeometryNodeTree
-  (let [node (mol-by-name name)
-        node_group  (-> node .-modifiers .-active .-node-group)]
-    node_group))
+  (-> (bpy.data.objects/get name) .-modifiers .-active .-node-group))
+  
+
 
 
 
@@ -187,7 +204,7 @@
 
   ; initialize the classes we ned to add additional Geom Nodes
   (load-node-groups)
-  
+
  ;; Works
   (load-pdb "1FAP")
   (load-pdb "7VDV")
@@ -197,11 +214,10 @@
   (let [fap (mol-by-name "1FAP")
         fap-geo (geom-node-by-name "1FAP")
         fap-geom-nodes (.-nodes fap-geo)
-        to-keep #{"Group Input" "Group Output"}
-        ]
+        to-keep #{"Group Input" "Group Output"}]
     ;; (print fap)
     ;; (print fap-geo)
-    ;; (print fap-geom-nodes)
+    ;; (print fap-geom-nodes)å
     (doseq [node fap-geom-nodes]
       (print node)
       (set! context.active_node)
@@ -212,20 +228,20 @@
       ;;   (bpy.ops.object/delete node)
       ;;   )
       ;; )
-    )
-    )
-  
-  
+      ))
+
+  (bpy.ops.node/add_node (molecular-node-types :seperate-polyerms))
+
   (def fap (mol-by-name "1FAP"))
   (def exampletree (geom-node-by-name "1FAP"))
 
  ;; Nodes need to be added to the workspace before they can be used
   (molecular-node-types :mn-dna-double-helix)
+  (molecular-node-types :separate-polymers)
   (def blendfile "/Users/zcpowers/Library/Application Support/Blender/4.2/extensions/blender_org/molecularnodes/assets/MN_data_file_4.2.blend")
 
   ;; todo:
   ;; Function to add node to a NodeGroup
   ;; Function to delete nodes from a NodeGroup
   ;; Function to build up NodegroupCombinations
-
-)  
+  )  

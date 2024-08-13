@@ -24,12 +24,24 @@ molecularnodes = { git = "https://github.com/BradyAJohnston/MolecularNodes.git" 
 opencv-python = "*"
 platformdirs = "*"
 basilisp = "*"
+basilisp-blender = "*"
 
 [tasks]
 # run pixi launch to open the system blender and connect to it
 launch-blender = "/Applications/Blender.app/Contents/MacOS/Blender --background --python scripts/blender_interop/blender_socket_server.py"
 # run pixi launch to open the system blender and connect to it
 launch-blender-live = "/Applications/Blender.app/Contents/MacOS/Blender --python scripts/blender_interop/blender_socket_server.py"
+
+# get an interactive basilisp repl
+# doesn't allow bytecode connection
+#
+# https://docs.blender.org/api/current/info_tips_and_tricks.html
+# Remove Blender Python subdirectory, Blender will then fallback on the system’s Python and use that instead.
+# Depending on your platform, you may need to explicitly reference the location of your Python installation using the PYTHONPATH environment variable, e.g:
+# launch-blender-basilisp = "/Applications/Blender.app/Contents/MacOS/Blender --python-use-system-env --python-expr \"from basilisp_blender.nrepl import server_start; shutdown_fn = server_start(port=8889);\""
+launch-blender-basilisp = "/Applications/Blender.app/Contents/MacOS/Blender --python-use-system-env --python scripts/blender_interop/start_basilisp_nrepl.py"
+
+
 # send a file for eval in Blender
 send-to-blender = "python scripts/blender_interop/send_to_blender.py"
 # kill background blender
