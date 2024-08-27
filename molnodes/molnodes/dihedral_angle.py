@@ -28,27 +28,27 @@ class Dihedral_Angle(bpy.types.Operator):
 			#vector_angle interface
 			#Socket Angle
 			angle_socket = vector_angle.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket.subtype = 'ANGLE'
 			angle_socket.default_value = 0.0
 			angle_socket.min_value = -3.4028234663852886e+38
 			angle_socket.max_value = 3.4028234663852886e+38
+			angle_socket.subtype = 'ANGLE'
 			angle_socket.attribute_domain = 'POINT'
 			angle_socket.description = "Angle between the two given vectors in radians"
 			
 			#Socket A
 			a_socket = vector_angle.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketVector')
-			a_socket.subtype = 'NONE'
 			a_socket.default_value = (0.0, 0.0, 0.0)
 			a_socket.min_value = -10000.0
 			a_socket.max_value = 10000.0
+			a_socket.subtype = 'NONE'
 			a_socket.attribute_domain = 'POINT'
 			
 			#Socket B
 			b_socket = vector_angle.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketVector')
-			b_socket.subtype = 'NONE'
 			b_socket.default_value = (0.0, 0.0, 0.0)
 			b_socket.min_value = -10000.0
 			b_socket.max_value = 10000.0
+			b_socket.subtype = 'NONE'
 			b_socket.attribute_domain = 'POINT'
 			
 			
@@ -130,73 +130,73 @@ class Dihedral_Angle(bpy.types.Operator):
 			#dihedral_angle interface
 			#Socket Angle
 			angle_socket_1 = dihedral_angle.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket_1.subtype = 'ANGLE'
 			angle_socket_1.default_value = 0.0
 			angle_socket_1.min_value = -3.4028234663852886e+38
 			angle_socket_1.max_value = 3.4028234663852886e+38
+			angle_socket_1.subtype = 'ANGLE'
 			angle_socket_1.attribute_domain = 'POINT'
 			angle_socket_1.description = "The angle between the vectors AB and CD, when made perpendicular to BC."
 			
 			#Socket BA⟂(BC)
 			ba__bc__socket = dihedral_angle.interface.new_socket(name = "BA⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			ba__bc__socket.subtype = 'NONE'
 			ba__bc__socket.default_value = (0.0, 0.0, 0.0)
 			ba__bc__socket.min_value = -3.4028234663852886e+38
 			ba__bc__socket.max_value = 3.4028234663852886e+38
+			ba__bc__socket.subtype = 'NONE'
 			ba__bc__socket.attribute_domain = 'POINT'
 			ba__bc__socket.description = "The vector BA when made perpendicular to  the axis BC"
 			
 			#Socket CD⟂(BC)
 			cd__bc__socket = dihedral_angle.interface.new_socket(name = "CD⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			cd__bc__socket.subtype = 'NONE'
 			cd__bc__socket.default_value = (0.0, 0.0, 0.0)
 			cd__bc__socket.min_value = -3.4028234663852886e+38
 			cd__bc__socket.max_value = 3.4028234663852886e+38
+			cd__bc__socket.subtype = 'NONE'
 			cd__bc__socket.attribute_domain = 'POINT'
 			cd__bc__socket.description = "The Vector CD when makde perpendicular to the axis BC"
 			
 			#Socket BC
 			bc_socket = dihedral_angle.interface.new_socket(name = "BC", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			bc_socket.subtype = 'NONE'
 			bc_socket.default_value = (0.0, 0.0, 0.0)
 			bc_socket.min_value = -3.4028234663852886e+38
 			bc_socket.max_value = 3.4028234663852886e+38
+			bc_socket.subtype = 'NONE'
 			bc_socket.attribute_domain = 'POINT'
 			bc_socket.description = "The axis vector BC"
 			
 			#Socket A
 			a_socket_1 = dihedral_angle.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketVector')
-			a_socket_1.subtype = 'NONE'
 			a_socket_1.default_value = (0.0, 0.0, 0.0)
 			a_socket_1.min_value = -3.4028234663852886e+38
 			a_socket_1.max_value = 3.4028234663852886e+38
+			a_socket_1.subtype = 'NONE'
 			a_socket_1.attribute_domain = 'POINT'
 			a_socket_1.description = "First vector for the calculation, which draws a line to B"
 			
 			#Socket B
 			b_socket_1 = dihedral_angle.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketVector')
-			b_socket_1.subtype = 'NONE'
 			b_socket_1.default_value = (0.0, 0.0, 0.0)
 			b_socket_1.min_value = -3.4028234663852886e+38
 			b_socket_1.max_value = 3.4028234663852886e+38
+			b_socket_1.subtype = 'NONE'
 			b_socket_1.attribute_domain = 'POINT'
 			b_socket_1.description = "Second vector for the calculation, which receives a line from A and draws a line to C"
 			
 			#Socket C
 			c_socket = dihedral_angle.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketVector')
-			c_socket.subtype = 'NONE'
 			c_socket.default_value = (0.0, 0.0, 0.0)
 			c_socket.min_value = -3.4028234663852886e+38
 			c_socket.max_value = 3.4028234663852886e+38
+			c_socket.subtype = 'NONE'
 			c_socket.attribute_domain = 'POINT'
 			c_socket.description = "Third vector for the calculation, which receives a line from B and draws a line to D"
 			
 			#Socket D
 			d_socket = dihedral_angle.interface.new_socket(name = "D", in_out='INPUT', socket_type = 'NodeSocketVector')
-			d_socket.subtype = 'NONE'
 			d_socket.default_value = (0.0, 0.0, 0.0)
 			d_socket.min_value = -3.4028234663852886e+38
 			d_socket.max_value = 3.4028234663852886e+38
+			d_socket.subtype = 'NONE'
 			d_socket.attribute_domain = 'POINT'
 			d_socket.description = "Last vector for the calculation, which is the end point of the line from D"
 			

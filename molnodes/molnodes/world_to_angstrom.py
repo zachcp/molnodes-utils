@@ -28,10 +28,10 @@ class World_to_Angstrom(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,18 +82,18 @@ class World_to_Angstrom(bpy.types.Operator):
 			#world_to_angstrom interface
 			#Socket Angstrom
 			angstrom_socket = world_to_angstrom.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket World
 			world_socket = world_to_angstrom.interface.new_socket(name = "World", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			world_socket.subtype = 'NONE'
 			world_socket.default_value = 0.5
 			world_socket.min_value = -10000.0
 			world_socket.max_value = 10000.0
+			world_socket.subtype = 'NONE'
 			world_socket.attribute_domain = 'POINT'
 			
 			

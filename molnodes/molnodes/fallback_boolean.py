@@ -28,14 +28,17 @@ class Fallback_Boolean(bpy.types.Operator):
 			#fallback_boolean interface
 			#Socket Boolean
 			boolean_socket = fallback_boolean.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket = fallback_boolean.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = ""
 			name_socket.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket = fallback_boolean.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketBool')
+			fallback_socket.default_value = False
 			fallback_socket.attribute_domain = 'POINT'
 			
 			

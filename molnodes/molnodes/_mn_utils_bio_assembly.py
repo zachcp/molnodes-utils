@@ -41,18 +41,18 @@ class _MN_utils_bio_assembly(bpy.types.Operator):
 			
 			#Socket Scale Rotation
 			scale_rotation_socket = _mn_utils_bio_assembly.interface.new_socket(name = "Scale Rotation", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_rotation_socket.subtype = 'NONE'
 			scale_rotation_socket.default_value = 1.0
 			scale_rotation_socket.min_value = -10000.0
 			scale_rotation_socket.max_value = 10000.0
+			scale_rotation_socket.subtype = 'NONE'
 			scale_rotation_socket.attribute_domain = 'POINT'
 			
 			#Socket Scale Translation
 			scale_translation_socket = _mn_utils_bio_assembly.interface.new_socket(name = "Scale Translation", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_translation_socket.subtype = 'NONE'
 			scale_translation_socket.default_value = 1.0
 			scale_translation_socket.min_value = -10000.0
 			scale_translation_socket.max_value = 10000.0
+			scale_translation_socket.subtype = 'NONE'
 			scale_translation_socket.attribute_domain = 'POINT'
 			
 			

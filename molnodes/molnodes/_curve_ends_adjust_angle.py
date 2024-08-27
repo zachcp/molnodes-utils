@@ -28,10 +28,10 @@ class _curve_ends_adjust_angle(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,26 +82,26 @@ class _curve_ends_adjust_angle(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 3.0
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "A value which will be scaled appropriately for the world"
 			
@@ -178,27 +178,27 @@ class _curve_ends_adjust_angle(bpy.types.Operator):
 			#_field_offset_vec interface
 			#Socket Field
 			field_socket = _field_offset_vec.interface.new_socket(name = "Field", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			field_socket.subtype = 'NONE'
 			field_socket.default_value = (0.0, 0.0, 0.0)
 			field_socket.min_value = -3.4028234663852886e+38
 			field_socket.max_value = 3.4028234663852886e+38
+			field_socket.subtype = 'NONE'
 			field_socket.attribute_domain = 'POINT'
 			
 			#Socket Field
 			field_socket_1 = _field_offset_vec.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketVector')
-			field_socket_1.subtype = 'NONE'
 			field_socket_1.default_value = (0.0, 0.0, 0.0)
 			field_socket_1.min_value = -3.4028234663852886e+38
 			field_socket_1.max_value = 3.4028234663852886e+38
+			field_socket_1.subtype = 'NONE'
 			field_socket_1.attribute_domain = 'POINT'
 			field_socket_1.hide_value = True
 			
 			#Socket Offset
 			offset_socket = _field_offset_vec.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 0
 			offset_socket.min_value = -2147483648
 			offset_socket.max_value = 2147483647
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -271,29 +271,33 @@ class _curve_ends_adjust_angle(bpy.types.Operator):
 			#_mn_select_sec_struct_id interface
 			#Socket Selection
 			selection_socket = _mn_select_sec_struct_id.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = _mn_select_sec_struct_id.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket = _mn_select_sec_struct_id.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = _mn_select_sec_struct_id.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
 			#Socket id
 			id_socket = _mn_select_sec_struct_id.interface.new_socket(name = "id", in_out='INPUT', socket_type = 'NodeSocketInt')
-			id_socket.subtype = 'NONE'
 			id_socket.default_value = 1
 			id_socket.min_value = -2147483648
 			id_socket.max_value = 2147483647
+			id_socket.subtype = 'NONE'
 			id_socket.attribute_domain = 'POINT'
 			id_socket.description = "Secondary structure component to select"
 			
@@ -392,20 +396,24 @@ class _curve_ends_adjust_angle(bpy.types.Operator):
 			#is_sheet interface
 			#Socket Selection
 			selection_socket_1 = is_sheet.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = False
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.description = "Selected atoms form part of a sheet"
 			
 			#Socket Inverted
 			inverted_socket_1 = is_sheet.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_1.default_value = False
 			inverted_socket_1.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_1 = is_sheet.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_1.default_value = True
 			and_socket_1.attribute_domain = 'POINT'
 			and_socket_1.hide_value = True
 			
 			#Socket Or
 			or_socket_1 = is_sheet.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_1.default_value = False
 			or_socket_1.attribute_domain = 'POINT'
 			or_socket_1.hide_value = True
 			
@@ -465,20 +473,24 @@ class _curve_ends_adjust_angle(bpy.types.Operator):
 			#is_loop interface
 			#Socket Selection
 			selection_socket_2 = is_loop.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_2.default_value = False
 			selection_socket_2.attribute_domain = 'POINT'
 			selection_socket_2.description = "Selected atoms form part of a loop, and not part of any secondary structure"
 			
 			#Socket Inverted
 			inverted_socket_2 = is_loop.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_2.default_value = False
 			inverted_socket_2.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_2 = is_loop.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_2.default_value = True
 			and_socket_2.attribute_domain = 'POINT'
 			and_socket_2.hide_value = True
 			
 			#Socket Or
 			or_socket_2 = is_loop.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_2.default_value = False
 			or_socket_2.attribute_domain = 'POINT'
 			or_socket_2.hide_value = True
 			
@@ -538,20 +550,24 @@ class _curve_ends_adjust_angle(bpy.types.Operator):
 			#is_helix interface
 			#Socket Selection
 			selection_socket_3 = is_helix.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_3.default_value = False
 			selection_socket_3.attribute_domain = 'POINT'
 			selection_socket_3.description = "Selected atoms form part of an helix"
 			
 			#Socket Inverted
 			inverted_socket_3 = is_helix.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_3.default_value = False
 			inverted_socket_3.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_3 = is_helix.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_3.default_value = True
 			and_socket_3.attribute_domain = 'POINT'
 			and_socket_3.hide_value = True
 			
 			#Socket Or
 			or_socket_3 = is_helix.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_3.default_value = False
 			or_socket_3.attribute_domain = 'POINT'
 			or_socket_3.hide_value = True
 			
@@ -611,22 +627,27 @@ class _curve_ends_adjust_angle(bpy.types.Operator):
 			#_mn_select_sec_struct interface
 			#Socket Is Helix
 			is_helix_socket = _mn_select_sec_struct.interface.new_socket(name = "Is Helix", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_helix_socket.default_value = False
 			is_helix_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Sheet
 			is_sheet_socket = _mn_select_sec_struct.interface.new_socket(name = "Is Sheet", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_sheet_socket.default_value = False
 			is_sheet_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Structured
 			is_structured_socket = _mn_select_sec_struct.interface.new_socket(name = "Is Structured", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_structured_socket.default_value = False
 			is_structured_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Loop
 			is_loop_socket = _mn_select_sec_struct.interface.new_socket(name = "Is Loop", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_loop_socket.default_value = False
 			is_loop_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_4 = _mn_select_sec_struct.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_4.default_value = True
 			and_socket_4.attribute_domain = 'POINT'
 			and_socket_4.hide_value = True
 			
@@ -729,18 +750,18 @@ class _curve_ends_adjust_angle(bpy.types.Operator):
 			
 			#Socket Distance
 			distance_socket = _curve_ends_adjust_angle.interface.new_socket(name = "Distance", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			distance_socket.subtype = 'NONE'
 			distance_socket.default_value = 3.0
 			distance_socket.min_value = -10000.0
 			distance_socket.max_value = 10000.0
+			distance_socket.subtype = 'NONE'
 			distance_socket.attribute_domain = 'POINT'
 			
 			#Socket Distance
 			distance_socket_1 = _curve_ends_adjust_angle.interface.new_socket(name = "Distance", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			distance_socket_1.subtype = 'NONE'
 			distance_socket_1.default_value = 0.4200000762939453
 			distance_socket_1.min_value = -10000.0
 			distance_socket_1.max_value = 10000.0
+			distance_socket_1.subtype = 'NONE'
 			distance_socket_1.attribute_domain = 'POINT'
 			
 			

@@ -28,22 +28,27 @@ class Color_Res_Name_Nucleic(bpy.types.Operator):
 			#color_res_name_nucleic interface
 			#Socket Color
 			color_socket = color_res_name_nucleic.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket A
 			a_socket = color_res_name_nucleic.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketColor')
+			a_socket.default_value = (0.2746773660182953, 0.5457246899604797, 0.7991029620170593, 1.0)
 			a_socket.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket = color_res_name_nucleic.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketColor')
+			c_socket.default_value = (0.2945820093154907, 0.800000011920929, 0.18778899312019348, 1.0)
 			c_socket.attribute_domain = 'POINT'
 			
 			#Socket G
 			g_socket = color_res_name_nucleic.interface.new_socket(name = "G", in_out='INPUT', socket_type = 'NodeSocketColor')
+			g_socket.default_value = (0.800000011920929, 0.23661400377750397, 0.1674170047044754, 1.0)
 			g_socket.attribute_domain = 'POINT'
 			
 			#Socket T / U
 			t___u_socket = color_res_name_nucleic.interface.new_socket(name = "T / U", in_out='INPUT', socket_type = 'NodeSocketColor')
+			t___u_socket.default_value = (0.800000011920929, 0.269802987575531, 0.5268980264663696, 1.0)
 			t___u_socket.attribute_domain = 'POINT'
 			
 			

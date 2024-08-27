@@ -33,26 +33,26 @@ class MN_oxdna_style_ribbon(bpy.types.Operator):
 			
 			#Socket Value
 			value_socket = _utils_oxdna_base.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.5
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_1 = _utils_oxdna_base.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_1.subtype = 'NONE'
 			value_socket_1.default_value = 0.5
 			value_socket_1.min_value = -10000.0
 			value_socket_1.max_value = 10000.0
+			value_socket_1.subtype = 'NONE'
 			value_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_2 = _utils_oxdna_base.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_2.subtype = 'NONE'
 			value_socket_2.default_value = 0.5
 			value_socket_2.min_value = -10000.0
 			value_socket_2.max_value = 10000.0
+			value_socket_2.subtype = 'NONE'
 			value_socket_2.attribute_domain = 'POINT'
 			
 			
@@ -236,22 +236,27 @@ class MN_oxdna_style_ribbon(bpy.types.Operator):
 			#color_res_name_nucleic interface
 			#Socket Color
 			color_socket = color_res_name_nucleic.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket A
 			a_socket = color_res_name_nucleic.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketColor')
+			a_socket.default_value = (0.2746773660182953, 0.5457246899604797, 0.7991029620170593, 1.0)
 			a_socket.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket = color_res_name_nucleic.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketColor')
+			c_socket.default_value = (0.2945820093154907, 0.800000011920929, 0.18778899312019348, 1.0)
 			c_socket.attribute_domain = 'POINT'
 			
 			#Socket G
 			g_socket = color_res_name_nucleic.interface.new_socket(name = "G", in_out='INPUT', socket_type = 'NodeSocketColor')
+			g_socket.default_value = (0.800000011920929, 0.23661400377750397, 0.1674170047044754, 1.0)
 			g_socket.attribute_domain = 'POINT'
 			
 			#Socket T / U
 			t___u_socket = color_res_name_nucleic.interface.new_socket(name = "T / U", in_out='INPUT', socket_type = 'NodeSocketColor')
+			t___u_socket.default_value = (0.800000011920929, 0.269802987575531, 0.5268980264663696, 1.0)
 			t___u_socket.attribute_domain = 'POINT'
 			
 			
@@ -520,6 +525,7 @@ class MN_oxdna_style_ribbon(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = mn_oxdna_style_ribbon.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
@@ -533,26 +539,30 @@ class MN_oxdna_style_ribbon(bpy.types.Operator):
 			base_panel = mn_oxdna_style_ribbon.interface.new_panel("Base")
 			#Socket A
 			a_socket_1 = mn_oxdna_style_ribbon.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketColor', parent = base_panel)
+			a_socket_1.default_value = (0.2746773660182953, 0.5457246899604797, 0.7991029620170593, 1.0)
 			a_socket_1.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket_1 = mn_oxdna_style_ribbon.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketColor', parent = base_panel)
+			c_socket_1.default_value = (0.2945820093154907, 0.800000011920929, 0.18778899312019348, 1.0)
 			c_socket_1.attribute_domain = 'POINT'
 			
 			#Socket G
 			g_socket_1 = mn_oxdna_style_ribbon.interface.new_socket(name = "G", in_out='INPUT', socket_type = 'NodeSocketColor', parent = base_panel)
+			g_socket_1.default_value = (0.800000011920929, 0.23661400377750397, 0.1674170047044754, 1.0)
 			g_socket_1.attribute_domain = 'POINT'
 			
 			#Socket T / U
 			t___u_socket_1 = mn_oxdna_style_ribbon.interface.new_socket(name = "T / U", in_out='INPUT', socket_type = 'NodeSocketColor', parent = base_panel)
+			t___u_socket_1.default_value = (0.800000011920929, 0.269802987575531, 0.5268980264663696, 1.0)
 			t___u_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Base Scale
 			base_scale_socket = mn_oxdna_style_ribbon.interface.new_socket(name = "Base Scale", in_out='INPUT', socket_type = 'NodeSocketVector', parent = base_panel)
-			base_scale_socket.subtype = 'XYZ'
 			base_scale_socket.default_value = (1.0, 1.0, 1.0)
 			base_scale_socket.min_value = -3.4028234663852886e+38
 			base_scale_socket.max_value = 3.4028234663852886e+38
+			base_scale_socket.subtype = 'XYZ'
 			base_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -560,30 +570,31 @@ class MN_oxdna_style_ribbon(bpy.types.Operator):
 			backbone_panel = mn_oxdna_style_ribbon.interface.new_panel("Backbone")
 			#Socket Backbone Resolution
 			backbone_resolution_socket = mn_oxdna_style_ribbon.interface.new_socket(name = "Backbone Resolution", in_out='INPUT', socket_type = 'NodeSocketInt', parent = backbone_panel)
-			backbone_resolution_socket.subtype = 'NONE'
 			backbone_resolution_socket.default_value = 6
 			backbone_resolution_socket.min_value = 3
 			backbone_resolution_socket.max_value = 512
+			backbone_resolution_socket.subtype = 'NONE'
 			backbone_resolution_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Subdivisions
 			backbone_subdivisions_socket = mn_oxdna_style_ribbon.interface.new_socket(name = "Backbone Subdivisions", in_out='INPUT', socket_type = 'NodeSocketInt', parent = backbone_panel)
-			backbone_subdivisions_socket.subtype = 'NONE'
 			backbone_subdivisions_socket.default_value = 1
 			backbone_subdivisions_socket.min_value = 1
 			backbone_subdivisions_socket.max_value = 2147483647
+			backbone_subdivisions_socket.subtype = 'NONE'
 			backbone_subdivisions_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Radius
 			backbone_radius_socket = mn_oxdna_style_ribbon.interface.new_socket(name = "Backbone Radius", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = backbone_panel)
-			backbone_radius_socket.subtype = 'NONE'
 			backbone_radius_socket.default_value = 2.0
 			backbone_radius_socket.min_value = 0.0
 			backbone_radius_socket.max_value = 10000.0
+			backbone_radius_socket.subtype = 'NONE'
 			backbone_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Shade Smooth
 			backbone_shade_smooth_socket = mn_oxdna_style_ribbon.interface.new_socket(name = "Backbone Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool', parent = backbone_panel)
+			backbone_shade_smooth_socket.default_value = True
 			backbone_shade_smooth_socket.attribute_domain = 'POINT'
 			
 			

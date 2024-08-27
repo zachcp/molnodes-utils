@@ -33,50 +33,50 @@ class MN_dna_double_helix(bpy.types.Operator):
 			
 			#Socket Position
 			position_socket = mn_utils_curve_resample.interface.new_socket(name = "Position", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			
 			#Socket Tangent
 			tangent_socket = mn_utils_curve_resample.interface.new_socket(name = "Tangent", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			tangent_socket.subtype = 'NONE'
 			tangent_socket.default_value = (0.0, 0.0, 0.0)
 			tangent_socket.min_value = -3.4028234663852886e+38
 			tangent_socket.max_value = 3.4028234663852886e+38
+			tangent_socket.subtype = 'NONE'
 			tangent_socket.attribute_domain = 'POINT'
 			
 			#Socket Normal
 			normal_socket = mn_utils_curve_resample.interface.new_socket(name = "Normal", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			normal_socket.subtype = 'NONE'
 			normal_socket.default_value = (0.0, 0.0, 0.0)
 			normal_socket.min_value = -3.4028234663852886e+38
 			normal_socket.max_value = 3.4028234663852886e+38
+			normal_socket.subtype = 'NONE'
 			normal_socket.attribute_domain = 'POINT'
 			
 			#Socket Field Float
 			field_float_socket = mn_utils_curve_resample.interface.new_socket(name = "Field Float", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			field_float_socket.subtype = 'NONE'
 			field_float_socket.default_value = 0.0
 			field_float_socket.min_value = -3.4028234663852886e+38
 			field_float_socket.max_value = 3.4028234663852886e+38
+			field_float_socket.subtype = 'NONE'
 			field_float_socket.attribute_domain = 'POINT'
 			
 			#Socket Field Int
 			field_int_socket = mn_utils_curve_resample.interface.new_socket(name = "Field Int", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			field_int_socket.subtype = 'NONE'
 			field_int_socket.default_value = 0
 			field_int_socket.min_value = -2147483648
 			field_int_socket.max_value = 2147483647
+			field_int_socket.subtype = 'NONE'
 			field_int_socket.attribute_domain = 'POINT'
 			
 			#Socket Field Vec
 			field_vec_socket = mn_utils_curve_resample.interface.new_socket(name = "Field Vec", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			field_vec_socket.subtype = 'NONE'
 			field_vec_socket.default_value = (0.0, 0.0, 0.0)
 			field_vec_socket.min_value = -3.4028234663852886e+38
 			field_vec_socket.max_value = 3.4028234663852886e+38
+			field_vec_socket.subtype = 'NONE'
 			field_vec_socket.attribute_domain = 'POINT'
 			
 			#Socket Geometry
@@ -85,44 +85,44 @@ class MN_dna_double_helix(bpy.types.Operator):
 			
 			#Socket Offset
 			offset_socket = mn_utils_curve_resample.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 2.299999952316284
 			offset_socket.min_value = -10000.0
 			offset_socket.max_value = 10000.0
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			#Socket Length
 			length_socket = mn_utils_curve_resample.interface.new_socket(name = "Length", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			length_socket.subtype = 'DISTANCE'
 			length_socket.default_value = 0.36000001430511475
 			length_socket.min_value = 0.009999999776482582
 			length_socket.max_value = 3.4028234663852886e+38
+			length_socket.subtype = 'DISTANCE'
 			length_socket.attribute_domain = 'POINT'
 			
 			#Socket Field Float
 			field_float_socket_1 = mn_utils_curve_resample.interface.new_socket(name = "Field Float", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			field_float_socket_1.subtype = 'NONE'
 			field_float_socket_1.default_value = 0.0
 			field_float_socket_1.min_value = -3.4028234663852886e+38
 			field_float_socket_1.max_value = 3.4028234663852886e+38
+			field_float_socket_1.subtype = 'NONE'
 			field_float_socket_1.attribute_domain = 'POINT'
 			field_float_socket_1.hide_value = True
 			
 			#Socket Field Int
 			field_int_socket_1 = mn_utils_curve_resample.interface.new_socket(name = "Field Int", in_out='INPUT', socket_type = 'NodeSocketInt')
-			field_int_socket_1.subtype = 'NONE'
 			field_int_socket_1.default_value = 0
 			field_int_socket_1.min_value = -2147483648
 			field_int_socket_1.max_value = 2147483647
+			field_int_socket_1.subtype = 'NONE'
 			field_int_socket_1.attribute_domain = 'POINT'
 			field_int_socket_1.hide_value = True
 			
 			#Socket Field Vec
 			field_vec_socket_1 = mn_utils_curve_resample.interface.new_socket(name = "Field Vec", in_out='INPUT', socket_type = 'NodeSocketVector')
-			field_vec_socket_1.subtype = 'NONE'
 			field_vec_socket_1.default_value = (0.0, 0.0, 0.0)
 			field_vec_socket_1.min_value = -3.4028234663852886e+38
 			field_vec_socket_1.max_value = 3.4028234663852886e+38
+			field_vec_socket_1.subtype = 'NONE'
 			field_vec_socket_1.attribute_domain = 'POINT'
 			field_vec_socket_1.hide_value = True
 			
@@ -415,10 +415,10 @@ class MN_dna_double_helix(bpy.types.Operator):
 			
 			#Socket pos_old - pos_new
 			pos_old___pos_new_socket = mn_utils_helix.interface.new_socket(name = "pos_old - pos_new", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			pos_old___pos_new_socket.subtype = 'NONE'
 			pos_old___pos_new_socket.default_value = (0.0, 0.0, 0.0)
 			pos_old___pos_new_socket.min_value = -3.4028234663852886e+38
 			pos_old___pos_new_socket.max_value = 3.4028234663852886e+38
+			pos_old___pos_new_socket.subtype = 'NONE'
 			pos_old___pos_new_socket.attribute_domain = 'POINT'
 			
 			#Socket Geometry
@@ -427,66 +427,66 @@ class MN_dna_double_helix(bpy.types.Operator):
 			
 			#Socket Value
 			value_socket = mn_utils_helix.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.5711986422538757
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Scale
 			scale_socket = mn_utils_helix.interface.new_socket(name = "Scale", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_socket.subtype = 'NONE'
 			scale_socket.default_value = 0.10000000149011612
 			scale_socket.min_value = -10000.0
 			scale_socket.max_value = 10000.0
+			scale_socket.subtype = 'NONE'
 			scale_socket.attribute_domain = 'POINT'
 			
 			#Socket Rotation
 			rotation_socket = mn_utils_helix.interface.new_socket(name = "Rotation", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			rotation_socket.subtype = 'NONE'
 			rotation_socket.default_value = 0.5
 			rotation_socket.min_value = -10000.0
 			rotation_socket.max_value = 10000.0
+			rotation_socket.subtype = 'NONE'
 			rotation_socket.attribute_domain = 'POINT'
 			
 			#Socket Angle
 			angle_socket = mn_utils_helix.interface.new_socket(name = "Angle", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			angle_socket.subtype = 'ANGLE'
 			angle_socket.default_value = -0.8028512597084045
 			angle_socket.min_value = -3.4028234663852886e+38
 			angle_socket.max_value = 3.4028234663852886e+38
+			angle_socket.subtype = 'ANGLE'
 			angle_socket.attribute_domain = 'POINT'
 			
 			#Socket Unwind
 			unwind_socket = mn_utils_helix.interface.new_socket(name = "Unwind", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			unwind_socket.subtype = 'NONE'
 			unwind_socket.default_value = 1.0
 			unwind_socket.min_value = -10000.0
 			unwind_socket.max_value = 10000.0
+			unwind_socket.subtype = 'NONE'
 			unwind_socket.attribute_domain = 'POINT'
 			
 			#Socket Offset
 			offset_socket_1 = mn_utils_helix.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.default_value = 0.009999999776482582
 			offset_socket_1.min_value = -10000.0
 			offset_socket_1.max_value = 10000.0
+			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Length
 			length_socket_1 = mn_utils_helix.interface.new_socket(name = "Length", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			length_socket_1.subtype = 'DISTANCE'
 			length_socket_1.default_value = 0.04000002145767212
 			length_socket_1.min_value = 0.009999999776482582
 			length_socket_1.max_value = 3.4028234663852886e+38
+			length_socket_1.subtype = 'DISTANCE'
 			length_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Offset
 			offset_socket_2 = mn_utils_helix.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_2.subtype = 'NONE'
 			offset_socket_2.default_value = 2
 			offset_socket_2.min_value = -2147483648
 			offset_socket_2.max_value = 2147483647
+			offset_socket_2.subtype = 'NONE'
 			offset_socket_2.attribute_domain = 'POINT'
 			
 			
@@ -904,34 +904,34 @@ class MN_dna_double_helix(bpy.types.Operator):
 			
 			#Socket Rot. Sec. Strand
 			rot__sec__strand_socket = mn_dna_double_helix.interface.new_socket(name = "Rot. Sec. Strand", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			rot__sec__strand_socket.subtype = 'NONE'
 			rot__sec__strand_socket.default_value = 0.0
 			rot__sec__strand_socket.min_value = -10000.0
 			rot__sec__strand_socket.max_value = 10000.0
+			rot__sec__strand_socket.subtype = 'NONE'
 			rot__sec__strand_socket.attribute_domain = 'POINT'
 			
 			#Socket Unzip
 			unzip_socket = mn_dna_double_helix.interface.new_socket(name = "Unzip", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			unzip_socket.subtype = 'NONE'
 			unzip_socket.default_value = 1.0
 			unzip_socket.min_value = -10000.0
 			unzip_socket.max_value = 10000.0
+			unzip_socket.subtype = 'NONE'
 			unzip_socket.attribute_domain = 'POINT'
 			
 			#Socket Rotation
 			rotation_socket_1 = mn_dna_double_helix.interface.new_socket(name = "Rotation", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			rotation_socket_1.subtype = 'NONE'
 			rotation_socket_1.default_value = 0.0
 			rotation_socket_1.min_value = -3.4028234663852886e+38
 			rotation_socket_1.max_value = 3.4028234663852886e+38
+			rotation_socket_1.subtype = 'NONE'
 			rotation_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Unwind
 			unwind_socket_1 = mn_dna_double_helix.interface.new_socket(name = "Unwind", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			unwind_socket_1.subtype = 'NONE'
 			unwind_socket_1.default_value = 1.0
 			unwind_socket_1.min_value = -10000.0
 			unwind_socket_1.max_value = 10000.0
+			unwind_socket_1.subtype = 'NONE'
 			unwind_socket_1.attribute_domain = 'POINT'
 			
 			

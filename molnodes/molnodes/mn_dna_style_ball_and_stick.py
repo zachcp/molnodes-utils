@@ -38,16 +38,17 @@ class MN_dna_style_ball_and_stick(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = topology_find_bonds.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Scale
 			scale_socket = topology_find_bonds.interface.new_socket(name = "Scale", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_socket.subtype = 'NONE'
 			scale_socket.default_value = 1.0
 			scale_socket.min_value = 0.0
 			scale_socket.max_value = 10000.0
+			scale_socket.subtype = 'NONE'
 			scale_socket.attribute_domain = 'POINT'
 			scale_socket.description = "Scale the VDW radii of the atoms when searching for bonds"
 			
@@ -1115,93 +1116,97 @@ class MN_dna_style_ball_and_stick(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_1 = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = True
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.hide_value = True
 			selection_socket_1.description = "Selection of atoms to apply this node to"
 			
 			#Socket Shade Smooth
 			shade_smooth_socket = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool')
+			shade_smooth_socket.default_value = True
 			shade_smooth_socket.attribute_domain = 'POINT'
 			shade_smooth_socket.description = "Apply smooth shading to the created geometry"
 			
 			#Socket Ball Resolution
 			ball_resolution_socket = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Ball Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			ball_resolution_socket.subtype = 'NONE'
 			ball_resolution_socket.default_value = 2
 			ball_resolution_socket.min_value = 1
 			ball_resolution_socket.max_value = 7
+			ball_resolution_socket.subtype = 'NONE'
 			ball_resolution_socket.attribute_domain = 'POINT'
 			
 			#Socket Ball Radius
 			ball_radius_socket = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Ball Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			ball_radius_socket.subtype = 'DISTANCE'
 			ball_radius_socket.default_value = 0.30000001192092896
 			ball_radius_socket.min_value = 0.0
 			ball_radius_socket.max_value = 3.4028234663852886e+38
+			ball_radius_socket.subtype = 'DISTANCE'
 			ball_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Find Bonds
 			find_bonds_socket = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Find Bonds", in_out='INPUT', socket_type = 'NodeSocketBool')
+			find_bonds_socket.default_value = False
 			find_bonds_socket.attribute_domain = 'POINT'
 			
 			#Socket Bond Resolution
 			bond_resolution_socket = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Bond Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			bond_resolution_socket.subtype = 'NONE'
 			bond_resolution_socket.default_value = 8
 			bond_resolution_socket.min_value = 3
 			bond_resolution_socket.max_value = 512
+			bond_resolution_socket.subtype = 'NONE'
 			bond_resolution_socket.attribute_domain = 'POINT'
 			
 			#Socket Bond Radius
 			bond_radius_socket = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Bond Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			bond_radius_socket.subtype = 'NONE'
 			bond_radius_socket.default_value = 0.20000000298023224
 			bond_radius_socket.min_value = -10000.0
 			bond_radius_socket.max_value = 10000.0
+			bond_radius_socket.subtype = 'NONE'
 			bond_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Split Double Bonds
 			split_double_bonds_socket = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Split Double Bonds", in_out='INPUT', socket_type = 'NodeSocketBool')
+			split_double_bonds_socket.default_value = False
 			split_double_bonds_socket.attribute_domain = 'POINT'
 			
 			#Socket Double Bond Curve
 			double_bond_curve_socket = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Double Bond Curve", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			double_bond_curve_socket.subtype = 'NONE'
 			double_bond_curve_socket.default_value = 1.0
 			double_bond_curve_socket.min_value = -10000.0
 			double_bond_curve_socket.max_value = 10000.0
+			double_bond_curve_socket.subtype = 'NONE'
 			double_bond_curve_socket.attribute_domain = 'POINT'
 			
 			#Socket Double Bond Width
 			double_bond_width_socket = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Double Bond Width", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			double_bond_width_socket.subtype = 'NONE'
 			double_bond_width_socket.default_value = 1.0
 			double_bond_width_socket.min_value = 0.0
 			double_bond_width_socket.max_value = 10000.0
+			double_bond_width_socket.subtype = 'NONE'
 			double_bond_width_socket.attribute_domain = 'POINT'
 			
 			#Socket Double Bond Resolution
 			double_bond_resolution_socket = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Double Bond Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			double_bond_resolution_socket.subtype = 'NONE'
 			double_bond_resolution_socket.default_value = 3
 			double_bond_resolution_socket.min_value = 1
 			double_bond_resolution_socket.max_value = 2147483647
+			double_bond_resolution_socket.subtype = 'NONE'
 			double_bond_resolution_socket.attribute_domain = 'POINT'
 			
 			#Socket Double Bond Radius
 			double_bond_radius_socket = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Double Bond Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			double_bond_radius_socket.subtype = 'NONE'
 			double_bond_radius_socket.default_value = 0.20000000298023224
 			double_bond_radius_socket.min_value = 0.0
 			double_bond_radius_socket.max_value = 1.0
+			double_bond_radius_socket.subtype = 'NONE'
 			double_bond_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Double Bond Rotate
 			double_bond_rotate_socket = _mn_utils_style_old_ball_and_stick.interface.new_socket(name = "Double Bond Rotate", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			double_bond_rotate_socket.subtype = 'NONE'
 			double_bond_rotate_socket.default_value = 0.0
 			double_bond_rotate_socket.min_value = -10000.0
 			double_bond_rotate_socket.max_value = 10000.0
+			double_bond_rotate_socket.subtype = 'NONE'
 			double_bond_rotate_socket.attribute_domain = 'POINT'
 			
 			#Socket Material
@@ -2229,49 +2234,52 @@ class MN_dna_style_ball_and_stick(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_2 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_2.default_value = True
 			selection_socket_2.attribute_domain = 'POINT'
 			selection_socket_2.hide_value = True
 			selection_socket_2.description = "Selection of atoms to apply this node to"
 			
 			#Socket Shade Smooth
 			shade_smooth_socket_1 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool')
+			shade_smooth_socket_1.default_value = True
 			shade_smooth_socket_1.attribute_domain = 'POINT'
 			shade_smooth_socket_1.description = "Apply smooth shading to the created geometry"
 			
 			#Socket Ball Resolution
 			ball_resolution_socket_1 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Ball Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			ball_resolution_socket_1.subtype = 'NONE'
 			ball_resolution_socket_1.default_value = 2
 			ball_resolution_socket_1.min_value = 1
 			ball_resolution_socket_1.max_value = 7
+			ball_resolution_socket_1.subtype = 'NONE'
 			ball_resolution_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Ball Radius
 			ball_radius_socket_1 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Ball Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			ball_radius_socket_1.subtype = 'DISTANCE'
 			ball_radius_socket_1.default_value = 0.30000001192092896
 			ball_radius_socket_1.min_value = 0.0
 			ball_radius_socket_1.max_value = 3.4028234663852886e+38
+			ball_radius_socket_1.subtype = 'DISTANCE'
 			ball_radius_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Find Bonds
 			find_bonds_socket_1 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Find Bonds", in_out='INPUT', socket_type = 'NodeSocketBool')
+			find_bonds_socket_1.default_value = False
 			find_bonds_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Bond Resolution
 			bond_resolution_socket_1 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Bond Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			bond_resolution_socket_1.subtype = 'NONE'
 			bond_resolution_socket_1.default_value = 8
 			bond_resolution_socket_1.min_value = 3
 			bond_resolution_socket_1.max_value = 512
+			bond_resolution_socket_1.subtype = 'NONE'
 			bond_resolution_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Bond Radius
 			bond_radius_socket_1 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Bond Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			bond_radius_socket_1.subtype = 'NONE'
 			bond_radius_socket_1.default_value = 0.20000000298023224
 			bond_radius_socket_1.min_value = -10000.0
 			bond_radius_socket_1.max_value = 10000.0
+			bond_radius_socket_1.subtype = 'NONE'
 			bond_radius_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Material
@@ -2281,46 +2289,47 @@ class MN_dna_style_ball_and_stick(bpy.types.Operator):
 			
 			#Socket Split Double Bonds
 			split_double_bonds_socket_1 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Split Double Bonds", in_out='INPUT', socket_type = 'NodeSocketBool')
+			split_double_bonds_socket_1.default_value = False
 			split_double_bonds_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Double Bond Curve
 			double_bond_curve_socket_1 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Double Bond Curve", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			double_bond_curve_socket_1.subtype = 'NONE'
 			double_bond_curve_socket_1.default_value = 1.0
 			double_bond_curve_socket_1.min_value = -10000.0
 			double_bond_curve_socket_1.max_value = 10000.0
+			double_bond_curve_socket_1.subtype = 'NONE'
 			double_bond_curve_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Double Bond Width
 			double_bond_width_socket_1 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Double Bond Width", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			double_bond_width_socket_1.subtype = 'NONE'
 			double_bond_width_socket_1.default_value = 1.1299999952316284
 			double_bond_width_socket_1.min_value = -10000.0
 			double_bond_width_socket_1.max_value = 10000.0
+			double_bond_width_socket_1.subtype = 'NONE'
 			double_bond_width_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Double Bond Resolution
 			double_bond_resolution_socket_1 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Double Bond Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			double_bond_resolution_socket_1.subtype = 'NONE'
 			double_bond_resolution_socket_1.default_value = 3
 			double_bond_resolution_socket_1.min_value = 1
 			double_bond_resolution_socket_1.max_value = 2147483647
+			double_bond_resolution_socket_1.subtype = 'NONE'
 			double_bond_resolution_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Double Bond Radius
 			double_bond_radius_socket_1 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Double Bond Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			double_bond_radius_socket_1.subtype = 'NONE'
 			double_bond_radius_socket_1.default_value = 0.800000011920929
 			double_bond_radius_socket_1.min_value = 0.0
 			double_bond_radius_socket_1.max_value = 10.0
+			double_bond_radius_socket_1.subtype = 'NONE'
 			double_bond_radius_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Double Bond Rotate
 			double_bond_rotate_socket_1 = mn_dna_style_ball_and_stick.interface.new_socket(name = "Double Bond Rotate", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			double_bond_rotate_socket_1.subtype = 'NONE'
 			double_bond_rotate_socket_1.default_value = 0.0
 			double_bond_rotate_socket_1.min_value = -10000.0
 			double_bond_rotate_socket_1.max_value = 10000.0
+			double_bond_rotate_socket_1.subtype = 'NONE'
 			double_bond_rotate_socket_1.attribute_domain = 'POINT'
 			
 			

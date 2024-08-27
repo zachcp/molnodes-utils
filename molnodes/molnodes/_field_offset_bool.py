@@ -28,19 +28,21 @@ class _field_offset_bool(bpy.types.Operator):
 			#_field_offset_bool interface
 			#Socket Boolean
 			boolean_socket = _field_offset_bool.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Boolean
 			boolean_socket_1 = _field_offset_bool.interface.new_socket(name = "Boolean", in_out='INPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_1.default_value = False
 			boolean_socket_1.attribute_domain = 'POINT'
 			boolean_socket_1.hide_value = True
 			
 			#Socket Offset
 			offset_socket = _field_offset_bool.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 0
 			offset_socket.min_value = -2147483648
 			offset_socket.max_value = 2147483647
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			

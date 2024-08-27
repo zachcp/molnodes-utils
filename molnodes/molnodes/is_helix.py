@@ -28,29 +28,33 @@ class Is_Helix(bpy.types.Operator):
 			#_mn_select_sec_struct_id interface
 			#Socket Selection
 			selection_socket = _mn_select_sec_struct_id.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = _mn_select_sec_struct_id.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket = _mn_select_sec_struct_id.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = _mn_select_sec_struct_id.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
 			#Socket id
 			id_socket = _mn_select_sec_struct_id.interface.new_socket(name = "id", in_out='INPUT', socket_type = 'NodeSocketInt')
-			id_socket.subtype = 'NONE'
 			id_socket.default_value = 1
 			id_socket.min_value = -2147483648
 			id_socket.max_value = 2147483647
+			id_socket.subtype = 'NONE'
 			id_socket.attribute_domain = 'POINT'
 			id_socket.description = "Secondary structure component to select"
 			
@@ -149,20 +153,24 @@ class Is_Helix(bpy.types.Operator):
 			#is_helix interface
 			#Socket Selection
 			selection_socket_1 = is_helix.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = False
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.description = "Selected atoms form part of an helix"
 			
 			#Socket Inverted
 			inverted_socket_1 = is_helix.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_1.default_value = False
 			inverted_socket_1.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_1 = is_helix.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_1.default_value = True
 			and_socket_1.attribute_domain = 'POINT'
 			and_socket_1.hide_value = True
 			
 			#Socket Or
 			or_socket_1 = is_helix.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_1.default_value = False
 			or_socket_1.attribute_domain = 'POINT'
 			or_socket_1.hide_value = True
 			

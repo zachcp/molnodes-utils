@@ -37,37 +37,37 @@ class Style_Density_Wire(bpy.types.Operator):
 			
 			#Socket Threshold
 			threshold_socket = style_density_wire.interface.new_socket(name = "Threshold", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			threshold_socket.subtype = 'NONE'
 			threshold_socket.default_value = 0.800000011920929
 			threshold_socket.min_value = -3.4028234663852886e+38
 			threshold_socket.max_value = 3.4028234663852886e+38
+			threshold_socket.subtype = 'NONE'
 			threshold_socket.attribute_domain = 'POINT'
 			
 			#Socket Hide Dust
 			hide_dust_socket = style_density_wire.interface.new_socket(name = "Hide Dust", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			hide_dust_socket.subtype = 'NONE'
 			hide_dust_socket.default_value = 20.0
 			hide_dust_socket.min_value = -10000.0
 			hide_dust_socket.max_value = 10000.0
+			hide_dust_socket.subtype = 'NONE'
 			hide_dust_socket.attribute_domain = 'POINT'
 			
 			#Panel Wire
 			wire_panel = style_density_wire.interface.new_panel("Wire")
 			#Socket Wire Radius
 			wire_radius_socket = style_density_wire.interface.new_socket(name = "Wire Radius", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = wire_panel)
-			wire_radius_socket.subtype = 'NONE'
 			wire_radius_socket.default_value = 1.0
 			wire_radius_socket.min_value = 0.0
 			wire_radius_socket.max_value = 3.4028234663852886e+38
+			wire_radius_socket.subtype = 'NONE'
 			wire_radius_socket.attribute_domain = 'POINT'
 			wire_radius_socket.description = "Radius of the created wire (in relative nm)"
 			
 			#Socket Wire Resolution
 			wire_resolution_socket = style_density_wire.interface.new_socket(name = "Wire Resolution", in_out='INPUT', socket_type = 'NodeSocketInt', parent = wire_panel)
-			wire_resolution_socket.subtype = 'NONE'
 			wire_resolution_socket.default_value = 3
 			wire_resolution_socket.min_value = 3
 			wire_resolution_socket.max_value = 512
+			wire_resolution_socket.subtype = 'NONE'
 			wire_resolution_socket.attribute_domain = 'POINT'
 			
 			
@@ -75,6 +75,7 @@ class Style_Density_Wire(bpy.types.Operator):
 			material_panel = style_density_wire.interface.new_panel("Material")
 			#Socket Color
 			color_socket = style_density_wire.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor', parent = material_panel)
+			color_socket.default_value = (0.10174982994794846, 0.3931145668029785, 0.10474135726690292, 1.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket Material

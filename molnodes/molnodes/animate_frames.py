@@ -28,10 +28,10 @@ class Animate_Frames(bpy.types.Operator):
 			#sample_mix_vector interface
 			#Socket Vector
 			vector_socket = sample_mix_vector.interface.new_socket(name = "Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -3.4028234663852886e+38
 			vector_socket.max_value = 3.4028234663852886e+38
+			vector_socket.subtype = 'NONE'
 			vector_socket.attribute_domain = 'POINT'
 			
 			#Socket A
@@ -44,27 +44,27 @@ class Animate_Frames(bpy.types.Operator):
 			
 			#Socket Factor
 			factor_socket = sample_mix_vector.interface.new_socket(name = "Factor", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			factor_socket.subtype = 'FACTOR'
 			factor_socket.default_value = 0.5
 			factor_socket.min_value = 0.0
 			factor_socket.max_value = 1.0
+			factor_socket.subtype = 'FACTOR'
 			factor_socket.attribute_domain = 'POINT'
 			
 			#Socket Position
 			position_socket = sample_mix_vector.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			position_socket.hide_value = True
 			
 			#Socket Index
 			index_socket = sample_mix_vector.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = -2147483648
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			
 			
@@ -166,14 +166,15 @@ class Animate_Frames(bpy.types.Operator):
 			
 			#Socket Realize Instances
 			realize_instances_socket = animate_collection_pick.interface.new_socket(name = "Realize Instances", in_out='INPUT', socket_type = 'NodeSocketBool')
+			realize_instances_socket.default_value = True
 			realize_instances_socket.attribute_domain = 'POINT'
 			
 			#Socket Item
 			item_socket = animate_collection_pick.interface.new_socket(name = "Item", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			item_socket.subtype = 'NONE'
 			item_socket.default_value = 1.0
 			item_socket.min_value = 0.0
 			item_socket.max_value = 10000.0
+			item_socket.subtype = 'NONE'
 			item_socket.attribute_domain = 'POINT'
 			
 			
@@ -394,26 +395,28 @@ class Animate_Frames(bpy.types.Operator):
 			#animate_fraction interface
 			#Socket Float
 			float_socket = animate_fraction.interface.new_socket(name = "Float", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			float_socket.subtype = 'NONE'
 			float_socket.default_value = 0.0
 			float_socket.min_value = -3.4028234663852886e+38
 			float_socket.max_value = 3.4028234663852886e+38
+			float_socket.subtype = 'NONE'
 			float_socket.attribute_domain = 'POINT'
 			
 			#Socket Interpolate
 			interpolate_socket = animate_fraction.interface.new_socket(name = "Interpolate", in_out='INPUT', socket_type = 'NodeSocketBool')
+			interpolate_socket.default_value = False
 			interpolate_socket.attribute_domain = 'POINT'
 			
 			#Socket Smoother Step
 			smoother_step_socket = animate_fraction.interface.new_socket(name = "Smoother Step", in_out='INPUT', socket_type = 'NodeSocketBool')
+			smoother_step_socket.default_value = False
 			smoother_step_socket.attribute_domain = 'POINT'
 			
 			#Socket Float
 			float_socket_1 = animate_fraction.interface.new_socket(name = "Float", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			float_socket_1.subtype = 'NONE'
 			float_socket_1.default_value = 0.0
 			float_socket_1.min_value = -3.4028234663852886e+38
 			float_socket_1.max_value = 3.4028234663852886e+38
+			float_socket_1.subtype = 'NONE'
 			float_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -521,10 +524,10 @@ class Animate_Frames(bpy.types.Operator):
 			#sample_mix_float interface
 			#Socket Value
 			value_socket = sample_mix_float.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.0
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket A
@@ -537,27 +540,27 @@ class Animate_Frames(bpy.types.Operator):
 			
 			#Socket Factor
 			factor_socket_1 = sample_mix_float.interface.new_socket(name = "Factor", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			factor_socket_1.subtype = 'FACTOR'
 			factor_socket_1.default_value = 0.5
 			factor_socket_1.min_value = 0.0
 			factor_socket_1.max_value = 1.0
+			factor_socket_1.subtype = 'FACTOR'
 			factor_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_1 = sample_mix_float.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_1.subtype = 'NONE'
 			value_socket_1.default_value = 0.0
 			value_socket_1.min_value = -3.4028234663852886e+38
 			value_socket_1.max_value = 3.4028234663852886e+38
+			value_socket_1.subtype = 'NONE'
 			value_socket_1.attribute_domain = 'POINT'
 			value_socket_1.hide_value = True
 			
 			#Socket Index
 			index_socket_1 = sample_mix_float.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket_1.subtype = 'NONE'
 			index_socket_1.default_value = 0
 			index_socket_1.min_value = -2147483648
 			index_socket_1.max_value = 2147483647
+			index_socket_1.subtype = 'NONE'
 			index_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -658,6 +661,7 @@ class Animate_Frames(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = animate_frames.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
@@ -669,20 +673,22 @@ class Animate_Frames(bpy.types.Operator):
 			
 			#Socket Smoother Step
 			smoother_step_socket_1 = animate_frames.interface.new_socket(name = "Smoother Step", in_out='INPUT', socket_type = 'NodeSocketBool')
+			smoother_step_socket_1.default_value = False
 			smoother_step_socket_1.attribute_domain = 'POINT'
 			smoother_step_socket_1.description = "Ease in and out of the individual frames if interpolating"
 			
 			#Socket Interpolate
 			interpolate_socket_1 = animate_frames.interface.new_socket(name = "Interpolate", in_out='INPUT', socket_type = 'NodeSocketBool')
+			interpolate_socket_1.default_value = True
 			interpolate_socket_1.attribute_domain = 'POINT'
 			interpolate_socket_1.description = "Whether to interpolate between frames of a trajectory or snap"
 			
 			#Socket Frame
 			frame_socket = animate_frames.interface.new_socket(name = "Frame", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			frame_socket.subtype = 'NONE'
 			frame_socket.default_value = 0.0
 			frame_socket.min_value = 0.0
 			frame_socket.max_value = 10000.0
+			frame_socket.subtype = 'NONE'
 			frame_socket.attribute_domain = 'POINT'
 			frame_socket.description = "Which frame to select from the collection. The fraction component of the float is how much to interpolate between the current and next frame"
 			

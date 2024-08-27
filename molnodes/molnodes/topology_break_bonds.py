@@ -28,10 +28,10 @@ class Topology_Break_Bonds(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,26 +82,26 @@ class Topology_Break_Bonds(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 3.0
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "A value which will be scaled appropriately for the world"
 			
@@ -189,16 +189,17 @@ class Topology_Break_Bonds(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = topology_break_bonds.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Cutoff
 			cutoff_socket = topology_break_bonds.interface.new_socket(name = "Cutoff", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			cutoff_socket.subtype = 'NONE'
 			cutoff_socket.default_value = 2.5
 			cutoff_socket.min_value = 0.0
 			cutoff_socket.max_value = 10000.0
+			cutoff_socket.subtype = 'NONE'
 			cutoff_socket.attribute_domain = 'POINT'
 			cutoff_socket.description = "Cutoff distance over which to remove bonds (Angstrom)"
 			

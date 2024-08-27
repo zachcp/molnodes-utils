@@ -28,42 +28,42 @@ class _MN_select_nucleic(bpy.types.Operator):
 			#_mn_constants_atom_name_nucleic interface
 			#Socket Backbone Lower
 			backbone_lower_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Backbone Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.default_value = 0
 			backbone_lower_socket.min_value = -2147483648
 			backbone_lower_socket.max_value = 2147483647
+			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Upper
 			backbone_upper_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Backbone Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.default_value = 0
 			backbone_upper_socket.min_value = -2147483648
 			backbone_upper_socket.max_value = 2147483647
+			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Lower
 			side_chain_lower_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Side Chain Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.default_value = 0
 			side_chain_lower_socket.min_value = -2147483648
 			side_chain_lower_socket.max_value = 2147483647
+			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Upper
 			side_chain_upper_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Side Chain Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.default_value = 0
 			side_chain_upper_socket.min_value = -2147483648
 			side_chain_upper_socket.max_value = 2147483647
+			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Joint Carbon
 			side_chain_joint_carbon_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Side Chain Joint Carbon", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_joint_carbon_socket.subtype = 'NONE'
 			side_chain_joint_carbon_socket.default_value = 0
 			side_chain_joint_carbon_socket.min_value = -2147483648
 			side_chain_joint_carbon_socket.max_value = 2147483647
+			side_chain_joint_carbon_socket.subtype = 'NONE'
 			side_chain_joint_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -149,16 +149,19 @@ class _MN_select_nucleic(bpy.types.Operator):
 			#_mn_select_nucleic interface
 			#Socket Is Backbone
 			is_backbone_socket = _mn_select_nucleic.interface.new_socket(name = "Is Backbone", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_backbone_socket.default_value = False
 			is_backbone_socket.attribute_domain = 'POINT'
 			is_backbone_socket.description = "True for atoms that are part of the sugar-phosphate backbone for the nucleotides"
 			
 			#Socket Is Side Chain
 			is_side_chain_socket = _mn_select_nucleic.interface.new_socket(name = "Is Side Chain", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_side_chain_socket.default_value = False
 			is_side_chain_socket.attribute_domain = 'POINT'
 			is_side_chain_socket.description = "True for atoms that are part of the bases for nucleotides."
 			
 			#Socket Is Nucleic
 			is_nucleic_socket = _mn_select_nucleic.interface.new_socket(name = "Is Nucleic", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_nucleic_socket.default_value = False
 			is_nucleic_socket.attribute_domain = 'POINT'
 			is_nucleic_socket.description = "True if the atoms are part of a nucleic acid"
 			

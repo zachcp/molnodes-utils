@@ -28,10 +28,10 @@ class MN_select_distance_empty(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,26 +82,26 @@ class MN_select_distance_empty(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 3.0
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "A value which will be scaled appropriately for the world"
 			
@@ -178,26 +178,28 @@ class MN_select_distance_empty(bpy.types.Operator):
 			#mn_select_distance_empty interface
 			#Socket > Cutoff
 			__cutoff_socket = mn_select_distance_empty.interface.new_socket(name = "> Cutoff", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			__cutoff_socket.default_value = False
 			__cutoff_socket.attribute_domain = 'POINT'
 			
 			#Socket < Cutoff
 			__cutoff_socket_1 = mn_select_distance_empty.interface.new_socket(name = "< Cutoff", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			__cutoff_socket_1.default_value = False
 			__cutoff_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Distance
 			distance_socket = mn_select_distance_empty.interface.new_socket(name = "Distance", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			distance_socket.subtype = 'NONE'
 			distance_socket.default_value = 0.0
 			distance_socket.min_value = -3.4028234663852886e+38
 			distance_socket.max_value = 3.4028234663852886e+38
+			distance_socket.subtype = 'NONE'
 			distance_socket.attribute_domain = 'POINT'
 			
 			#Socket 0..1
 			_0__1_socket = mn_select_distance_empty.interface.new_socket(name = "0..1", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			_0__1_socket.subtype = 'NONE'
 			_0__1_socket.default_value = 0.0
 			_0__1_socket.min_value = -3.4028234663852886e+38
 			_0__1_socket.max_value = 3.4028234663852886e+38
+			_0__1_socket.subtype = 'NONE'
 			_0__1_socket.attribute_domain = 'POINT'
 			
 			#Socket Object
@@ -206,26 +208,26 @@ class MN_select_distance_empty(bpy.types.Operator):
 			
 			#Socket From Min
 			from_min_socket = mn_select_distance_empty.interface.new_socket(name = "From Min", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			from_min_socket.subtype = 'NONE'
 			from_min_socket.default_value = 0.0
 			from_min_socket.min_value = -10000.0
 			from_min_socket.max_value = 10000.0
+			from_min_socket.subtype = 'NONE'
 			from_min_socket.attribute_domain = 'POINT'
 			
 			#Socket From Max
 			from_max_socket = mn_select_distance_empty.interface.new_socket(name = "From Max", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			from_max_socket.subtype = 'NONE'
 			from_max_socket.default_value = 1.0
 			from_max_socket.min_value = -10000.0
 			from_max_socket.max_value = 10000.0
+			from_max_socket.subtype = 'NONE'
 			from_max_socket.attribute_domain = 'POINT'
 			
 			#Socket Distance
 			distance_socket_1 = mn_select_distance_empty.interface.new_socket(name = "Distance", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			distance_socket_1.subtype = 'NONE'
 			distance_socket_1.default_value = 3.0
 			distance_socket_1.min_value = -10000.0
 			distance_socket_1.max_value = 10000.0
+			distance_socket_1.subtype = 'NONE'
 			distance_socket_1.attribute_domain = 'POINT'
 			
 			

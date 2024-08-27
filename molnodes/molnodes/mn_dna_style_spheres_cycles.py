@@ -28,10 +28,10 @@ class MN_dna_style_spheres_cycles(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,26 +82,26 @@ class MN_dna_style_spheres_cycles(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 3.0
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "A value which will be scaled appropriately for the world"
 			
@@ -188,16 +188,17 @@ class MN_dna_style_spheres_cycles(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = _mn_utils_style_spheres_points.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Radii
 			radii_socket = _mn_utils_style_spheres_points.interface.new_socket(name = "Radii", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radii_socket.subtype = 'NONE'
 			radii_socket.default_value = 0.800000011920929
 			radii_socket.min_value = 0.0
 			radii_socket.max_value = 10000.0
+			radii_socket.subtype = 'NONE'
 			radii_socket.attribute_domain = 'POINT'
 			
 			#Socket Material
@@ -324,16 +325,17 @@ class MN_dna_style_spheres_cycles(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_1 = mn_dna_style_spheres_cycles.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = True
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.hide_value = True
 			selection_socket_1.description = "Selection of atoms to apply this node to"
 			
 			#Socket Scale Radii
 			scale_radii_socket = mn_dna_style_spheres_cycles.interface.new_socket(name = "Scale Radii", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_radii_socket.subtype = 'NONE'
 			scale_radii_socket.default_value = 1.0
 			scale_radii_socket.min_value = -10000.0
 			scale_radii_socket.max_value = 10000.0
+			scale_radii_socket.subtype = 'NONE'
 			scale_radii_socket.attribute_domain = 'POINT'
 			
 			#Socket Material

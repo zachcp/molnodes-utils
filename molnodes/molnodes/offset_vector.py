@@ -28,35 +28,35 @@ class Offset_Vector(bpy.types.Operator):
 			#offset_vector interface
 			#Socket Value
 			value_socket = offset_vector.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = (0.0, 0.0, 0.0)
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket = offset_vector.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = 0
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			
 			#Socket Position
 			position_socket = offset_vector.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			position_socket.hide_value = True
 			
 			#Socket Offset
 			offset_socket = offset_vector.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 0
 			offset_socket.min_value = -2147483647
 			offset_socket.max_value = 2147483647
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			

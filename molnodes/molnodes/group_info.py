@@ -28,45 +28,45 @@ class Group_Info(bpy.types.Operator):
 			#group_info interface
 			#Socket First Index
 			first_index_socket = group_info.interface.new_socket(name = "First Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			first_index_socket.subtype = 'NONE'
 			first_index_socket.default_value = 0
 			first_index_socket.min_value = -2147483648
 			first_index_socket.max_value = 2147483647
+			first_index_socket.subtype = 'NONE'
 			first_index_socket.attribute_domain = 'POINT'
 			first_index_socket.description = "Index of the first point in the group"
 			
 			#Socket Last Index
 			last_index_socket = group_info.interface.new_socket(name = "Last Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			last_index_socket.subtype = 'NONE'
 			last_index_socket.default_value = 0
 			last_index_socket.min_value = -2147483648
 			last_index_socket.max_value = 2147483647
+			last_index_socket.subtype = 'NONE'
 			last_index_socket.attribute_domain = 'POINT'
 			last_index_socket.description = "Index of the last point in the group"
 			
 			#Socket Index in Group
 			index_in_group_socket = group_info.interface.new_socket(name = "Index in Group", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_in_group_socket.subtype = 'NONE'
 			index_in_group_socket.default_value = 0
 			index_in_group_socket.min_value = -2147483648
 			index_in_group_socket.max_value = 2147483647
+			index_in_group_socket.subtype = 'NONE'
 			index_in_group_socket.attribute_domain = 'POINT'
 			
 			#Socket Size
 			size_socket = group_info.interface.new_socket(name = "Size", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			size_socket.subtype = 'NONE'
 			size_socket.default_value = 0
 			size_socket.min_value = -2147483648
 			size_socket.max_value = 2147483647
+			size_socket.subtype = 'NONE'
 			size_socket.attribute_domain = 'POINT'
 			size_socket.description = "Number of points in the group"
 			
 			#Socket Group ID
 			group_id_socket = group_info.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket.subtype = 'NONE'
 			group_id_socket.default_value = 0
 			group_id_socket.min_value = -2147483648
 			group_id_socket.max_value = 2147483647
+			group_id_socket.subtype = 'NONE'
 			group_id_socket.attribute_domain = 'POINT'
 			
 			

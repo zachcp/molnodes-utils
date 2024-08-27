@@ -28,30 +28,31 @@ class Utils_ZYZ_to_Rotation(bpy.types.Operator):
 			#utils_zyz_to_rotation interface
 			#Socket Rotation
 			rotation_socket = utils_zyz_to_rotation.interface.new_socket(name = "Rotation", in_out='OUTPUT', socket_type = 'NodeSocketRotation')
+			rotation_socket.default_value = (0.0, 0.0, 0.0)
 			rotation_socket.attribute_domain = 'POINT'
 			
 			#Socket Phi
 			phi_socket = utils_zyz_to_rotation.interface.new_socket(name = "Phi", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			phi_socket.subtype = 'NONE'
 			phi_socket.default_value = 0.5
 			phi_socket.min_value = -10000.0
 			phi_socket.max_value = 10000.0
+			phi_socket.subtype = 'NONE'
 			phi_socket.attribute_domain = 'POINT'
 			
 			#Socket Theta
 			theta_socket = utils_zyz_to_rotation.interface.new_socket(name = "Theta", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			theta_socket.subtype = 'NONE'
 			theta_socket.default_value = 0.5
 			theta_socket.min_value = -10000.0
 			theta_socket.max_value = 10000.0
+			theta_socket.subtype = 'NONE'
 			theta_socket.attribute_domain = 'POINT'
 			
 			#Socket Psi
 			psi_socket = utils_zyz_to_rotation.interface.new_socket(name = "Psi", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			psi_socket.subtype = 'NONE'
 			psi_socket.default_value = 0.5
 			psi_socket.min_value = -10000.0
 			psi_socket.max_value = 10000.0
+			psi_socket.subtype = 'NONE'
 			psi_socket.attribute_domain = 'POINT'
 			
 			

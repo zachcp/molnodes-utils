@@ -37,24 +37,25 @@ class _MN_assembly_rotate(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = _mn_assembly_rotate.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Rotation
 			rotation_socket = _mn_assembly_rotate.interface.new_socket(name = "Rotation", in_out='INPUT', socket_type = 'NodeSocketVector')
-			rotation_socket.subtype = 'EULER'
 			rotation_socket.default_value = (0.0, 0.0, 0.0)
 			rotation_socket.min_value = -3.4028234663852886e+38
 			rotation_socket.max_value = 3.4028234663852886e+38
+			rotation_socket.subtype = 'EULER'
 			rotation_socket.attribute_domain = 'POINT'
 			
 			#Socket com_offset
 			com_offset_socket = _mn_assembly_rotate.interface.new_socket(name = "com_offset", in_out='INPUT', socket_type = 'NodeSocketVector')
-			com_offset_socket.subtype = 'NONE'
 			com_offset_socket.default_value = (0.0, 0.0, 0.0)
 			com_offset_socket.min_value = -10000.0
 			com_offset_socket.max_value = 10000.0
+			com_offset_socket.subtype = 'NONE'
 			com_offset_socket.attribute_domain = 'POINT'
 			
 			

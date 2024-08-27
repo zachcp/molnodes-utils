@@ -28,30 +28,34 @@ class Select_Atomic_Number(bpy.types.Operator):
 			#select_atomic_number interface
 			#Socket Selection
 			selection_socket = select_atomic_number.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = select_atomic_number.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			inverted_socket.description = "The inverse of the calculated selection"
 			
 			#Socket And
 			and_socket = select_atomic_number.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = select_atomic_number.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
 			#Socket atomic_number
 			atomic_number_socket = select_atomic_number.interface.new_socket(name = "atomic_number", in_out='INPUT', socket_type = 'NodeSocketInt')
-			atomic_number_socket.subtype = 'NONE'
 			atomic_number_socket.default_value = 6
 			atomic_number_socket.min_value = 1
 			atomic_number_socket.max_value = 140
+			atomic_number_socket.subtype = 'NONE'
 			atomic_number_socket.attribute_domain = 'POINT'
 			atomic_number_socket.description = "Create a selection based on the inputted atomic number."
 			

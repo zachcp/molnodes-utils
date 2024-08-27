@@ -28,35 +28,35 @@ class Res_Info(bpy.types.Operator):
 			#offset_integer interface
 			#Socket Value
 			value_socket = offset_integer.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0
 			value_socket.min_value = -2147483648
 			value_socket.max_value = 2147483647
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket = offset_integer.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = 0
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_1 = offset_integer.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketInt')
-			value_socket_1.subtype = 'NONE'
 			value_socket_1.default_value = 0
 			value_socket_1.min_value = -2147483648
 			value_socket_1.max_value = 2147483647
+			value_socket_1.subtype = 'NONE'
 			value_socket_1.attribute_domain = 'POINT'
 			value_socket_1.hide_value = True
 			
 			#Socket Offset
 			offset_socket = offset_integer.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 0
 			offset_socket.min_value = -2147483648
 			offset_socket.max_value = 2147483647
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -123,45 +123,45 @@ class Res_Info(bpy.types.Operator):
 			#group_info interface
 			#Socket First Index
 			first_index_socket = group_info.interface.new_socket(name = "First Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			first_index_socket.subtype = 'NONE'
 			first_index_socket.default_value = 0
 			first_index_socket.min_value = -2147483648
 			first_index_socket.max_value = 2147483647
+			first_index_socket.subtype = 'NONE'
 			first_index_socket.attribute_domain = 'POINT'
 			first_index_socket.description = "Index of the first point in the group"
 			
 			#Socket Last Index
 			last_index_socket = group_info.interface.new_socket(name = "Last Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			last_index_socket.subtype = 'NONE'
 			last_index_socket.default_value = 0
 			last_index_socket.min_value = -2147483648
 			last_index_socket.max_value = 2147483647
+			last_index_socket.subtype = 'NONE'
 			last_index_socket.attribute_domain = 'POINT'
 			last_index_socket.description = "Index of the last point in the group"
 			
 			#Socket Index in Group
 			index_in_group_socket = group_info.interface.new_socket(name = "Index in Group", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_in_group_socket.subtype = 'NONE'
 			index_in_group_socket.default_value = 0
 			index_in_group_socket.min_value = -2147483648
 			index_in_group_socket.max_value = 2147483647
+			index_in_group_socket.subtype = 'NONE'
 			index_in_group_socket.attribute_domain = 'POINT'
 			
 			#Socket Size
 			size_socket = group_info.interface.new_socket(name = "Size", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			size_socket.subtype = 'NONE'
 			size_socket.default_value = 0
 			size_socket.min_value = -2147483648
 			size_socket.max_value = 2147483647
+			size_socket.subtype = 'NONE'
 			size_socket.attribute_domain = 'POINT'
 			size_socket.description = "Number of points in the group"
 			
 			#Socket Group ID
 			group_id_socket = group_info.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket.subtype = 'NONE'
 			group_id_socket.default_value = 0
 			group_id_socket.min_value = -2147483648
 			group_id_socket.max_value = 2147483647
+			group_id_socket.subtype = 'NONE'
 			group_id_socket.attribute_domain = 'POINT'
 			
 			
@@ -322,53 +322,53 @@ class Res_Info(bpy.types.Operator):
 			#_topo_count_atoms interface
 			#Socket Total
 			total_socket = _topo_count_atoms.interface.new_socket(name = "Total", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			total_socket.subtype = 'NONE'
 			total_socket.default_value = 0
 			total_socket.min_value = -2147483648
 			total_socket.max_value = 2147483647
+			total_socket.subtype = 'NONE'
 			total_socket.attribute_domain = 'POINT'
 			total_socket.description = "Total number of residues"
 			
 			#Socket Counted Index
 			counted_index_socket = _topo_count_atoms.interface.new_socket(name = "Counted Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			counted_index_socket.subtype = 'NONE'
 			counted_index_socket.default_value = 0
 			counted_index_socket.min_value = -2147483648
 			counted_index_socket.max_value = 2147483647
+			counted_index_socket.subtype = 'NONE'
 			counted_index_socket.attribute_domain = 'POINT'
 			
 			#Socket First atom_name
 			first_atom_name_socket = _topo_count_atoms.interface.new_socket(name = "First atom_name", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			first_atom_name_socket.subtype = 'NONE'
 			first_atom_name_socket.default_value = 0
 			first_atom_name_socket.min_value = -2147483648
 			first_atom_name_socket.max_value = 2147483647
+			first_atom_name_socket.subtype = 'NONE'
 			first_atom_name_socket.attribute_domain = 'POINT'
 			first_atom_name_socket.description = "Res ID value for the first residue"
 			
 			#Socket Last atom_name
 			last_atom_name_socket = _topo_count_atoms.interface.new_socket(name = "Last atom_name", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			last_atom_name_socket.subtype = 'NONE'
 			last_atom_name_socket.default_value = 0
 			last_atom_name_socket.min_value = -2147483648
 			last_atom_name_socket.max_value = 2147483647
+			last_atom_name_socket.subtype = 'NONE'
 			last_atom_name_socket.attribute_domain = 'POINT'
 			last_atom_name_socket.description = "Res ID value for the last residue"
 			
 			#Socket Index First
 			index_first_socket = _topo_count_atoms.interface.new_socket(name = "Index First", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_first_socket.subtype = 'NONE'
 			index_first_socket.default_value = 0
 			index_first_socket.min_value = -2147483648
 			index_first_socket.max_value = 2147483647
+			index_first_socket.subtype = 'NONE'
 			index_first_socket.attribute_domain = 'POINT'
 			
 			#Socket Index Last
 			index_last_socket = _topo_count_atoms.interface.new_socket(name = "Index Last", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_last_socket.subtype = 'NONE'
 			index_last_socket.default_value = 0
 			index_last_socket.min_value = -2147483648
 			index_last_socket.max_value = 2147483647
+			index_last_socket.subtype = 'NONE'
 			index_last_socket.attribute_domain = 'POINT'
 			
 			
@@ -510,64 +510,64 @@ class Res_Info(bpy.types.Operator):
 			#res_info interface
 			#Socket Factor
 			factor_socket = res_info.interface.new_socket(name = "Factor", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			factor_socket.subtype = 'FACTOR'
 			factor_socket.default_value = 0.0
 			factor_socket.min_value = 0.0
 			factor_socket.max_value = 1.0
+			factor_socket.subtype = 'FACTOR'
 			factor_socket.attribute_domain = 'POINT'
 			factor_socket.description = "An atom's relative position in a residue, with the first atom being 0 and the last atom being 1"
 			
 			#Socket Length
 			length_socket = res_info.interface.new_socket(name = "Length", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			length_socket.subtype = 'NONE'
 			length_socket.default_value = 0
 			length_socket.min_value = -2147483648
 			length_socket.max_value = 2147483647
+			length_socket.subtype = 'NONE'
 			length_socket.attribute_domain = 'POINT'
 			length_socket.description = "Number of  atoms in a residue"
 			
 			#Socket Counted Index
 			counted_index_socket_1 = res_info.interface.new_socket(name = "Counted Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			counted_index_socket_1.subtype = 'NONE'
 			counted_index_socket_1.default_value = 0
 			counted_index_socket_1.min_value = -2147483648
 			counted_index_socket_1.max_value = 2147483647
+			counted_index_socket_1.subtype = 'NONE'
 			counted_index_socket_1.attribute_domain = 'POINT'
 			counted_index_socket_1.description = "Index of an atom in a residue when counting from 0"
 			
 			#Socket First atom_name
 			first_atom_name_socket_1 = res_info.interface.new_socket(name = "First atom_name", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			first_atom_name_socket_1.subtype = 'NONE'
 			first_atom_name_socket_1.default_value = 0
 			first_atom_name_socket_1.min_value = -2147483648
 			first_atom_name_socket_1.max_value = 2147483647
+			first_atom_name_socket_1.subtype = 'NONE'
 			first_atom_name_socket_1.attribute_domain = 'POINT'
 			first_atom_name_socket_1.description = "the atom_name for the first atom in a residue"
 			
 			#Socket Last atom_name
 			last_atom_name_socket_1 = res_info.interface.new_socket(name = "Last atom_name", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			last_atom_name_socket_1.subtype = 'NONE'
 			last_atom_name_socket_1.default_value = 0
 			last_atom_name_socket_1.min_value = -2147483648
 			last_atom_name_socket_1.max_value = 2147483647
+			last_atom_name_socket_1.subtype = 'NONE'
 			last_atom_name_socket_1.attribute_domain = 'POINT'
 			last_atom_name_socket_1.description = "The atom_name for the last atom in a residue"
 			
 			#Socket First Index
 			first_index_socket_1 = res_info.interface.new_socket(name = "First Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			first_index_socket_1.subtype = 'NONE'
 			first_index_socket_1.default_value = 0
 			first_index_socket_1.min_value = -2147483648
 			first_index_socket_1.max_value = 2147483647
+			first_index_socket_1.subtype = 'NONE'
 			first_index_socket_1.attribute_domain = 'POINT'
 			first_index_socket_1.description = "Index (in the whole structure) for the first atom in a  residue"
 			
 			#Socket Last Index
 			last_index_socket_1 = res_info.interface.new_socket(name = "Last Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			last_index_socket_1.subtype = 'NONE'
 			last_index_socket_1.default_value = 0
 			last_index_socket_1.min_value = -2147483648
 			last_index_socket_1.max_value = 2147483647
+			last_index_socket_1.subtype = 'NONE'
 			last_index_socket_1.attribute_domain = 'POINT'
 			last_index_socket_1.description = "Index (in the whole structure) for the last atom in a  residue"
 			

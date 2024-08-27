@@ -28,91 +28,96 @@ class Animate_Peptide_to_Curve(bpy.types.Operator):
 			#_utils_group_field_at_selection interface
 			#Socket Group Index
 			group_index_socket = _utils_group_field_at_selection.interface.new_socket(name = "Group Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			group_index_socket.subtype = 'NONE'
 			group_index_socket.default_value = 0
 			group_index_socket.min_value = -2147483648
 			group_index_socket.max_value = 2147483647
+			group_index_socket.subtype = 'NONE'
 			group_index_socket.attribute_domain = 'POINT'
 			
 			#Socket Float
 			float_socket = _utils_group_field_at_selection.interface.new_socket(name = "Float", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			float_socket.subtype = 'NONE'
 			float_socket.default_value = 0.0
 			float_socket.min_value = -3.4028234663852886e+38
 			float_socket.max_value = 3.4028234663852886e+38
+			float_socket.subtype = 'NONE'
 			float_socket.attribute_domain = 'POINT'
 			
 			#Socket Vector
 			vector_socket = _utils_group_field_at_selection.interface.new_socket(name = "Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -3.4028234663852886e+38
 			vector_socket.max_value = 3.4028234663852886e+38
+			vector_socket.subtype = 'NONE'
 			vector_socket.attribute_domain = 'POINT'
 			
 			#Socket Boolean
 			boolean_socket = _utils_group_field_at_selection.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Color
 			color_socket = _utils_group_field_at_selection.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket Integer
 			integer_socket = _utils_group_field_at_selection.interface.new_socket(name = "Integer", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			integer_socket.subtype = 'NONE'
 			integer_socket.default_value = 0
 			integer_socket.min_value = -2147483648
 			integer_socket.max_value = 2147483647
+			integer_socket.subtype = 'NONE'
 			integer_socket.attribute_domain = 'POINT'
 			
 			#Socket Selection
 			selection_socket = _utils_group_field_at_selection.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Group Index
 			group_index_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Group Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_index_socket_1.subtype = 'NONE'
 			group_index_socket_1.default_value = 0
 			group_index_socket_1.min_value = -2147483648
 			group_index_socket_1.max_value = 2147483647
+			group_index_socket_1.subtype = 'NONE'
 			group_index_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Float
 			float_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Float", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			float_socket_1.subtype = 'NONE'
 			float_socket_1.default_value = 0.0
 			float_socket_1.min_value = -3.4028234663852886e+38
 			float_socket_1.max_value = 3.4028234663852886e+38
+			float_socket_1.subtype = 'NONE'
 			float_socket_1.attribute_domain = 'POINT'
 			float_socket_1.hide_value = True
 			
 			#Socket Vector
 			vector_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Vector", in_out='INPUT', socket_type = 'NodeSocketVector')
-			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.default_value = (0.0, 0.0, 0.0)
 			vector_socket_1.min_value = -3.4028234663852886e+38
 			vector_socket_1.max_value = 3.4028234663852886e+38
+			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.attribute_domain = 'POINT'
 			vector_socket_1.hide_value = True
 			
 			#Socket Boolean
 			boolean_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Boolean", in_out='INPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_1.default_value = False
 			boolean_socket_1.attribute_domain = 'POINT'
 			boolean_socket_1.hide_value = True
 			
 			#Socket Color
 			color_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor')
+			color_socket_1.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket_1.attribute_domain = 'POINT'
 			color_socket_1.hide_value = True
 			
 			#Socket Integer
 			integer_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Integer", in_out='INPUT', socket_type = 'NodeSocketInt')
-			integer_socket_1.subtype = 'NONE'
 			integer_socket_1.default_value = 0
 			integer_socket_1.min_value = -2147483648
 			integer_socket_1.max_value = 2147483647
+			integer_socket_1.subtype = 'NONE'
 			integer_socket_1.attribute_domain = 'POINT'
 			integer_socket_1.hide_value = True
 			
@@ -257,42 +262,42 @@ class Animate_Peptide_to_Curve(bpy.types.Operator):
 			#_mn_utils_aa_atom_pos interface
 			#Socket Position
 			position_socket = _mn_utils_aa_atom_pos.interface.new_socket(name = "Position", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			
 			#Socket Group Index
 			group_index_socket_2 = _mn_utils_aa_atom_pos.interface.new_socket(name = "Group Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			group_index_socket_2.subtype = 'NONE'
 			group_index_socket_2.default_value = 0
 			group_index_socket_2.min_value = -2147483648
 			group_index_socket_2.max_value = 2147483647
+			group_index_socket_2.subtype = 'NONE'
 			group_index_socket_2.attribute_domain = 'POINT'
 			
 			#Socket b_factor
 			b_factor_socket = _mn_utils_aa_atom_pos.interface.new_socket(name = "b_factor", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			b_factor_socket.subtype = 'NONE'
 			b_factor_socket.default_value = 0.0
 			b_factor_socket.min_value = -3.4028234663852886e+38
 			b_factor_socket.max_value = 3.4028234663852886e+38
+			b_factor_socket.subtype = 'NONE'
 			b_factor_socket.attribute_domain = 'POINT'
 			
 			#Socket Integer
 			integer_socket_2 = _mn_utils_aa_atom_pos.interface.new_socket(name = "Integer", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			integer_socket_2.subtype = 'NONE'
 			integer_socket_2.default_value = 0
 			integer_socket_2.min_value = -2147483648
 			integer_socket_2.max_value = 2147483647
+			integer_socket_2.subtype = 'NONE'
 			integer_socket_2.attribute_domain = 'POINT'
 			
 			#Socket atom_name
 			atom_name_socket = _mn_utils_aa_atom_pos.interface.new_socket(name = "atom_name", in_out='INPUT', socket_type = 'NodeSocketInt')
-			atom_name_socket.subtype = 'NONE'
 			atom_name_socket.default_value = 5
 			atom_name_socket.min_value = -2147483648
 			atom_name_socket.max_value = 2147483647
+			atom_name_socket.subtype = 'NONE'
 			atom_name_socket.attribute_domain = 'POINT'
 			
 			
@@ -610,50 +615,50 @@ class Animate_Peptide_to_Curve(bpy.types.Operator):
 			
 			#Socket Position
 			position_socket_1 = mn_utils_curve_resample.interface.new_socket(name = "Position", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			position_socket_1.subtype = 'NONE'
 			position_socket_1.default_value = (0.0, 0.0, 0.0)
 			position_socket_1.min_value = -3.4028234663852886e+38
 			position_socket_1.max_value = 3.4028234663852886e+38
+			position_socket_1.subtype = 'NONE'
 			position_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Tangent
 			tangent_socket = mn_utils_curve_resample.interface.new_socket(name = "Tangent", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			tangent_socket.subtype = 'NONE'
 			tangent_socket.default_value = (0.0, 0.0, 0.0)
 			tangent_socket.min_value = -3.4028234663852886e+38
 			tangent_socket.max_value = 3.4028234663852886e+38
+			tangent_socket.subtype = 'NONE'
 			tangent_socket.attribute_domain = 'POINT'
 			
 			#Socket Normal
 			normal_socket = mn_utils_curve_resample.interface.new_socket(name = "Normal", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			normal_socket.subtype = 'NONE'
 			normal_socket.default_value = (0.0, 0.0, 0.0)
 			normal_socket.min_value = -3.4028234663852886e+38
 			normal_socket.max_value = 3.4028234663852886e+38
+			normal_socket.subtype = 'NONE'
 			normal_socket.attribute_domain = 'POINT'
 			
 			#Socket Field Float
 			field_float_socket = mn_utils_curve_resample.interface.new_socket(name = "Field Float", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			field_float_socket.subtype = 'NONE'
 			field_float_socket.default_value = 0.0
 			field_float_socket.min_value = -3.4028234663852886e+38
 			field_float_socket.max_value = 3.4028234663852886e+38
+			field_float_socket.subtype = 'NONE'
 			field_float_socket.attribute_domain = 'POINT'
 			
 			#Socket Field Int
 			field_int_socket = mn_utils_curve_resample.interface.new_socket(name = "Field Int", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			field_int_socket.subtype = 'NONE'
 			field_int_socket.default_value = 0
 			field_int_socket.min_value = -2147483648
 			field_int_socket.max_value = 2147483647
+			field_int_socket.subtype = 'NONE'
 			field_int_socket.attribute_domain = 'POINT'
 			
 			#Socket Field Vec
 			field_vec_socket = mn_utils_curve_resample.interface.new_socket(name = "Field Vec", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			field_vec_socket.subtype = 'NONE'
 			field_vec_socket.default_value = (0.0, 0.0, 0.0)
 			field_vec_socket.min_value = -3.4028234663852886e+38
 			field_vec_socket.max_value = 3.4028234663852886e+38
+			field_vec_socket.subtype = 'NONE'
 			field_vec_socket.attribute_domain = 'POINT'
 			
 			#Socket Geometry
@@ -662,44 +667,44 @@ class Animate_Peptide_to_Curve(bpy.types.Operator):
 			
 			#Socket Offset
 			offset_socket = mn_utils_curve_resample.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 2.299999952316284
 			offset_socket.min_value = -10000.0
 			offset_socket.max_value = 10000.0
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			#Socket Length
 			length_socket = mn_utils_curve_resample.interface.new_socket(name = "Length", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			length_socket.subtype = 'DISTANCE'
 			length_socket.default_value = 0.36000001430511475
 			length_socket.min_value = 0.009999999776482582
 			length_socket.max_value = 3.4028234663852886e+38
+			length_socket.subtype = 'DISTANCE'
 			length_socket.attribute_domain = 'POINT'
 			
 			#Socket Field Float
 			field_float_socket_1 = mn_utils_curve_resample.interface.new_socket(name = "Field Float", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			field_float_socket_1.subtype = 'NONE'
 			field_float_socket_1.default_value = 0.0
 			field_float_socket_1.min_value = -3.4028234663852886e+38
 			field_float_socket_1.max_value = 3.4028234663852886e+38
+			field_float_socket_1.subtype = 'NONE'
 			field_float_socket_1.attribute_domain = 'POINT'
 			field_float_socket_1.hide_value = True
 			
 			#Socket Field Int
 			field_int_socket_1 = mn_utils_curve_resample.interface.new_socket(name = "Field Int", in_out='INPUT', socket_type = 'NodeSocketInt')
-			field_int_socket_1.subtype = 'NONE'
 			field_int_socket_1.default_value = 0
 			field_int_socket_1.min_value = -2147483648
 			field_int_socket_1.max_value = 2147483647
+			field_int_socket_1.subtype = 'NONE'
 			field_int_socket_1.attribute_domain = 'POINT'
 			field_int_socket_1.hide_value = True
 			
 			#Socket Field Vec
 			field_vec_socket_1 = mn_utils_curve_resample.interface.new_socket(name = "Field Vec", in_out='INPUT', socket_type = 'NodeSocketVector')
-			field_vec_socket_1.subtype = 'NONE'
 			field_vec_socket_1.default_value = (0.0, 0.0, 0.0)
 			field_vec_socket_1.min_value = -3.4028234663852886e+38
 			field_vec_socket_1.max_value = 3.4028234663852886e+38
+			field_vec_socket_1.subtype = 'NONE'
 			field_vec_socket_1.attribute_domain = 'POINT'
 			field_vec_socket_1.hide_value = True
 			
@@ -1001,42 +1006,42 @@ class Animate_Peptide_to_Curve(bpy.types.Operator):
 			
 			#Socket Offset
 			offset_socket_1 = animate_peptide_to_curve.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.default_value = 0.0
 			offset_socket_1.min_value = -10000.0
 			offset_socket_1.max_value = 10000.0
+			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Start
 			start_socket = animate_peptide_to_curve.interface.new_socket(name = "Start", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			start_socket.subtype = 'FACTOR'
 			start_socket.default_value = 0.0
 			start_socket.min_value = 0.0
 			start_socket.max_value = 1.0
+			start_socket.subtype = 'FACTOR'
 			start_socket.attribute_domain = 'POINT'
 			
 			#Socket End
 			end_socket = animate_peptide_to_curve.interface.new_socket(name = "End", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			end_socket.subtype = 'FACTOR'
 			end_socket.default_value = 1.0
 			end_socket.min_value = 0.0
 			end_socket.max_value = 1.0
+			end_socket.subtype = 'FACTOR'
 			end_socket.attribute_domain = 'POINT'
 			
 			#Socket Rotate
 			rotate_socket = animate_peptide_to_curve.interface.new_socket(name = "Rotate", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			rotate_socket.subtype = 'NONE'
 			rotate_socket.default_value = 0.5
 			rotate_socket.min_value = -10000.0
 			rotate_socket.max_value = 10000.0
+			rotate_socket.subtype = 'NONE'
 			rotate_socket.attribute_domain = 'POINT'
 			
 			#Socket Twist
 			twist_socket = animate_peptide_to_curve.interface.new_socket(name = "Twist", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			twist_socket.subtype = 'NONE'
 			twist_socket.default_value = 1.0
 			twist_socket.min_value = -10000.0
 			twist_socket.max_value = 10000.0
+			twist_socket.subtype = 'NONE'
 			twist_socket.attribute_domain = 'POINT'
 			
 			

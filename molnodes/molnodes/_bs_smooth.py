@@ -28,70 +28,72 @@ class _bs_smooth(bpy.types.Operator):
 			#_field_offset interface
 			#Socket Field
 			field_socket = _field_offset.interface.new_socket(name = "Field", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			field_socket.subtype = 'NONE'
 			field_socket.default_value = (0.0, 0.0, 0.0)
 			field_socket.min_value = -3.4028234663852886e+38
 			field_socket.max_value = 3.4028234663852886e+38
+			field_socket.subtype = 'NONE'
 			field_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = _field_offset.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			value_socket.default_value = False
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Field
 			field_socket_1 = _field_offset.interface.new_socket(name = "Field", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			field_socket_1.subtype = 'NONE'
 			field_socket_1.default_value = 0
 			field_socket_1.min_value = -2147483648
 			field_socket_1.max_value = 2147483647
+			field_socket_1.subtype = 'NONE'
 			field_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Field
 			field_socket_2 = _field_offset.interface.new_socket(name = "Field", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			field_socket_2.subtype = 'NONE'
 			field_socket_2.default_value = 0.0
 			field_socket_2.min_value = -3.4028234663852886e+38
 			field_socket_2.max_value = 3.4028234663852886e+38
+			field_socket_2.subtype = 'NONE'
 			field_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Field
 			field_socket_3 = _field_offset.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketVector')
-			field_socket_3.subtype = 'NONE'
 			field_socket_3.default_value = (0.0, 0.0, 0.0)
 			field_socket_3.min_value = -3.4028234663852886e+38
 			field_socket_3.max_value = 3.4028234663852886e+38
+			field_socket_3.subtype = 'NONE'
 			field_socket_3.attribute_domain = 'POINT'
 			field_socket_3.hide_value = True
 			
 			#Socket Value
 			value_socket_1 = _field_offset.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketBool')
+			value_socket_1.default_value = False
 			value_socket_1.attribute_domain = 'POINT'
 			value_socket_1.hide_value = True
 			
 			#Socket Field
 			field_socket_4 = _field_offset.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketInt')
-			field_socket_4.subtype = 'NONE'
 			field_socket_4.default_value = 0
 			field_socket_4.min_value = -2147483648
 			field_socket_4.max_value = 2147483647
+			field_socket_4.subtype = 'NONE'
 			field_socket_4.attribute_domain = 'POINT'
 			field_socket_4.hide_value = True
 			
 			#Socket Field
 			field_socket_5 = _field_offset.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			field_socket_5.subtype = 'NONE'
 			field_socket_5.default_value = 0.0
 			field_socket_5.min_value = -3.4028234663852886e+38
 			field_socket_5.max_value = 3.4028234663852886e+38
+			field_socket_5.subtype = 'NONE'
 			field_socket_5.attribute_domain = 'POINT'
 			field_socket_5.hide_value = True
 			
 			#Socket Offset
 			offset_socket = _field_offset.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 0
 			offset_socket.min_value = -2147483648
 			offset_socket.max_value = 2147483647
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -206,30 +208,31 @@ class _bs_smooth(bpy.types.Operator):
 			#_sec_struct_counter interface
 			#Socket Leading
 			leading_socket = _sec_struct_counter.interface.new_socket(name = "Leading", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			leading_socket.subtype = 'NONE'
 			leading_socket.default_value = 0
 			leading_socket.min_value = -2147483648
 			leading_socket.max_value = 2147483647
+			leading_socket.subtype = 'NONE'
 			leading_socket.attribute_domain = 'POINT'
 			
 			#Socket Trailing
 			trailing_socket = _sec_struct_counter.interface.new_socket(name = "Trailing", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			trailing_socket.subtype = 'NONE'
 			trailing_socket.default_value = 0
 			trailing_socket.min_value = -2147483648
 			trailing_socket.max_value = 2147483647
+			trailing_socket.subtype = 'NONE'
 			trailing_socket.attribute_domain = 'POINT'
 			
 			#Socket Total
 			total_socket = _sec_struct_counter.interface.new_socket(name = "Total", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			total_socket.subtype = 'NONE'
 			total_socket.default_value = 0
 			total_socket.min_value = -2147483648
 			total_socket.max_value = 2147483647
+			total_socket.subtype = 'NONE'
 			total_socket.attribute_domain = 'POINT'
 			
 			#Socket Border
 			border_socket = _sec_struct_counter.interface.new_socket(name = "Border", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			border_socket.default_value = False
 			border_socket.attribute_domain = 'POINT'
 			
 			
@@ -384,29 +387,33 @@ class _bs_smooth(bpy.types.Operator):
 			#_mn_select_sec_struct_id interface
 			#Socket Selection
 			selection_socket = _mn_select_sec_struct_id.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = _mn_select_sec_struct_id.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket = _mn_select_sec_struct_id.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = _mn_select_sec_struct_id.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
 			#Socket id
 			id_socket = _mn_select_sec_struct_id.interface.new_socket(name = "id", in_out='INPUT', socket_type = 'NodeSocketInt')
-			id_socket.subtype = 'NONE'
 			id_socket.default_value = 1
 			id_socket.min_value = -2147483648
 			id_socket.max_value = 2147483647
+			id_socket.subtype = 'NONE'
 			id_socket.attribute_domain = 'POINT'
 			id_socket.description = "Secondary structure component to select"
 			
@@ -505,20 +512,24 @@ class _bs_smooth(bpy.types.Operator):
 			#is_sheet interface
 			#Socket Selection
 			selection_socket_1 = is_sheet.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = False
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.description = "Selected atoms form part of a sheet"
 			
 			#Socket Inverted
 			inverted_socket_1 = is_sheet.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_1.default_value = False
 			inverted_socket_1.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_1 = is_sheet.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_1.default_value = True
 			and_socket_1.attribute_domain = 'POINT'
 			and_socket_1.hide_value = True
 			
 			#Socket Or
 			or_socket_1 = is_sheet.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_1.default_value = False
 			or_socket_1.attribute_domain = 'POINT'
 			or_socket_1.hide_value = True
 			
@@ -578,20 +589,24 @@ class _bs_smooth(bpy.types.Operator):
 			#is_loop interface
 			#Socket Selection
 			selection_socket_2 = is_loop.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_2.default_value = False
 			selection_socket_2.attribute_domain = 'POINT'
 			selection_socket_2.description = "Selected atoms form part of a loop, and not part of any secondary structure"
 			
 			#Socket Inverted
 			inverted_socket_2 = is_loop.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_2.default_value = False
 			inverted_socket_2.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_2 = is_loop.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_2.default_value = True
 			and_socket_2.attribute_domain = 'POINT'
 			and_socket_2.hide_value = True
 			
 			#Socket Or
 			or_socket_2 = is_loop.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_2.default_value = False
 			or_socket_2.attribute_domain = 'POINT'
 			or_socket_2.hide_value = True
 			
@@ -651,20 +666,24 @@ class _bs_smooth(bpy.types.Operator):
 			#is_helix interface
 			#Socket Selection
 			selection_socket_3 = is_helix.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_3.default_value = False
 			selection_socket_3.attribute_domain = 'POINT'
 			selection_socket_3.description = "Selected atoms form part of an helix"
 			
 			#Socket Inverted
 			inverted_socket_3 = is_helix.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_3.default_value = False
 			inverted_socket_3.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_3 = is_helix.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_3.default_value = True
 			and_socket_3.attribute_domain = 'POINT'
 			and_socket_3.hide_value = True
 			
 			#Socket Or
 			or_socket_3 = is_helix.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_3.default_value = False
 			or_socket_3.attribute_domain = 'POINT'
 			or_socket_3.hide_value = True
 			
@@ -724,22 +743,27 @@ class _bs_smooth(bpy.types.Operator):
 			#_mn_select_sec_struct interface
 			#Socket Is Helix
 			is_helix_socket = _mn_select_sec_struct.interface.new_socket(name = "Is Helix", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_helix_socket.default_value = False
 			is_helix_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Sheet
 			is_sheet_socket = _mn_select_sec_struct.interface.new_socket(name = "Is Sheet", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_sheet_socket.default_value = False
 			is_sheet_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Structured
 			is_structured_socket = _mn_select_sec_struct.interface.new_socket(name = "Is Structured", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_structured_socket.default_value = False
 			is_structured_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Loop
 			is_loop_socket = _mn_select_sec_struct.interface.new_socket(name = "Is Loop", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_loop_socket.default_value = False
 			is_loop_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_4 = _mn_select_sec_struct.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_4.default_value = True
 			and_socket_4.attribute_domain = 'POINT'
 			and_socket_4.hide_value = True
 			
@@ -842,18 +866,18 @@ class _bs_smooth(bpy.types.Operator):
 			
 			#Socket Factor
 			factor_socket = _bs_smooth.interface.new_socket(name = "Factor", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			factor_socket.subtype = 'FACTOR'
 			factor_socket.default_value = 1.0
 			factor_socket.min_value = 0.0
 			factor_socket.max_value = 1.0
+			factor_socket.subtype = 'FACTOR'
 			factor_socket.attribute_domain = 'POINT'
 			
 			#Socket Iterations
 			iterations_socket = _bs_smooth.interface.new_socket(name = "Iterations", in_out='INPUT', socket_type = 'NodeSocketInt')
-			iterations_socket.subtype = 'NONE'
 			iterations_socket.default_value = 2
 			iterations_socket.min_value = 0
 			iterations_socket.max_value = 2147483647
+			iterations_socket.subtype = 'NONE'
 			iterations_socket.attribute_domain = 'POINT'
 			
 			

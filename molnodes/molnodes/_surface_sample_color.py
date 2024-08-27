@@ -28,6 +28,7 @@ class _surface_sample_color(bpy.types.Operator):
 			#_surface_sample_color interface
 			#Socket Color
 			color_socket = _surface_sample_color.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket Atoms
@@ -37,6 +38,7 @@ class _surface_sample_color(bpy.types.Operator):
 			
 			#Socket Sample CA
 			sample_ca_socket = _surface_sample_color.interface.new_socket(name = "Sample CA", in_out='INPUT', socket_type = 'NodeSocketBool')
+			sample_ca_socket.default_value = False
 			sample_ca_socket.attribute_domain = 'POINT'
 			
 			

@@ -28,26 +28,26 @@ class _MN_utils_int_multiply(bpy.types.Operator):
 			#_mn_utils_int_multiply interface
 			#Socket Value
 			value_socket = _mn_utils_int_multiply.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0
 			value_socket.min_value = -2147483648
 			value_socket.max_value = 2147483647
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_1 = _mn_utils_int_multiply.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketInt')
-			value_socket_1.subtype = 'NONE'
 			value_socket_1.default_value = 0
 			value_socket_1.min_value = -2147483648
 			value_socket_1.max_value = 2147483647
+			value_socket_1.subtype = 'NONE'
 			value_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_2 = _mn_utils_int_multiply.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketInt')
-			value_socket_2.subtype = 'NONE'
 			value_socket_2.default_value = 0
 			value_socket_2.min_value = -2147483648
 			value_socket_2.max_value = 2147483647
+			value_socket_2.subtype = 'NONE'
 			value_socket_2.attribute_domain = 'POINT'
 			
 			

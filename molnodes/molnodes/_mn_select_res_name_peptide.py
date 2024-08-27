@@ -28,111 +28,133 @@ class _MN_select_res_name_peptide(bpy.types.Operator):
 			#_mn_select_res_name_peptide interface
 			#Socket Selection
 			selection_socket = _mn_select_res_name_peptide.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = _mn_select_res_name_peptide.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			inverted_socket.description = "The inverse of the calculated selection"
 			
 			#Socket ALA
 			ala_socket = _mn_select_res_name_peptide.interface.new_socket(name = "ALA", in_out='INPUT', socket_type = 'NodeSocketBool')
+			ala_socket.default_value = False
 			ala_socket.attribute_domain = 'POINT'
 			ala_socket.description = "Select the AA residue ALA"
 			
 			#Socket ARG
 			arg_socket = _mn_select_res_name_peptide.interface.new_socket(name = "ARG", in_out='INPUT', socket_type = 'NodeSocketBool')
+			arg_socket.default_value = False
 			arg_socket.attribute_domain = 'POINT'
 			arg_socket.description = "Select the AA residue ARG"
 			
 			#Socket ASN
 			asn_socket = _mn_select_res_name_peptide.interface.new_socket(name = "ASN", in_out='INPUT', socket_type = 'NodeSocketBool')
+			asn_socket.default_value = False
 			asn_socket.attribute_domain = 'POINT'
 			asn_socket.description = "Select the AA residue ASN"
 			
 			#Socket ASP
 			asp_socket = _mn_select_res_name_peptide.interface.new_socket(name = "ASP", in_out='INPUT', socket_type = 'NodeSocketBool')
+			asp_socket.default_value = False
 			asp_socket.attribute_domain = 'POINT'
 			asp_socket.description = "Select the AA residue ASP"
 			
 			#Socket CYS
 			cys_socket = _mn_select_res_name_peptide.interface.new_socket(name = "CYS", in_out='INPUT', socket_type = 'NodeSocketBool')
+			cys_socket.default_value = False
 			cys_socket.attribute_domain = 'POINT'
 			cys_socket.description = "Select the AA residue CYS"
 			
 			#Socket GLU
 			glu_socket = _mn_select_res_name_peptide.interface.new_socket(name = "GLU", in_out='INPUT', socket_type = 'NodeSocketBool')
+			glu_socket.default_value = False
 			glu_socket.attribute_domain = 'POINT'
 			glu_socket.description = "Select the AA residue GLU"
 			
 			#Socket GLN
 			gln_socket = _mn_select_res_name_peptide.interface.new_socket(name = "GLN", in_out='INPUT', socket_type = 'NodeSocketBool')
+			gln_socket.default_value = False
 			gln_socket.attribute_domain = 'POINT'
 			gln_socket.description = "Select the AA residue GLN"
 			
 			#Socket GLY
 			gly_socket = _mn_select_res_name_peptide.interface.new_socket(name = "GLY", in_out='INPUT', socket_type = 'NodeSocketBool')
+			gly_socket.default_value = False
 			gly_socket.attribute_domain = 'POINT'
 			gly_socket.description = "Select the AA residue GLY"
 			
 			#Socket HIS
 			his_socket = _mn_select_res_name_peptide.interface.new_socket(name = "HIS", in_out='INPUT', socket_type = 'NodeSocketBool')
+			his_socket.default_value = False
 			his_socket.attribute_domain = 'POINT'
 			his_socket.description = "Select the AA residue HIS"
 			
 			#Socket ILE
 			ile_socket = _mn_select_res_name_peptide.interface.new_socket(name = "ILE", in_out='INPUT', socket_type = 'NodeSocketBool')
+			ile_socket.default_value = False
 			ile_socket.attribute_domain = 'POINT'
 			ile_socket.description = "Select the AA residue ILE"
 			
 			#Socket LEU
 			leu_socket = _mn_select_res_name_peptide.interface.new_socket(name = "LEU", in_out='INPUT', socket_type = 'NodeSocketBool')
+			leu_socket.default_value = False
 			leu_socket.attribute_domain = 'POINT'
 			leu_socket.description = "Select the AA residue LEU"
 			
 			#Socket LYS
 			lys_socket = _mn_select_res_name_peptide.interface.new_socket(name = "LYS", in_out='INPUT', socket_type = 'NodeSocketBool')
+			lys_socket.default_value = False
 			lys_socket.attribute_domain = 'POINT'
 			lys_socket.description = "Select the AA residue LYS"
 			
 			#Socket MET
 			met_socket = _mn_select_res_name_peptide.interface.new_socket(name = "MET", in_out='INPUT', socket_type = 'NodeSocketBool')
+			met_socket.default_value = False
 			met_socket.attribute_domain = 'POINT'
 			met_socket.description = "Select the AA residue MET"
 			
 			#Socket PHE
 			phe_socket = _mn_select_res_name_peptide.interface.new_socket(name = "PHE", in_out='INPUT', socket_type = 'NodeSocketBool')
+			phe_socket.default_value = False
 			phe_socket.attribute_domain = 'POINT'
 			phe_socket.description = "Select the AA residue PHE"
 			
 			#Socket PRO
 			pro_socket = _mn_select_res_name_peptide.interface.new_socket(name = "PRO", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pro_socket.default_value = False
 			pro_socket.attribute_domain = 'POINT'
 			pro_socket.description = "Select the AA residue PRO"
 			
 			#Socket SER
 			ser_socket = _mn_select_res_name_peptide.interface.new_socket(name = "SER", in_out='INPUT', socket_type = 'NodeSocketBool')
+			ser_socket.default_value = False
 			ser_socket.attribute_domain = 'POINT'
 			ser_socket.description = "Select the AA residue SER"
 			
 			#Socket THR
 			thr_socket = _mn_select_res_name_peptide.interface.new_socket(name = "THR", in_out='INPUT', socket_type = 'NodeSocketBool')
+			thr_socket.default_value = False
 			thr_socket.attribute_domain = 'POINT'
 			thr_socket.description = "Select the AA residue THR"
 			
 			#Socket TRP
 			trp_socket = _mn_select_res_name_peptide.interface.new_socket(name = "TRP", in_out='INPUT', socket_type = 'NodeSocketBool')
+			trp_socket.default_value = False
 			trp_socket.attribute_domain = 'POINT'
 			trp_socket.description = "Select the AA residue TRP"
 			
 			#Socket TYR
 			tyr_socket = _mn_select_res_name_peptide.interface.new_socket(name = "TYR", in_out='INPUT', socket_type = 'NodeSocketBool')
+			tyr_socket.default_value = False
 			tyr_socket.attribute_domain = 'POINT'
 			tyr_socket.description = "Select the AA residue TYR"
 			
 			#Socket VAL
 			val_socket = _mn_select_res_name_peptide.interface.new_socket(name = "VAL", in_out='INPUT', socket_type = 'NodeSocketBool')
+			val_socket.default_value = False
 			val_socket.attribute_domain = 'POINT'
 			val_socket.description = "Select the AA residue VAL"
 			

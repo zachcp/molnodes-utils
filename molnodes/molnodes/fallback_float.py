@@ -28,22 +28,23 @@ class Fallback_Float(bpy.types.Operator):
 			#fallback_float interface
 			#Socket Value
 			value_socket = fallback_float.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.0
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket = fallback_float.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = ""
 			name_socket.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket = fallback_float.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			fallback_socket.subtype = 'NONE'
 			fallback_socket.default_value = 0.0
 			fallback_socket.min_value = -3.4028234663852886e+38
 			fallback_socket.max_value = 3.4028234663852886e+38
+			fallback_socket.subtype = 'NONE'
 			fallback_socket.attribute_domain = 'POINT'
 			
 			

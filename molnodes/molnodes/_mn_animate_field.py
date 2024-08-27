@@ -28,67 +28,67 @@ class _MN_animate_field(bpy.types.Operator):
 			#_mn_animate_field interface
 			#Socket Vector Interp.
 			vector_interp__socket = _mn_animate_field.interface.new_socket(name = "Vector Interp.", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector_interp__socket.subtype = 'NONE'
 			vector_interp__socket.default_value = (0.0, 0.0, 0.0)
 			vector_interp__socket.min_value = -3.4028234663852886e+38
 			vector_interp__socket.max_value = 3.4028234663852886e+38
+			vector_interp__socket.subtype = 'NONE'
 			vector_interp__socket.attribute_domain = 'POINT'
 			
 			#Socket Vector0
 			vector0_socket = _mn_animate_field.interface.new_socket(name = "Vector0", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector0_socket.subtype = 'NONE'
 			vector0_socket.default_value = (0.0, 0.0, 0.0)
 			vector0_socket.min_value = -3.4028234663852886e+38
 			vector0_socket.max_value = 3.4028234663852886e+38
+			vector0_socket.subtype = 'NONE'
 			vector0_socket.attribute_domain = 'POINT'
 			
 			#Socket Vector1
 			vector1_socket = _mn_animate_field.interface.new_socket(name = "Vector1", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector1_socket.subtype = 'NONE'
 			vector1_socket.default_value = (0.0, 0.0, 0.0)
 			vector1_socket.min_value = -3.4028234663852886e+38
 			vector1_socket.max_value = 3.4028234663852886e+38
+			vector1_socket.subtype = 'NONE'
 			vector1_socket.attribute_domain = 'POINT'
 			
 			#Socket Float Interp.
 			float_interp__socket = _mn_animate_field.interface.new_socket(name = "Float Interp.", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			float_interp__socket.subtype = 'NONE'
 			float_interp__socket.default_value = 0.0
 			float_interp__socket.min_value = -3.4028234663852886e+38
 			float_interp__socket.max_value = 3.4028234663852886e+38
+			float_interp__socket.subtype = 'NONE'
 			float_interp__socket.attribute_domain = 'POINT'
 			
 			#Socket Float0
 			float0_socket = _mn_animate_field.interface.new_socket(name = "Float0", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			float0_socket.subtype = 'NONE'
 			float0_socket.default_value = 0.0
 			float0_socket.min_value = -3.4028234663852886e+38
 			float0_socket.max_value = 3.4028234663852886e+38
+			float0_socket.subtype = 'NONE'
 			float0_socket.attribute_domain = 'POINT'
 			
 			#Socket Float1
 			float1_socket = _mn_animate_field.interface.new_socket(name = "Float1", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			float1_socket.subtype = 'NONE'
 			float1_socket.default_value = 0.0
 			float1_socket.min_value = -3.4028234663852886e+38
 			float1_socket.max_value = 3.4028234663852886e+38
+			float1_socket.subtype = 'NONE'
 			float1_socket.attribute_domain = 'POINT'
 			
 			#Socket Vector
 			vector_socket = _mn_animate_field.interface.new_socket(name = "Vector", in_out='INPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -3.4028234663852886e+38
 			vector_socket.max_value = 3.4028234663852886e+38
+			vector_socket.subtype = 'NONE'
 			vector_socket.attribute_domain = 'POINT'
 			vector_socket.hide_value = True
 			
 			#Socket Float
 			float_socket = _mn_animate_field.interface.new_socket(name = "Float", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			float_socket.subtype = 'NONE'
 			float_socket.default_value = 0.0
 			float_socket.min_value = -3.4028234663852886e+38
 			float_socket.max_value = 3.4028234663852886e+38
+			float_socket.subtype = 'NONE'
 			float_socket.attribute_domain = 'POINT'
 			float_socket.hide_value = True
 			
@@ -98,42 +98,44 @@ class _MN_animate_field(bpy.types.Operator):
 			
 			#Socket Start
 			start_socket = _mn_animate_field.interface.new_socket(name = "Start", in_out='INPUT', socket_type = 'NodeSocketInt')
-			start_socket.subtype = 'NONE'
 			start_socket.default_value = 0
 			start_socket.min_value = 0
 			start_socket.max_value = 100000
+			start_socket.subtype = 'NONE'
 			start_socket.attribute_domain = 'POINT'
 			
 			#Socket End
 			end_socket = _mn_animate_field.interface.new_socket(name = "End", in_out='INPUT', socket_type = 'NodeSocketInt')
-			end_socket.subtype = 'NONE'
 			end_socket.default_value = -1
 			end_socket.min_value = -1
 			end_socket.max_value = 100000
+			end_socket.subtype = 'NONE'
 			end_socket.attribute_domain = 'POINT'
 			
 			#Socket Animate 0..1
 			animate_0__1_socket = _mn_animate_field.interface.new_socket(name = "Animate 0..1", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			animate_0__1_socket.subtype = 'NONE'
 			animate_0__1_socket.default_value = 1.0
 			animate_0__1_socket.min_value = -10000.0
 			animate_0__1_socket.max_value = 10000.0
+			animate_0__1_socket.subtype = 'NONE'
 			animate_0__1_socket.attribute_domain = 'POINT'
 			
 			#Socket Interpolate
 			interpolate_socket = _mn_animate_field.interface.new_socket(name = "Interpolate", in_out='INPUT', socket_type = 'NodeSocketBool')
+			interpolate_socket.default_value = True
 			interpolate_socket.attribute_domain = 'POINT'
 			
 			#Socket Smoother Step
 			smoother_step_socket = _mn_animate_field.interface.new_socket(name = "Smoother Step", in_out='INPUT', socket_type = 'NodeSocketBool')
+			smoother_step_socket.default_value = False
 			smoother_step_socket.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket = _mn_animate_field.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = -2147483648
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.default_attribute_name = "Index"
 			index_socket.attribute_domain = 'POINT'
 			index_socket.hide_value = True

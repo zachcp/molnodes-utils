@@ -33,14 +33,15 @@ class _SampleAtomValue(bpy.types.Operator):
 			
 			#Socket Value
 			value_socket = _sampleatomvalue.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = (0.0, 0.0, 0.0)
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_1 = _sampleatomvalue.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			value_socket_1.default_value = (0.0, 0.0, 0.0, 0.0)
 			value_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Geometry
@@ -49,10 +50,10 @@ class _SampleAtomValue(bpy.types.Operator):
 			
 			#Socket B
 			b_socket = _sampleatomvalue.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketInt')
-			b_socket.subtype = 'NONE'
 			b_socket.default_value = 57
 			b_socket.min_value = -2147483648
 			b_socket.max_value = 2147483647
+			b_socket.subtype = 'NONE'
 			b_socket.attribute_domain = 'POINT'
 			
 			

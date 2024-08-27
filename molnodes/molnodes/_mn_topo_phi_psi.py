@@ -28,35 +28,35 @@ class _MN_topo_phi_psi(bpy.types.Operator):
 			#offset_vector interface
 			#Socket Value
 			value_socket = offset_vector.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = (0.0, 0.0, 0.0)
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket = offset_vector.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = 0
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			
 			#Socket Position
 			position_socket = offset_vector.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			position_socket.hide_value = True
 			
 			#Socket Offset
 			offset_socket = offset_vector.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 0
 			offset_socket.min_value = -2147483647
 			offset_socket.max_value = 2147483647
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -123,10 +123,10 @@ class _MN_topo_phi_psi(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -177,26 +177,26 @@ class _MN_topo_phi_psi(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_1 = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_1.subtype = 'NONE'
 			value_socket_1.default_value = 3.0
 			value_socket_1.min_value = -10000.0
 			value_socket_1.max_value = 10000.0
+			value_socket_1.subtype = 'NONE'
 			value_socket_1.attribute_domain = 'POINT'
 			value_socket_1.description = "A value which will be scaled appropriately for the world"
 			
@@ -273,18 +273,18 @@ class _MN_topo_phi_psi(bpy.types.Operator):
 			#backbone_nh interface
 			#Socket H
 			h_socket = backbone_nh.interface.new_socket(name = "H", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			h_socket.subtype = 'NONE'
 			h_socket.default_value = (0.0, 0.0, 0.0)
 			h_socket.min_value = -3.4028234663852886e+38
 			h_socket.max_value = 3.4028234663852886e+38
+			h_socket.subtype = 'NONE'
 			h_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_2 = backbone_nh.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_2.subtype = 'NONE'
 			value_socket_2.default_value = 1.0
 			value_socket_2.min_value = -10000.0
 			value_socket_2.max_value = 10000.0
+			value_socket_2.subtype = 'NONE'
 			value_socket_2.attribute_domain = 'POINT'
 			
 			
@@ -458,50 +458,50 @@ class _MN_topo_phi_psi(bpy.types.Operator):
 			#mn_topo_backbone interface
 			#Socket O
 			o_socket = mn_topo_backbone.interface.new_socket(name = "O", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			o_socket.subtype = 'NONE'
 			o_socket.default_value = (0.0, 0.0, 0.0)
 			o_socket.min_value = -3.4028234663852886e+38
 			o_socket.max_value = 3.4028234663852886e+38
+			o_socket.subtype = 'NONE'
 			o_socket.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket = mn_topo_backbone.interface.new_socket(name = "C", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			c_socket.subtype = 'NONE'
 			c_socket.default_value = (0.0, 0.0, 0.0)
 			c_socket.min_value = -3.4028234663852886e+38
 			c_socket.max_value = 3.4028234663852886e+38
+			c_socket.subtype = 'NONE'
 			c_socket.attribute_domain = 'POINT'
 			
 			#Socket CA
 			ca_socket = mn_topo_backbone.interface.new_socket(name = "CA", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			ca_socket.subtype = 'NONE'
 			ca_socket.default_value = (0.0, 0.0, 0.0)
 			ca_socket.min_value = -3.4028234663852886e+38
 			ca_socket.max_value = 3.4028234663852886e+38
+			ca_socket.subtype = 'NONE'
 			ca_socket.attribute_domain = 'POINT'
 			
 			#Socket N
 			n_socket = mn_topo_backbone.interface.new_socket(name = "N", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			n_socket.subtype = 'NONE'
 			n_socket.default_value = (0.0, 0.0, 0.0)
 			n_socket.min_value = -3.4028234663852886e+38
 			n_socket.max_value = 3.4028234663852886e+38
+			n_socket.subtype = 'NONE'
 			n_socket.attribute_domain = 'POINT'
 			
 			#Socket NH
 			nh_socket = mn_topo_backbone.interface.new_socket(name = "NH", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			nh_socket.subtype = 'NONE'
 			nh_socket.default_value = (0.0, 0.0, 0.0)
 			nh_socket.min_value = -3.4028234663852886e+38
 			nh_socket.max_value = 3.4028234663852886e+38
+			nh_socket.subtype = 'NONE'
 			nh_socket.attribute_domain = 'POINT'
 			
 			#Socket Offset
 			offset_socket_1 = mn_topo_backbone.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.default_value = 0
 			offset_socket_1.min_value = -2147483648
 			offset_socket_1.max_value = 2147483647
+			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -713,27 +713,27 @@ class _MN_topo_phi_psi(bpy.types.Operator):
 			#vector_angle interface
 			#Socket Angle
 			angle_socket = vector_angle.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket.subtype = 'ANGLE'
 			angle_socket.default_value = 0.0
 			angle_socket.min_value = -3.4028234663852886e+38
 			angle_socket.max_value = 3.4028234663852886e+38
+			angle_socket.subtype = 'ANGLE'
 			angle_socket.attribute_domain = 'POINT'
 			angle_socket.description = "Angle between the two given vectors in radians"
 			
 			#Socket A
 			a_socket = vector_angle.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketVector')
-			a_socket.subtype = 'NONE'
 			a_socket.default_value = (0.0, 0.0, 0.0)
 			a_socket.min_value = -10000.0
 			a_socket.max_value = 10000.0
+			a_socket.subtype = 'NONE'
 			a_socket.attribute_domain = 'POINT'
 			
 			#Socket B
 			b_socket = vector_angle.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketVector')
-			b_socket.subtype = 'NONE'
 			b_socket.default_value = (0.0, 0.0, 0.0)
 			b_socket.min_value = -10000.0
 			b_socket.max_value = 10000.0
+			b_socket.subtype = 'NONE'
 			b_socket.attribute_domain = 'POINT'
 			
 			
@@ -815,73 +815,73 @@ class _MN_topo_phi_psi(bpy.types.Operator):
 			#dihedral_angle interface
 			#Socket Angle
 			angle_socket_1 = dihedral_angle.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket_1.subtype = 'ANGLE'
 			angle_socket_1.default_value = 0.0
 			angle_socket_1.min_value = -3.4028234663852886e+38
 			angle_socket_1.max_value = 3.4028234663852886e+38
+			angle_socket_1.subtype = 'ANGLE'
 			angle_socket_1.attribute_domain = 'POINT'
 			angle_socket_1.description = "The angle between the vectors AB and CD, when made perpendicular to BC."
 			
 			#Socket BA⟂(BC)
 			ba__bc__socket = dihedral_angle.interface.new_socket(name = "BA⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			ba__bc__socket.subtype = 'NONE'
 			ba__bc__socket.default_value = (0.0, 0.0, 0.0)
 			ba__bc__socket.min_value = -3.4028234663852886e+38
 			ba__bc__socket.max_value = 3.4028234663852886e+38
+			ba__bc__socket.subtype = 'NONE'
 			ba__bc__socket.attribute_domain = 'POINT'
 			ba__bc__socket.description = "The vector BA when made perpendicular to  the axis BC"
 			
 			#Socket CD⟂(BC)
 			cd__bc__socket = dihedral_angle.interface.new_socket(name = "CD⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			cd__bc__socket.subtype = 'NONE'
 			cd__bc__socket.default_value = (0.0, 0.0, 0.0)
 			cd__bc__socket.min_value = -3.4028234663852886e+38
 			cd__bc__socket.max_value = 3.4028234663852886e+38
+			cd__bc__socket.subtype = 'NONE'
 			cd__bc__socket.attribute_domain = 'POINT'
 			cd__bc__socket.description = "The Vector CD when makde perpendicular to the axis BC"
 			
 			#Socket BC
 			bc_socket = dihedral_angle.interface.new_socket(name = "BC", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			bc_socket.subtype = 'NONE'
 			bc_socket.default_value = (0.0, 0.0, 0.0)
 			bc_socket.min_value = -3.4028234663852886e+38
 			bc_socket.max_value = 3.4028234663852886e+38
+			bc_socket.subtype = 'NONE'
 			bc_socket.attribute_domain = 'POINT'
 			bc_socket.description = "The axis vector BC"
 			
 			#Socket A
 			a_socket_1 = dihedral_angle.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketVector')
-			a_socket_1.subtype = 'NONE'
 			a_socket_1.default_value = (0.0, 0.0, 0.0)
 			a_socket_1.min_value = -3.4028234663852886e+38
 			a_socket_1.max_value = 3.4028234663852886e+38
+			a_socket_1.subtype = 'NONE'
 			a_socket_1.attribute_domain = 'POINT'
 			a_socket_1.description = "First vector for the calculation, which draws a line to B"
 			
 			#Socket B
 			b_socket_1 = dihedral_angle.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketVector')
-			b_socket_1.subtype = 'NONE'
 			b_socket_1.default_value = (0.0, 0.0, 0.0)
 			b_socket_1.min_value = -3.4028234663852886e+38
 			b_socket_1.max_value = 3.4028234663852886e+38
+			b_socket_1.subtype = 'NONE'
 			b_socket_1.attribute_domain = 'POINT'
 			b_socket_1.description = "Second vector for the calculation, which receives a line from A and draws a line to C"
 			
 			#Socket C
 			c_socket_1 = dihedral_angle.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketVector')
-			c_socket_1.subtype = 'NONE'
 			c_socket_1.default_value = (0.0, 0.0, 0.0)
 			c_socket_1.min_value = -3.4028234663852886e+38
 			c_socket_1.max_value = 3.4028234663852886e+38
+			c_socket_1.subtype = 'NONE'
 			c_socket_1.attribute_domain = 'POINT'
 			c_socket_1.description = "Third vector for the calculation, which receives a line from B and draws a line to D"
 			
 			#Socket D
 			d_socket = dihedral_angle.interface.new_socket(name = "D", in_out='INPUT', socket_type = 'NodeSocketVector')
-			d_socket.subtype = 'NONE'
 			d_socket.default_value = (0.0, 0.0, 0.0)
 			d_socket.min_value = -3.4028234663852886e+38
 			d_socket.max_value = 3.4028234663852886e+38
+			d_socket.subtype = 'NONE'
 			d_socket.attribute_domain = 'POINT'
 			d_socket.description = "Last vector for the calculation, which is the end point of the line from D"
 			
@@ -1119,70 +1119,71 @@ class _MN_topo_phi_psi(bpy.types.Operator):
 			#_mn_topo_phi_psi interface
 			#Socket Angle
 			angle_socket_2 = _mn_topo_phi_psi.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket_2.subtype = 'ANGLE'
 			angle_socket_2.default_value = 0.0
 			angle_socket_2.min_value = -3.4028234663852886e+38
 			angle_socket_2.max_value = 3.4028234663852886e+38
+			angle_socket_2.subtype = 'ANGLE'
 			angle_socket_2.attribute_domain = 'POINT'
 			
 			#Socket BA⟂(BC)
 			ba__bc__socket_1 = _mn_topo_phi_psi.interface.new_socket(name = "BA⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			ba__bc__socket_1.subtype = 'NONE'
 			ba__bc__socket_1.default_value = (0.0, 0.0, 0.0)
 			ba__bc__socket_1.min_value = -3.4028234663852886e+38
 			ba__bc__socket_1.max_value = 3.4028234663852886e+38
+			ba__bc__socket_1.subtype = 'NONE'
 			ba__bc__socket_1.attribute_domain = 'POINT'
 			
 			#Socket CD⟂(BC)
 			cd__bc__socket_1 = _mn_topo_phi_psi.interface.new_socket(name = "CD⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			cd__bc__socket_1.subtype = 'NONE'
 			cd__bc__socket_1.default_value = (0.0, 0.0, 0.0)
 			cd__bc__socket_1.min_value = -3.4028234663852886e+38
 			cd__bc__socket_1.max_value = 3.4028234663852886e+38
+			cd__bc__socket_1.subtype = 'NONE'
 			cd__bc__socket_1.attribute_domain = 'POINT'
 			
 			#Socket BC
 			bc_socket_1 = _mn_topo_phi_psi.interface.new_socket(name = "BC", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			bc_socket_1.subtype = 'NONE'
 			bc_socket_1.default_value = (0.0, 0.0, 0.0)
 			bc_socket_1.min_value = -3.4028234663852886e+38
 			bc_socket_1.max_value = 3.4028234663852886e+38
+			bc_socket_1.subtype = 'NONE'
 			bc_socket_1.attribute_domain = 'POINT'
 			
 			#Socket A
 			a_socket_2 = _mn_topo_phi_psi.interface.new_socket(name = "A", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			a_socket_2.subtype = 'NONE'
 			a_socket_2.default_value = (0.0, 0.0, 0.0)
 			a_socket_2.min_value = -3.4028234663852886e+38
 			a_socket_2.max_value = 3.4028234663852886e+38
+			a_socket_2.subtype = 'NONE'
 			a_socket_2.attribute_domain = 'POINT'
 			
 			#Socket B
 			b_socket_2 = _mn_topo_phi_psi.interface.new_socket(name = "B", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			b_socket_2.subtype = 'NONE'
 			b_socket_2.default_value = (0.0, 0.0, 0.0)
 			b_socket_2.min_value = -3.4028234663852886e+38
 			b_socket_2.max_value = 3.4028234663852886e+38
+			b_socket_2.subtype = 'NONE'
 			b_socket_2.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket_2 = _mn_topo_phi_psi.interface.new_socket(name = "C", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			c_socket_2.subtype = 'NONE'
 			c_socket_2.default_value = (0.0, 0.0, 0.0)
 			c_socket_2.min_value = -3.4028234663852886e+38
 			c_socket_2.max_value = 3.4028234663852886e+38
+			c_socket_2.subtype = 'NONE'
 			c_socket_2.attribute_domain = 'POINT'
 			
 			#Socket D
 			d_socket_1 = _mn_topo_phi_psi.interface.new_socket(name = "D", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			d_socket_1.subtype = 'NONE'
 			d_socket_1.default_value = (0.0, 0.0, 0.0)
 			d_socket_1.min_value = -3.4028234663852886e+38
 			d_socket_1.max_value = 3.4028234663852886e+38
+			d_socket_1.subtype = 'NONE'
 			d_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Menu
 			menu_socket = _mn_topo_phi_psi.interface.new_socket(name = "Menu", in_out='INPUT', socket_type = 'NodeSocketMenu')
+			menu_socket.default_value = "Phi"
 			menu_socket.attribute_domain = 'POINT'
 			
 			

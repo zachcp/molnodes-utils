@@ -34,19 +34,19 @@ class MN_assembly_center(bpy.types.Operator):
 			
 			#Socket Old Centre
 			old_centre_socket = mn_assembly_center.interface.new_socket(name = "Old Centre", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			old_centre_socket.subtype = 'NONE'
 			old_centre_socket.default_value = (0.0, 0.0, 0.0)
 			old_centre_socket.min_value = -3.4028234663852886e+38
 			old_centre_socket.max_value = 3.4028234663852886e+38
+			old_centre_socket.subtype = 'NONE'
 			old_centre_socket.attribute_domain = 'POINT'
 			old_centre_socket.description = "The old centre point of the assembly"
 			
 			#Socket Transform Vector
 			transform_vector_socket = mn_assembly_center.interface.new_socket(name = "Transform Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			transform_vector_socket.subtype = 'NONE'
 			transform_vector_socket.default_value = (0.0, 0.0, 0.0)
 			transform_vector_socket.min_value = -3.4028234663852886e+38
 			transform_vector_socket.max_value = 3.4028234663852886e+38
+			transform_vector_socket.subtype = 'NONE'
 			transform_vector_socket.attribute_domain = 'POINT'
 			transform_vector_socket.description = "The transformation that was applied to the assembly"
 			
@@ -57,15 +57,16 @@ class MN_assembly_center(bpy.types.Operator):
 			
 			#Socket Center
 			center_socket = mn_assembly_center.interface.new_socket(name = "Center", in_out='INPUT', socket_type = 'NodeSocketBool')
+			center_socket.default_value = True
 			center_socket.attribute_domain = 'POINT'
 			center_socket.description = "Whether to center the assembly"
 			
 			#Socket Translation
 			translation_socket = mn_assembly_center.interface.new_socket(name = "Translation", in_out='INPUT', socket_type = 'NodeSocketVector')
-			translation_socket.subtype = 'TRANSLATION'
 			translation_socket.default_value = (0.0, 0.0, 0.0)
 			translation_socket.min_value = -3.4028234663852886e+38
 			translation_socket.max_value = 3.4028234663852886e+38
+			translation_socket.subtype = 'TRANSLATION'
 			translation_socket.attribute_domain = 'POINT'
 			translation_socket.description = "Additional translation to apply to the centered assembly"
 			

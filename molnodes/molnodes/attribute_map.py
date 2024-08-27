@@ -28,10 +28,10 @@ class Attribute_Map(bpy.types.Operator):
 			#attribute_map interface
 			#Socket Value
 			value_socket = attribute_map.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.0
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Sample Atoms
@@ -40,22 +40,23 @@ class Attribute_Map(bpy.types.Operator):
 			
 			#Socket Attribute
 			attribute_socket = attribute_map.interface.new_socket(name = "Attribute", in_out='INPUT', socket_type = 'NodeSocketString')
+			attribute_socket.default_value = "b_factor"
 			attribute_socket.attribute_domain = 'POINT'
 			
 			#Socket Value Min
 			value_min_socket = attribute_map.interface.new_socket(name = "Value Min", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_min_socket.subtype = 'NONE'
 			value_min_socket.default_value = 0.20000000298023224
 			value_min_socket.min_value = -10000.0
 			value_min_socket.max_value = 10000.0
+			value_min_socket.subtype = 'NONE'
 			value_min_socket.attribute_domain = 'POINT'
 			
 			#Socket Value Max
 			value_max_socket = attribute_map.interface.new_socket(name = "Value Max", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_max_socket.subtype = 'NONE'
 			value_max_socket.default_value = 3.0
 			value_max_socket.min_value = -10000.0
 			value_max_socket.max_value = 10000.0
+			value_max_socket.subtype = 'NONE'
 			value_max_socket.attribute_domain = 'POINT'
 			
 			

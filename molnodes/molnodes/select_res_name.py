@@ -28,21 +28,25 @@ class Select_Res_Name(bpy.types.Operator):
 			#select_res_name interface
 			#Socket Selection
 			selection_socket = select_res_name.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = select_res_name.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			inverted_socket.description = "The inverse of the calculated selection"
 			
 			#Socket And
 			and_socket = select_res_name.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = select_res_name.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
@@ -50,82 +54,102 @@ class Select_Res_Name(bpy.types.Operator):
 			protein_panel = select_res_name.interface.new_panel("Protein")
 			#Socket ALA
 			ala_socket = select_res_name.interface.new_socket(name = "ALA", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			ala_socket.default_value = False
 			ala_socket.attribute_domain = 'POINT'
 			
 			#Socket ARG
 			arg_socket = select_res_name.interface.new_socket(name = "ARG", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			arg_socket.default_value = False
 			arg_socket.attribute_domain = 'POINT'
 			
 			#Socket ASN
 			asn_socket = select_res_name.interface.new_socket(name = "ASN", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			asn_socket.default_value = False
 			asn_socket.attribute_domain = 'POINT'
 			
 			#Socket ASP
 			asp_socket = select_res_name.interface.new_socket(name = "ASP", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			asp_socket.default_value = False
 			asp_socket.attribute_domain = 'POINT'
 			
 			#Socket CYS
 			cys_socket = select_res_name.interface.new_socket(name = "CYS", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			cys_socket.default_value = False
 			cys_socket.attribute_domain = 'POINT'
 			
 			#Socket GLU
 			glu_socket = select_res_name.interface.new_socket(name = "GLU", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			glu_socket.default_value = False
 			glu_socket.attribute_domain = 'POINT'
 			
 			#Socket GLN
 			gln_socket = select_res_name.interface.new_socket(name = "GLN", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			gln_socket.default_value = False
 			gln_socket.attribute_domain = 'POINT'
 			
 			#Socket GLY
 			gly_socket = select_res_name.interface.new_socket(name = "GLY", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			gly_socket.default_value = False
 			gly_socket.attribute_domain = 'POINT'
 			
 			#Socket HIS
 			his_socket = select_res_name.interface.new_socket(name = "HIS", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			his_socket.default_value = False
 			his_socket.attribute_domain = 'POINT'
 			
 			#Socket ILE
 			ile_socket = select_res_name.interface.new_socket(name = "ILE", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			ile_socket.default_value = False
 			ile_socket.attribute_domain = 'POINT'
 			
 			#Socket LEU
 			leu_socket = select_res_name.interface.new_socket(name = "LEU", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			leu_socket.default_value = False
 			leu_socket.attribute_domain = 'POINT'
 			
 			#Socket LYS
 			lys_socket = select_res_name.interface.new_socket(name = "LYS", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			lys_socket.default_value = False
 			lys_socket.attribute_domain = 'POINT'
 			
 			#Socket MET
 			met_socket = select_res_name.interface.new_socket(name = "MET", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			met_socket.default_value = False
 			met_socket.attribute_domain = 'POINT'
 			
 			#Socket PHE
 			phe_socket = select_res_name.interface.new_socket(name = "PHE", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			phe_socket.default_value = False
 			phe_socket.attribute_domain = 'POINT'
 			
 			#Socket PRO
 			pro_socket = select_res_name.interface.new_socket(name = "PRO", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			pro_socket.default_value = False
 			pro_socket.attribute_domain = 'POINT'
 			
 			#Socket SER
 			ser_socket = select_res_name.interface.new_socket(name = "SER", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			ser_socket.default_value = False
 			ser_socket.attribute_domain = 'POINT'
 			
 			#Socket THR
 			thr_socket = select_res_name.interface.new_socket(name = "THR", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			thr_socket.default_value = False
 			thr_socket.attribute_domain = 'POINT'
 			
 			#Socket TRP
 			trp_socket = select_res_name.interface.new_socket(name = "TRP", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			trp_socket.default_value = False
 			trp_socket.attribute_domain = 'POINT'
 			
 			#Socket TYR
 			tyr_socket = select_res_name.interface.new_socket(name = "TYR", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			tyr_socket.default_value = False
 			tyr_socket.attribute_domain = 'POINT'
 			
 			#Socket VAL
 			val_socket = select_res_name.interface.new_socket(name = "VAL", in_out='INPUT', socket_type = 'NodeSocketBool', parent = protein_panel)
+			val_socket.default_value = False
 			val_socket.attribute_domain = 'POINT'
 			
 			
@@ -133,18 +157,22 @@ class Select_Res_Name(bpy.types.Operator):
 			dna_panel = select_res_name.interface.new_panel("DNA")
 			#Socket A
 			a_socket = select_res_name.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketBool', parent = dna_panel)
+			a_socket.default_value = False
 			a_socket.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket = select_res_name.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketBool', parent = dna_panel)
+			c_socket.default_value = False
 			c_socket.attribute_domain = 'POINT'
 			
 			#Socket G
 			g_socket = select_res_name.interface.new_socket(name = "G", in_out='INPUT', socket_type = 'NodeSocketBool', parent = dna_panel)
+			g_socket.default_value = False
 			g_socket.attribute_domain = 'POINT'
 			
 			#Socket T
 			t_socket = select_res_name.interface.new_socket(name = "T", in_out='INPUT', socket_type = 'NodeSocketBool', parent = dna_panel)
+			t_socket.default_value = False
 			t_socket.attribute_domain = 'POINT'
 			
 			
@@ -152,18 +180,22 @@ class Select_Res_Name(bpy.types.Operator):
 			rna_panel = select_res_name.interface.new_panel("RNA")
 			#Socket rA
 			ra_socket = select_res_name.interface.new_socket(name = "rA", in_out='INPUT', socket_type = 'NodeSocketBool', parent = rna_panel)
+			ra_socket.default_value = False
 			ra_socket.attribute_domain = 'POINT'
 			
 			#Socket rC
 			rc_socket = select_res_name.interface.new_socket(name = "rC", in_out='INPUT', socket_type = 'NodeSocketBool', parent = rna_panel)
+			rc_socket.default_value = False
 			rc_socket.attribute_domain = 'POINT'
 			
 			#Socket rG
 			rg_socket = select_res_name.interface.new_socket(name = "rG", in_out='INPUT', socket_type = 'NodeSocketBool', parent = rna_panel)
+			rg_socket.default_value = False
 			rg_socket.attribute_domain = 'POINT'
 			
 			#Socket rU
 			ru_socket = select_res_name.interface.new_socket(name = "rU", in_out='INPUT', socket_type = 'NodeSocketBool', parent = rna_panel)
+			ru_socket.default_value = False
 			ru_socket.attribute_domain = 'POINT'
 			
 			

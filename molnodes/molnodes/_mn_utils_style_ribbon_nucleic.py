@@ -33,14 +33,15 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			
 			#Socket Value
 			value_socket = _sampleatomvalue.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = (0.0, 0.0, 0.0)
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_1 = _sampleatomvalue.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			value_socket_1.default_value = (0.0, 0.0, 0.0, 0.0)
 			value_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Geometry
@@ -49,10 +50,10 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			
 			#Socket B
 			b_socket = _sampleatomvalue.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketInt')
-			b_socket.subtype = 'NONE'
 			b_socket.default_value = 57
 			b_socket.min_value = -2147483648
 			b_socket.max_value = 2147483647
+			b_socket.subtype = 'NONE'
 			b_socket.attribute_domain = 'POINT'
 			
 			
@@ -183,10 +184,12 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			#mn_select_nucleic_type interface
 			#Socket is_purine
 			is_purine_socket = mn_select_nucleic_type.interface.new_socket(name = "is_purine", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_purine_socket.default_value = False
 			is_purine_socket.attribute_domain = 'POINT'
 			
 			#Socket is_pyrimidine
 			is_pyrimidine_socket = mn_select_nucleic_type.interface.new_socket(name = "is_pyrimidine", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_pyrimidine_socket.default_value = False
 			is_pyrimidine_socket.attribute_domain = 'POINT'
 			
 			
@@ -417,34 +420,34 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			#_base_align interface
 			#Socket Base Interface
 			base_interface_socket = _base_align.interface.new_socket(name = "Base Interface", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			base_interface_socket.subtype = 'NONE'
 			base_interface_socket.default_value = (0.0, 0.0, 0.0)
 			base_interface_socket.min_value = -3.4028234663852886e+38
 			base_interface_socket.max_value = 3.4028234663852886e+38
+			base_interface_socket.subtype = 'NONE'
 			base_interface_socket.attribute_domain = 'POINT'
 			
 			#Socket Base Pivot
 			base_pivot_socket = _base_align.interface.new_socket(name = "Base Pivot", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			base_pivot_socket.subtype = 'NONE'
 			base_pivot_socket.default_value = (0.0, 0.0, 0.0)
 			base_pivot_socket.min_value = -3.4028234663852886e+38
 			base_pivot_socket.max_value = 3.4028234663852886e+38
+			base_pivot_socket.subtype = 'NONE'
 			base_pivot_socket.attribute_domain = 'POINT'
 			
 			#Socket Align Vertical
 			align_vertical_socket = _base_align.interface.new_socket(name = "Align Vertical", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			align_vertical_socket.subtype = 'NONE'
 			align_vertical_socket.default_value = (0.0, 0.0, 0.0)
 			align_vertical_socket.min_value = -3.4028234663852886e+38
 			align_vertical_socket.max_value = 3.4028234663852886e+38
+			align_vertical_socket.subtype = 'NONE'
 			align_vertical_socket.attribute_domain = 'POINT'
 			
 			#Socket Align Horizontal
 			align_horizontal_socket = _base_align.interface.new_socket(name = "Align Horizontal", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			align_horizontal_socket.subtype = 'NONE'
 			align_horizontal_socket.default_value = (0.0, 0.0, 0.0)
 			align_horizontal_socket.min_value = -3.4028234663852886e+38
 			align_horizontal_socket.max_value = 3.4028234663852886e+38
+			align_horizontal_socket.subtype = 'NONE'
 			align_horizontal_socket.attribute_domain = 'POINT'
 			
 			#Socket Input
@@ -599,30 +602,32 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			#group_pick interface
 			#Socket Is Valid
 			is_valid_socket = group_pick.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket.default_value = True
 			is_valid_socket.attribute_domain = 'POINT'
 			is_valid_socket.description = "Whether the pick is valid. Pick is only valid if a single item is picked in the Group ID"
 			
 			#Socket Index
 			index_socket = group_pick.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = 0
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			index_socket.description = "Index of picked item. Returns -1 if not a valid pick."
 			
 			#Socket Pick
 			pick_socket = group_pick.interface.new_socket(name = "Pick", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pick_socket.default_value = False
 			pick_socket.attribute_domain = 'POINT'
 			pick_socket.hide_value = True
 			pick_socket.description = "True for the item to pick from the group. If number of picks is 0 or more than 1, not a valid pick"
 			
 			#Socket Group ID
 			group_id_socket = group_pick.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket.subtype = 'NONE'
 			group_id_socket.default_value = 0
 			group_id_socket.min_value = -2147483648
 			group_id_socket.max_value = 2147483647
+			group_id_socket.subtype = 'NONE'
 			group_id_socket.attribute_domain = 'POINT'
 			group_id_socket.description = "Group ID inside which to pick the item"
 			
@@ -751,46 +756,48 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			#group_pick_vector interface
 			#Socket Is Valid
 			is_valid_socket_1 = group_pick_vector.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket_1.default_value = False
 			is_valid_socket_1.attribute_domain = 'POINT'
 			is_valid_socket_1.description = "The pick for this group is valid"
 			
 			#Socket Index
 			index_socket_1 = group_pick_vector.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket_1.subtype = 'NONE'
 			index_socket_1.default_value = 0
 			index_socket_1.min_value = -2147483648
 			index_socket_1.max_value = 2147483647
+			index_socket_1.subtype = 'NONE'
 			index_socket_1.attribute_domain = 'POINT'
 			index_socket_1.description = "Picked Index for the Group"
 			
 			#Socket Vector
 			vector_socket = group_pick_vector.interface.new_socket(name = "Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -3.4028234663852886e+38
 			vector_socket.max_value = 3.4028234663852886e+38
+			vector_socket.subtype = 'NONE'
 			vector_socket.attribute_domain = 'POINT'
 			vector_socket.description = "Picked vector for the group"
 			
 			#Socket Pick
 			pick_socket_1 = group_pick_vector.interface.new_socket(name = "Pick", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pick_socket_1.default_value = False
 			pick_socket_1.attribute_domain = 'POINT'
 			pick_socket_1.hide_value = True
 			
 			#Socket Group ID
 			group_id_socket_1 = group_pick_vector.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_1.subtype = 'NONE'
 			group_id_socket_1.default_value = 0
 			group_id_socket_1.min_value = -2147483648
 			group_id_socket_1.max_value = 2147483647
+			group_id_socket_1.subtype = 'NONE'
 			group_id_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Position
 			position_socket = group_pick_vector.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			position_socket.description = "Vector field to pick vlaue for, defaults to Position"
 			
@@ -874,35 +881,35 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			#offset_integer interface
 			#Socket Value
 			value_socket_2 = offset_integer.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			value_socket_2.subtype = 'NONE'
 			value_socket_2.default_value = 0
 			value_socket_2.min_value = -2147483648
 			value_socket_2.max_value = 2147483647
+			value_socket_2.subtype = 'NONE'
 			value_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket_2 = offset_integer.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket_2.subtype = 'NONE'
 			index_socket_2.default_value = 0
 			index_socket_2.min_value = 0
 			index_socket_2.max_value = 2147483647
+			index_socket_2.subtype = 'NONE'
 			index_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_3 = offset_integer.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketInt')
-			value_socket_3.subtype = 'NONE'
 			value_socket_3.default_value = 0
 			value_socket_3.min_value = -2147483648
 			value_socket_3.max_value = 2147483647
+			value_socket_3.subtype = 'NONE'
 			value_socket_3.attribute_domain = 'POINT'
 			value_socket_3.hide_value = True
 			
 			#Socket Offset
 			offset_socket = offset_integer.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 0
 			offset_socket.min_value = -2147483648
 			offset_socket.max_value = 2147483647
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -969,10 +976,10 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			#res_group_id interface
 			#Socket Unique Group ID
 			unique_group_id_socket = res_group_id.interface.new_socket(name = "Unique Group ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			unique_group_id_socket.subtype = 'NONE'
 			unique_group_id_socket.default_value = 0
 			unique_group_id_socket.min_value = -2147483648
 			unique_group_id_socket.max_value = 2147483647
+			unique_group_id_socket.subtype = 'NONE'
 			unique_group_id_socket.attribute_domain = 'POINT'
 			unique_group_id_socket.description = "A unique Group ID for eash residue"
 			
@@ -1144,55 +1151,57 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			#residue_mask interface
 			#Socket Is Valid
 			is_valid_socket_2 = residue_mask.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket_2.default_value = False
 			is_valid_socket_2.attribute_domain = 'POINT'
 			is_valid_socket_2.description = "Group contains only one occurrance of the selected atom. None or more than one returns False"
 			
 			#Socket Index
 			index_socket_3 = residue_mask.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket_3.subtype = 'NONE'
 			index_socket_3.default_value = 0
 			index_socket_3.min_value = -2147483648
 			index_socket_3.max_value = 2147483647
+			index_socket_3.subtype = 'NONE'
 			index_socket_3.attribute_domain = 'POINT'
 			index_socket_3.description = "Index for the group's atom with specified name, returns -1 if not valid"
 			
 			#Socket Position
 			position_socket_1 = residue_mask.interface.new_socket(name = "Position", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			position_socket_1.subtype = 'NONE'
 			position_socket_1.default_value = (0.0, 0.0, 0.0)
 			position_socket_1.min_value = -3.4028234663852886e+38
 			position_socket_1.max_value = 3.4028234663852886e+38
+			position_socket_1.subtype = 'NONE'
 			position_socket_1.attribute_domain = 'POINT'
 			position_socket_1.description = "Position of the picked point in the group, returns (0, 0, 0) if not valid"
 			
 			#Socket Group ID
 			group_id_socket_2 = residue_mask.interface.new_socket(name = "Group ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_2.subtype = 'NONE'
 			group_id_socket_2.default_value = 0
 			group_id_socket_2.min_value = -2147483648
 			group_id_socket_2.max_value = 2147483647
+			group_id_socket_2.subtype = 'NONE'
 			group_id_socket_2.attribute_domain = 'POINT'
 			
 			#Socket atom_name
 			atom_name_socket = residue_mask.interface.new_socket(name = "atom_name", in_out='INPUT', socket_type = 'NodeSocketInt')
-			atom_name_socket.subtype = 'NONE'
 			atom_name_socket.default_value = 1
 			atom_name_socket.min_value = 2
 			atom_name_socket.max_value = 2147483647
+			atom_name_socket.subtype = 'NONE'
 			atom_name_socket.attribute_domain = 'POINT'
 			atom_name_socket.description = "Atom to pick from the group"
 			
 			#Socket Use Fallback
 			use_fallback_socket = residue_mask.interface.new_socket(name = "Use Fallback", in_out='INPUT', socket_type = 'NodeSocketBool')
+			use_fallback_socket.default_value = True
 			use_fallback_socket.attribute_domain = 'POINT'
 			use_fallback_socket.description = "Uses a calculated Unique Group ID as a fallback. Disabling can increase performance if pre-computing a Group ID for multiple nodes"
 			
 			#Socket Group ID
 			group_id_socket_3 = residue_mask.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_3.subtype = 'NONE'
 			group_id_socket_3.default_value = 0
 			group_id_socket_3.min_value = -2147483648
 			group_id_socket_3.max_value = 2147483647
+			group_id_socket_3.subtype = 'NONE'
 			group_id_socket_3.attribute_domain = 'POINT'
 			
 			
@@ -1296,42 +1305,42 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			#_mn_constants_atom_name_nucleic interface
 			#Socket Backbone Lower
 			backbone_lower_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Backbone Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.default_value = 0
 			backbone_lower_socket.min_value = -2147483648
 			backbone_lower_socket.max_value = 2147483647
+			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Upper
 			backbone_upper_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Backbone Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.default_value = 0
 			backbone_upper_socket.min_value = -2147483648
 			backbone_upper_socket.max_value = 2147483647
+			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Lower
 			side_chain_lower_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Side Chain Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.default_value = 0
 			side_chain_lower_socket.min_value = -2147483648
 			side_chain_lower_socket.max_value = 2147483647
+			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Upper
 			side_chain_upper_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Side Chain Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.default_value = 0
 			side_chain_upper_socket.min_value = -2147483648
 			side_chain_upper_socket.max_value = 2147483647
+			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Joint Carbon
 			side_chain_joint_carbon_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Side Chain Joint Carbon", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_joint_carbon_socket.subtype = 'NONE'
 			side_chain_joint_carbon_socket.default_value = 0
 			side_chain_joint_carbon_socket.min_value = -2147483648
 			side_chain_joint_carbon_socket.max_value = 2147483647
+			side_chain_joint_carbon_socket.subtype = 'NONE'
 			side_chain_joint_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -1417,16 +1426,19 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			#_mn_select_nucleic interface
 			#Socket Is Backbone
 			is_backbone_socket = _mn_select_nucleic.interface.new_socket(name = "Is Backbone", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_backbone_socket.default_value = False
 			is_backbone_socket.attribute_domain = 'POINT'
 			is_backbone_socket.description = "True for atoms that are part of the sugar-phosphate backbone for the nucleotides"
 			
 			#Socket Is Side Chain
 			is_side_chain_socket = _mn_select_nucleic.interface.new_socket(name = "Is Side Chain", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_side_chain_socket.default_value = False
 			is_side_chain_socket.attribute_domain = 'POINT'
 			is_side_chain_socket.description = "True for atoms that are part of the bases for nucleotides."
 			
 			#Socket Is Nucleic
 			is_nucleic_socket = _mn_select_nucleic.interface.new_socket(name = "Is Nucleic", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_nucleic_socket.default_value = False
 			is_nucleic_socket.attribute_domain = 'POINT'
 			is_nucleic_socket.description = "True if the atoms are part of a nucleic acid"
 			
@@ -1601,14 +1613,17 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			#fallback_boolean interface
 			#Socket Boolean
 			boolean_socket = fallback_boolean.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket = fallback_boolean.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = ""
 			name_socket.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket = fallback_boolean.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketBool')
+			fallback_socket.default_value = False
 			fallback_socket.attribute_domain = 'POINT'
 			
 			
@@ -1673,20 +1688,24 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			#is_nucleic interface
 			#Socket Selection
 			selection_socket = is_nucleic.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "True if atoms are part of a nucleic acid"
 			
 			#Socket Inverted
 			inverted_socket = is_nucleic.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket = is_nucleic.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = is_nucleic.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
@@ -1795,6 +1814,7 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_1 = _mn_utils_style_ribbon_nucleic.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = True
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.hide_value = True
 			selection_socket_1.description = "Selection of atoms to apply this node to"
@@ -1806,36 +1826,38 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			
 			#Socket Intepolate Color
 			intepolate_color_socket = _mn_utils_style_ribbon_nucleic.interface.new_socket(name = "Intepolate Color", in_out='INPUT', socket_type = 'NodeSocketBool')
+			intepolate_color_socket.default_value = False
 			intepolate_color_socket.attribute_domain = 'POINT'
 			
 			#Panel Backbone
 			backbone_panel = _mn_utils_style_ribbon_nucleic.interface.new_panel("Backbone")
 			#Socket Backbone Subdivisions
 			backbone_subdivisions_socket = _mn_utils_style_ribbon_nucleic.interface.new_socket(name = "Backbone Subdivisions", in_out='INPUT', socket_type = 'NodeSocketInt', parent = backbone_panel)
-			backbone_subdivisions_socket.subtype = 'NONE'
 			backbone_subdivisions_socket.default_value = 3
 			backbone_subdivisions_socket.min_value = 1
 			backbone_subdivisions_socket.max_value = 10
+			backbone_subdivisions_socket.subtype = 'NONE'
 			backbone_subdivisions_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Resolution
 			backbone_resolution_socket = _mn_utils_style_ribbon_nucleic.interface.new_socket(name = "Backbone Resolution", in_out='INPUT', socket_type = 'NodeSocketInt', parent = backbone_panel)
-			backbone_resolution_socket.subtype = 'NONE'
 			backbone_resolution_socket.default_value = 8
 			backbone_resolution_socket.min_value = 3
 			backbone_resolution_socket.max_value = 50
+			backbone_resolution_socket.subtype = 'NONE'
 			backbone_resolution_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Radius
 			backbone_radius_socket = _mn_utils_style_ribbon_nucleic.interface.new_socket(name = "Backbone Radius", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = backbone_panel)
-			backbone_radius_socket.subtype = 'DISTANCE'
 			backbone_radius_socket.default_value = 2.0
 			backbone_radius_socket.min_value = 0.0
 			backbone_radius_socket.max_value = 3.4028234663852886e+38
+			backbone_radius_socket.subtype = 'DISTANCE'
 			backbone_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Shade Smooth
 			backbone_shade_smooth_socket = _mn_utils_style_ribbon_nucleic.interface.new_socket(name = "Backbone Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool', parent = backbone_panel)
+			backbone_shade_smooth_socket.default_value = True
 			backbone_shade_smooth_socket.attribute_domain = 'POINT'
 			
 			
@@ -1843,18 +1865,18 @@ class _MN_utils_style_ribbon_nucleic(bpy.types.Operator):
 			base_panel = _mn_utils_style_ribbon_nucleic.interface.new_panel("Base")
 			#Socket Base Radius
 			base_radius_socket = _mn_utils_style_ribbon_nucleic.interface.new_socket(name = "Base Radius", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = base_panel)
-			base_radius_socket.subtype = 'DISTANCE'
 			base_radius_socket.default_value = 0.20000000298023224
 			base_radius_socket.min_value = 0.0
 			base_radius_socket.max_value = 3.4028234663852886e+38
+			base_radius_socket.subtype = 'DISTANCE'
 			base_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Base Resolution
 			base_resolution_socket = _mn_utils_style_ribbon_nucleic.interface.new_socket(name = "Base Resolution", in_out='INPUT', socket_type = 'NodeSocketInt', parent = base_panel)
-			base_resolution_socket.subtype = 'NONE'
 			base_resolution_socket.default_value = 6
 			base_resolution_socket.min_value = 3
 			base_resolution_socket.max_value = 512
+			base_resolution_socket.subtype = 'NONE'
 			base_resolution_socket.attribute_domain = 'POINT'
 			
 			

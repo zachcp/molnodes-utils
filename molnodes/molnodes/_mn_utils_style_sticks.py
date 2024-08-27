@@ -28,10 +28,10 @@ class _MN_utils_style_sticks(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,26 +82,26 @@ class _MN_utils_style_sticks(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 3.0
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "A value which will be scaled appropriately for the world"
 			
@@ -188,41 +188,45 @@ class _MN_utils_style_sticks(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = _mn_utils_style_sticks.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Radius
 			radius_socket = _mn_utils_style_sticks.interface.new_socket(name = "Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radius_socket.subtype = 'NONE'
 			radius_socket.default_value = 0.30000001192092896
 			radius_socket.min_value = 0.0
 			radius_socket.max_value = 1.0
+			radius_socket.subtype = 'NONE'
 			radius_socket.attribute_domain = 'POINT'
 			radius_socket.description = "Radius of the bond mesh."
 			
 			#Socket Resolution
 			resolution_socket = _mn_utils_style_sticks.interface.new_socket(name = "Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			resolution_socket.subtype = 'NONE'
 			resolution_socket.default_value = 6
 			resolution_socket.min_value = 3
 			resolution_socket.max_value = 512
+			resolution_socket.subtype = 'NONE'
 			resolution_socket.attribute_domain = 'POINT'
 			resolution_socket.description = "Resolution of the created bond cylinders."
 			
 			#Socket Fill Caps
 			fill_caps_socket = _mn_utils_style_sticks.interface.new_socket(name = "Fill Caps", in_out='INPUT', socket_type = 'NodeSocketBool')
+			fill_caps_socket.default_value = False
 			fill_caps_socket.attribute_domain = 'POINT'
 			fill_caps_socket.description = "Fill the caps at each end of the bonds."
 			
 			#Socket Interpolate Color
 			interpolate_color_socket = _mn_utils_style_sticks.interface.new_socket(name = "Interpolate Color", in_out='INPUT', socket_type = 'NodeSocketBool')
+			interpolate_color_socket.default_value = False
 			interpolate_color_socket.attribute_domain = 'POINT'
 			
 			#Panel Material
 			material_panel = _mn_utils_style_sticks.interface.new_panel("Material")
 			#Socket Shade Smooth
 			shade_smooth_socket = _mn_utils_style_sticks.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool', parent = material_panel)
+			shade_smooth_socket.default_value = True
 			shade_smooth_socket.attribute_domain = 'POINT'
 			shade_smooth_socket.description = "Apply smooth shading to the created geometry"
 			

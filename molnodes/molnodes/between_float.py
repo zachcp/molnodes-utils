@@ -28,30 +28,31 @@ class Between_Float(bpy.types.Operator):
 			#between_float interface
 			#Socket Boolean
 			boolean_socket = between_float.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = between_float.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.0
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Lower
 			lower_socket = between_float.interface.new_socket(name = "Lower", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			lower_socket.subtype = 'NONE'
 			lower_socket.default_value = 0.0
 			lower_socket.min_value = -3.4028234663852886e+38
 			lower_socket.max_value = 3.4028234663852886e+38
+			lower_socket.subtype = 'NONE'
 			lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Upper
 			upper_socket = between_float.interface.new_socket(name = "Upper", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			upper_socket.subtype = 'NONE'
 			upper_socket.default_value = 0.0
 			upper_socket.min_value = -3.4028234663852886e+38
 			upper_socket.max_value = 3.4028234663852886e+38
+			upper_socket.subtype = 'NONE'
 			upper_socket.attribute_domain = 'POINT'
 			
 			

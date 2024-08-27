@@ -28,10 +28,10 @@ class NodeGroup_001(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,18 +82,18 @@ class NodeGroup_001(bpy.types.Operator):
 			#world_to_angstrom interface
 			#Socket Angstrom
 			angstrom_socket = world_to_angstrom.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket World
 			world_socket = world_to_angstrom.interface.new_socket(name = "World", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			world_socket.subtype = 'NONE'
 			world_socket.default_value = 0.5
 			world_socket.min_value = -10000.0
 			world_socket.max_value = 10000.0
+			world_socket.subtype = 'NONE'
 			world_socket.attribute_domain = 'POINT'
 			
 			
@@ -155,26 +155,26 @@ class NodeGroup_001(bpy.types.Operator):
 			#nodegroup_001 interface
 			#Socket Value
 			value_socket = nodegroup_001.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.0
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Vector
 			vector_socket = nodegroup_001.interface.new_socket(name = "Vector", in_out='INPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -10000.0
 			vector_socket.max_value = 10000.0
+			vector_socket.subtype = 'NONE'
 			vector_socket.attribute_domain = 'POINT'
 			
 			#Socket Vector
 			vector_socket_1 = nodegroup_001.interface.new_socket(name = "Vector", in_out='INPUT', socket_type = 'NodeSocketVector')
-			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.default_value = (0.0, 0.0, 0.0)
 			vector_socket_1.min_value = -10000.0
 			vector_socket_1.max_value = 10000.0
+			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.attribute_domain = 'POINT'
 			
 			

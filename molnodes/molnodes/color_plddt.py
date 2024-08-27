@@ -28,26 +28,31 @@ class Color_pLDDT(bpy.types.Operator):
 			#color_plddt interface
 			#Socket Color
 			color_socket = color_plddt.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			color_socket.description = "Assigned color based on the pLDTT score"
 			
 			#Socket <50
 			_50_socket = color_plddt.interface.new_socket(name = "<50", in_out='INPUT', socket_type = 'NodeSocketColor')
+			_50_socket.default_value = (1.0001691579818726, 0.20506973564624786, 0.05950700864195824, 1.0)
 			_50_socket.attribute_domain = 'POINT'
 			_50_socket.description = "Color for pLDTT < 50"
 			
 			#Socket <70
 			_70_socket = color_plddt.interface.new_socket(name = "<70", in_out='INPUT', socket_type = 'NodeSocketColor')
+			_70_socket.default_value = (1.0001686811447144, 0.7083451151847839, 0.006511816289275885, 1.0)
 			_70_socket.attribute_domain = 'POINT'
 			_70_socket.description = "Color for 50 < pLDTT < 70"
 			
 			#Socket <90
 			_90_socket = color_plddt.interface.new_socket(name = "<90", in_out='INPUT', socket_type = 'NodeSocketColor')
+			_90_socket.default_value = (0.13015742599964142, 0.5971758961677551, 0.8962045907974243, 1.0)
 			_90_socket.attribute_domain = 'POINT'
 			_90_socket.description = "Color for 70 < pLDTT < 90"
 			
 			#Socket >90
 			_90_socket_1 = color_plddt.interface.new_socket(name = ">90", in_out='INPUT', socket_type = 'NodeSocketColor')
+			_90_socket_1.default_value = (0.0, 0.08649647235870361, 0.6723945140838623, 1.0)
 			_90_socket_1.attribute_domain = 'POINT'
 			_90_socket_1.description = "Color for 90 < pLDTT"
 			

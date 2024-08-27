@@ -28,30 +28,32 @@ class Group_Pick(bpy.types.Operator):
 			#group_pick interface
 			#Socket Is Valid
 			is_valid_socket = group_pick.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket.default_value = True
 			is_valid_socket.attribute_domain = 'POINT'
 			is_valid_socket.description = "Whether the pick is valid. Pick is only valid if a single item is picked in the Group ID"
 			
 			#Socket Index
 			index_socket = group_pick.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = 0
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			index_socket.description = "Index of picked item. Returns -1 if not a valid pick."
 			
 			#Socket Pick
 			pick_socket = group_pick.interface.new_socket(name = "Pick", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pick_socket.default_value = False
 			pick_socket.attribute_domain = 'POINT'
 			pick_socket.hide_value = True
 			pick_socket.description = "True for the item to pick from the group. If number of picks is 0 or more than 1, not a valid pick"
 			
 			#Socket Group ID
 			group_id_socket = group_pick.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket.subtype = 'NONE'
 			group_id_socket.default_value = 0
 			group_id_socket.min_value = -2147483648
 			group_id_socket.max_value = 2147483647
+			group_id_socket.subtype = 'NONE'
 			group_id_socket.attribute_domain = 'POINT'
 			group_id_socket.description = "Group ID inside which to pick the item"
 			

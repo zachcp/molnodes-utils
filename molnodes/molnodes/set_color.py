@@ -39,12 +39,14 @@ class Set_Color(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = set_color.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Color
 			color_socket = set_color.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.16151699423789978, 0.6239609718322754, 0.19560199975967407, 1.0)
 			color_socket.attribute_domain = 'POINT'
 			color_socket.description = "Color to apply to the selected atoms"
 			

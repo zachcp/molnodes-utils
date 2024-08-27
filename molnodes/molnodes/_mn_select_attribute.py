@@ -28,24 +28,29 @@ class _MN_select_attribute(bpy.types.Operator):
 			#_mn_select_attribute interface
 			#Socket Selection
 			selection_socket = _mn_select_attribute.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			
 			#Socket Inverted
 			inverted_socket = _mn_select_attribute.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket = _mn_select_attribute.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = _mn_select_attribute.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
 			#Socket Name
 			name_socket = _mn_select_attribute.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = ""
 			name_socket.attribute_domain = 'POINT'
 			
 			

@@ -28,30 +28,32 @@ class Group_Pick_Vector(bpy.types.Operator):
 			#group_pick interface
 			#Socket Is Valid
 			is_valid_socket = group_pick.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket.default_value = True
 			is_valid_socket.attribute_domain = 'POINT'
 			is_valid_socket.description = "Whether the pick is valid. Pick is only valid if a single item is picked in the Group ID"
 			
 			#Socket Index
 			index_socket = group_pick.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = 0
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			index_socket.description = "Index of picked item. Returns -1 if not a valid pick."
 			
 			#Socket Pick
 			pick_socket = group_pick.interface.new_socket(name = "Pick", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pick_socket.default_value = False
 			pick_socket.attribute_domain = 'POINT'
 			pick_socket.hide_value = True
 			pick_socket.description = "True for the item to pick from the group. If number of picks is 0 or more than 1, not a valid pick"
 			
 			#Socket Group ID
 			group_id_socket = group_pick.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket.subtype = 'NONE'
 			group_id_socket.default_value = 0
 			group_id_socket.min_value = -2147483648
 			group_id_socket.max_value = 2147483647
+			group_id_socket.subtype = 'NONE'
 			group_id_socket.attribute_domain = 'POINT'
 			group_id_socket.description = "Group ID inside which to pick the item"
 			
@@ -180,46 +182,48 @@ class Group_Pick_Vector(bpy.types.Operator):
 			#group_pick_vector interface
 			#Socket Is Valid
 			is_valid_socket_1 = group_pick_vector.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket_1.default_value = False
 			is_valid_socket_1.attribute_domain = 'POINT'
 			is_valid_socket_1.description = "The pick for this group is valid"
 			
 			#Socket Index
 			index_socket_1 = group_pick_vector.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket_1.subtype = 'NONE'
 			index_socket_1.default_value = 0
 			index_socket_1.min_value = -2147483648
 			index_socket_1.max_value = 2147483647
+			index_socket_1.subtype = 'NONE'
 			index_socket_1.attribute_domain = 'POINT'
 			index_socket_1.description = "Picked Index for the Group"
 			
 			#Socket Vector
 			vector_socket = group_pick_vector.interface.new_socket(name = "Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -3.4028234663852886e+38
 			vector_socket.max_value = 3.4028234663852886e+38
+			vector_socket.subtype = 'NONE'
 			vector_socket.attribute_domain = 'POINT'
 			vector_socket.description = "Picked vector for the group"
 			
 			#Socket Pick
 			pick_socket_1 = group_pick_vector.interface.new_socket(name = "Pick", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pick_socket_1.default_value = False
 			pick_socket_1.attribute_domain = 'POINT'
 			pick_socket_1.hide_value = True
 			
 			#Socket Group ID
 			group_id_socket_1 = group_pick_vector.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_1.subtype = 'NONE'
 			group_id_socket_1.default_value = 0
 			group_id_socket_1.min_value = -2147483648
 			group_id_socket_1.max_value = 2147483647
+			group_id_socket_1.subtype = 'NONE'
 			group_id_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Position
 			position_socket = group_pick_vector.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			position_socket.description = "Vector field to pick vlaue for, defaults to Position"
 			

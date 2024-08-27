@@ -28,35 +28,35 @@ class _Topo_Count_Residues(bpy.types.Operator):
 			#offset_integer interface
 			#Socket Value
 			value_socket = offset_integer.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0
 			value_socket.min_value = -2147483648
 			value_socket.max_value = 2147483647
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket = offset_integer.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = 0
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_1 = offset_integer.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketInt')
-			value_socket_1.subtype = 'NONE'
 			value_socket_1.default_value = 0
 			value_socket_1.min_value = -2147483648
 			value_socket_1.max_value = 2147483647
+			value_socket_1.subtype = 'NONE'
 			value_socket_1.attribute_domain = 'POINT'
 			value_socket_1.hide_value = True
 			
 			#Socket Offset
 			offset_socket = offset_integer.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 0
 			offset_socket.min_value = -2147483648
 			offset_socket.max_value = 2147483647
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -123,45 +123,45 @@ class _Topo_Count_Residues(bpy.types.Operator):
 			#group_info interface
 			#Socket First Index
 			first_index_socket = group_info.interface.new_socket(name = "First Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			first_index_socket.subtype = 'NONE'
 			first_index_socket.default_value = 0
 			first_index_socket.min_value = -2147483648
 			first_index_socket.max_value = 2147483647
+			first_index_socket.subtype = 'NONE'
 			first_index_socket.attribute_domain = 'POINT'
 			first_index_socket.description = "Index of the first point in the group"
 			
 			#Socket Last Index
 			last_index_socket = group_info.interface.new_socket(name = "Last Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			last_index_socket.subtype = 'NONE'
 			last_index_socket.default_value = 0
 			last_index_socket.min_value = -2147483648
 			last_index_socket.max_value = 2147483647
+			last_index_socket.subtype = 'NONE'
 			last_index_socket.attribute_domain = 'POINT'
 			last_index_socket.description = "Index of the last point in the group"
 			
 			#Socket Index in Group
 			index_in_group_socket = group_info.interface.new_socket(name = "Index in Group", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_in_group_socket.subtype = 'NONE'
 			index_in_group_socket.default_value = 0
 			index_in_group_socket.min_value = -2147483648
 			index_in_group_socket.max_value = 2147483647
+			index_in_group_socket.subtype = 'NONE'
 			index_in_group_socket.attribute_domain = 'POINT'
 			
 			#Socket Size
 			size_socket = group_info.interface.new_socket(name = "Size", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			size_socket.subtype = 'NONE'
 			size_socket.default_value = 0
 			size_socket.min_value = -2147483648
 			size_socket.max_value = 2147483647
+			size_socket.subtype = 'NONE'
 			size_socket.attribute_domain = 'POINT'
 			size_socket.description = "Number of points in the group"
 			
 			#Socket Group ID
 			group_id_socket = group_info.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket.subtype = 'NONE'
 			group_id_socket.default_value = 0
 			group_id_socket.min_value = -2147483648
 			group_id_socket.max_value = 2147483647
+			group_id_socket.subtype = 'NONE'
 			group_id_socket.attribute_domain = 'POINT'
 			
 			
@@ -322,61 +322,61 @@ class _Topo_Count_Residues(bpy.types.Operator):
 			#_topo_count_residues interface
 			#Socket Counted Res ID
 			counted_res_id_socket = _topo_count_residues.interface.new_socket(name = "Counted Res ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			counted_res_id_socket.subtype = 'NONE'
 			counted_res_id_socket.default_value = 0
 			counted_res_id_socket.min_value = -2147483648
 			counted_res_id_socket.max_value = 2147483647
+			counted_res_id_socket.subtype = 'NONE'
 			counted_res_id_socket.attribute_domain = 'POINT'
 			
 			#Socket Total
 			total_socket = _topo_count_residues.interface.new_socket(name = "Total", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			total_socket.subtype = 'NONE'
 			total_socket.default_value = 0
 			total_socket.min_value = -2147483648
 			total_socket.max_value = 2147483647
+			total_socket.subtype = 'NONE'
 			total_socket.attribute_domain = 'POINT'
 			total_socket.description = "Total number of residues"
 			
 			#Socket First Res ID
 			first_res_id_socket = _topo_count_residues.interface.new_socket(name = "First Res ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			first_res_id_socket.subtype = 'NONE'
 			first_res_id_socket.default_value = 0
 			first_res_id_socket.min_value = -2147483648
 			first_res_id_socket.max_value = 2147483647
+			first_res_id_socket.subtype = 'NONE'
 			first_res_id_socket.attribute_domain = 'POINT'
 			first_res_id_socket.description = "Res ID value for the first residue"
 			
 			#Socket Last Res ID
 			last_res_id_socket = _topo_count_residues.interface.new_socket(name = "Last Res ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			last_res_id_socket.subtype = 'NONE'
 			last_res_id_socket.default_value = 0
 			last_res_id_socket.min_value = -2147483648
 			last_res_id_socket.max_value = 2147483647
+			last_res_id_socket.subtype = 'NONE'
 			last_res_id_socket.attribute_domain = 'POINT'
 			last_res_id_socket.description = "Res ID value for the last residue"
 			
 			#Socket Index First
 			index_first_socket = _topo_count_residues.interface.new_socket(name = "Index First", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_first_socket.subtype = 'NONE'
 			index_first_socket.default_value = 0
 			index_first_socket.min_value = -2147483648
 			index_first_socket.max_value = 2147483647
+			index_first_socket.subtype = 'NONE'
 			index_first_socket.attribute_domain = 'POINT'
 			
 			#Socket Index Last
 			index_last_socket = _topo_count_residues.interface.new_socket(name = "Index Last", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_last_socket.subtype = 'NONE'
 			index_last_socket.default_value = 0
 			index_last_socket.min_value = -2147483648
 			index_last_socket.max_value = 2147483647
+			index_last_socket.subtype = 'NONE'
 			index_last_socket.attribute_domain = 'POINT'
 			
 			#Socket Input
 			input_socket = _topo_count_residues.interface.new_socket(name = "Input", in_out='INPUT', socket_type = 'NodeSocketInt')
-			input_socket.subtype = 'NONE'
 			input_socket.default_value = 0
 			input_socket.min_value = -2147483648
 			input_socket.max_value = 2147483647
+			input_socket.subtype = 'NONE'
 			input_socket.attribute_domain = 'POINT'
 			
 			

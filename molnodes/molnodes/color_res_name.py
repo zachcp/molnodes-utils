@@ -28,30 +28,31 @@ class Color_Res_Name(bpy.types.Operator):
 			#between_integer interface
 			#Socket Boolean
 			boolean_socket = between_integer.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = between_integer.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketInt')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0
 			value_socket.min_value = -2147483648
 			value_socket.max_value = 2147483647
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Lower
 			lower_socket = between_integer.interface.new_socket(name = "Lower", in_out='INPUT', socket_type = 'NodeSocketInt')
-			lower_socket.subtype = 'NONE'
 			lower_socket.default_value = 0
 			lower_socket.min_value = -2147483648
 			lower_socket.max_value = 2147483647
+			lower_socket.subtype = 'NONE'
 			lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Upper
 			upper_socket = between_integer.interface.new_socket(name = "Upper", in_out='INPUT', socket_type = 'NodeSocketInt')
-			upper_socket.subtype = 'NONE'
 			upper_socket.default_value = 19
 			upper_socket.min_value = -2147483648
 			upper_socket.max_value = 2147483647
+			upper_socket.subtype = 'NONE'
 			upper_socket.attribute_domain = 'POINT'
 			
 			
@@ -131,88 +132,109 @@ class Color_Res_Name(bpy.types.Operator):
 			#color_res_name interface
 			#Socket Color
 			color_socket = color_res_name.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.800000011920929, 0.800000011920929, 0.800000011920929, 1.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Panel Peptide
 			peptide_panel = color_res_name.interface.new_panel("Peptide", default_closed=True)
 			#Socket ALA
 			ala_socket = color_res_name.interface.new_socket(name = "ALA", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			ala_socket.default_value = (0.0, 0.0, 0.0, 1.0)
 			ala_socket.attribute_domain = 'POINT'
 			
 			#Socket ARG
 			arg_socket = color_res_name.interface.new_socket(name = "ARG", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			arg_socket.default_value = (0.09462588280439377, 0.09462588280439377, 0.09462588280439377, 1.0)
 			arg_socket.attribute_domain = 'POINT'
 			
 			#Socket ASN
 			asn_socket = color_res_name.interface.new_socket(name = "ASN", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			asn_socket.default_value = (0.11411894112825394, 0.22025452554225922, 0.18504783511161804, 1.0)
 			asn_socket.attribute_domain = 'POINT'
 			
 			#Socket ASP
 			asp_socket = color_res_name.interface.new_socket(name = "ASP", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			asp_socket.default_value = (0.1408783346414566, 0.33738043904304504, 0.42922618985176086, 1.0)
 			asp_socket.attribute_domain = 'POINT'
 			
 			#Socket CYS
 			cys_socket = color_res_name.interface.new_socket(name = "CYS", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			cys_socket.default_value = (0.28100982308387756, 0.15101823210716248, 0.10579018294811249, 1.0)
 			cys_socket.attribute_domain = 'POINT'
 			
 			#Socket GLU
 			glu_socket = color_res_name.interface.new_socket(name = "GLU", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			glu_socket.default_value = (0.20190106332302094, 0.20190106332302094, 0.20190106332302094, 1.0)
 			glu_socket.attribute_domain = 'POINT'
 			
 			#Socket GLN
 			gln_socket = color_res_name.interface.new_socket(name = "GLN", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			gln_socket.default_value = (0.12770424783229828, 0.20473986864089966, 0.8000000715255737, 1.0)
 			gln_socket.attribute_domain = 'POINT'
 			
 			#Socket GLY
 			gly_socket = color_res_name.interface.new_socket(name = "GLY", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			gly_socket.default_value = (0.8000000715255737, 0.0689556673169136, 0.06778784096240997, 1.0)
 			gly_socket.attribute_domain = 'POINT'
 			
 			#Socket HIS
 			his_socket = color_res_name.interface.new_socket(name = "HIS", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			his_socket.default_value = (0.18364381790161133, 0.761273205280304, 0.3411029577255249, 1.0)
 			his_socket.attribute_domain = 'POINT'
 			
 			#Socket ILE
 			ile_socket = color_res_name.interface.new_socket(name = "ILE", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			ile_socket.default_value = (0.09119512140750885, 0.6266628503799438, 0.12943390011787415, 1.0)
 			ile_socket.attribute_domain = 'POINT'
 			
 			#Socket LEU
 			leu_socket = color_res_name.interface.new_socket(name = "LEU", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			leu_socket.default_value = (0.0366930328309536, 0.17026513814926147, 0.41093894839286804, 1.0)
 			leu_socket.attribute_domain = 'POINT'
 			
 			#Socket LYS
 			lys_socket = color_res_name.interface.new_socket(name = "LYS", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			lys_socket.default_value = (0.052218127995729446, 0.052218127995729446, 0.052218127995729446, 1.0)
 			lys_socket.attribute_domain = 'POINT'
 			
 			#Socket MET
 			met_socket = color_res_name.interface.new_socket(name = "MET", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			met_socket.default_value = (0.527719259262085, 0.45242294669151306, 0.49789106845855713, 1.0)
 			met_socket.attribute_domain = 'POINT'
 			
 			#Socket PHE
 			phe_socket = color_res_name.interface.new_socket(name = "PHE", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			phe_socket.default_value = (0.3588410019874573, 0.3051301836967468, 0.09418508410453796, 1.0)
 			phe_socket.attribute_domain = 'POINT'
 			
 			#Socket PRO
 			pro_socket = color_res_name.interface.new_socket(name = "PRO", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			pro_socket.default_value = (0.8000000715255737, 0.1718127280473709, 0.525249719619751, 1.0)
 			pro_socket.attribute_domain = 'POINT'
 			
 			#Socket SER
 			ser_socket = color_res_name.interface.new_socket(name = "SER", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			ser_socket.default_value = (0.8000000715255737, 0.7220579385757446, 0.051990706473588943, 1.0)
 			ser_socket.attribute_domain = 'POINT'
 			
 			#Socket THR
 			thr_socket = color_res_name.interface.new_socket(name = "THR", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			thr_socket.default_value = (0.10636822879314423, 1.0, 0.11561121791601181, 1.0)
 			thr_socket.attribute_domain = 'POINT'
 			
 			#Socket TRP
 			trp_socket = color_res_name.interface.new_socket(name = "TRP", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			trp_socket.default_value = (0.527719259262085, 0.1365669220685959, 0.4106137752532959, 1.0)
 			trp_socket.attribute_domain = 'POINT'
 			
 			#Socket TYR
 			tyr_socket = color_res_name.interface.new_socket(name = "TYR", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			tyr_socket.default_value = (0.08601968735456467, 0.36478209495544434, 0.6382719874382019, 1.0)
 			tyr_socket.attribute_domain = 'POINT'
 			
 			#Socket VAL
 			val_socket = color_res_name.interface.new_socket(name = "VAL", in_out='INPUT', socket_type = 'NodeSocketColor', parent = peptide_panel)
+			val_socket.default_value = (0.06929229199886322, 0.15196387469768524, 0.5596004128456116, 1.0)
 			val_socket.attribute_domain = 'POINT'
 			
 			
@@ -220,34 +242,42 @@ class Color_Res_Name(bpy.types.Operator):
 			nucleic_panel = color_res_name.interface.new_panel("Nucleic", default_closed=True)
 			#Socket A
 			a_socket = color_res_name.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketColor', parent = nucleic_panel)
+			a_socket.default_value = (0.2737779915332794, 0.5478230118751526, 0.800000011920929, 1.0)
 			a_socket.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket = color_res_name.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketColor', parent = nucleic_panel)
+			c_socket.default_value = (0.2945820093154907, 0.800000011920929, 0.18778899312019348, 1.0)
 			c_socket.attribute_domain = 'POINT'
 			
 			#Socket G
 			g_socket = color_res_name.interface.new_socket(name = "G", in_out='INPUT', socket_type = 'NodeSocketColor', parent = nucleic_panel)
+			g_socket.default_value = (0.8500000238418579, 0.2514023780822754, 0.17788057029247284, 1.0)
 			g_socket.attribute_domain = 'POINT'
 			
 			#Socket T
 			t_socket = color_res_name.interface.new_socket(name = "T", in_out='INPUT', socket_type = 'NodeSocketColor', parent = nucleic_panel)
+			t_socket.default_value = (0.800000011920929, 0.269802987575531, 0.5268980264663696, 1.0)
 			t_socket.attribute_domain = 'POINT'
 			
 			#Socket rA
 			ra_socket = color_res_name.interface.new_socket(name = "rA", in_out='INPUT', socket_type = 'NodeSocketColor', parent = nucleic_panel)
+			ra_socket.default_value = (0.2737779915332794, 0.5478230118751526, 0.800000011920929, 1.0)
 			ra_socket.attribute_domain = 'POINT'
 			
 			#Socket rC
 			rc_socket = color_res_name.interface.new_socket(name = "rC", in_out='INPUT', socket_type = 'NodeSocketColor', parent = nucleic_panel)
+			rc_socket.default_value = (0.2945820093154907, 0.800000011920929, 0.18778899312019348, 1.0)
 			rc_socket.attribute_domain = 'POINT'
 			
 			#Socket rG
 			rg_socket = color_res_name.interface.new_socket(name = "rG", in_out='INPUT', socket_type = 'NodeSocketColor', parent = nucleic_panel)
+			rg_socket.default_value = (0.8500000238418579, 0.2514023780822754, 0.17788057029247284, 1.0)
 			rg_socket.attribute_domain = 'POINT'
 			
 			#Socket rU
 			ru_socket = color_res_name.interface.new_socket(name = "rU", in_out='INPUT', socket_type = 'NodeSocketColor', parent = nucleic_panel)
+			ru_socket.default_value = (0.800000011920929, 0.269802987575531, 0.5268980264663696, 1.0)
 			ru_socket.attribute_domain = 'POINT'
 			
 			

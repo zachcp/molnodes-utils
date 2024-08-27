@@ -28,6 +28,7 @@ class Color_Attribute_Map(bpy.types.Operator):
 			#color_attribute_map interface
 			#Socket Color
 			color_socket = color_attribute_map.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			color_socket.description = "The mapped color value based on the attribute."
 			
@@ -35,24 +36,25 @@ class Color_Attribute_Map(bpy.types.Operator):
 			attribute_panel = color_attribute_map.interface.new_panel("Attribute")
 			#Socket Attribute Name
 			attribute_name_socket = color_attribute_map.interface.new_socket(name = "Attribute Name", in_out='INPUT', socket_type = 'NodeSocketString', parent = attribute_panel)
+			attribute_name_socket.default_value = "b_factor"
 			attribute_name_socket.attribute_domain = 'POINT'
 			attribute_name_socket.description = "Name of the attribute to map colors to"
 			
 			#Socket Attribute Min
 			attribute_min_socket = color_attribute_map.interface.new_socket(name = "Attribute Min", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = attribute_panel)
-			attribute_min_socket.subtype = 'NONE'
 			attribute_min_socket.default_value = 0.0
 			attribute_min_socket.min_value = -10000.0
 			attribute_min_socket.max_value = 10000.0
+			attribute_min_socket.subtype = 'NONE'
 			attribute_min_socket.attribute_domain = 'POINT'
 			attribute_min_socket.description = "Value for the attribute to be the minimum color"
 			
 			#Socket Attribute Max
 			attribute_max_socket = color_attribute_map.interface.new_socket(name = "Attribute Max", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = attribute_panel)
-			attribute_max_socket.subtype = 'NONE'
 			attribute_max_socket.default_value = 150.0
 			attribute_max_socket.min_value = -10000.0
 			attribute_max_socket.max_value = 10000.0
+			attribute_max_socket.subtype = 'NONE'
 			attribute_max_socket.attribute_domain = 'POINT'
 			attribute_max_socket.description = "Value for the attribute to be the maxium color"
 			
@@ -61,21 +63,25 @@ class Color_Attribute_Map(bpy.types.Operator):
 			color_panel = color_attribute_map.interface.new_panel("Color")
 			#Socket Color Use Mid
 			color_use_mid_socket = color_attribute_map.interface.new_socket(name = "Color Use Mid", in_out='INPUT', socket_type = 'NodeSocketBool', parent = color_panel)
+			color_use_mid_socket.default_value = True
 			color_use_mid_socket.attribute_domain = 'POINT'
 			color_use_mid_socket.description = "Wheter to interpolate through the 'Mid' color."
 			
 			#Socket Color Min
 			color_min_socket = color_attribute_map.interface.new_socket(name = "Color Min", in_out='INPUT', socket_type = 'NodeSocketColor', parent = color_panel)
+			color_min_socket.default_value = (0.07694950699806213, 0.4785124361515045, 0.5, 1.0)
 			color_min_socket.attribute_domain = 'POINT'
 			color_min_socket.description = "Color mapped to the minimum value of the attribute"
 			
 			#Socket Color Mid
 			color_mid_socket = color_attribute_map.interface.new_socket(name = "Color Mid", in_out='INPUT', socket_type = 'NodeSocketColor', parent = color_panel)
+			color_mid_socket.default_value = (0.5, 0.5, 0.5, 1.0)
 			color_mid_socket.attribute_domain = 'POINT'
 			color_mid_socket.description = "Color mapped to the middle value of the attribute"
 			
 			#Socket Color Max
 			color_max_socket = color_attribute_map.interface.new_socket(name = "Color Max", in_out='INPUT', socket_type = 'NodeSocketColor', parent = color_panel)
+			color_max_socket.default_value = (0.5, 0.15948081016540527, 0.058025065809488297, 1.0)
 			color_max_socket.attribute_domain = 'POINT'
 			color_max_socket.description = "Color mapped t othe maximum value of the attribute"
 			

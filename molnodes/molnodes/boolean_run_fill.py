@@ -28,19 +28,21 @@ class Boolean_Run_Fill(bpy.types.Operator):
 			#boolean_run_fill interface
 			#Socket Boolean
 			boolean_socket = boolean_run_fill.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Boolean
 			boolean_socket_1 = boolean_run_fill.interface.new_socket(name = "Boolean", in_out='INPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_1.default_value = False
 			boolean_socket_1.attribute_domain = 'POINT'
 			boolean_socket_1.description = "Boolean array to fill runs of False"
 			
 			#Socket Fill Size
 			fill_size_socket = boolean_run_fill.interface.new_socket(name = "Fill Size", in_out='INPUT', socket_type = 'NodeSocketInt')
-			fill_size_socket.subtype = 'NONE'
 			fill_size_socket.default_value = 3
 			fill_size_socket.min_value = -2147483648
 			fill_size_socket.max_value = 2147483647
+			fill_size_socket.subtype = 'NONE'
 			fill_size_socket.attribute_domain = 'POINT'
 			fill_size_socket.description = "Set a run of False to True if length equal or less than Fill Size"
 			

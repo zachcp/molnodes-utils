@@ -39,12 +39,14 @@ class MN_dna_bases(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = set_color.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Color
 			color_socket = set_color.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.16151699423789978, 0.6239609718322754, 0.19560199975967407, 1.0)
 			color_socket.attribute_domain = 'POINT'
 			color_socket.description = "Color to apply to the selected atoms"
 			
@@ -104,26 +106,29 @@ class MN_dna_bases(bpy.types.Operator):
 			#select_bonded interface
 			#Socket Selection
 			selection_socket_1 = select_bonded.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = False
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.description = "Expanded selection that includes the original selection"
 			
 			#Socket Bonded
 			bonded_socket = select_bonded.interface.new_socket(name = "Bonded", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			bonded_socket.default_value = False
 			bonded_socket.attribute_domain = 'POINT'
 			bonded_socket.description = "Expanded Selection that excludes the original selection"
 			
 			#Socket Selection
 			selection_socket_2 = select_bonded.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_2.default_value = False
 			selection_socket_2.attribute_domain = 'POINT'
 			selection_socket_2.hide_value = True
 			selection_socket_2.description = "Selection of atoms to apply this node to"
 			
 			#Socket Depth
 			depth_socket = select_bonded.interface.new_socket(name = "Depth", in_out='INPUT', socket_type = 'NodeSocketInt')
-			depth_socket.subtype = 'NONE'
 			depth_socket.default_value = 1
 			depth_socket.min_value = 0
 			depth_socket.max_value = 2147483647
+			depth_socket.subtype = 'NONE'
 			depth_socket.attribute_domain = 'POINT'
 			depth_socket.description = "Number of bonds to expand the selection by"
 			
@@ -243,6 +248,7 @@ class MN_dna_bases(bpy.types.Operator):
 			
 			#Socket Color
 			color_socket_1 = mn_dna_bases.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket_1.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Collection
@@ -251,26 +257,32 @@ class MN_dna_bases(bpy.types.Operator):
 			
 			#Socket dA
 			da_socket = mn_dna_bases.interface.new_socket(name = "dA", in_out='INPUT', socket_type = 'NodeSocketColor')
+			da_socket.default_value = (0.3064832389354706, 0.9674258828163147, 0.14814630150794983, 1.0)
 			da_socket.attribute_domain = 'POINT'
 			
 			#Socket dC
 			dc_socket = mn_dna_bases.interface.new_socket(name = "dC", in_out='INPUT', socket_type = 'NodeSocketColor')
+			dc_socket.default_value = (0.21314002573490143, 0.45463669300079346, 0.6208675503730774, 1.0)
 			dc_socket.attribute_domain = 'POINT'
 			
 			#Socket dG
 			dg_socket = mn_dna_bases.interface.new_socket(name = "dG", in_out='INPUT', socket_type = 'NodeSocketColor')
+			dg_socket.default_value = (0.7381805777549744, 0.24614499509334564, 0.8000000715255737, 1.0)
 			dg_socket.attribute_domain = 'POINT'
 			
 			#Socket dT
 			dt_socket = mn_dna_bases.interface.new_socket(name = "dT", in_out='INPUT', socket_type = 'NodeSocketColor')
+			dt_socket.default_value = (0.8000000715255737, 0.43615972995758057, 0.2251065969467163, 1.0)
 			dt_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Color
 			backbone_color_socket = mn_dna_bases.interface.new_socket(name = "Backbone Color", in_out='INPUT', socket_type = 'NodeSocketBool')
+			backbone_color_socket.default_value = True
 			backbone_color_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone
 			backbone_socket = mn_dna_bases.interface.new_socket(name = "Backbone", in_out='INPUT', socket_type = 'NodeSocketColor')
+			backbone_socket.default_value = (0.7991029620170593, 0.1094617024064064, 0.1247718334197998, 1.0)
 			backbone_socket.attribute_domain = 'POINT'
 			
 			

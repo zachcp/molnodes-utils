@@ -28,18 +28,18 @@ class _MN_animate_wiggle_mask_length(bpy.types.Operator):
 			#_mn_animate_wiggle_mask_length interface
 			#Socket Result
 			result_socket = _mn_animate_wiggle_mask_length.interface.new_socket(name = "Result", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			result_socket.subtype = 'NONE'
 			result_socket.default_value = 0
 			result_socket.min_value = -2147483648
 			result_socket.max_value = 2147483647
+			result_socket.subtype = 'NONE'
 			result_socket.attribute_domain = 'POINT'
 			
 			#Socket A
 			a_socket = _mn_animate_wiggle_mask_length.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketInt')
-			a_socket.subtype = 'NONE'
 			a_socket.default_value = 0
 			a_socket.min_value = -2147483648
 			a_socket.max_value = 2147483647
+			a_socket.subtype = 'NONE'
 			a_socket.attribute_domain = 'POINT'
 			
 			

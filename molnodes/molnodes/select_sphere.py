@@ -28,10 +28,10 @@ class Select_Sphere(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,26 +82,26 @@ class Select_Sphere(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 3.0
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "A value which will be scaled appropriately for the world"
 			
@@ -178,29 +178,33 @@ class Select_Sphere(bpy.types.Operator):
 			#select_sphere interface
 			#Socket Selection
 			selection_socket = select_sphere.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = select_sphere.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			inverted_socket.description = "The inverse of the calculated selection"
 			
 			#Socket 0..1
 			_0__1_socket = select_sphere.interface.new_socket(name = "0..1", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			_0__1_socket.subtype = 'NONE'
 			_0__1_socket.default_value = 0.0
 			_0__1_socket.min_value = -3.4028234663852886e+38
 			_0__1_socket.max_value = 3.4028234663852886e+38
+			_0__1_socket.subtype = 'NONE'
 			_0__1_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket = select_sphere.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = select_sphere.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
@@ -210,18 +214,18 @@ class Select_Sphere(bpy.types.Operator):
 			
 			#Socket From Min (A)
 			from_min__a__socket = select_sphere.interface.new_socket(name = "From Min (A)", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			from_min__a__socket.subtype = 'NONE'
 			from_min__a__socket.default_value = 0.0
 			from_min__a__socket.min_value = -10000.0
 			from_min__a__socket.max_value = 10000.0
+			from_min__a__socket.subtype = 'NONE'
 			from_min__a__socket.attribute_domain = 'POINT'
 			
 			#Socket From Max (A)
 			from_max__a__socket = select_sphere.interface.new_socket(name = "From Max (A)", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			from_max__a__socket.subtype = 'NONE'
 			from_max__a__socket.default_value = 10.0
 			from_max__a__socket.min_value = -10000.0
 			from_max__a__socket.max_value = 10000.0
+			from_max__a__socket.subtype = 'NONE'
 			from_max__a__socket.attribute_domain = 'POINT'
 			
 			

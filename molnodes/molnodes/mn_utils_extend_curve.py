@@ -37,26 +37,26 @@ class MN_utils_extend_curve(bpy.types.Operator):
 			
 			#Socket Smoothing Iterations
 			smoothing_iterations_socket = mn_utils_extend_curve.interface.new_socket(name = "Smoothing Iterations", in_out='INPUT', socket_type = 'NodeSocketInt')
-			smoothing_iterations_socket.subtype = 'NONE'
 			smoothing_iterations_socket.default_value = 4
 			smoothing_iterations_socket.min_value = 1
 			smoothing_iterations_socket.max_value = 1000
+			smoothing_iterations_socket.subtype = 'NONE'
 			smoothing_iterations_socket.attribute_domain = 'POINT'
 			
 			#Socket Smoothing Distance
 			smoothing_distance_socket = mn_utils_extend_curve.interface.new_socket(name = "Smoothing Distance", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			smoothing_distance_socket.subtype = 'DISTANCE'
 			smoothing_distance_socket.default_value = 1.0
 			smoothing_distance_socket.min_value = 0.009999999776482582
 			smoothing_distance_socket.max_value = 3.4028234663852886e+38
+			smoothing_distance_socket.subtype = 'DISTANCE'
 			smoothing_distance_socket.attribute_domain = 'POINT'
 			
 			#Socket Extend Distance
 			extend_distance_socket = mn_utils_extend_curve.interface.new_socket(name = "Extend Distance", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			extend_distance_socket.subtype = 'NONE'
 			extend_distance_socket.default_value = 6.5799994468688965
 			extend_distance_socket.min_value = -10000.0
 			extend_distance_socket.max_value = 10000.0
+			extend_distance_socket.subtype = 'NONE'
 			extend_distance_socket.attribute_domain = 'POINT'
 			
 			

@@ -28,10 +28,10 @@ class _curve_to_mesh(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,26 +82,26 @@ class _curve_to_mesh(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 3.0
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "A value which will be scaled appropriately for the world"
 			
@@ -191,22 +191,23 @@ class _curve_to_mesh(bpy.types.Operator):
 			
 			#Socket Resolution
 			resolution_socket = _curve_to_mesh.interface.new_socket(name = "Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			resolution_socket.subtype = 'NONE'
 			resolution_socket.default_value = 12
 			resolution_socket.min_value = 3
 			resolution_socket.max_value = 512
+			resolution_socket.subtype = 'NONE'
 			resolution_socket.attribute_domain = 'POINT'
 			
 			#Socket Fill Caps
 			fill_caps_socket = _curve_to_mesh.interface.new_socket(name = "Fill Caps", in_out='INPUT', socket_type = 'NodeSocketBool')
+			fill_caps_socket.default_value = False
 			fill_caps_socket.attribute_domain = 'POINT'
 			
 			#Socket Radius (A)
 			radius__a__socket = _curve_to_mesh.interface.new_socket(name = "Radius (A)", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radius__a__socket.subtype = 'NONE'
 			radius__a__socket.default_value = 0.20000000298023224
 			radius__a__socket.min_value = 0.0
 			radius__a__socket.max_value = 10000.0
+			radius__a__socket.subtype = 'NONE'
 			radius__a__socket.attribute_domain = 'POINT'
 			
 			

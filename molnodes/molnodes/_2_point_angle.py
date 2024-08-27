@@ -28,27 +28,27 @@ class _2_Point_Angle(bpy.types.Operator):
 			#vector_angle interface
 			#Socket Angle
 			angle_socket = vector_angle.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket.subtype = 'ANGLE'
 			angle_socket.default_value = 0.0
 			angle_socket.min_value = -3.4028234663852886e+38
 			angle_socket.max_value = 3.4028234663852886e+38
+			angle_socket.subtype = 'ANGLE'
 			angle_socket.attribute_domain = 'POINT'
 			angle_socket.description = "Angle between the two given vectors in radians"
 			
 			#Socket A
 			a_socket = vector_angle.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketVector')
-			a_socket.subtype = 'NONE'
 			a_socket.default_value = (0.0, 0.0, 0.0)
 			a_socket.min_value = -10000.0
 			a_socket.max_value = 10000.0
+			a_socket.subtype = 'NONE'
 			a_socket.attribute_domain = 'POINT'
 			
 			#Socket B
 			b_socket = vector_angle.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketVector')
-			b_socket.subtype = 'NONE'
 			b_socket.default_value = (0.0, 0.0, 0.0)
 			b_socket.min_value = -10000.0
 			b_socket.max_value = 10000.0
+			b_socket.subtype = 'NONE'
 			b_socket.attribute_domain = 'POINT'
 			
 			
@@ -130,28 +130,28 @@ class _2_Point_Angle(bpy.types.Operator):
 			#_2_point_angle interface
 			#Socket Angle
 			angle_socket_1 = _2_point_angle.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket_1.subtype = 'NONE'
 			angle_socket_1.default_value = 0.0
 			angle_socket_1.min_value = -3.4028234663852886e+38
 			angle_socket_1.max_value = 3.4028234663852886e+38
+			angle_socket_1.subtype = 'NONE'
 			angle_socket_1.attribute_domain = 'POINT'
 			angle_socket_1.description = "Angle of the line A -> Self -> C in radians"
 			
 			#Socket Index A
 			index_a_socket = _2_point_angle.interface.new_socket(name = "Index A", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_a_socket.subtype = 'NONE'
 			index_a_socket.default_value = 0
 			index_a_socket.min_value = 0
 			index_a_socket.max_value = 2147483647
+			index_a_socket.subtype = 'NONE'
 			index_a_socket.attribute_domain = 'POINT'
 			index_a_socket.description = "First end point for the angle calculation around the current point"
 			
 			#Socket Index C
 			index_c_socket = _2_point_angle.interface.new_socket(name = "Index C", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_c_socket.subtype = 'NONE'
 			index_c_socket.default_value = 2
 			index_c_socket.min_value = 0
 			index_c_socket.max_value = 2147483647
+			index_c_socket.subtype = 'NONE'
 			index_c_socket.attribute_domain = 'POINT'
 			index_c_socket.description = "Last end point for the angle calculation around the current point"
 			

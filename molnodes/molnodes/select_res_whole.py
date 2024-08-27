@@ -28,17 +28,20 @@ class Select_Res_Whole(bpy.types.Operator):
 			#select_res_whole interface
 			#Socket Selection
 			selection_socket = select_res_whole.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Selection
 			selection_socket_1 = select_res_whole.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = False
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.hide_value = True
 			selection_socket_1.description = "Selection of atoms to apply this node to"
 			
 			#Socket Expand
 			expand_socket = select_res_whole.interface.new_socket(name = "Expand", in_out='INPUT', socket_type = 'NodeSocketBool')
+			expand_socket.default_value = True
 			expand_socket.attribute_domain = 'POINT'
 			expand_socket.description = "Whether to expand the selection to the whole residue if at least one atom is selected"
 			

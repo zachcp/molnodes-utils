@@ -28,30 +28,34 @@ class Select_Res_ID(bpy.types.Operator):
 			#select_res_id interface
 			#Socket Selection
 			selection_socket = select_res_id.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = select_res_id.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			inverted_socket.description = "The inverse of the calculated selection"
 			
 			#Socket And
 			and_socket = select_res_id.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = select_res_id.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
 			#Socket Res ID
 			res_id_socket = select_res_id.interface.new_socket(name = "Res ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			res_id_socket.subtype = 'NONE'
 			res_id_socket.default_value = 10
 			res_id_socket.min_value = 0
 			res_id_socket.max_value = 2147483647
+			res_id_socket.subtype = 'NONE'
 			res_id_socket.attribute_domain = 'POINT'
 			res_id_socket.description = "A single `res_id` selection"
 			

@@ -28,75 +28,75 @@ class MN_animate_noise_field(bpy.types.Operator):
 			#mn_animate_noise_field interface
 			#Socket Noise
 			noise_socket = mn_animate_noise_field.interface.new_socket(name = "Noise", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			noise_socket.subtype = 'NONE'
 			noise_socket.default_value = (0.0, 0.0, 0.0)
 			noise_socket.min_value = -3.4028234663852886e+38
 			noise_socket.max_value = 3.4028234663852886e+38
+			noise_socket.subtype = 'NONE'
 			noise_socket.attribute_domain = 'POINT'
 			
 			#Socket Fac
 			fac_socket = mn_animate_noise_field.interface.new_socket(name = "Fac", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			fac_socket.subtype = 'NONE'
 			fac_socket.default_value = 0.0
 			fac_socket.min_value = -3.4028234663852886e+38
 			fac_socket.max_value = 3.4028234663852886e+38
+			fac_socket.subtype = 'NONE'
 			fac_socket.attribute_domain = 'POINT'
 			
 			#Socket Field
 			field_socket = mn_animate_noise_field.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketVector')
-			field_socket.subtype = 'NONE'
 			field_socket.default_value = (0.0, 0.0, 0.0)
 			field_socket.min_value = -3.4028234663852886e+38
 			field_socket.max_value = 3.4028234663852886e+38
+			field_socket.subtype = 'NONE'
 			field_socket.attribute_domain = 'POINT'
 			field_socket.hide_value = True
 			
 			#Socket Amplitude
 			amplitude_socket = mn_animate_noise_field.interface.new_socket(name = "Amplitude", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			amplitude_socket.subtype = 'NONE'
 			amplitude_socket.default_value = 0.25
 			amplitude_socket.min_value = -10000.0
 			amplitude_socket.max_value = 10000.0
+			amplitude_socket.subtype = 'NONE'
 			amplitude_socket.attribute_domain = 'POINT'
 			
 			#Socket Animate
 			animate_socket = mn_animate_noise_field.interface.new_socket(name = "Animate", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			animate_socket.subtype = 'NONE'
 			animate_socket.default_value = 0.0
 			animate_socket.min_value = -1000.0
 			animate_socket.max_value = 1000.0
+			animate_socket.subtype = 'NONE'
 			animate_socket.attribute_domain = 'POINT'
 			
 			#Socket Scale
 			scale_socket = mn_animate_noise_field.interface.new_socket(name = "Scale", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_socket.subtype = 'NONE'
 			scale_socket.default_value = 1.0
 			scale_socket.min_value = -1000.0
 			scale_socket.max_value = 1000.0
+			scale_socket.subtype = 'NONE'
 			scale_socket.attribute_domain = 'POINT'
 			
 			#Socket Detail
 			detail_socket = mn_animate_noise_field.interface.new_socket(name = "Detail", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			detail_socket.subtype = 'NONE'
 			detail_socket.default_value = 3.0
 			detail_socket.min_value = 0.0
 			detail_socket.max_value = 15.0
+			detail_socket.subtype = 'NONE'
 			detail_socket.attribute_domain = 'POINT'
 			
 			#Socket Roughness
 			roughness_socket = mn_animate_noise_field.interface.new_socket(name = "Roughness", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			roughness_socket.subtype = 'FACTOR'
 			roughness_socket.default_value = 1.0
 			roughness_socket.min_value = 0.0
 			roughness_socket.max_value = 1.0
+			roughness_socket.subtype = 'FACTOR'
 			roughness_socket.attribute_domain = 'POINT'
 			
 			#Socket Distortion
 			distortion_socket = mn_animate_noise_field.interface.new_socket(name = "Distortion", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			distortion_socket.subtype = 'NONE'
 			distortion_socket.default_value = 0.0
 			distortion_socket.min_value = -1000.0
 			distortion_socket.max_value = 1000.0
+			distortion_socket.subtype = 'NONE'
 			distortion_socket.attribute_domain = 'POINT'
 			
 			

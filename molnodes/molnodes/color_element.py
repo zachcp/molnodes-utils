@@ -28,88 +28,109 @@ class Color_Element(bpy.types.Operator):
 			#color_element interface
 			#Socket Color
 			color_socket = color_element.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 1.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Panel 1-20
 			_1_20_panel = color_element.interface.new_panel("1-20", default_closed=True)
 			#Socket H
 			h_socket = color_element.interface.new_socket(name = "H", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			h_socket.default_value = (1.0, 1.0, 1.0, 1.0)
 			h_socket.attribute_domain = 'POINT'
 			
 			#Socket He
 			he_socket = color_element.interface.new_socket(name = "He", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			he_socket.default_value = (0.8509804010391235, 1.0, 1.0, 1.0)
 			he_socket.attribute_domain = 'POINT'
 			
 			#Socket Li
 			li_socket = color_element.interface.new_socket(name = "Li", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			li_socket.default_value = (0.800000011920929, 0.501960813999176, 1.0, 1.0)
 			li_socket.attribute_domain = 'POINT'
 			
 			#Socket Be
 			be_socket = color_element.interface.new_socket(name = "Be", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			be_socket.default_value = (0.7607843279838562, 1.0, 0.0, 1.0)
 			be_socket.attribute_domain = 'POINT'
 			
 			#Socket B
 			b_socket = color_element.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			b_socket.default_value = (1.0, 0.7098039388656616, 0.7098039388656616, 1.0)
 			b_socket.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket = color_element.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			c_socket.default_value = (0.5647059082984924, 0.5647059082984924, 0.5647059082984924, 1.0)
 			c_socket.attribute_domain = 'POINT'
 			
 			#Socket N
 			n_socket = color_element.interface.new_socket(name = "N", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			n_socket.default_value = (0.1882352977991104, 0.3137255012989044, 0.9725490212440491, 1.0)
 			n_socket.attribute_domain = 'POINT'
 			
 			#Socket O
 			o_socket = color_element.interface.new_socket(name = "O", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			o_socket.default_value = (1.0, 0.05098039284348488, 0.05098039284348488, 1.0)
 			o_socket.attribute_domain = 'POINT'
 			
 			#Socket F
 			f_socket = color_element.interface.new_socket(name = "F", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			f_socket.default_value = (0.5647059082984924, 0.8784313797950745, 0.3137255012989044, 1.0)
 			f_socket.attribute_domain = 'POINT'
 			
 			#Socket Ne
 			ne_socket = color_element.interface.new_socket(name = "Ne", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			ne_socket.default_value = (0.7019608020782471, 0.8901960849761963, 0.9607843160629272, 1.0)
 			ne_socket.attribute_domain = 'POINT'
 			
 			#Socket Na
 			na_socket = color_element.interface.new_socket(name = "Na", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			na_socket.default_value = (0.6705882549285889, 0.3607843220233917, 0.9490196108818054, 1.0)
 			na_socket.attribute_domain = 'POINT'
 			
 			#Socket Mg
 			mg_socket = color_element.interface.new_socket(name = "Mg", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			mg_socket.default_value = (0.5411764979362488, 1.0, 0.0, 1.0)
 			mg_socket.attribute_domain = 'POINT'
 			
 			#Socket Al
 			al_socket = color_element.interface.new_socket(name = "Al", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			al_socket.default_value = (0.7490196228027344, 0.6509804129600525, 0.6509804129600525, 1.0)
 			al_socket.attribute_domain = 'POINT'
 			
 			#Socket Si
 			si_socket = color_element.interface.new_socket(name = "Si", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			si_socket.default_value = (0.9411764740943909, 0.7843137383460999, 0.6274510025978088, 1.0)
 			si_socket.attribute_domain = 'POINT'
 			
 			#Socket P
 			p_socket = color_element.interface.new_socket(name = "P", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			p_socket.default_value = (1.0, 0.501960813999176, 0.0, 1.0)
 			p_socket.attribute_domain = 'POINT'
 			
 			#Socket S
 			s_socket = color_element.interface.new_socket(name = "S", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			s_socket.default_value = (1.0, 1.0, 0.1882352977991104, 1.0)
 			s_socket.attribute_domain = 'POINT'
 			
 			#Socket Cl
 			cl_socket = color_element.interface.new_socket(name = "Cl", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			cl_socket.default_value = (0.12156862765550613, 0.9411764740943909, 0.12156862765550613, 1.0)
 			cl_socket.attribute_domain = 'POINT'
 			
 			#Socket Ar
 			ar_socket = color_element.interface.new_socket(name = "Ar", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			ar_socket.default_value = (0.501960813999176, 0.8196078538894653, 0.8901960849761963, 1.0)
 			ar_socket.attribute_domain = 'POINT'
 			
 			#Socket K
 			k_socket = color_element.interface.new_socket(name = "K", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			k_socket.default_value = (0.5607843399047852, 0.250980406999588, 0.8313725590705872, 1.0)
 			k_socket.attribute_domain = 'POINT'
 			
 			#Socket Ca
 			ca_socket = color_element.interface.new_socket(name = "Ca", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _1_20_panel)
+			ca_socket.default_value = (0.239215686917305, 1.0, 0.0, 1.0)
 			ca_socket.attribute_domain = 'POINT'
 			
 			
@@ -117,82 +138,102 @@ class Color_Element(bpy.types.Operator):
 			_21_40_panel = color_element.interface.new_panel("21-40", default_closed=True)
 			#Socket Sc
 			sc_socket = color_element.interface.new_socket(name = "Sc", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			sc_socket.default_value = (0.9019607901573181, 0.9019607901573181, 0.9019607901573181, 1.0)
 			sc_socket.attribute_domain = 'POINT'
 			
 			#Socket Ti
 			ti_socket = color_element.interface.new_socket(name = "Ti", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			ti_socket.default_value = (0.7490196228027344, 0.7607843279838562, 0.7803921699523926, 1.0)
 			ti_socket.attribute_domain = 'POINT'
 			
 			#Socket V
 			v_socket = color_element.interface.new_socket(name = "V", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			v_socket.default_value = (0.6509804129600525, 0.6509804129600525, 0.6705882549285889, 1.0)
 			v_socket.attribute_domain = 'POINT'
 			
 			#Socket Cr
 			cr_socket = color_element.interface.new_socket(name = "Cr", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			cr_socket.default_value = (0.5411764979362488, 0.6000000238418579, 0.7803921699523926, 1.0)
 			cr_socket.attribute_domain = 'POINT'
 			
 			#Socket Mn
 			mn_socket = color_element.interface.new_socket(name = "Mn", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			mn_socket.default_value = (0.6117647290229797, 0.47843137383461, 0.7803921699523926, 1.0)
 			mn_socket.attribute_domain = 'POINT'
 			
 			#Socket Fe
 			fe_socket = color_element.interface.new_socket(name = "Fe", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			fe_socket.default_value = (0.8784313797950745, 0.4000000059604645, 0.20000000298023224, 1.0)
 			fe_socket.attribute_domain = 'POINT'
 			
 			#Socket Co
 			co_socket = color_element.interface.new_socket(name = "Co", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			co_socket.default_value = (1.0, 0.8509804010391235, 0.5607843399047852, 1.0)
 			co_socket.attribute_domain = 'POINT'
 			
 			#Socket Ni
 			ni_socket = color_element.interface.new_socket(name = "Ni", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			ni_socket.default_value = (0.7803921699523926, 0.5411764979362488, 0.5411764979362488, 1.0)
 			ni_socket.attribute_domain = 'POINT'
 			
 			#Socket Cu
 			cu_socket = color_element.interface.new_socket(name = "Cu", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			cu_socket.default_value = (0.7843137383460999, 0.501960813999176, 0.20000000298023224, 1.0)
 			cu_socket.attribute_domain = 'POINT'
 			
 			#Socket Zn
 			zn_socket = color_element.interface.new_socket(name = "Zn", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			zn_socket.default_value = (0.4901960790157318, 0.501960813999176, 0.6901960968971252, 1.0)
 			zn_socket.attribute_domain = 'POINT'
 			
 			#Socket Ga
 			ga_socket = color_element.interface.new_socket(name = "Ga", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			ga_socket.default_value = (0.7607843279838562, 0.5607843399047852, 0.5607843399047852, 1.0)
 			ga_socket.attribute_domain = 'POINT'
 			
 			#Socket Ge
 			ge_socket = color_element.interface.new_socket(name = "Ge", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			ge_socket.default_value = (0.4000000059604645, 0.5607843399047852, 0.5607843399047852, 1.0)
 			ge_socket.attribute_domain = 'POINT'
 			
 			#Socket As
 			as_socket = color_element.interface.new_socket(name = "As", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			as_socket.default_value = (0.7411764860153198, 0.501960813999176, 0.8901960849761963, 1.0)
 			as_socket.attribute_domain = 'POINT'
 			
 			#Socket Se
 			se_socket = color_element.interface.new_socket(name = "Se", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			se_socket.default_value = (1.0, 0.6313725709915161, 0.0, 1.0)
 			se_socket.attribute_domain = 'POINT'
 			
 			#Socket Br
 			br_socket = color_element.interface.new_socket(name = "Br", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			br_socket.default_value = (0.6509804129600525, 0.16078431904315948, 0.16078431904315948, 1.0)
 			br_socket.attribute_domain = 'POINT'
 			
 			#Socket Kr
 			kr_socket = color_element.interface.new_socket(name = "Kr", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			kr_socket.default_value = (0.3607843220233917, 0.7215686440467834, 0.8196078538894653, 1.0)
 			kr_socket.attribute_domain = 'POINT'
 			
 			#Socket Rb
 			rb_socket = color_element.interface.new_socket(name = "Rb", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			rb_socket.default_value = (0.43921568989753723, 0.18039216101169586, 0.6901960968971252, 1.0)
 			rb_socket.attribute_domain = 'POINT'
 			
 			#Socket Sr
 			sr_socket = color_element.interface.new_socket(name = "Sr", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			sr_socket.default_value = (0.0, 1.0, 0.0, 1.0)
 			sr_socket.attribute_domain = 'POINT'
 			
 			#Socket Y
 			y_socket = color_element.interface.new_socket(name = "Y", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			y_socket.default_value = (0.5803921818733215, 1.0, 1.0, 1.0)
 			y_socket.attribute_domain = 'POINT'
 			
 			#Socket Zr
 			zr_socket = color_element.interface.new_socket(name = "Zr", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _21_40_panel)
+			zr_socket.default_value = (0.5803921818733215, 0.8784313797950745, 0.8784313797950745, 1.0)
 			zr_socket.attribute_domain = 'POINT'
 			
 			
@@ -200,82 +241,102 @@ class Color_Element(bpy.types.Operator):
 			_41_60_panel = color_element.interface.new_panel("41-60", default_closed=True)
 			#Socket Nb
 			nb_socket = color_element.interface.new_socket(name = "Nb", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			nb_socket.default_value = (0.45098039507865906, 0.7607843279838562, 0.7882353067398071, 1.0)
 			nb_socket.attribute_domain = 'POINT'
 			
 			#Socket Mo
 			mo_socket = color_element.interface.new_socket(name = "Mo", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			mo_socket.default_value = (0.3294117748737335, 0.7098039388656616, 0.7098039388656616, 1.0)
 			mo_socket.attribute_domain = 'POINT'
 			
 			#Socket Tc
 			tc_socket = color_element.interface.new_socket(name = "Tc", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			tc_socket.default_value = (0.23137255012989044, 0.6196078658103943, 0.6196078658103943, 1.0)
 			tc_socket.attribute_domain = 'POINT'
 			
 			#Socket Ru
 			ru_socket = color_element.interface.new_socket(name = "Ru", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			ru_socket.default_value = (0.1411764770746231, 0.4901960790157318, 0.4901960790157318, 1.0)
 			ru_socket.attribute_domain = 'POINT'
 			
 			#Socket Rh
 			rh_socket = color_element.interface.new_socket(name = "Rh", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			rh_socket.default_value = (0.03921568766236305, 0.4901960790157318, 0.5490196347236633, 1.0)
 			rh_socket.attribute_domain = 'POINT'
 			
 			#Socket Pd
 			pd_socket = color_element.interface.new_socket(name = "Pd", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			pd_socket.default_value = (0.0, 0.4117647111415863, 0.5215686559677124, 1.0)
 			pd_socket.attribute_domain = 'POINT'
 			
 			#Socket Ag
 			ag_socket = color_element.interface.new_socket(name = "Ag", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			ag_socket.default_value = (0.7529411911964417, 0.7529411911964417, 0.7529411911964417, 1.0)
 			ag_socket.attribute_domain = 'POINT'
 			
 			#Socket Cd
 			cd_socket = color_element.interface.new_socket(name = "Cd", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			cd_socket.default_value = (1.0, 0.8509804010391235, 0.5607843399047852, 1.0)
 			cd_socket.attribute_domain = 'POINT'
 			
 			#Socket In
 			in_socket = color_element.interface.new_socket(name = "In", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			in_socket.default_value = (0.6509804129600525, 0.4588235318660736, 0.45098039507865906, 1.0)
 			in_socket.attribute_domain = 'POINT'
 			
 			#Socket Sn
 			sn_socket = color_element.interface.new_socket(name = "Sn", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			sn_socket.default_value = (0.4000000059604645, 0.501960813999176, 0.501960813999176, 1.0)
 			sn_socket.attribute_domain = 'POINT'
 			
 			#Socket Sb
 			sb_socket = color_element.interface.new_socket(name = "Sb", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			sb_socket.default_value = (0.6196078658103943, 0.38823530077934265, 0.7098039388656616, 1.0)
 			sb_socket.attribute_domain = 'POINT'
 			
 			#Socket Te
 			te_socket = color_element.interface.new_socket(name = "Te", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			te_socket.default_value = (0.8313725590705872, 0.47843137383461, 0.0, 1.0)
 			te_socket.attribute_domain = 'POINT'
 			
 			#Socket I
 			i_socket = color_element.interface.new_socket(name = "I", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			i_socket.default_value = (0.5803921818733215, 0.0, 0.5803921818733215, 1.0)
 			i_socket.attribute_domain = 'POINT'
 			
 			#Socket Xe
 			xe_socket = color_element.interface.new_socket(name = "Xe", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			xe_socket.default_value = (0.25882354378700256, 0.6196078658103943, 0.6901960968971252, 1.0)
 			xe_socket.attribute_domain = 'POINT'
 			
 			#Socket Cs
 			cs_socket = color_element.interface.new_socket(name = "Cs", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			cs_socket.default_value = (0.34117648005485535, 0.09019608050584793, 0.5607843399047852, 1.0)
 			cs_socket.attribute_domain = 'POINT'
 			
 			#Socket Ba
 			ba_socket = color_element.interface.new_socket(name = "Ba", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			ba_socket.default_value = (0.0, 0.7882353067398071, 0.0, 1.0)
 			ba_socket.attribute_domain = 'POINT'
 			
 			#Socket La
 			la_socket = color_element.interface.new_socket(name = "La", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			la_socket.default_value = (0.43921568989753723, 0.8313725590705872, 1.0, 1.0)
 			la_socket.attribute_domain = 'POINT'
 			
 			#Socket Ce
 			ce_socket = color_element.interface.new_socket(name = "Ce", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			ce_socket.default_value = (1.0, 1.0, 0.7803921699523926, 1.0)
 			ce_socket.attribute_domain = 'POINT'
 			
 			#Socket Pr
 			pr_socket = color_element.interface.new_socket(name = "Pr", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			pr_socket.default_value = (0.8509804010391235, 1.0, 0.7803921699523926, 1.0)
 			pr_socket.attribute_domain = 'POINT'
 			
 			#Socket Nd
 			nd_socket = color_element.interface.new_socket(name = "Nd", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _41_60_panel)
+			nd_socket.default_value = (0.7803921699523926, 1.0, 0.7803921699523926, 1.0)
 			nd_socket.attribute_domain = 'POINT'
 			
 			
@@ -283,82 +344,102 @@ class Color_Element(bpy.types.Operator):
 			_61_80_panel = color_element.interface.new_panel("61-80", default_closed=True)
 			#Socket Pm
 			pm_socket = color_element.interface.new_socket(name = "Pm", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			pm_socket.default_value = (0.6392157077789307, 1.0, 0.7803921699523926, 1.0)
 			pm_socket.attribute_domain = 'POINT'
 			
 			#Socket Sm
 			sm_socket = color_element.interface.new_socket(name = "Sm", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			sm_socket.default_value = (0.5607843399047852, 1.0, 0.7803921699523926, 1.0)
 			sm_socket.attribute_domain = 'POINT'
 			
 			#Socket Eu
 			eu_socket = color_element.interface.new_socket(name = "Eu", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			eu_socket.default_value = (0.3803921639919281, 1.0, 0.7803921699523926, 1.0)
 			eu_socket.attribute_domain = 'POINT'
 			
 			#Socket Gd
 			gd_socket = color_element.interface.new_socket(name = "Gd", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			gd_socket.default_value = (0.2705882489681244, 1.0, 0.7803921699523926, 1.0)
 			gd_socket.attribute_domain = 'POINT'
 			
 			#Socket Tb
 			tb_socket = color_element.interface.new_socket(name = "Tb", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			tb_socket.default_value = (0.1882352977991104, 1.0, 0.7803921699523926, 1.0)
 			tb_socket.attribute_domain = 'POINT'
 			
 			#Socket Dy
 			dy_socket = color_element.interface.new_socket(name = "Dy", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			dy_socket.default_value = (0.12156862765550613, 1.0, 0.7803921699523926, 1.0)
 			dy_socket.attribute_domain = 'POINT'
 			
 			#Socket Ho
 			ho_socket = color_element.interface.new_socket(name = "Ho", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			ho_socket.default_value = (0.0, 1.0, 0.6117647290229797, 1.0)
 			ho_socket.attribute_domain = 'POINT'
 			
 			#Socket Er
 			er_socket = color_element.interface.new_socket(name = "Er", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			er_socket.default_value = (0.0, 0.9019607901573181, 0.4588235318660736, 1.0)
 			er_socket.attribute_domain = 'POINT'
 			
 			#Socket Tm
 			tm_socket = color_element.interface.new_socket(name = "Tm", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			tm_socket.default_value = (0.0, 0.8313725590705872, 0.32156863808631897, 1.0)
 			tm_socket.attribute_domain = 'POINT'
 			
 			#Socket Yb
 			yb_socket = color_element.interface.new_socket(name = "Yb", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			yb_socket.default_value = (0.0, 0.7490196228027344, 0.21960784494876862, 1.0)
 			yb_socket.attribute_domain = 'POINT'
 			
 			#Socket Lu
 			lu_socket = color_element.interface.new_socket(name = "Lu", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			lu_socket.default_value = (0.0, 0.6705882549285889, 0.1411764770746231, 1.0)
 			lu_socket.attribute_domain = 'POINT'
 			
 			#Socket Hf
 			hf_socket = color_element.interface.new_socket(name = "Hf", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			hf_socket.default_value = (0.3019607961177826, 0.7607843279838562, 1.0, 1.0)
 			hf_socket.attribute_domain = 'POINT'
 			
 			#Socket Ta
 			ta_socket = color_element.interface.new_socket(name = "Ta", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			ta_socket.default_value = (0.3019607961177826, 0.6509804129600525, 1.0, 1.0)
 			ta_socket.attribute_domain = 'POINT'
 			
 			#Socket W
 			w_socket = color_element.interface.new_socket(name = "W", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			w_socket.default_value = (0.12941177189350128, 0.5803921818733215, 0.8392156958580017, 1.0)
 			w_socket.attribute_domain = 'POINT'
 			
 			#Socket Re
 			re_socket = color_element.interface.new_socket(name = "Re", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			re_socket.default_value = (0.14901961386203766, 0.4901960790157318, 0.6705882549285889, 1.0)
 			re_socket.attribute_domain = 'POINT'
 			
 			#Socket Os
 			os_socket = color_element.interface.new_socket(name = "Os", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			os_socket.default_value = (0.14901961386203766, 0.4000000059604645, 0.5882353186607361, 1.0)
 			os_socket.attribute_domain = 'POINT'
 			
 			#Socket Ir
 			ir_socket = color_element.interface.new_socket(name = "Ir", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			ir_socket.default_value = (0.09019608050584793, 0.3294117748737335, 0.529411792755127, 1.0)
 			ir_socket.attribute_domain = 'POINT'
 			
 			#Socket Pt
 			pt_socket = color_element.interface.new_socket(name = "Pt", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			pt_socket.default_value = (0.8156862854957581, 0.8156862854957581, 0.8784313797950745, 1.0)
 			pt_socket.attribute_domain = 'POINT'
 			
 			#Socket Au
 			au_socket = color_element.interface.new_socket(name = "Au", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			au_socket.default_value = (1.0, 0.8196078538894653, 0.13725490868091583, 1.0)
 			au_socket.attribute_domain = 'POINT'
 			
 			#Socket Hg
 			hg_socket = color_element.interface.new_socket(name = "Hg", in_out='INPUT', socket_type = 'NodeSocketColor', parent = _61_80_panel)
+			hg_socket.default_value = (0.7215686440467834, 0.7215686440467834, 0.8156862854957581, 1.0)
 			hg_socket.attribute_domain = 'POINT'
 			
 			

@@ -28,26 +28,31 @@ class Select_Segment_(bpy.types.Operator):
 			#select_segment_ interface
 			#Socket Selection
 			selection_socket = select_segment_.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = select_segment_.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			inverted_socket.description = "The inverse of the calculated selection"
 			
 			#Socket Segment A
 			segment_a_socket = select_segment_.interface.new_socket(name = "Segment A", in_out='INPUT', socket_type = 'NodeSocketBool')
+			segment_a_socket.default_value = True
 			segment_a_socket.attribute_domain = 'POINT'
 			segment_a_socket.description = "Select the atoms in Ligand A"
 			
 			#Socket Segment B
 			segment_b_socket = select_segment_.interface.new_socket(name = "Segment B", in_out='INPUT', socket_type = 'NodeSocketBool')
+			segment_b_socket.default_value = True
 			segment_b_socket.attribute_domain = 'POINT'
 			segment_b_socket.description = "Select the atoms in Ligand B"
 			
 			#Socket Segment ...
 			segment_____socket = select_segment_.interface.new_socket(name = "Segment ...", in_out='INPUT', socket_type = 'NodeSocketBool')
+			segment_____socket.default_value = True
 			segment_____socket.attribute_domain = 'POINT'
 			segment_____socket.description = "Select the atoms in Ligand ..."
 			

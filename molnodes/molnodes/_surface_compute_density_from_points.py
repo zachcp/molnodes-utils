@@ -28,6 +28,7 @@ class _surface_compute_density_from_points(bpy.types.Operator):
 			#_surface_compute_density_from_points interface
 			#Socket Result
 			result_socket = _surface_compute_density_from_points.interface.new_socket(name = "Result", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			result_socket.default_value = False
 			result_socket.attribute_domain = 'POINT'
 			
 			#Socket Atoms
@@ -37,18 +38,18 @@ class _surface_compute_density_from_points(bpy.types.Operator):
 			
 			#Socket Scale Radius
 			scale_radius_socket = _surface_compute_density_from_points.interface.new_socket(name = "Scale Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_radius_socket.subtype = 'NONE'
 			scale_radius_socket.default_value = 1.0
 			scale_radius_socket.min_value = -10000.0
 			scale_radius_socket.max_value = 10000.0
+			scale_radius_socket.subtype = 'NONE'
 			scale_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Probe Size
 			probe_size_socket = _surface_compute_density_from_points.interface.new_socket(name = "Probe Size", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			probe_size_socket.subtype = 'NONE'
 			probe_size_socket.default_value = 0.0
 			probe_size_socket.min_value = 0.0
 			probe_size_socket.max_value = 10000.0
+			probe_size_socket.subtype = 'NONE'
 			probe_size_socket.attribute_domain = 'POINT'
 			
 			

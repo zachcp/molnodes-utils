@@ -28,10 +28,10 @@ class Sample_Mix_Float(bpy.types.Operator):
 			#sample_mix_float interface
 			#Socket Value
 			value_socket = sample_mix_float.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.0
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket A
@@ -44,27 +44,27 @@ class Sample_Mix_Float(bpy.types.Operator):
 			
 			#Socket Factor
 			factor_socket = sample_mix_float.interface.new_socket(name = "Factor", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			factor_socket.subtype = 'FACTOR'
 			factor_socket.default_value = 0.5
 			factor_socket.min_value = 0.0
 			factor_socket.max_value = 1.0
+			factor_socket.subtype = 'FACTOR'
 			factor_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_1 = sample_mix_float.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_1.subtype = 'NONE'
 			value_socket_1.default_value = 0.0
 			value_socket_1.min_value = -3.4028234663852886e+38
 			value_socket_1.max_value = 3.4028234663852886e+38
+			value_socket_1.subtype = 'NONE'
 			value_socket_1.attribute_domain = 'POINT'
 			value_socket_1.hide_value = True
 			
 			#Socket Index
 			index_socket = sample_mix_float.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = -2147483648
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			
 			

@@ -37,14 +37,15 @@ class _surface_blur_color(bpy.types.Operator):
 			
 			#Socket Blur Iterations
 			blur_iterations_socket = _surface_blur_color.interface.new_socket(name = "Blur Iterations", in_out='INPUT', socket_type = 'NodeSocketInt')
-			blur_iterations_socket.subtype = 'NONE'
 			blur_iterations_socket.default_value = 0
 			blur_iterations_socket.min_value = -2147483648
 			blur_iterations_socket.max_value = 2147483647
+			blur_iterations_socket.subtype = 'NONE'
 			blur_iterations_socket.attribute_domain = 'POINT'
 			
 			#Socket Color
 			color_socket = _surface_blur_color.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			color_socket.hide_value = True
 			

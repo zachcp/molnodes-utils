@@ -28,33 +28,34 @@ class Centre_on_Selection(bpy.types.Operator):
 			#centroid interface
 			#Socket Centroid
 			centroid_socket = centroid.interface.new_socket(name = "Centroid", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			centroid_socket.subtype = 'NONE'
 			centroid_socket.default_value = (0.0, 0.0, 0.0)
 			centroid_socket.min_value = -3.4028234663852886e+38
 			centroid_socket.max_value = 3.4028234663852886e+38
+			centroid_socket.subtype = 'NONE'
 			centroid_socket.attribute_domain = 'POINT'
 			centroid_socket.description = "Centroid point for the the points in the selectoin"
 			
 			#Socket Position
 			position_socket = centroid.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			
 			#Socket Selection
 			selection_socket = centroid.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection to use for calculating centroid value"
 			
 			#Socket Group ID
 			group_id_socket = centroid.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket.subtype = 'NONE'
 			group_id_socket.default_value = 0
 			group_id_socket.min_value = -2147483648
 			group_id_socket.max_value = 2147483647
+			group_id_socket.subtype = 'NONE'
 			group_id_socket.attribute_domain = 'POINT'
 			group_id_socket.description = "ID to calculate on a per-group basis"
 			
@@ -151,10 +152,10 @@ class Centre_on_Selection(bpy.types.Operator):
 			
 			#Socket Offset
 			offset_socket = centre_on_selection.interface.new_socket(name = "Offset", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = (0.0, 0.0, 0.0)
 			offset_socket.min_value = -3.4028234663852886e+38
 			offset_socket.max_value = 3.4028234663852886e+38
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			offset_socket.description = "The calculated vector offset applied to centre the points"
 			
@@ -164,16 +165,17 @@ class Centre_on_Selection(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_1 = centre_on_selection.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = True
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.hide_value = True
 			selection_socket_1.description = "Selection within the groups to calculate the centroid for, which then affects all other points in the group"
 			
 			#Socket Group ID
 			group_id_socket_1 = centre_on_selection.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_1.subtype = 'NONE'
 			group_id_socket_1.default_value = 0
 			group_id_socket_1.min_value = -2147483648
 			group_id_socket_1.max_value = 2147483647
+			group_id_socket_1.subtype = 'NONE'
 			group_id_socket_1.attribute_domain = 'POINT'
 			group_id_socket_1.hide_value = True
 			group_id_socket_1.description = "An optional `Group ID` value to calculate the centroid and offset points on a per-group basis"

@@ -28,60 +28,61 @@ class Points_of_Edge(bpy.types.Operator):
 			#edge_info interface
 			#Socket Is Valid
 			is_valid_socket = edge_info.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket.default_value = False
 			is_valid_socket.attribute_domain = 'POINT'
 			is_valid_socket.description = "Whether there is a valid edge corresponding to the given index"
 			
 			#Socket Point Index
 			point_index_socket = edge_info.interface.new_socket(name = "Point Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			point_index_socket.subtype = 'NONE'
 			point_index_socket.default_value = -1
 			point_index_socket.min_value = -1
 			point_index_socket.max_value = 2147483647
+			point_index_socket.subtype = 'NONE'
 			point_index_socket.attribute_domain = 'POINT'
 			point_index_socket.description = "The index for the other point involved in this edge, -1 if not connected"
 			
 			#Socket Point Position
 			point_position_socket = edge_info.interface.new_socket(name = "Point Position", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			point_position_socket.subtype = 'NONE'
 			point_position_socket.default_value = (0.0, 0.0, 0.0)
 			point_position_socket.min_value = -3.4028234663852886e+38
 			point_position_socket.max_value = 3.4028234663852886e+38
+			point_position_socket.subtype = 'NONE'
 			point_position_socket.attribute_domain = 'POINT'
 			point_position_socket.description = "The position for the other point involved in this edge, (0, 0, 0) if not connected"
 			
 			#Socket Edge Index
 			edge_index_socket = edge_info.interface.new_socket(name = "Edge Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			edge_index_socket.subtype = 'NONE'
 			edge_index_socket.default_value = -1
 			edge_index_socket.min_value = -1
 			edge_index_socket.max_value = 2147483647
+			edge_index_socket.subtype = 'NONE'
 			edge_index_socket.attribute_domain = 'POINT'
 			edge_index_socket.description = "The index on the edge domain for the selected edge. -1 if not connected"
 			
 			#Socket Edge Vector
 			edge_vector_socket = edge_info.interface.new_socket(name = "Edge Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			edge_vector_socket.subtype = 'EULER'
 			edge_vector_socket.default_value = (0.0, 0.0, 0.0)
 			edge_vector_socket.min_value = -3.4028234663852886e+38
 			edge_vector_socket.max_value = 3.4028234663852886e+38
+			edge_vector_socket.subtype = 'EULER'
 			edge_vector_socket.attribute_domain = 'POINT'
 			edge_vector_socket.description = "The vector along the selected edge. (0, 0, 0) if not connected"
 			
 			#Socket Edge Length
 			edge_length_socket = edge_info.interface.new_socket(name = "Edge Length", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			edge_length_socket.subtype = 'NONE'
 			edge_length_socket.default_value = -1.0
 			edge_length_socket.min_value = 0.0
 			edge_length_socket.max_value = 3.4028234663852886e+38
+			edge_length_socket.subtype = 'NONE'
 			edge_length_socket.attribute_domain = 'POINT'
 			edge_length_socket.description = "Length of the selected edge, -1 if not connected"
 			
 			#Socket Edge Index
 			edge_index_socket_1 = edge_info.interface.new_socket(name = "Edge Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			edge_index_socket_1.subtype = 'NONE'
 			edge_index_socket_1.default_value = 0
 			edge_index_socket_1.min_value = 0
 			edge_index_socket_1.max_value = 3
+			edge_index_socket_1.subtype = 'NONE'
 			edge_index_socket_1.attribute_domain = 'POINT'
 			edge_index_socket_1.description = "Index within the gorup of edges that are connected to this point"
 			
@@ -344,55 +345,55 @@ class Points_of_Edge(bpy.types.Operator):
 			#points_of_edge interface
 			#Socket 0
 			_0_socket = points_of_edge.interface.new_socket(name = "0", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			_0_socket.subtype = 'NONE'
 			_0_socket.default_value = -1
 			_0_socket.min_value = -1
 			_0_socket.max_value = 2147483647
+			_0_socket.subtype = 'NONE'
 			_0_socket.attribute_domain = 'POINT'
 			_0_socket.description = "Index for the 0th point, connected to the point at the end of the selected edge. Returns -1 if not connected or self"
 			
 			#Socket 1
 			_1_socket = points_of_edge.interface.new_socket(name = "1", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			_1_socket.subtype = 'NONE'
 			_1_socket.default_value = -1
 			_1_socket.min_value = -1
 			_1_socket.max_value = 2147483647
+			_1_socket.subtype = 'NONE'
 			_1_socket.attribute_domain = 'POINT'
 			_1_socket.description = "Index for the 1th point, connected to the point at the end of the selected edge. Returns -1 if not connected or self"
 			
 			#Socket 2
 			_2_socket = points_of_edge.interface.new_socket(name = "2", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			_2_socket.subtype = 'NONE'
 			_2_socket.default_value = -1
 			_2_socket.min_value = -1
 			_2_socket.max_value = 2147483647
+			_2_socket.subtype = 'NONE'
 			_2_socket.attribute_domain = 'POINT'
 			_2_socket.description = "Index for the 2th point, connected to the point at the end of the selected edge. Returns -1 if not connected or self"
 			
 			#Socket 3
 			_3_socket = points_of_edge.interface.new_socket(name = "3", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			_3_socket.subtype = 'NONE'
 			_3_socket.default_value = -1
 			_3_socket.min_value = -1
 			_3_socket.max_value = 2147483647
+			_3_socket.subtype = 'NONE'
 			_3_socket.attribute_domain = 'POINT'
 			_3_socket.description = "Index for the 3th point, connected to the point at the end of the selected edge. Returns -1 if not connected or self"
 			
 			#Socket Total
 			total_socket = points_of_edge.interface.new_socket(name = "Total", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			total_socket.subtype = 'NONE'
 			total_socket.default_value = 0
 			total_socket.min_value = 0
 			total_socket.max_value = 2147483647
+			total_socket.subtype = 'NONE'
 			total_socket.attribute_domain = 'POINT'
 			total_socket.description = "Number of edges conncted to the connected point, including this edge"
 			
 			#Socket Edge Index
 			edge_index_socket_2 = points_of_edge.interface.new_socket(name = "Edge Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			edge_index_socket_2.subtype = 'NONE'
 			edge_index_socket_2.default_value = 0
 			edge_index_socket_2.min_value = 0
 			edge_index_socket_2.max_value = 3
+			edge_index_socket_2.subtype = 'NONE'
 			edge_index_socket_2.attribute_domain = 'POINT'
 			edge_index_socket_2.description = "Index within the gorup of edges that are connected to this point"
 			

@@ -28,11 +28,13 @@ class Color_Attribute_Random(bpy.types.Operator):
 			#color_attribute_random interface
 			#Socket Color
 			color_socket = color_attribute_random.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			color_socket.description = "The randomly generated color based on the input attribute"
 			
 			#Socket Name
 			name_socket = color_attribute_random.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = "chain_id"
 			name_socket.attribute_domain = 'POINT'
 			name_socket.description = "Attribute to base the random color generation on "
 			
@@ -40,28 +42,28 @@ class Color_Attribute_Random(bpy.types.Operator):
 			color_panel = color_attribute_random.interface.new_panel("Color", default_closed=True)
 			#Socket Color Saturation
 			color_saturation_socket = color_attribute_random.interface.new_socket(name = "Color Saturation", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = color_panel)
-			color_saturation_socket.subtype = 'FACTOR'
 			color_saturation_socket.default_value = 0.6000000238418579
 			color_saturation_socket.min_value = 0.0
 			color_saturation_socket.max_value = 1.0
+			color_saturation_socket.subtype = 'FACTOR'
 			color_saturation_socket.attribute_domain = 'POINT'
 			color_saturation_socket.description = "Saturlation level for the random color"
 			
 			#Socket Color Lightness
 			color_lightness_socket = color_attribute_random.interface.new_socket(name = "Color Lightness", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = color_panel)
-			color_lightness_socket.subtype = 'FACTOR'
 			color_lightness_socket.default_value = 0.6000000238418579
 			color_lightness_socket.min_value = 0.0
 			color_lightness_socket.max_value = 1.0
+			color_lightness_socket.subtype = 'FACTOR'
 			color_lightness_socket.attribute_domain = 'POINT'
 			color_lightness_socket.description = "Lightness value for the generated random color"
 			
 			#Socket Color Seed
 			color_seed_socket = color_attribute_random.interface.new_socket(name = "Color Seed", in_out='INPUT', socket_type = 'NodeSocketInt', parent = color_panel)
-			color_seed_socket.subtype = 'NONE'
 			color_seed_socket.default_value = 0
 			color_seed_socket.min_value = -10000
 			color_seed_socket.max_value = 10000
+			color_seed_socket.subtype = 'NONE'
 			color_seed_socket.attribute_domain = 'POINT'
 			color_seed_socket.description = "Seed value for the random generation of the colors"
 			

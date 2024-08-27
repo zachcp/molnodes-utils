@@ -28,10 +28,10 @@ class _Hbond_j___1_i_and_Hbond_i_j___1_(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,18 +82,18 @@ class _Hbond_j___1_i_and_Hbond_i_j___1_(bpy.types.Operator):
 			#world_to_angstrom interface
 			#Socket Angstrom
 			angstrom_socket = world_to_angstrom.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket World
 			world_socket = world_to_angstrom.interface.new_socket(name = "World", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			world_socket.subtype = 'NONE'
 			world_socket.default_value = 0.5
 			world_socket.min_value = -10000.0
 			world_socket.max_value = 10000.0
+			world_socket.subtype = 'NONE'
 			world_socket.attribute_domain = 'POINT'
 			
 			
@@ -155,26 +155,26 @@ class _Hbond_j___1_i_and_Hbond_i_j___1_(bpy.types.Operator):
 			#nodegroup_001 interface
 			#Socket Value
 			value_socket = nodegroup_001.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.0
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Vector
 			vector_socket = nodegroup_001.interface.new_socket(name = "Vector", in_out='INPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -10000.0
 			vector_socket.max_value = 10000.0
+			vector_socket.subtype = 'NONE'
 			vector_socket.attribute_domain = 'POINT'
 			
 			#Socket Vector
 			vector_socket_1 = nodegroup_001.interface.new_socket(name = "Vector", in_out='INPUT', socket_type = 'NodeSocketVector')
-			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.default_value = (0.0, 0.0, 0.0)
 			vector_socket_1.min_value = -10000.0
 			vector_socket_1.max_value = 10000.0
+			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -249,54 +249,55 @@ class _Hbond_j___1_i_and_Hbond_i_j___1_(bpy.types.Operator):
 			#hbond_energy interface
 			#Socket Is Bonded
 			is_bonded_socket = hbond_energy.interface.new_socket(name = "Is Bonded", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_bonded_socket.default_value = False
 			is_bonded_socket.attribute_domain = 'POINT'
 			
 			#Socket Bond Energy
 			bond_energy_socket = hbond_energy.interface.new_socket(name = "Bond Energy", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			bond_energy_socket.subtype = 'NONE'
 			bond_energy_socket.default_value = 0.0
 			bond_energy_socket.min_value = -3.4028234663852886e+38
 			bond_energy_socket.max_value = 3.4028234663852886e+38
+			bond_energy_socket.subtype = 'NONE'
 			bond_energy_socket.attribute_domain = 'POINT'
 			
 			#Socket Bond Vector
 			bond_vector_socket = hbond_energy.interface.new_socket(name = "Bond Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			bond_vector_socket.subtype = 'NONE'
 			bond_vector_socket.default_value = (0.0, 0.0, 0.0)
 			bond_vector_socket.min_value = -3.4028234663852886e+38
 			bond_vector_socket.max_value = 3.4028234663852886e+38
+			bond_vector_socket.subtype = 'NONE'
 			bond_vector_socket.attribute_domain = 'POINT'
 			
 			#Socket O
 			o_socket = hbond_energy.interface.new_socket(name = "O", in_out='INPUT', socket_type = 'NodeSocketVector')
-			o_socket.subtype = 'NONE'
 			o_socket.default_value = (0.0, 0.0, 0.0)
 			o_socket.min_value = -3.4028234663852886e+38
 			o_socket.max_value = 3.4028234663852886e+38
+			o_socket.subtype = 'NONE'
 			o_socket.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket = hbond_energy.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketVector')
-			c_socket.subtype = 'NONE'
 			c_socket.default_value = (0.0, 0.0, 0.0)
 			c_socket.min_value = -3.4028234663852886e+38
 			c_socket.max_value = 3.4028234663852886e+38
+			c_socket.subtype = 'NONE'
 			c_socket.attribute_domain = 'POINT'
 			
 			#Socket N
 			n_socket = hbond_energy.interface.new_socket(name = "N", in_out='INPUT', socket_type = 'NodeSocketVector')
-			n_socket.subtype = 'NONE'
 			n_socket.default_value = (0.0, 0.0, 0.0)
 			n_socket.min_value = -3.4028234663852886e+38
 			n_socket.max_value = 3.4028234663852886e+38
+			n_socket.subtype = 'NONE'
 			n_socket.attribute_domain = 'POINT'
 			
 			#Socket H
 			h_socket = hbond_energy.interface.new_socket(name = "H", in_out='INPUT', socket_type = 'NodeSocketVector')
-			h_socket.subtype = 'NONE'
 			h_socket.default_value = (0.0, 0.0, 0.0)
 			h_socket.min_value = -3.4028234663852886e+38
 			h_socket.max_value = 3.4028234663852886e+38
+			h_socket.subtype = 'NONE'
 			h_socket.attribute_domain = 'POINT'
 			
 			
@@ -501,35 +502,35 @@ class _Hbond_j___1_i_and_Hbond_i_j___1_(bpy.types.Operator):
 			#offset_vector interface
 			#Socket Value
 			value_socket_1 = offset_vector.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			value_socket_1.subtype = 'NONE'
 			value_socket_1.default_value = (0.0, 0.0, 0.0)
 			value_socket_1.min_value = -3.4028234663852886e+38
 			value_socket_1.max_value = 3.4028234663852886e+38
+			value_socket_1.subtype = 'NONE'
 			value_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket = offset_vector.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = 0
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			
 			#Socket Position
 			position_socket = offset_vector.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			position_socket.hide_value = True
 			
 			#Socket Offset
 			offset_socket = offset_vector.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 0
 			offset_socket.min_value = -2147483647
 			offset_socket.max_value = 2147483647
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -596,26 +597,26 @@ class _Hbond_j___1_i_and_Hbond_i_j___1_(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket_1 = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket_1.subtype = 'NONE'
 			angstrom_socket_1.default_value = 0.0
 			angstrom_socket_1.min_value = -3.4028234663852886e+38
 			angstrom_socket_1.max_value = 3.4028234663852886e+38
+			angstrom_socket_1.subtype = 'NONE'
 			angstrom_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_2 = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_2.subtype = 'NONE'
 			value_socket_2.default_value = 3.0
 			value_socket_2.min_value = -10000.0
 			value_socket_2.max_value = 10000.0
+			value_socket_2.subtype = 'NONE'
 			value_socket_2.attribute_domain = 'POINT'
 			value_socket_2.description = "A value which will be scaled appropriately for the world"
 			
@@ -692,18 +693,18 @@ class _Hbond_j___1_i_and_Hbond_i_j___1_(bpy.types.Operator):
 			#backbone_nh interface
 			#Socket H
 			h_socket_1 = backbone_nh.interface.new_socket(name = "H", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			h_socket_1.subtype = 'NONE'
 			h_socket_1.default_value = (0.0, 0.0, 0.0)
 			h_socket_1.min_value = -3.4028234663852886e+38
 			h_socket_1.max_value = 3.4028234663852886e+38
+			h_socket_1.subtype = 'NONE'
 			h_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_3 = backbone_nh.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_3.subtype = 'NONE'
 			value_socket_3.default_value = 1.0
 			value_socket_3.min_value = -10000.0
 			value_socket_3.max_value = 10000.0
+			value_socket_3.subtype = 'NONE'
 			value_socket_3.attribute_domain = 'POINT'
 			
 			
@@ -877,50 +878,50 @@ class _Hbond_j___1_i_and_Hbond_i_j___1_(bpy.types.Operator):
 			#mn_topo_backbone interface
 			#Socket O
 			o_socket_1 = mn_topo_backbone.interface.new_socket(name = "O", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			o_socket_1.subtype = 'NONE'
 			o_socket_1.default_value = (0.0, 0.0, 0.0)
 			o_socket_1.min_value = -3.4028234663852886e+38
 			o_socket_1.max_value = 3.4028234663852886e+38
+			o_socket_1.subtype = 'NONE'
 			o_socket_1.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket_1 = mn_topo_backbone.interface.new_socket(name = "C", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			c_socket_1.subtype = 'NONE'
 			c_socket_1.default_value = (0.0, 0.0, 0.0)
 			c_socket_1.min_value = -3.4028234663852886e+38
 			c_socket_1.max_value = 3.4028234663852886e+38
+			c_socket_1.subtype = 'NONE'
 			c_socket_1.attribute_domain = 'POINT'
 			
 			#Socket CA
 			ca_socket = mn_topo_backbone.interface.new_socket(name = "CA", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			ca_socket.subtype = 'NONE'
 			ca_socket.default_value = (0.0, 0.0, 0.0)
 			ca_socket.min_value = -3.4028234663852886e+38
 			ca_socket.max_value = 3.4028234663852886e+38
+			ca_socket.subtype = 'NONE'
 			ca_socket.attribute_domain = 'POINT'
 			
 			#Socket N
 			n_socket_1 = mn_topo_backbone.interface.new_socket(name = "N", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			n_socket_1.subtype = 'NONE'
 			n_socket_1.default_value = (0.0, 0.0, 0.0)
 			n_socket_1.min_value = -3.4028234663852886e+38
 			n_socket_1.max_value = 3.4028234663852886e+38
+			n_socket_1.subtype = 'NONE'
 			n_socket_1.attribute_domain = 'POINT'
 			
 			#Socket NH
 			nh_socket = mn_topo_backbone.interface.new_socket(name = "NH", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			nh_socket.subtype = 'NONE'
 			nh_socket.default_value = (0.0, 0.0, 0.0)
 			nh_socket.min_value = -3.4028234663852886e+38
 			nh_socket.max_value = 3.4028234663852886e+38
+			nh_socket.subtype = 'NONE'
 			nh_socket.attribute_domain = 'POINT'
 			
 			#Socket Offset
 			offset_socket_1 = mn_topo_backbone.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.default_value = 0
 			offset_socket_1.min_value = -2147483648
 			offset_socket_1.max_value = 2147483647
+			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -1132,40 +1133,41 @@ class _Hbond_j___1_i_and_Hbond_i_j___1_(bpy.types.Operator):
 			#hbond_backbone_check interface
 			#Socket Is Bonded
 			is_bonded_socket_1 = hbond_backbone_check.interface.new_socket(name = "Is Bonded", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_bonded_socket_1.default_value = False
 			is_bonded_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Bond Energy
 			bond_energy_socket_1 = hbond_backbone_check.interface.new_socket(name = "Bond Energy", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			bond_energy_socket_1.subtype = 'NONE'
 			bond_energy_socket_1.default_value = 0.0
 			bond_energy_socket_1.min_value = -3.4028234663852886e+38
 			bond_energy_socket_1.max_value = 3.4028234663852886e+38
+			bond_energy_socket_1.subtype = 'NONE'
 			bond_energy_socket_1.attribute_domain = 'POINT'
 			
 			#Socket H->O
 			h__o_socket = hbond_backbone_check.interface.new_socket(name = "H->O", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			h__o_socket.subtype = 'NONE'
 			h__o_socket.default_value = (0.0, 0.0, 0.0)
 			h__o_socket.min_value = -3.4028234663852886e+38
 			h__o_socket.max_value = 3.4028234663852886e+38
+			h__o_socket.subtype = 'NONE'
 			h__o_socket.attribute_domain = 'POINT'
 			
 			#Panel CO
 			co_panel = hbond_backbone_check.interface.new_panel("CO")
 			#Socket CO Index
 			co_index_socket = hbond_backbone_check.interface.new_socket(name = "CO Index", in_out='INPUT', socket_type = 'NodeSocketInt', parent = co_panel)
-			co_index_socket.subtype = 'NONE'
 			co_index_socket.default_value = 0
 			co_index_socket.min_value = 0
 			co_index_socket.max_value = 2147483647
+			co_index_socket.subtype = 'NONE'
 			co_index_socket.attribute_domain = 'POINT'
 			
 			#Socket CO Offset
 			co_offset_socket = hbond_backbone_check.interface.new_socket(name = "CO Offset", in_out='INPUT', socket_type = 'NodeSocketInt', parent = co_panel)
-			co_offset_socket.subtype = 'NONE'
 			co_offset_socket.default_value = 0
 			co_offset_socket.min_value = -2147483648
 			co_offset_socket.max_value = 2147483647
+			co_offset_socket.subtype = 'NONE'
 			co_offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -1173,18 +1175,18 @@ class _Hbond_j___1_i_and_Hbond_i_j___1_(bpy.types.Operator):
 			nh_panel = hbond_backbone_check.interface.new_panel("NH")
 			#Socket NH Index
 			nh_index_socket = hbond_backbone_check.interface.new_socket(name = "NH Index", in_out='INPUT', socket_type = 'NodeSocketInt', parent = nh_panel)
-			nh_index_socket.subtype = 'NONE'
 			nh_index_socket.default_value = 0
 			nh_index_socket.min_value = 0
 			nh_index_socket.max_value = 2147483647
+			nh_index_socket.subtype = 'NONE'
 			nh_index_socket.attribute_domain = 'POINT'
 			
 			#Socket NH Offset
 			nh_offset_socket = hbond_backbone_check.interface.new_socket(name = "NH Offset", in_out='INPUT', socket_type = 'NodeSocketInt', parent = nh_panel)
-			nh_offset_socket.subtype = 'NONE'
 			nh_offset_socket.default_value = 0
 			nh_offset_socket.min_value = -2147483648
 			nh_offset_socket.max_value = 2147483647
+			nh_offset_socket.subtype = 'NONE'
 			nh_offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -1428,23 +1430,24 @@ class _Hbond_j___1_i_and_Hbond_i_j___1_(bpy.types.Operator):
 			#_hbond_j___1_i_and_hbond_i_j___1_ interface
 			#Socket Boolean
 			boolean_socket = _hbond_j___1_i_and_hbond_i_j___1_.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket i
 			i_socket = _hbond_j___1_i_and_hbond_i_j___1_.interface.new_socket(name = "i", in_out='INPUT', socket_type = 'NodeSocketInt')
-			i_socket.subtype = 'NONE'
 			i_socket.default_value = 0
 			i_socket.min_value = 0
 			i_socket.max_value = 2147483647
+			i_socket.subtype = 'NONE'
 			i_socket.attribute_domain = 'POINT'
 			i_socket.hide_value = True
 			
 			#Socket j
 			j_socket = _hbond_j___1_i_and_hbond_i_j___1_.interface.new_socket(name = "j", in_out='INPUT', socket_type = 'NodeSocketInt')
-			j_socket.subtype = 'NONE'
 			j_socket.default_value = 0
 			j_socket.min_value = 0
 			j_socket.max_value = 2147483647
+			j_socket.subtype = 'NONE'
 			j_socket.attribute_domain = 'POINT'
 			j_socket.hide_value = True
 			

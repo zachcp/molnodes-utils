@@ -28,19 +28,23 @@ class Select_Element(bpy.types.Operator):
 			#select_element interface
 			#Socket Selection
 			selection_socket = select_element.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			
 			#Socket Inverted
 			inverted_socket = select_element.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket = select_element.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = select_element.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
@@ -48,82 +52,102 @@ class Select_Element(bpy.types.Operator):
 			_1_20_panel = select_element.interface.new_panel("1-20", default_closed=True)
 			#Socket H
 			h_socket = select_element.interface.new_socket(name = "H", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			h_socket.default_value = False
 			h_socket.attribute_domain = 'POINT'
 			
 			#Socket He
 			he_socket = select_element.interface.new_socket(name = "He", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			he_socket.default_value = False
 			he_socket.attribute_domain = 'POINT'
 			
 			#Socket Li
 			li_socket = select_element.interface.new_socket(name = "Li", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			li_socket.default_value = False
 			li_socket.attribute_domain = 'POINT'
 			
 			#Socket Be
 			be_socket = select_element.interface.new_socket(name = "Be", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			be_socket.default_value = False
 			be_socket.attribute_domain = 'POINT'
 			
 			#Socket B
 			b_socket = select_element.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			b_socket.default_value = False
 			b_socket.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket = select_element.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			c_socket.default_value = False
 			c_socket.attribute_domain = 'POINT'
 			
 			#Socket N
 			n_socket = select_element.interface.new_socket(name = "N", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			n_socket.default_value = False
 			n_socket.attribute_domain = 'POINT'
 			
 			#Socket O
 			o_socket = select_element.interface.new_socket(name = "O", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			o_socket.default_value = False
 			o_socket.attribute_domain = 'POINT'
 			
 			#Socket F
 			f_socket = select_element.interface.new_socket(name = "F", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			f_socket.default_value = False
 			f_socket.attribute_domain = 'POINT'
 			
 			#Socket Ne
 			ne_socket = select_element.interface.new_socket(name = "Ne", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			ne_socket.default_value = False
 			ne_socket.attribute_domain = 'POINT'
 			
 			#Socket Na
 			na_socket = select_element.interface.new_socket(name = "Na", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			na_socket.default_value = False
 			na_socket.attribute_domain = 'POINT'
 			
 			#Socket Mg
 			mg_socket = select_element.interface.new_socket(name = "Mg", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			mg_socket.default_value = False
 			mg_socket.attribute_domain = 'POINT'
 			
 			#Socket Al
 			al_socket = select_element.interface.new_socket(name = "Al", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			al_socket.default_value = False
 			al_socket.attribute_domain = 'POINT'
 			
 			#Socket Si
 			si_socket = select_element.interface.new_socket(name = "Si", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			si_socket.default_value = False
 			si_socket.attribute_domain = 'POINT'
 			
 			#Socket P
 			p_socket = select_element.interface.new_socket(name = "P", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			p_socket.default_value = False
 			p_socket.attribute_domain = 'POINT'
 			
 			#Socket S
 			s_socket = select_element.interface.new_socket(name = "S", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			s_socket.default_value = False
 			s_socket.attribute_domain = 'POINT'
 			
 			#Socket Cl
 			cl_socket = select_element.interface.new_socket(name = "Cl", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			cl_socket.default_value = False
 			cl_socket.attribute_domain = 'POINT'
 			
 			#Socket Ar
 			ar_socket = select_element.interface.new_socket(name = "Ar", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			ar_socket.default_value = False
 			ar_socket.attribute_domain = 'POINT'
 			
 			#Socket K
 			k_socket = select_element.interface.new_socket(name = "K", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			k_socket.default_value = False
 			k_socket.attribute_domain = 'POINT'
 			
 			#Socket Ca
 			ca_socket = select_element.interface.new_socket(name = "Ca", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _1_20_panel)
+			ca_socket.default_value = False
 			ca_socket.attribute_domain = 'POINT'
 			
 			
@@ -131,82 +155,102 @@ class Select_Element(bpy.types.Operator):
 			_21_40_panel = select_element.interface.new_panel("21-40", default_closed=True)
 			#Socket Sc
 			sc_socket = select_element.interface.new_socket(name = "Sc", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			sc_socket.default_value = False
 			sc_socket.attribute_domain = 'POINT'
 			
 			#Socket Ti
 			ti_socket = select_element.interface.new_socket(name = "Ti", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			ti_socket.default_value = False
 			ti_socket.attribute_domain = 'POINT'
 			
 			#Socket V
 			v_socket = select_element.interface.new_socket(name = "V", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			v_socket.default_value = False
 			v_socket.attribute_domain = 'POINT'
 			
 			#Socket Cr
 			cr_socket = select_element.interface.new_socket(name = "Cr", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			cr_socket.default_value = False
 			cr_socket.attribute_domain = 'POINT'
 			
 			#Socket Mn
 			mn_socket = select_element.interface.new_socket(name = "Mn", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			mn_socket.default_value = False
 			mn_socket.attribute_domain = 'POINT'
 			
 			#Socket Fe
 			fe_socket = select_element.interface.new_socket(name = "Fe", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			fe_socket.default_value = False
 			fe_socket.attribute_domain = 'POINT'
 			
 			#Socket Co
 			co_socket = select_element.interface.new_socket(name = "Co", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			co_socket.default_value = False
 			co_socket.attribute_domain = 'POINT'
 			
 			#Socket Ni
 			ni_socket = select_element.interface.new_socket(name = "Ni", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			ni_socket.default_value = False
 			ni_socket.attribute_domain = 'POINT'
 			
 			#Socket Cu
 			cu_socket = select_element.interface.new_socket(name = "Cu", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			cu_socket.default_value = False
 			cu_socket.attribute_domain = 'POINT'
 			
 			#Socket Zn
 			zn_socket = select_element.interface.new_socket(name = "Zn", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			zn_socket.default_value = False
 			zn_socket.attribute_domain = 'POINT'
 			
 			#Socket Ga
 			ga_socket = select_element.interface.new_socket(name = "Ga", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			ga_socket.default_value = False
 			ga_socket.attribute_domain = 'POINT'
 			
 			#Socket Ge
 			ge_socket = select_element.interface.new_socket(name = "Ge", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			ge_socket.default_value = False
 			ge_socket.attribute_domain = 'POINT'
 			
 			#Socket As
 			as_socket = select_element.interface.new_socket(name = "As", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			as_socket.default_value = False
 			as_socket.attribute_domain = 'POINT'
 			
 			#Socket Se
 			se_socket = select_element.interface.new_socket(name = "Se", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			se_socket.default_value = False
 			se_socket.attribute_domain = 'POINT'
 			
 			#Socket Br
 			br_socket = select_element.interface.new_socket(name = "Br", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			br_socket.default_value = False
 			br_socket.attribute_domain = 'POINT'
 			
 			#Socket Kr
 			kr_socket = select_element.interface.new_socket(name = "Kr", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			kr_socket.default_value = False
 			kr_socket.attribute_domain = 'POINT'
 			
 			#Socket Rb
 			rb_socket = select_element.interface.new_socket(name = "Rb", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			rb_socket.default_value = False
 			rb_socket.attribute_domain = 'POINT'
 			
 			#Socket Sr
 			sr_socket = select_element.interface.new_socket(name = "Sr", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			sr_socket.default_value = False
 			sr_socket.attribute_domain = 'POINT'
 			
 			#Socket Y
 			y_socket = select_element.interface.new_socket(name = "Y", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			y_socket.default_value = False
 			y_socket.attribute_domain = 'POINT'
 			
 			#Socket Zr
 			zr_socket = select_element.interface.new_socket(name = "Zr", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _21_40_panel)
+			zr_socket.default_value = False
 			zr_socket.attribute_domain = 'POINT'
 			
 			
@@ -214,82 +258,102 @@ class Select_Element(bpy.types.Operator):
 			_41_60_panel = select_element.interface.new_panel("41-60", default_closed=True)
 			#Socket Nb
 			nb_socket = select_element.interface.new_socket(name = "Nb", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			nb_socket.default_value = False
 			nb_socket.attribute_domain = 'POINT'
 			
 			#Socket Mo
 			mo_socket = select_element.interface.new_socket(name = "Mo", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			mo_socket.default_value = False
 			mo_socket.attribute_domain = 'POINT'
 			
 			#Socket Tc
 			tc_socket = select_element.interface.new_socket(name = "Tc", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			tc_socket.default_value = False
 			tc_socket.attribute_domain = 'POINT'
 			
 			#Socket Ru
 			ru_socket = select_element.interface.new_socket(name = "Ru", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			ru_socket.default_value = False
 			ru_socket.attribute_domain = 'POINT'
 			
 			#Socket Rh
 			rh_socket = select_element.interface.new_socket(name = "Rh", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			rh_socket.default_value = False
 			rh_socket.attribute_domain = 'POINT'
 			
 			#Socket Pd
 			pd_socket = select_element.interface.new_socket(name = "Pd", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			pd_socket.default_value = False
 			pd_socket.attribute_domain = 'POINT'
 			
 			#Socket Ag
 			ag_socket = select_element.interface.new_socket(name = "Ag", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			ag_socket.default_value = False
 			ag_socket.attribute_domain = 'POINT'
 			
 			#Socket Cd
 			cd_socket = select_element.interface.new_socket(name = "Cd", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			cd_socket.default_value = False
 			cd_socket.attribute_domain = 'POINT'
 			
 			#Socket In
 			in_socket = select_element.interface.new_socket(name = "In", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			in_socket.default_value = False
 			in_socket.attribute_domain = 'POINT'
 			
 			#Socket Sn
 			sn_socket = select_element.interface.new_socket(name = "Sn", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			sn_socket.default_value = False
 			sn_socket.attribute_domain = 'POINT'
 			
 			#Socket Sb
 			sb_socket = select_element.interface.new_socket(name = "Sb", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			sb_socket.default_value = False
 			sb_socket.attribute_domain = 'POINT'
 			
 			#Socket Te
 			te_socket = select_element.interface.new_socket(name = "Te", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			te_socket.default_value = False
 			te_socket.attribute_domain = 'POINT'
 			
 			#Socket I
 			i_socket = select_element.interface.new_socket(name = "I", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			i_socket.default_value = False
 			i_socket.attribute_domain = 'POINT'
 			
 			#Socket Xe
 			xe_socket = select_element.interface.new_socket(name = "Xe", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			xe_socket.default_value = False
 			xe_socket.attribute_domain = 'POINT'
 			
 			#Socket Cs
 			cs_socket = select_element.interface.new_socket(name = "Cs", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			cs_socket.default_value = False
 			cs_socket.attribute_domain = 'POINT'
 			
 			#Socket Ba
 			ba_socket = select_element.interface.new_socket(name = "Ba", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			ba_socket.default_value = False
 			ba_socket.attribute_domain = 'POINT'
 			
 			#Socket La
 			la_socket = select_element.interface.new_socket(name = "La", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			la_socket.default_value = False
 			la_socket.attribute_domain = 'POINT'
 			
 			#Socket Ce
 			ce_socket = select_element.interface.new_socket(name = "Ce", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			ce_socket.default_value = False
 			ce_socket.attribute_domain = 'POINT'
 			
 			#Socket Pr
 			pr_socket = select_element.interface.new_socket(name = "Pr", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			pr_socket.default_value = False
 			pr_socket.attribute_domain = 'POINT'
 			
 			#Socket Nd
 			nd_socket = select_element.interface.new_socket(name = "Nd", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _41_60_panel)
+			nd_socket.default_value = False
 			nd_socket.attribute_domain = 'POINT'
 			
 			
@@ -297,82 +361,102 @@ class Select_Element(bpy.types.Operator):
 			_61_80_panel = select_element.interface.new_panel("61-80", default_closed=True)
 			#Socket Pm
 			pm_socket = select_element.interface.new_socket(name = "Pm", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			pm_socket.default_value = False
 			pm_socket.attribute_domain = 'POINT'
 			
 			#Socket Sm
 			sm_socket = select_element.interface.new_socket(name = "Sm", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			sm_socket.default_value = False
 			sm_socket.attribute_domain = 'POINT'
 			
 			#Socket Eu
 			eu_socket = select_element.interface.new_socket(name = "Eu", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			eu_socket.default_value = False
 			eu_socket.attribute_domain = 'POINT'
 			
 			#Socket Gd
 			gd_socket = select_element.interface.new_socket(name = "Gd", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			gd_socket.default_value = False
 			gd_socket.attribute_domain = 'POINT'
 			
 			#Socket Tb
 			tb_socket = select_element.interface.new_socket(name = "Tb", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			tb_socket.default_value = False
 			tb_socket.attribute_domain = 'POINT'
 			
 			#Socket Dy
 			dy_socket = select_element.interface.new_socket(name = "Dy", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			dy_socket.default_value = False
 			dy_socket.attribute_domain = 'POINT'
 			
 			#Socket Ho
 			ho_socket = select_element.interface.new_socket(name = "Ho", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			ho_socket.default_value = False
 			ho_socket.attribute_domain = 'POINT'
 			
 			#Socket Er
 			er_socket = select_element.interface.new_socket(name = "Er", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			er_socket.default_value = False
 			er_socket.attribute_domain = 'POINT'
 			
 			#Socket Tm
 			tm_socket = select_element.interface.new_socket(name = "Tm", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			tm_socket.default_value = False
 			tm_socket.attribute_domain = 'POINT'
 			
 			#Socket Yb
 			yb_socket = select_element.interface.new_socket(name = "Yb", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			yb_socket.default_value = False
 			yb_socket.attribute_domain = 'POINT'
 			
 			#Socket Lu
 			lu_socket = select_element.interface.new_socket(name = "Lu", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			lu_socket.default_value = False
 			lu_socket.attribute_domain = 'POINT'
 			
 			#Socket Hf
 			hf_socket = select_element.interface.new_socket(name = "Hf", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			hf_socket.default_value = False
 			hf_socket.attribute_domain = 'POINT'
 			
 			#Socket Ta
 			ta_socket = select_element.interface.new_socket(name = "Ta", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			ta_socket.default_value = False
 			ta_socket.attribute_domain = 'POINT'
 			
 			#Socket W
 			w_socket = select_element.interface.new_socket(name = "W", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			w_socket.default_value = False
 			w_socket.attribute_domain = 'POINT'
 			
 			#Socket Re
 			re_socket = select_element.interface.new_socket(name = "Re", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			re_socket.default_value = False
 			re_socket.attribute_domain = 'POINT'
 			
 			#Socket Os
 			os_socket = select_element.interface.new_socket(name = "Os", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			os_socket.default_value = False
 			os_socket.attribute_domain = 'POINT'
 			
 			#Socket Ir
 			ir_socket = select_element.interface.new_socket(name = "Ir", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			ir_socket.default_value = False
 			ir_socket.attribute_domain = 'POINT'
 			
 			#Socket Pt
 			pt_socket = select_element.interface.new_socket(name = "Pt", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			pt_socket.default_value = False
 			pt_socket.attribute_domain = 'POINT'
 			
 			#Socket Au
 			au_socket = select_element.interface.new_socket(name = "Au", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			au_socket.default_value = False
 			au_socket.attribute_domain = 'POINT'
 			
 			#Socket Hg
 			hg_socket = select_element.interface.new_socket(name = "Hg", in_out='INPUT', socket_type = 'NodeSocketBool', parent = _61_80_panel)
+			hg_socket.default_value = False
 			hg_socket.attribute_domain = 'POINT'
 			
 			

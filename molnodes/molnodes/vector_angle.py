@@ -28,27 +28,27 @@ class Vector_Angle(bpy.types.Operator):
 			#vector_angle interface
 			#Socket Angle
 			angle_socket = vector_angle.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket.subtype = 'ANGLE'
 			angle_socket.default_value = 0.0
 			angle_socket.min_value = -3.4028234663852886e+38
 			angle_socket.max_value = 3.4028234663852886e+38
+			angle_socket.subtype = 'ANGLE'
 			angle_socket.attribute_domain = 'POINT'
 			angle_socket.description = "Angle between the two given vectors in radians"
 			
 			#Socket A
 			a_socket = vector_angle.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketVector')
-			a_socket.subtype = 'NONE'
 			a_socket.default_value = (0.0, 0.0, 0.0)
 			a_socket.min_value = -10000.0
 			a_socket.max_value = 10000.0
+			a_socket.subtype = 'NONE'
 			a_socket.attribute_domain = 'POINT'
 			
 			#Socket B
 			b_socket = vector_angle.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketVector')
-			b_socket.subtype = 'NONE'
 			b_socket.default_value = (0.0, 0.0, 0.0)
 			b_socket.min_value = -10000.0
 			b_socket.max_value = 10000.0
+			b_socket.subtype = 'NONE'
 			b_socket.attribute_domain = 'POINT'
 			
 			

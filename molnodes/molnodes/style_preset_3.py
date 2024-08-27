@@ -333,42 +333,42 @@ class Style_Preset_3(bpy.types.Operator):
 			#_utils_bounding_box interface
 			#Socket Min
 			min_socket = _utils_bounding_box.interface.new_socket(name = "Min", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			min_socket.subtype = 'NONE'
 			min_socket.default_value = (0.0, 0.0, 0.0)
 			min_socket.min_value = -3.4028234663852886e+38
 			min_socket.max_value = 3.4028234663852886e+38
+			min_socket.subtype = 'NONE'
 			min_socket.attribute_domain = 'POINT'
 			
 			#Socket Max
 			max_socket = _utils_bounding_box.interface.new_socket(name = "Max", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			max_socket.subtype = 'NONE'
 			max_socket.default_value = (0.0, 0.0, 0.0)
 			max_socket.min_value = -3.4028234663852886e+38
 			max_socket.max_value = 3.4028234663852886e+38
+			max_socket.subtype = 'NONE'
 			max_socket.attribute_domain = 'POINT'
 			
 			#Socket X
 			x_socket = _utils_bounding_box.interface.new_socket(name = "X", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			x_socket.subtype = 'NONE'
 			x_socket.default_value = 0
 			x_socket.min_value = -2147483648
 			x_socket.max_value = 2147483647
+			x_socket.subtype = 'NONE'
 			x_socket.attribute_domain = 'POINT'
 			
 			#Socket Y
 			y_socket = _utils_bounding_box.interface.new_socket(name = "Y", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			y_socket.subtype = 'NONE'
 			y_socket.default_value = 0
 			y_socket.min_value = -2147483648
 			y_socket.max_value = 2147483647
+			y_socket.subtype = 'NONE'
 			y_socket.attribute_domain = 'POINT'
 			
 			#Socket Z
 			z_socket = _utils_bounding_box.interface.new_socket(name = "Z", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			z_socket.subtype = 'NONE'
 			z_socket.default_value = 0
 			z_socket.min_value = -2147483648
 			z_socket.max_value = 2147483647
+			z_socket.subtype = 'NONE'
 			z_socket.attribute_domain = 'POINT'
 			
 			#Socket Geometry
@@ -377,10 +377,10 @@ class Style_Preset_3(bpy.types.Operator):
 			
 			#Socket Subdivisions
 			subdivisions_socket = _utils_bounding_box.interface.new_socket(name = "Subdivisions", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			subdivisions_socket.subtype = 'NONE'
 			subdivisions_socket.default_value = 16.700000762939453
 			subdivisions_socket.min_value = -10000.0
 			subdivisions_socket.max_value = 10000.0
+			subdivisions_socket.subtype = 'NONE'
 			subdivisions_socket.attribute_domain = 'POINT'
 			
 			
@@ -592,6 +592,7 @@ class Style_Preset_3(bpy.types.Operator):
 			#_surface_compute_density_from_points interface
 			#Socket Result
 			result_socket = _surface_compute_density_from_points.interface.new_socket(name = "Result", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			result_socket.default_value = False
 			result_socket.attribute_domain = 'POINT'
 			
 			#Socket Atoms
@@ -601,18 +602,18 @@ class Style_Preset_3(bpy.types.Operator):
 			
 			#Socket Scale Radius
 			scale_radius_socket = _surface_compute_density_from_points.interface.new_socket(name = "Scale Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_radius_socket.subtype = 'NONE'
 			scale_radius_socket.default_value = 1.0
 			scale_radius_socket.min_value = -10000.0
 			scale_radius_socket.max_value = 10000.0
+			scale_radius_socket.subtype = 'NONE'
 			scale_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Probe Size
 			probe_size_socket = _surface_compute_density_from_points.interface.new_socket(name = "Probe Size", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			probe_size_socket.subtype = 'NONE'
 			probe_size_socket.default_value = 0.0
 			probe_size_socket.min_value = 0.0
 			probe_size_socket.max_value = 10000.0
+			probe_size_socket.subtype = 'NONE'
 			probe_size_socket.attribute_domain = 'POINT'
 			
 			
@@ -848,42 +849,42 @@ class Style_Preset_3(bpy.types.Operator):
 			#_mn_constants_atom_name_nucleic interface
 			#Socket Backbone Lower
 			backbone_lower_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Backbone Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.default_value = 0
 			backbone_lower_socket.min_value = -2147483648
 			backbone_lower_socket.max_value = 2147483647
+			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Upper
 			backbone_upper_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Backbone Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.default_value = 0
 			backbone_upper_socket.min_value = -2147483648
 			backbone_upper_socket.max_value = 2147483647
+			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Lower
 			side_chain_lower_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Side Chain Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.default_value = 0
 			side_chain_lower_socket.min_value = -2147483648
 			side_chain_lower_socket.max_value = 2147483647
+			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Upper
 			side_chain_upper_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Side Chain Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.default_value = 0
 			side_chain_upper_socket.min_value = -2147483648
 			side_chain_upper_socket.max_value = 2147483647
+			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Joint Carbon
 			side_chain_joint_carbon_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Side Chain Joint Carbon", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_joint_carbon_socket.subtype = 'NONE'
 			side_chain_joint_carbon_socket.default_value = 0
 			side_chain_joint_carbon_socket.min_value = -2147483648
 			side_chain_joint_carbon_socket.max_value = 2147483647
+			side_chain_joint_carbon_socket.subtype = 'NONE'
 			side_chain_joint_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -969,14 +970,17 @@ class Style_Preset_3(bpy.types.Operator):
 			#fallback_boolean interface
 			#Socket Boolean
 			boolean_socket = fallback_boolean.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket = fallback_boolean.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = ""
 			name_socket.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket = fallback_boolean.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketBool')
+			fallback_socket.default_value = False
 			fallback_socket.attribute_domain = 'POINT'
 			
 			
@@ -1041,42 +1045,42 @@ class Style_Preset_3(bpy.types.Operator):
 			#_mn_constants_atom_name_peptide interface
 			#Socket Backbone Lower
 			backbone_lower_socket_1 = _mn_constants_atom_name_peptide.interface.new_socket(name = "Backbone Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_lower_socket_1.subtype = 'NONE'
 			backbone_lower_socket_1.default_value = 0
 			backbone_lower_socket_1.min_value = -2147483648
 			backbone_lower_socket_1.max_value = 2147483647
+			backbone_lower_socket_1.subtype = 'NONE'
 			backbone_lower_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Backbone Upper
 			backbone_upper_socket_1 = _mn_constants_atom_name_peptide.interface.new_socket(name = "Backbone Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_upper_socket_1.subtype = 'NONE'
 			backbone_upper_socket_1.default_value = 0
 			backbone_upper_socket_1.min_value = -2147483648
 			backbone_upper_socket_1.max_value = 2147483647
+			backbone_upper_socket_1.subtype = 'NONE'
 			backbone_upper_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Lower
 			side_chain_lower_socket_1 = _mn_constants_atom_name_peptide.interface.new_socket(name = "Side Chain Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_lower_socket_1.subtype = 'NONE'
 			side_chain_lower_socket_1.default_value = 0
 			side_chain_lower_socket_1.min_value = -2147483648
 			side_chain_lower_socket_1.max_value = 2147483647
+			side_chain_lower_socket_1.subtype = 'NONE'
 			side_chain_lower_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Upper
 			side_chain_upper_socket_1 = _mn_constants_atom_name_peptide.interface.new_socket(name = "Side Chain Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_upper_socket_1.subtype = 'NONE'
 			side_chain_upper_socket_1.default_value = 0
 			side_chain_upper_socket_1.min_value = -2147483648
 			side_chain_upper_socket_1.max_value = 2147483647
+			side_chain_upper_socket_1.subtype = 'NONE'
 			side_chain_upper_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Alpha Carbon
 			alpha_carbon_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Alpha Carbon", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			alpha_carbon_socket.subtype = 'NONE'
 			alpha_carbon_socket.default_value = 0
 			alpha_carbon_socket.min_value = -2147483648
 			alpha_carbon_socket.max_value = 2147483647
+			alpha_carbon_socket.subtype = 'NONE'
 			alpha_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -1162,18 +1166,22 @@ class Style_Preset_3(bpy.types.Operator):
 			#_mn_select_peptide interface
 			#Socket Is Backbone
 			is_backbone_socket = _mn_select_peptide.interface.new_socket(name = "Is Backbone", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_backbone_socket.default_value = False
 			is_backbone_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Side Chain
 			is_side_chain_socket = _mn_select_peptide.interface.new_socket(name = "Is Side Chain", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_side_chain_socket.default_value = False
 			is_side_chain_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Peptide
 			is_peptide_socket = _mn_select_peptide.interface.new_socket(name = "Is Peptide", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_peptide_socket.default_value = False
 			is_peptide_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Alpha Carbon
 			is_alpha_carbon_socket = _mn_select_peptide.interface.new_socket(name = "Is Alpha Carbon", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_alpha_carbon_socket.default_value = False
 			is_alpha_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -1373,20 +1381,24 @@ class Style_Preset_3(bpy.types.Operator):
 			#is_alpha_carbon interface
 			#Socket Selection
 			selection_socket = is_alpha_carbon.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "True if atom is an alpha carbon of an amino acid"
 			
 			#Socket Inverted
 			inverted_socket = is_alpha_carbon.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket = is_alpha_carbon.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = is_alpha_carbon.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
@@ -1498,53 +1510,57 @@ class Style_Preset_3(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_1 = _mn_utils_style_surface_new.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = True
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.hide_value = True
 			selection_socket_1.description = "Selection of atoms to apply this node to"
 			
 			#Socket Quality
 			quality_socket = _mn_utils_style_surface_new.interface.new_socket(name = "Quality", in_out='INPUT', socket_type = 'NodeSocketInt')
-			quality_socket.subtype = 'NONE'
 			quality_socket.default_value = 12
 			quality_socket.min_value = 1
 			quality_socket.max_value = 15
+			quality_socket.subtype = 'NONE'
 			quality_socket.attribute_domain = 'POINT'
 			
 			#Socket Scale Radii
 			scale_radii_socket = _mn_utils_style_surface_new.interface.new_socket(name = "Scale Radii", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_radii_socket.subtype = 'NONE'
 			scale_radii_socket.default_value = 1.0
 			scale_radii_socket.min_value = 0.0
 			scale_radii_socket.max_value = 10.0
+			scale_radii_socket.subtype = 'NONE'
 			scale_radii_socket.attribute_domain = 'POINT'
 			
 			#Socket Probe Size
 			probe_size_socket_1 = _mn_utils_style_surface_new.interface.new_socket(name = "Probe Size", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			probe_size_socket_1.subtype = 'NONE'
 			probe_size_socket_1.default_value = 0.6000000238418579
 			probe_size_socket_1.min_value = 0.0
 			probe_size_socket_1.max_value = 10000.0
+			probe_size_socket_1.subtype = 'NONE'
 			probe_size_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Color by CA
 			color_by_ca_socket = _mn_utils_style_surface_new.interface.new_socket(name = "Color by CA", in_out='INPUT', socket_type = 'NodeSocketBool')
+			color_by_ca_socket.default_value = True
 			color_by_ca_socket.attribute_domain = 'POINT'
 			
 			#Socket Color Blur
 			color_blur_socket = _mn_utils_style_surface_new.interface.new_socket(name = "Color Blur", in_out='INPUT', socket_type = 'NodeSocketInt')
-			color_blur_socket.subtype = 'NONE'
 			color_blur_socket.default_value = 1
 			color_blur_socket.min_value = 0
 			color_blur_socket.max_value = 20
+			color_blur_socket.subtype = 'NONE'
 			color_blur_socket.attribute_domain = 'POINT'
 			
 			#Socket Shade Smooth
 			shade_smooth_socket = _mn_utils_style_surface_new.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool')
+			shade_smooth_socket.default_value = True
 			shade_smooth_socket.attribute_domain = 'POINT'
 			shade_smooth_socket.description = "Apply smooth shading to the created geometry"
 			
 			#Socket Triangulate
 			triangulate_socket = _mn_utils_style_surface_new.interface.new_socket(name = "Triangulate", in_out='INPUT', socket_type = 'NodeSocketBool')
+			triangulate_socket.default_value = True
 			triangulate_socket.attribute_domain = 'POINT'
 			triangulate_socket.hide_value = True
 			
@@ -1555,10 +1571,10 @@ class Style_Preset_3(bpy.types.Operator):
 			
 			#Socket Relaxation Steps
 			relaxation_steps_socket = _mn_utils_style_surface_new.interface.new_socket(name = "Relaxation Steps", in_out='INPUT', socket_type = 'NodeSocketInt')
-			relaxation_steps_socket.subtype = 'NONE'
 			relaxation_steps_socket.default_value = 30
 			relaxation_steps_socket.min_value = 0
 			relaxation_steps_socket.max_value = 2147483647
+			relaxation_steps_socket.subtype = 'NONE'
 			relaxation_steps_socket.attribute_domain = 'POINT'
 			
 			
@@ -2525,16 +2541,17 @@ class Style_Preset_3(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_2 = style_surface.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_2.default_value = True
 			selection_socket_2.attribute_domain = 'POINT'
 			selection_socket_2.hide_value = True
 			selection_socket_2.description = "Selection of atoms to apply this style to"
 			
 			#Socket Quality
 			quality_socket_1 = style_surface.interface.new_socket(name = "Quality", in_out='INPUT', socket_type = 'NodeSocketInt')
-			quality_socket_1.subtype = 'NONE'
 			quality_socket_1.default_value = 3
 			quality_socket_1.min_value = 0
 			quality_socket_1.max_value = 8
+			quality_socket_1.subtype = 'NONE'
 			quality_socket_1.attribute_domain = 'POINT'
 			quality_socket_1.description = "Quailty of the surface to generate"
 			
@@ -2542,43 +2559,46 @@ class Style_Preset_3(bpy.types.Operator):
 			surface_panel = style_surface.interface.new_panel("Surface", default_closed=True)
 			#Socket Separate
 			separate_socket = style_surface.interface.new_socket(name = "Separate", in_out='INPUT', socket_type = 'NodeSocketBool', parent = surface_panel)
+			separate_socket.default_value = True
 			separate_socket.attribute_domain = 'POINT'
 			separate_socket.description = "Whether to create separate surfaces, based on the 'Attribute' name"
 			
 			#Socket Attribute
 			attribute_socket = style_surface.interface.new_socket(name = "Attribute", in_out='INPUT', socket_type = 'NodeSocketString', parent = surface_panel)
+			attribute_socket.default_value = "chain_id"
 			attribute_socket.attribute_domain = 'POINT'
 			attribute_socket.description = "Attribute to separate the surface by"
 			
 			#Socket Scale Radii
 			scale_radii_socket_1 = style_surface.interface.new_socket(name = "Scale Radii", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = surface_panel)
-			scale_radii_socket_1.subtype = 'NONE'
 			scale_radii_socket_1.default_value = 1.5
 			scale_radii_socket_1.min_value = 0.0
 			scale_radii_socket_1.max_value = 10.0
+			scale_radii_socket_1.subtype = 'NONE'
 			scale_radii_socket_1.attribute_domain = 'POINT'
 			scale_radii_socket_1.description = "Scale the VDW radii of the atoms when creating the surface"
 			
 			#Socket Probe Size
 			probe_size_socket_2 = style_surface.interface.new_socket(name = "Probe Size", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = surface_panel)
-			probe_size_socket_2.subtype = 'NONE'
 			probe_size_socket_2.default_value = 1.0
 			probe_size_socket_2.min_value = 0.0
 			probe_size_socket_2.max_value = 5.0
+			probe_size_socket_2.subtype = 'NONE'
 			probe_size_socket_2.attribute_domain = 'POINT'
 			probe_size_socket_2.description = "Size of the probe that is used to check for solvent accessibility (Angstroms)"
 			
 			#Socket Triangulate
 			triangulate_socket_1 = style_surface.interface.new_socket(name = "Triangulate", in_out='INPUT', socket_type = 'NodeSocketBool', parent = surface_panel)
+			triangulate_socket_1.default_value = False
 			triangulate_socket_1.attribute_domain = 'POINT'
 			triangulate_socket_1.description = "Whether to triangulate the resulting mesh. Can help reduce shading problems"
 			
 			#Socket Relaxation Steps
 			relaxation_steps_socket_1 = style_surface.interface.new_socket(name = "Relaxation Steps", in_out='INPUT', socket_type = 'NodeSocketInt', parent = surface_panel)
-			relaxation_steps_socket_1.subtype = 'NONE'
 			relaxation_steps_socket_1.default_value = 10
 			relaxation_steps_socket_1.min_value = 0
 			relaxation_steps_socket_1.max_value = 2147483647
+			relaxation_steps_socket_1.subtype = 'NONE'
 			relaxation_steps_socket_1.default_attribute_name = "Number of steps in the process of smoothening out the surface that stretches between atoms"
 			relaxation_steps_socket_1.attribute_domain = 'POINT'
 			
@@ -2587,15 +2607,16 @@ class Style_Preset_3(bpy.types.Operator):
 			color_panel = style_surface.interface.new_panel("Color", default_closed=True)
 			#Socket Color by CA
 			color_by_ca_socket_1 = style_surface.interface.new_socket(name = "Color by CA", in_out='INPUT', socket_type = 'NodeSocketBool', parent = color_panel)
+			color_by_ca_socket_1.default_value = True
 			color_by_ca_socket_1.attribute_domain = 'POINT'
 			color_by_ca_socket_1.description = "Only take colors from CA atoms (or similar in nucleic acids)"
 			
 			#Socket Color Blur
 			color_blur_socket_1 = style_surface.interface.new_socket(name = "Color Blur", in_out='INPUT', socket_type = 'NodeSocketInt', parent = color_panel)
-			color_blur_socket_1.subtype = 'NONE'
 			color_blur_socket_1.default_value = 2
 			color_blur_socket_1.min_value = 0
 			color_blur_socket_1.max_value = 20
+			color_blur_socket_1.subtype = 'NONE'
 			color_blur_socket_1.attribute_domain = 'POINT'
 			color_blur_socket_1.description = "When coloring the surface, blur colors from nearby atoms"
 			
@@ -2604,6 +2625,7 @@ class Style_Preset_3(bpy.types.Operator):
 			material_panel = style_surface.interface.new_panel("Material", default_closed=True)
 			#Socket Shade Smooth
 			shade_smooth_socket_1 = style_surface.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool', parent = material_panel)
+			shade_smooth_socket_1.default_value = True
 			shade_smooth_socket_1.attribute_domain = 'POINT'
 			shade_smooth_socket_1.description = "Apply smooth shading to the created geometry"
 			
@@ -2991,10 +3013,10 @@ class Style_Preset_3(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -3045,26 +3067,26 @@ class Style_Preset_3(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 3.0
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "A value which will be scaled appropriately for the world"
 			
@@ -3151,16 +3173,17 @@ class Style_Preset_3(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_3 = _mn_utils_style_spheres_points.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_3.default_value = True
 			selection_socket_3.attribute_domain = 'POINT'
 			selection_socket_3.hide_value = True
 			selection_socket_3.description = "Selection of atoms to apply this node to"
 			
 			#Socket Radii
 			radii_socket = _mn_utils_style_spheres_points.interface.new_socket(name = "Radii", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radii_socket.subtype = 'NONE'
 			radii_socket.default_value = 0.800000011920929
 			radii_socket.min_value = 0.0
 			radii_socket.max_value = 10000.0
+			radii_socket.subtype = 'NONE'
 			radii_socket.attribute_domain = 'POINT'
 			
 			#Socket Material
@@ -3288,29 +3311,31 @@ class Style_Preset_3(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_4 = _mn_utils_style_spheres_icosphere.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_4.default_value = True
 			selection_socket_4.attribute_domain = 'POINT'
 			selection_socket_4.hide_value = True
 			selection_socket_4.description = "Selection of atoms to apply this node to"
 			
 			#Socket Radii
 			radii_socket_1 = _mn_utils_style_spheres_icosphere.interface.new_socket(name = "Radii", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radii_socket_1.subtype = 'NONE'
 			radii_socket_1.default_value = 0.800000011920929
 			radii_socket_1.min_value = 0.0
 			radii_socket_1.max_value = 10000.0
+			radii_socket_1.subtype = 'NONE'
 			radii_socket_1.attribute_domain = 'POINT'
 			radii_socket_1.description = "Scale the VDW radii of the atoms."
 			
 			#Socket Subdivisions
 			subdivisions_socket_1 = _mn_utils_style_spheres_icosphere.interface.new_socket(name = "Subdivisions", in_out='INPUT', socket_type = 'NodeSocketInt')
-			subdivisions_socket_1.subtype = 'NONE'
 			subdivisions_socket_1.default_value = 2
 			subdivisions_socket_1.min_value = 0
 			subdivisions_socket_1.max_value = 5
+			subdivisions_socket_1.subtype = 'NONE'
 			subdivisions_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Shade Smooth
 			shade_smooth_socket_2 = _mn_utils_style_spheres_icosphere.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool')
+			shade_smooth_socket_2.default_value = True
 			shade_smooth_socket_2.attribute_domain = 'POINT'
 			shade_smooth_socket_2.description = "Apply smooth shading to the created geometry"
 			
@@ -3670,6 +3695,7 @@ class Style_Preset_3(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_5 = style_spheres.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_5.default_value = True
 			selection_socket_5.attribute_domain = 'POINT'
 			selection_socket_5.hide_value = True
 			selection_socket_5.description = "Selection of atoms to apply this style to"
@@ -3678,24 +3704,25 @@ class Style_Preset_3(bpy.types.Operator):
 			sphere_panel = style_spheres.interface.new_panel("Sphere")
 			#Socket Sphere As Mesh
 			sphere_as_mesh_socket = style_spheres.interface.new_socket(name = "Sphere As Mesh", in_out='INPUT', socket_type = 'NodeSocketBool', parent = sphere_panel)
+			sphere_as_mesh_socket.default_value = False
 			sphere_as_mesh_socket.attribute_domain = 'POINT'
 			sphere_as_mesh_socket.description = "Use Eevee or Cycles compatible atoms."
 			
 			#Socket Sphere Radii
 			sphere_radii_socket = style_spheres.interface.new_socket(name = "Sphere Radii", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = sphere_panel)
-			sphere_radii_socket.subtype = 'NONE'
 			sphere_radii_socket.default_value = 0.800000011920929
 			sphere_radii_socket.min_value = 0.0
 			sphere_radii_socket.max_value = 2.0
+			sphere_radii_socket.subtype = 'NONE'
 			sphere_radii_socket.attribute_domain = 'POINT'
 			sphere_radii_socket.description = "Scale the `vdw_radii` of the atoms."
 			
 			#Socket Sphere Subdivisions
 			sphere_subdivisions_socket = style_spheres.interface.new_socket(name = "Sphere Subdivisions", in_out='INPUT', socket_type = 'NodeSocketInt', parent = sphere_panel)
-			sphere_subdivisions_socket.subtype = 'NONE'
 			sphere_subdivisions_socket.default_value = 2
 			sphere_subdivisions_socket.min_value = 0
 			sphere_subdivisions_socket.max_value = 5
+			sphere_subdivisions_socket.subtype = 'NONE'
 			sphere_subdivisions_socket.attribute_domain = 'POINT'
 			sphere_subdivisions_socket.description = "Subdivisions for Eevee compatible atoms."
 			
@@ -3704,6 +3731,7 @@ class Style_Preset_3(bpy.types.Operator):
 			material_panel_1 = style_spheres.interface.new_panel("Material", default_closed=True)
 			#Socket Shade Smooth
 			shade_smooth_socket_3 = style_spheres.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool', parent = material_panel_1)
+			shade_smooth_socket_3.default_value = True
 			shade_smooth_socket_3.attribute_domain = 'POINT'
 			shade_smooth_socket_3.description = "Apply smooth shading to the created geometry"
 			
@@ -3822,20 +3850,24 @@ class Style_Preset_3(bpy.types.Operator):
 			#is_peptide interface
 			#Socket Selection
 			selection_socket_6 = is_peptide.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_6.default_value = False
 			selection_socket_6.attribute_domain = 'POINT'
 			selection_socket_6.description = "True if atoms are part of a peptide"
 			
 			#Socket Inverted
 			inverted_socket_1 = is_peptide.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_1.default_value = False
 			inverted_socket_1.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_1 = is_peptide.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_1.default_value = True
 			and_socket_1.attribute_domain = 'POINT'
 			and_socket_1.hide_value = True
 			
 			#Socket Or
 			or_socket_1 = is_peptide.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_1.default_value = False
 			or_socket_1.attribute_domain = 'POINT'
 			or_socket_1.hide_value = True
 			
@@ -3938,19 +3970,21 @@ class Style_Preset_3(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_7 = style_preset_3.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_7.default_value = True
 			selection_socket_7.attribute_domain = 'POINT'
 			selection_socket_7.hide_value = True
 			
 			#Socket Quality
 			quality_socket_2 = style_preset_3.interface.new_socket(name = "Quality", in_out='INPUT', socket_type = 'NodeSocketInt')
-			quality_socket_2.subtype = 'NONE'
 			quality_socket_2.default_value = 3
 			quality_socket_2.min_value = 0
 			quality_socket_2.max_value = 6
+			quality_socket_2.subtype = 'NONE'
 			quality_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Shade Smooth
 			shade_smooth_socket_4 = style_preset_3.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool')
+			shade_smooth_socket_4.default_value = True
 			shade_smooth_socket_4.attribute_domain = 'POINT'
 			
 			#Socket Material
