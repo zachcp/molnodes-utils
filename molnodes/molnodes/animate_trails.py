@@ -709,7 +709,7 @@ class Animate_Trails(bpy.types.Operator):
 			set_handle_type = animate_trails.nodes.new("GeometryNodeCurveSetHandles")
 			set_handle_type.name = "Set Handle Type"
 			set_handle_type.handle_type = 'AUTO'
-			set_handle_type.mode = {'RIGHT', 'LEFT'}
+			set_handle_type.mode = {'LEFT', 'RIGHT'}
 			#Selection
 			set_handle_type.inputs[1].default_value = True
 			

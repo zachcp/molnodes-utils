@@ -25,6 +25,7 @@ opencv-python = "*"
 platformdirs = "*"
 basilisp = "*"
 basilisp-blender = "*"
+molnodes = { path = "molnodes", editable = true }
 
 [tasks]
 # run pixi launch to open the system blender and connect to it
@@ -51,8 +52,3 @@ convert-MN = "python scripts/convert_MN/convert_MolecularNodes.py"
 # convert MolecularNodes
 # build-wheel = "cd molnodes && pip install build && python -m build"
 build-wheel = "cd molnodes && python -m build"
-build = "*"
-ipython = "*"
-bpy = "*"
-blendersynth = "*"
-platformdirs = "*"

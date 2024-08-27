@@ -7547,7 +7547,7 @@ class Style_Cartoon(bpy.types.Operator):
 			set_handle_type_002 = _mn_utils_style_cartoon.nodes.new("GeometryNodeCurveSetHandles")
 			set_handle_type_002.name = "Set Handle Type.002"
 			set_handle_type_002.handle_type = 'AUTO'
-			set_handle_type_002.mode = {'RIGHT', 'LEFT'}
+			set_handle_type_002.mode = {'LEFT', 'RIGHT'}
 			#Selection
 			set_handle_type_002.inputs[1].default_value = True
 			
@@ -7655,7 +7655,7 @@ class Style_Cartoon(bpy.types.Operator):
 			set_handle_type = _mn_utils_style_cartoon.nodes.new("GeometryNodeCurveSetHandles")
 			set_handle_type.name = "Set Handle Type"
 			set_handle_type.handle_type = 'AUTO'
-			set_handle_type.mode = {'RIGHT', 'LEFT'}
+			set_handle_type.mode = {'LEFT', 'RIGHT'}
 			#Selection
 			set_handle_type.inputs[1].default_value = True
 			
@@ -7905,7 +7905,7 @@ class Style_Cartoon(bpy.types.Operator):
 			set_handle_type_003 = _mn_utils_style_cartoon.nodes.new("GeometryNodeCurveSetHandles")
 			set_handle_type_003.name = "Set Handle Type.003"
 			set_handle_type_003.handle_type = 'AUTO'
-			set_handle_type_003.mode = {'RIGHT', 'LEFT'}
+			set_handle_type_003.mode = {'LEFT', 'RIGHT'}
 			#Selection
 			set_handle_type_003.inputs[1].default_value = True
 			
@@ -8076,7 +8076,7 @@ class Style_Cartoon(bpy.types.Operator):
 			set_handle_type_001 = _mn_utils_style_cartoon.nodes.new("GeometryNodeCurveSetHandles")
 			set_handle_type_001.name = "Set Handle Type.001"
 			set_handle_type_001.handle_type = 'AUTO'
-			set_handle_type_001.mode = {'RIGHT', 'LEFT'}
+			set_handle_type_001.mode = {'LEFT', 'RIGHT'}
 			#Selection
 			set_handle_type_001.inputs[1].default_value = True
 			
@@ -15943,7 +15943,7 @@ class Style_Cartoon(bpy.types.Operator):
 			set_handle_type_1 = _mn_utils_style_ribbon_nucleic.nodes.new("GeometryNodeCurveSetHandles")
 			set_handle_type_1.name = "Set Handle Type"
 			set_handle_type_1.handle_type = 'AUTO'
-			set_handle_type_1.mode = {'RIGHT', 'LEFT'}
+			set_handle_type_1.mode = {'LEFT', 'RIGHT'}
 			#Selection
 			set_handle_type_1.inputs[1].default_value = True
 			

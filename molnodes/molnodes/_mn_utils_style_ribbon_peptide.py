@@ -4184,7 +4184,7 @@ class _MN_utils_style_ribbon_peptide(bpy.types.Operator):
 			set_handle_type_001 = _mn_utils_style_ribbon_peptide.nodes.new("GeometryNodeCurveSetHandles")
 			set_handle_type_001.name = "Set Handle Type.001"
 			set_handle_type_001.handle_type = 'AUTO'
-			set_handle_type_001.mode = {'RIGHT', 'LEFT'}
+			set_handle_type_001.mode = {'LEFT', 'RIGHT'}
 			#Selection
 			set_handle_type_001.inputs[1].default_value = True
 			
