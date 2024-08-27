@@ -1,9 +1,11 @@
 (ns molnodes
-  "Utilitis for workign with Moecular Nodes via basilisp-repl"
-  (:import bpy math pathlib)
+  "Utilities for working with Molecular Nodes via basilisp-repl"
+  (:import bpy mathutils pathlib
+           [bpy.types :as types]
+           [bpy.props :as props]
+           )
   (:require
    [basilisp.string :as string]))
-
 
 (def molecular-node-types
   ; from: for groups in bpy.data.node_groups: print(groups.name)
@@ -180,7 +182,7 @@
 
 
 (defn load-pdb [code]
-  "primary way to load a PDB file"
+  "primary way to load a PDB file. uses MN builtin function"
   (do
     (set! (.. bpy/context -scene -MN_pdb_code) code)
     (set! (.. bpy/context -scene -MN_import_style) "cartoon")
@@ -196,12 +198,48 @@
   (-> (bpy.data.objects/get name) .-modifiers .-active .-node-group))
   
 
+(defn get-camera-location []
+  (let [camera (.. bpy/context -scene -camera)
+        location (.-location camera)]
+    location))
+
+
+(defn set-camera! [distance]
+  ;; Set camera position
+  (let [camera (.. bpy/context -scene -camera)] 
+    (set! (.-location camera) (new mathutils.Vector [distance 0 0]))
+
+    ;; Calculate rotation to look at origin
+    (let [direction (new mathutils.Vector [1 0 0])
+          _ (.normalize direction)
+          up (new mathutils.Vector [0 0 1])
+          rotation (.to_track_quat direction "Z" "Y")]
+      (set! (.-rotation_euler camera) (.to_euler rotation)))
+
+    ;; Update the view
+    (.. bpy/context -view_layer update)))
+
+
+
+(defn bounding-box-center [obj-name]
+ "add the bounding box vectors and average them"
+  (let [obj (.. bpy -data -objects (get obj-name))
+        bound-box (map #(new mathutils.Vector %) (.-bound_box obj))
+        combined_vec (reduce + bound-box)] 
+    (/ combined_vec 8)))
+
+
+
+(defn center-object-on-origin! [obj-name]
+  "center the object  on the middle of the bounding box"
+  (let [obj (.. bpy -data -objects (get obj-name))
+        objcenter (bounding-box-center obj-name)]
+    (set! (.-location obj) (- objcenter))))
 
 
 
 (comment
-  ;; (.register molnodes)
-
+  
   ; initialize the classes we ned to add additional Geom Nodes
   (load-node-groups)
 
@@ -211,26 +249,26 @@
   (mol-by-name "1FAP")
   (geom-node-by-name "1FAP")
 
-  (let [fap (mol-by-name "1FAP")
-        fap-geo (geom-node-by-name "1FAP")
-        fap-geom-nodes (.-nodes fap-geo)
-        to-keep #{"Group Input" "Group Output"}]
-    ;; (print fap)
-    ;; (print fap-geo)
-    ;; (print fap-geom-nodes)å
-    (doseq [node fap-geom-nodes]
-      (print node)
-      (set! context.active_node)
-      ;; (if (contains? to-keep (.-name node))
-      ;;   (print (.-name node))
-      ;;   (do 
-      ;;     (set! ()))
-      ;;   (bpy.ops.object/delete node)
-      ;;   )
-      ;; )
-      ))
+  ;; (let [fap (mol-by-name "1FAP")
+  ;;       fap-geo (geom-node-by-name "1FAP")
+  ;;       fap-geom-nodes (.-nodes fap-geo)
+  ;;       to-keep #{"Group Input" "Group Output"}]
+  ;;   ;; (print fap)
+  ;;   ;; (print fap-geo)
+  ;;   ;; (print fap-geom-nodes)å
+  ;;   (doseq [node fap-geom-nodes]
+  ;;     (print node)
+  ;;     (set! context.active_node)
+  ;;     ;; (if (contains? to-keep (.-name node))
+  ;;     ;;   (print (.-name node))
+  ;;     ;;   (do 
+  ;;     ;;     (set! ()))
+  ;;     ;;   (bpy.ops.object/delete node)
+  ;;     ;;   )
+  ;;     ;; )
+  ;;     ))
 
-  (bpy.ops.node/add_node (molecular-node-types :seperate-polyerms))
+  (bpy.ops.node/add_node (molecular-node-types :seperate-polymers))
 
   (def fap (mol-by-name "1FAP"))
   (def exampletree (geom-node-by-name "1FAP"))
