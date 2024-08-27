@@ -4,14 +4,14 @@ import tempfile
 import zipfile
 import bpy
 import molecularnodes
-import nodetopython
+import NodeToPython
 from molecularnodes.entities.molecule import Molecule
 from molecularnodes.entities.molecule.ui import load_local
 
 
 # need this to load the NTP
 try:
-    nodetopython.register()
+    NodeToPython.register()
     molecularnodes.register()
 except:
     pass
