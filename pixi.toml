@@ -18,14 +18,16 @@ ipython = "*"
 bpy = "*"
 blendersynth = "*"
 biotite = "==0.40.0"
+build = "*"
 geometry_script = { git = "https://github.com/zachcp/geometry-script.git" }
-nodetopython = { git = "https://github.com/zachcp/NodeToPython.git", branch = "v32" }
+nodetopython = { git = "https://github.com/zachcp/NodeToPython.git" }
 molecularnodes = { git = "https://github.com/BradyAJohnston/MolecularNodes.git" }
 opencv-python = "*"
 platformdirs = "*"
 basilisp = "*"
 basilisp-blender = "*"
 molnodes = { path = "molnodes", editable = true }
+usernodes = { path = "usernodes", editable = true }
 
 [tasks]
 # run pixi launch to open the system blender and connect to it
@@ -40,7 +42,7 @@ launch-blender-live = "/Applications/Blender.app/Contents/MacOS/Blender --python
 # Remove Blender Python subdirectory, Blender will then fallback on the system’s Python and use that instead.
 # Depending on your platform, you may need to explicitly reference the location of your Python installation using the PYTHONPATH environment variable, e.g:
 # launch-blender-basilisp = "/Applications/Blender.app/Contents/MacOS/Blender --python-use-system-env --python-expr \"from basilisp_blender.nrepl import server_start; shutdown_fn = server_start(port=8889);\""
-launch-blender-basilisp = "/Applications/Blender.app/Contents/MacOS/Blender --python-use-system-env --python scripts/blender_interop/start_basilisp_nrepl.py"
+repl = "/Applications/Blender.app/Contents/MacOS/Blender --python-use-system-env --python scripts/blender_interop/start_basilisp_nrepl.py"
 
 
 # send a file for eval in Blender
@@ -51,4 +53,4 @@ kill-blender = "pkill -f blender --background"
 convert-MN = "python scripts/convert_MN/convert_MolecularNodes.py"
 # convert MolecularNodes
 # build-wheel = "cd molnodes && pip install build && python -m build"
-build-wheel = "cd molnodes && python -m build"
+build-wheels = "python -m build molnodes && python -m build molnodes"
