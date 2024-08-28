@@ -28,26 +28,28 @@ class Animate_Fraction(bpy.types.Operator):
 			#animate_fraction interface
 			#Socket Float
 			float_socket = animate_fraction.interface.new_socket(name = "Float", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			float_socket.subtype = 'NONE'
 			float_socket.default_value = 0.0
 			float_socket.min_value = -3.4028234663852886e+38
 			float_socket.max_value = 3.4028234663852886e+38
+			float_socket.subtype = 'NONE'
 			float_socket.attribute_domain = 'POINT'
 			
 			#Socket Interpolate
 			interpolate_socket = animate_fraction.interface.new_socket(name = "Interpolate", in_out='INPUT', socket_type = 'NodeSocketBool')
+			interpolate_socket.default_value = False
 			interpolate_socket.attribute_domain = 'POINT'
 			
 			#Socket Smoother Step
 			smoother_step_socket = animate_fraction.interface.new_socket(name = "Smoother Step", in_out='INPUT', socket_type = 'NodeSocketBool')
+			smoother_step_socket.default_value = False
 			smoother_step_socket.attribute_domain = 'POINT'
 			
 			#Socket Float
 			float_socket_1 = animate_fraction.interface.new_socket(name = "Float", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			float_socket_1.subtype = 'NONE'
 			float_socket_1.default_value = 0.0
 			float_socket_1.min_value = -3.4028234663852886e+38
 			float_socket_1.max_value = 3.4028234663852886e+38
+			float_socket_1.subtype = 'NONE'
 			float_socket_1.attribute_domain = 'POINT'
 			
 			

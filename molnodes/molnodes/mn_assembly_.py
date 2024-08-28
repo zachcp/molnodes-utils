@@ -38,28 +38,28 @@ class MN_assembly_(bpy.types.Operator):
 			
 			#Socket Rotation
 			rotation_socket = mn_assembly_.interface.new_socket(name = "Rotation", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			rotation_socket.subtype = 'FACTOR'
 			rotation_socket.default_value = 1.0
 			rotation_socket.min_value = 0.0
 			rotation_socket.max_value = 1.0
+			rotation_socket.subtype = 'FACTOR'
 			rotation_socket.attribute_domain = 'POINT'
 			rotation_socket.description = "Amount to apply the rotation of the matrix"
 			
 			#Socket Translation
 			translation_socket = mn_assembly_.interface.new_socket(name = "Translation", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			translation_socket.subtype = 'FACTOR'
 			translation_socket.default_value = 1.0
 			translation_socket.min_value = 0.0
 			translation_socket.max_value = 1.0
+			translation_socket.subtype = 'FACTOR'
 			translation_socket.attribute_domain = 'POINT'
 			translation_socket.description = "Amount to apply the translation of the matrix"
 			
 			#Socket assembly_id
 			assembly_id_socket = mn_assembly_.interface.new_socket(name = "assembly_id", in_out='INPUT', socket_type = 'NodeSocketInt')
-			assembly_id_socket.subtype = 'NONE'
 			assembly_id_socket.default_value = 1
 			assembly_id_socket.min_value = 1
 			assembly_id_socket.max_value = 6
+			assembly_id_socket.subtype = 'NONE'
 			assembly_id_socket.attribute_domain = 'POINT'
 			assembly_id_socket.description = "Which biological assembly to create"
 			

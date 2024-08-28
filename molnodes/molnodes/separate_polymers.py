@@ -28,42 +28,42 @@ class Separate_Polymers(bpy.types.Operator):
 			#_mn_constants_atom_name_peptide interface
 			#Socket Backbone Lower
 			backbone_lower_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Backbone Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.default_value = 0
 			backbone_lower_socket.min_value = -2147483648
 			backbone_lower_socket.max_value = 2147483647
+			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Upper
 			backbone_upper_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Backbone Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.default_value = 0
 			backbone_upper_socket.min_value = -2147483648
 			backbone_upper_socket.max_value = 2147483647
+			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Lower
 			side_chain_lower_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Side Chain Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.default_value = 0
 			side_chain_lower_socket.min_value = -2147483648
 			side_chain_lower_socket.max_value = 2147483647
+			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Upper
 			side_chain_upper_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Side Chain Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.default_value = 0
 			side_chain_upper_socket.min_value = -2147483648
 			side_chain_upper_socket.max_value = 2147483647
+			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Alpha Carbon
 			alpha_carbon_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Alpha Carbon", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			alpha_carbon_socket.subtype = 'NONE'
 			alpha_carbon_socket.default_value = 0
 			alpha_carbon_socket.min_value = -2147483648
 			alpha_carbon_socket.max_value = 2147483647
+			alpha_carbon_socket.subtype = 'NONE'
 			alpha_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -149,18 +149,22 @@ class Separate_Polymers(bpy.types.Operator):
 			#_mn_select_peptide interface
 			#Socket Is Backbone
 			is_backbone_socket = _mn_select_peptide.interface.new_socket(name = "Is Backbone", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_backbone_socket.default_value = False
 			is_backbone_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Side Chain
 			is_side_chain_socket = _mn_select_peptide.interface.new_socket(name = "Is Side Chain", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_side_chain_socket.default_value = False
 			is_side_chain_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Peptide
 			is_peptide_socket = _mn_select_peptide.interface.new_socket(name = "Is Peptide", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_peptide_socket.default_value = False
 			is_peptide_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Alpha Carbon
 			is_alpha_carbon_socket = _mn_select_peptide.interface.new_socket(name = "Is Alpha Carbon", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_alpha_carbon_socket.default_value = False
 			is_alpha_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -360,14 +364,17 @@ class Separate_Polymers(bpy.types.Operator):
 			#fallback_boolean interface
 			#Socket Boolean
 			boolean_socket = fallback_boolean.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket = fallback_boolean.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = ""
 			name_socket.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket = fallback_boolean.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketBool')
+			fallback_socket.default_value = False
 			fallback_socket.attribute_domain = 'POINT'
 			
 			
@@ -432,20 +439,24 @@ class Separate_Polymers(bpy.types.Operator):
 			#is_peptide interface
 			#Socket Selection
 			selection_socket = is_peptide.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "True if atoms are part of a peptide"
 			
 			#Socket Inverted
 			inverted_socket = is_peptide.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket = is_peptide.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = is_peptide.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
@@ -540,42 +551,42 @@ class Separate_Polymers(bpy.types.Operator):
 			#_mn_constants_atom_name_nucleic interface
 			#Socket Backbone Lower
 			backbone_lower_socket_1 = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Backbone Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_lower_socket_1.subtype = 'NONE'
 			backbone_lower_socket_1.default_value = 0
 			backbone_lower_socket_1.min_value = -2147483648
 			backbone_lower_socket_1.max_value = 2147483647
+			backbone_lower_socket_1.subtype = 'NONE'
 			backbone_lower_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Backbone Upper
 			backbone_upper_socket_1 = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Backbone Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_upper_socket_1.subtype = 'NONE'
 			backbone_upper_socket_1.default_value = 0
 			backbone_upper_socket_1.min_value = -2147483648
 			backbone_upper_socket_1.max_value = 2147483647
+			backbone_upper_socket_1.subtype = 'NONE'
 			backbone_upper_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Lower
 			side_chain_lower_socket_1 = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Side Chain Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_lower_socket_1.subtype = 'NONE'
 			side_chain_lower_socket_1.default_value = 0
 			side_chain_lower_socket_1.min_value = -2147483648
 			side_chain_lower_socket_1.max_value = 2147483647
+			side_chain_lower_socket_1.subtype = 'NONE'
 			side_chain_lower_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Upper
 			side_chain_upper_socket_1 = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Side Chain Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_upper_socket_1.subtype = 'NONE'
 			side_chain_upper_socket_1.default_value = 0
 			side_chain_upper_socket_1.min_value = -2147483648
 			side_chain_upper_socket_1.max_value = 2147483647
+			side_chain_upper_socket_1.subtype = 'NONE'
 			side_chain_upper_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Joint Carbon
 			side_chain_joint_carbon_socket = _mn_constants_atom_name_nucleic.interface.new_socket(name = "Side Chain Joint Carbon", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_joint_carbon_socket.subtype = 'NONE'
 			side_chain_joint_carbon_socket.default_value = 0
 			side_chain_joint_carbon_socket.min_value = -2147483648
 			side_chain_joint_carbon_socket.max_value = 2147483647
+			side_chain_joint_carbon_socket.subtype = 'NONE'
 			side_chain_joint_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -661,16 +672,19 @@ class Separate_Polymers(bpy.types.Operator):
 			#_mn_select_nucleic interface
 			#Socket Is Backbone
 			is_backbone_socket_1 = _mn_select_nucleic.interface.new_socket(name = "Is Backbone", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_backbone_socket_1.default_value = False
 			is_backbone_socket_1.attribute_domain = 'POINT'
 			is_backbone_socket_1.description = "True for atoms that are part of the sugar-phosphate backbone for the nucleotides"
 			
 			#Socket Is Side Chain
 			is_side_chain_socket_1 = _mn_select_nucleic.interface.new_socket(name = "Is Side Chain", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_side_chain_socket_1.default_value = False
 			is_side_chain_socket_1.attribute_domain = 'POINT'
 			is_side_chain_socket_1.description = "True for atoms that are part of the bases for nucleotides."
 			
 			#Socket Is Nucleic
 			is_nucleic_socket = _mn_select_nucleic.interface.new_socket(name = "Is Nucleic", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_nucleic_socket.default_value = False
 			is_nucleic_socket.attribute_domain = 'POINT'
 			is_nucleic_socket.description = "True if the atoms are part of a nucleic acid"
 			
@@ -845,20 +859,24 @@ class Separate_Polymers(bpy.types.Operator):
 			#is_nucleic interface
 			#Socket Selection
 			selection_socket_1 = is_nucleic.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = False
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.description = "True if atoms are part of a nucleic acid"
 			
 			#Socket Inverted
 			inverted_socket_1 = is_nucleic.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_1.default_value = False
 			inverted_socket_1.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_1 = is_nucleic.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_1.default_value = True
 			and_socket_1.attribute_domain = 'POINT'
 			and_socket_1.hide_value = True
 			
 			#Socket Or
 			or_socket_1 = is_nucleic.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_1.default_value = False
 			or_socket_1.attribute_domain = 'POINT'
 			or_socket_1.hide_value = True
 			

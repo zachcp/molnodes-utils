@@ -28,22 +28,23 @@ class Fallback_Vector(bpy.types.Operator):
 			#fallback_vector interface
 			#Socket Output
 			output_socket = fallback_vector.interface.new_socket(name = "Output", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			output_socket.subtype = 'NONE'
 			output_socket.default_value = (0.0, 0.0, 0.0)
 			output_socket.min_value = -3.4028234663852886e+38
 			output_socket.max_value = 3.4028234663852886e+38
+			output_socket.subtype = 'NONE'
 			output_socket.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket = fallback_vector.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = ""
 			name_socket.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket = fallback_vector.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketVector')
-			fallback_socket.subtype = 'NONE'
 			fallback_socket.default_value = (0.0, 0.0, 0.0)
 			fallback_socket.min_value = -3.4028234663852886e+38
 			fallback_socket.max_value = 3.4028234663852886e+38
+			fallback_socket.subtype = 'NONE'
 			fallback_socket.attribute_domain = 'POINT'
 			
 			

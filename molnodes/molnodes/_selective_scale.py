@@ -28,30 +28,31 @@ class _selective_scale(bpy.types.Operator):
 			#_selective_scale interface
 			#Socket Output
 			output_socket = _selective_scale.interface.new_socket(name = "Output", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			output_socket.subtype = 'NONE'
 			output_socket.default_value = 0.0
 			output_socket.min_value = -3.4028234663852886e+38
 			output_socket.max_value = 3.4028234663852886e+38
+			output_socket.subtype = 'NONE'
 			output_socket.attribute_domain = 'POINT'
 			
 			#Socket Switch
 			switch_socket = _selective_scale.interface.new_socket(name = "Switch", in_out='INPUT', socket_type = 'NodeSocketBool')
+			switch_socket.default_value = False
 			switch_socket.attribute_domain = 'POINT'
 			
 			#Socket Input
 			input_socket = _selective_scale.interface.new_socket(name = "Input", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			input_socket.subtype = 'NONE'
 			input_socket.default_value = 0.0
 			input_socket.min_value = -3.4028234663852886e+38
 			input_socket.max_value = 3.4028234663852886e+38
+			input_socket.subtype = 'NONE'
 			input_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = _selective_scale.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.800000011920929
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			

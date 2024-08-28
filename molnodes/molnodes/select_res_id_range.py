@@ -28,21 +28,25 @@ class Select_Res_ID_Range(bpy.types.Operator):
 			#select_res_id_range interface
 			#Socket Selection
 			selection_socket = select_res_id_range.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = select_res_id_range.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			inverted_socket.description = "The inverse of the calculated selection"
 			
 			#Socket And
 			and_socket = select_res_id_range.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = select_res_id_range.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
@@ -50,19 +54,19 @@ class Select_Res_ID_Range(bpy.types.Operator):
 			res_id_panel = select_res_id_range.interface.new_panel("Res ID")
 			#Socket Min
 			min_socket = select_res_id_range.interface.new_socket(name = "Min", in_out='INPUT', socket_type = 'NodeSocketInt', parent = res_id_panel)
-			min_socket.subtype = 'NONE'
 			min_socket.default_value = 10
 			min_socket.min_value = 0
 			min_socket.max_value = 2147483647
+			min_socket.subtype = 'NONE'
 			min_socket.attribute_domain = 'POINT'
 			min_socket.description = "Minimum of a `res_id` range selection"
 			
 			#Socket Max
 			max_socket = select_res_id_range.interface.new_socket(name = "Max", in_out='INPUT', socket_type = 'NodeSocketInt', parent = res_id_panel)
-			max_socket.subtype = 'NONE'
 			max_socket.default_value = 100
 			max_socket.min_value = 1
 			max_socket.max_value = 2147483647
+			max_socket.subtype = 'NONE'
 			max_socket.attribute_domain = 'POINT'
 			max_socket.description = "Maximum of a `res_id` range selection"
 			

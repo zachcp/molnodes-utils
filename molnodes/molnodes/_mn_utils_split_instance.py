@@ -37,26 +37,26 @@ class _MN_utils_split_instance(bpy.types.Operator):
 			
 			#Socket Field
 			field_socket = _mn_utils_split_instance.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketInt')
-			field_socket.subtype = 'NONE'
 			field_socket.default_value = 0
 			field_socket.min_value = -2147483648
 			field_socket.max_value = 2147483647
+			field_socket.subtype = 'NONE'
 			field_socket.attribute_domain = 'POINT'
 			
 			#Socket Group ID
 			group_id_socket = _mn_utils_split_instance.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket.subtype = 'NONE'
 			group_id_socket.default_value = 0
 			group_id_socket.min_value = -2147483648
 			group_id_socket.max_value = 2147483647
+			group_id_socket.subtype = 'NONE'
 			group_id_socket.attribute_domain = 'POINT'
 			
 			#Socket Origin Offset
 			origin_offset_socket = _mn_utils_split_instance.interface.new_socket(name = "Origin Offset", in_out='INPUT', socket_type = 'NodeSocketVector')
-			origin_offset_socket.subtype = 'NONE'
 			origin_offset_socket.default_value = (0.0, 0.0, 0.0)
 			origin_offset_socket.min_value = -10000.0
 			origin_offset_socket.max_value = 10000.0
+			origin_offset_socket.subtype = 'NONE'
 			origin_offset_socket.attribute_domain = 'POINT'
 			
 			

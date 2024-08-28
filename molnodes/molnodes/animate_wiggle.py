@@ -28,18 +28,18 @@ class Animate_Wiggle(bpy.types.Operator):
 			#_mn_animate_wiggle_mask_length interface
 			#Socket Result
 			result_socket = _mn_animate_wiggle_mask_length.interface.new_socket(name = "Result", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			result_socket.subtype = 'NONE'
 			result_socket.default_value = 0
 			result_socket.min_value = -2147483648
 			result_socket.max_value = 2147483647
+			result_socket.subtype = 'NONE'
 			result_socket.attribute_domain = 'POINT'
 			
 			#Socket A
 			a_socket = _mn_animate_wiggle_mask_length.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketInt')
-			a_socket.subtype = 'NONE'
 			a_socket.default_value = 0
 			a_socket.min_value = -2147483648
 			a_socket.max_value = 2147483647
+			a_socket.subtype = 'NONE'
 			a_socket.attribute_domain = 'POINT'
 			
 			
@@ -107,76 +107,76 @@ class Animate_Wiggle(bpy.types.Operator):
 			#mn_animate_noise_repeat interface
 			#Socket Noise Float
 			noise_float_socket = mn_animate_noise_repeat.interface.new_socket(name = "Noise Float", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			noise_float_socket.subtype = 'NONE'
 			noise_float_socket.default_value = 0.0
 			noise_float_socket.min_value = -3.4028234663852886e+38
 			noise_float_socket.max_value = 3.4028234663852886e+38
+			noise_float_socket.subtype = 'NONE'
 			noise_float_socket.attribute_domain = 'POINT'
 			
 			#Socket Noise Vector
 			noise_vector_socket = mn_animate_noise_repeat.interface.new_socket(name = "Noise Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			noise_vector_socket.subtype = 'NONE'
 			noise_vector_socket.default_value = (0.0, 0.0, 0.0)
 			noise_vector_socket.min_value = -3.4028234663852886e+38
 			noise_vector_socket.max_value = 3.4028234663852886e+38
+			noise_vector_socket.subtype = 'NONE'
 			noise_vector_socket.attribute_domain = 'POINT'
 			
 			#Socket Amplitude
 			amplitude_socket = mn_animate_noise_repeat.interface.new_socket(name = "Amplitude", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			amplitude_socket.subtype = 'NONE'
 			amplitude_socket.default_value = 1.0
 			amplitude_socket.min_value = -10000.0
 			amplitude_socket.max_value = 10000.0
+			amplitude_socket.subtype = 'NONE'
 			amplitude_socket.attribute_domain = 'POINT'
 			
 			#Socket Detail
 			detail_socket = mn_animate_noise_repeat.interface.new_socket(name = "Detail", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			detail_socket.subtype = 'NONE'
 			detail_socket.default_value = 0.5
 			detail_socket.min_value = 0.0
 			detail_socket.max_value = 15.0
+			detail_socket.subtype = 'NONE'
 			detail_socket.attribute_domain = 'POINT'
 			
 			#Socket Roughness
 			roughness_socket = mn_animate_noise_repeat.interface.new_socket(name = "Roughness", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			roughness_socket.subtype = 'FACTOR'
 			roughness_socket.default_value = 0.5
 			roughness_socket.min_value = 0.0
 			roughness_socket.max_value = 1.0
+			roughness_socket.subtype = 'FACTOR'
 			roughness_socket.attribute_domain = 'POINT'
 			
 			#Socket Distortion
 			distortion_socket = mn_animate_noise_repeat.interface.new_socket(name = "Distortion", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			distortion_socket.subtype = 'NONE'
 			distortion_socket.default_value = 0.0
 			distortion_socket.min_value = -1000.0
 			distortion_socket.max_value = 1000.0
+			distortion_socket.subtype = 'NONE'
 			distortion_socket.attribute_domain = 'POINT'
 			
 			#Socket Vector
 			vector_socket = mn_animate_noise_repeat.interface.new_socket(name = "Vector", in_out='INPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -10000.0
 			vector_socket.max_value = 10000.0
+			vector_socket.subtype = 'NONE'
 			vector_socket.default_attribute_name = "position"
 			vector_socket.attribute_domain = 'POINT'
 			vector_socket.hide_value = True
 			
 			#Socket Speed
 			speed_socket = mn_animate_noise_repeat.interface.new_socket(name = "Speed", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			speed_socket.subtype = 'NONE'
 			speed_socket.default_value = 0.5
 			speed_socket.min_value = -10000.0
 			speed_socket.max_value = 10000.0
+			speed_socket.subtype = 'NONE'
 			speed_socket.attribute_domain = 'POINT'
 			
 			#Socket Animate 0..1
 			animate_0__1_socket = mn_animate_noise_repeat.interface.new_socket(name = "Animate 0..1", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			animate_0__1_socket.subtype = 'NONE'
 			animate_0__1_socket.default_value = 0.5
 			animate_0__1_socket.min_value = -10000.0
 			animate_0__1_socket.max_value = 10000.0
+			animate_0__1_socket.subtype = 'NONE'
 			animate_0__1_socket.attribute_domain = 'POINT'
 			
 			
@@ -496,91 +496,96 @@ class Animate_Wiggle(bpy.types.Operator):
 			#_utils_group_field_at_selection interface
 			#Socket Group Index
 			group_index_socket = _utils_group_field_at_selection.interface.new_socket(name = "Group Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			group_index_socket.subtype = 'NONE'
 			group_index_socket.default_value = 0
 			group_index_socket.min_value = -2147483648
 			group_index_socket.max_value = 2147483647
+			group_index_socket.subtype = 'NONE'
 			group_index_socket.attribute_domain = 'POINT'
 			
 			#Socket Float
 			float_socket = _utils_group_field_at_selection.interface.new_socket(name = "Float", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			float_socket.subtype = 'NONE'
 			float_socket.default_value = 0.0
 			float_socket.min_value = -3.4028234663852886e+38
 			float_socket.max_value = 3.4028234663852886e+38
+			float_socket.subtype = 'NONE'
 			float_socket.attribute_domain = 'POINT'
 			
 			#Socket Vector
 			vector_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.default_value = (0.0, 0.0, 0.0)
 			vector_socket_1.min_value = -3.4028234663852886e+38
 			vector_socket_1.max_value = 3.4028234663852886e+38
+			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Boolean
 			boolean_socket = _utils_group_field_at_selection.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Color
 			color_socket = _utils_group_field_at_selection.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket Integer
 			integer_socket = _utils_group_field_at_selection.interface.new_socket(name = "Integer", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			integer_socket.subtype = 'NONE'
 			integer_socket.default_value = 0
 			integer_socket.min_value = -2147483648
 			integer_socket.max_value = 2147483647
+			integer_socket.subtype = 'NONE'
 			integer_socket.attribute_domain = 'POINT'
 			
 			#Socket Selection
 			selection_socket = _utils_group_field_at_selection.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Group Index
 			group_index_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Group Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_index_socket_1.subtype = 'NONE'
 			group_index_socket_1.default_value = 0
 			group_index_socket_1.min_value = -2147483648
 			group_index_socket_1.max_value = 2147483647
+			group_index_socket_1.subtype = 'NONE'
 			group_index_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Float
 			float_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Float", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			float_socket_1.subtype = 'NONE'
 			float_socket_1.default_value = 0.0
 			float_socket_1.min_value = -3.4028234663852886e+38
 			float_socket_1.max_value = 3.4028234663852886e+38
+			float_socket_1.subtype = 'NONE'
 			float_socket_1.attribute_domain = 'POINT'
 			float_socket_1.hide_value = True
 			
 			#Socket Vector
 			vector_socket_2 = _utils_group_field_at_selection.interface.new_socket(name = "Vector", in_out='INPUT', socket_type = 'NodeSocketVector')
-			vector_socket_2.subtype = 'NONE'
 			vector_socket_2.default_value = (0.0, 0.0, 0.0)
 			vector_socket_2.min_value = -3.4028234663852886e+38
 			vector_socket_2.max_value = 3.4028234663852886e+38
+			vector_socket_2.subtype = 'NONE'
 			vector_socket_2.attribute_domain = 'POINT'
 			vector_socket_2.hide_value = True
 			
 			#Socket Boolean
 			boolean_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Boolean", in_out='INPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_1.default_value = False
 			boolean_socket_1.attribute_domain = 'POINT'
 			boolean_socket_1.hide_value = True
 			
 			#Socket Color
 			color_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor')
+			color_socket_1.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket_1.attribute_domain = 'POINT'
 			color_socket_1.hide_value = True
 			
 			#Socket Integer
 			integer_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Integer", in_out='INPUT', socket_type = 'NodeSocketInt')
-			integer_socket_1.subtype = 'NONE'
 			integer_socket_1.default_value = 0
 			integer_socket_1.min_value = -2147483648
 			integer_socket_1.max_value = 2147483647
+			integer_socket_1.subtype = 'NONE'
 			integer_socket_1.attribute_domain = 'POINT'
 			integer_socket_1.hide_value = True
 			
@@ -725,42 +730,42 @@ class Animate_Wiggle(bpy.types.Operator):
 			#_mn_utils_aa_atom_pos interface
 			#Socket Position
 			position_socket = _mn_utils_aa_atom_pos.interface.new_socket(name = "Position", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			
 			#Socket Group Index
 			group_index_socket_2 = _mn_utils_aa_atom_pos.interface.new_socket(name = "Group Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			group_index_socket_2.subtype = 'NONE'
 			group_index_socket_2.default_value = 0
 			group_index_socket_2.min_value = -2147483648
 			group_index_socket_2.max_value = 2147483647
+			group_index_socket_2.subtype = 'NONE'
 			group_index_socket_2.attribute_domain = 'POINT'
 			
 			#Socket b_factor
 			b_factor_socket = _mn_utils_aa_atom_pos.interface.new_socket(name = "b_factor", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			b_factor_socket.subtype = 'NONE'
 			b_factor_socket.default_value = 0.0
 			b_factor_socket.min_value = -3.4028234663852886e+38
 			b_factor_socket.max_value = 3.4028234663852886e+38
+			b_factor_socket.subtype = 'NONE'
 			b_factor_socket.attribute_domain = 'POINT'
 			
 			#Socket Integer
 			integer_socket_2 = _mn_utils_aa_atom_pos.interface.new_socket(name = "Integer", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			integer_socket_2.subtype = 'NONE'
 			integer_socket_2.default_value = 0
 			integer_socket_2.min_value = -2147483648
 			integer_socket_2.max_value = 2147483647
+			integer_socket_2.subtype = 'NONE'
 			integer_socket_2.attribute_domain = 'POINT'
 			
 			#Socket atom_name
 			atom_name_socket = _mn_utils_aa_atom_pos.interface.new_socket(name = "atom_name", in_out='INPUT', socket_type = 'NodeSocketInt')
-			atom_name_socket.subtype = 'NONE'
 			atom_name_socket.default_value = 5
 			atom_name_socket.min_value = -2147483648
 			atom_name_socket.max_value = 2147483647
+			atom_name_socket.subtype = 'NONE'
 			atom_name_socket.attribute_domain = 'POINT'
 			
 			
@@ -1073,42 +1078,42 @@ class Animate_Wiggle(bpy.types.Operator):
 			#_mn_constants_atom_name_peptide interface
 			#Socket Backbone Lower
 			backbone_lower_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Backbone Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.default_value = 0
 			backbone_lower_socket.min_value = -2147483648
 			backbone_lower_socket.max_value = 2147483647
+			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Upper
 			backbone_upper_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Backbone Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.default_value = 0
 			backbone_upper_socket.min_value = -2147483648
 			backbone_upper_socket.max_value = 2147483647
+			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Lower
 			side_chain_lower_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Side Chain Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.default_value = 0
 			side_chain_lower_socket.min_value = -2147483648
 			side_chain_lower_socket.max_value = 2147483647
+			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Upper
 			side_chain_upper_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Side Chain Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.default_value = 0
 			side_chain_upper_socket.min_value = -2147483648
 			side_chain_upper_socket.max_value = 2147483647
+			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Alpha Carbon
 			alpha_carbon_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Alpha Carbon", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			alpha_carbon_socket.subtype = 'NONE'
 			alpha_carbon_socket.default_value = 0
 			alpha_carbon_socket.min_value = -2147483648
 			alpha_carbon_socket.max_value = 2147483647
+			alpha_carbon_socket.subtype = 'NONE'
 			alpha_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -1194,18 +1199,22 @@ class Animate_Wiggle(bpy.types.Operator):
 			#_mn_select_peptide interface
 			#Socket Is Backbone
 			is_backbone_socket = _mn_select_peptide.interface.new_socket(name = "Is Backbone", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_backbone_socket.default_value = False
 			is_backbone_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Side Chain
 			is_side_chain_socket = _mn_select_peptide.interface.new_socket(name = "Is Side Chain", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_side_chain_socket.default_value = False
 			is_side_chain_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Peptide
 			is_peptide_socket = _mn_select_peptide.interface.new_socket(name = "Is Peptide", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_peptide_socket.default_value = False
 			is_peptide_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Alpha Carbon
 			is_alpha_carbon_socket = _mn_select_peptide.interface.new_socket(name = "Is Alpha Carbon", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_alpha_carbon_socket.default_value = False
 			is_alpha_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -1405,14 +1414,17 @@ class Animate_Wiggle(bpy.types.Operator):
 			#fallback_boolean interface
 			#Socket Boolean
 			boolean_socket_2 = fallback_boolean.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_2.default_value = False
 			boolean_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket = fallback_boolean.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = ""
 			name_socket.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket = fallback_boolean.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketBool')
+			fallback_socket.default_value = False
 			fallback_socket.attribute_domain = 'POINT'
 			
 			
@@ -1477,20 +1489,24 @@ class Animate_Wiggle(bpy.types.Operator):
 			#is_peptide interface
 			#Socket Selection
 			selection_socket_1 = is_peptide.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = False
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.description = "True if atoms are part of a peptide"
 			
 			#Socket Inverted
 			inverted_socket = is_peptide.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket = is_peptide.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = is_peptide.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
@@ -1585,84 +1601,86 @@ class Animate_Wiggle(bpy.types.Operator):
 			#_mn_utils_rotate_res interface
 			#Socket Selection
 			selection_socket_2 = _mn_utils_rotate_res.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_2.default_value = False
 			selection_socket_2.attribute_domain = 'POINT'
 			selection_socket_2.description = "The calculated selection"
 			
 			#Socket Position
 			position_socket_1 = _mn_utils_rotate_res.interface.new_socket(name = "Position", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			position_socket_1.subtype = 'NONE'
 			position_socket_1.default_value = (0.0, 0.0, 0.0)
 			position_socket_1.min_value = -3.4028234663852886e+38
 			position_socket_1.max_value = 3.4028234663852886e+38
+			position_socket_1.subtype = 'NONE'
 			position_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Selection
 			selection_socket_3 = _mn_utils_rotate_res.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_3.default_value = False
 			selection_socket_3.attribute_domain = 'POINT'
 			selection_socket_3.description = "Selection of atoms to apply this node to"
 			
 			#Socket atom_name rotation
 			atom_name_rotation_socket = _mn_utils_rotate_res.interface.new_socket(name = "atom_name rotation", in_out='INPUT', socket_type = 'NodeSocketInt')
-			atom_name_rotation_socket.subtype = 'NONE'
 			atom_name_rotation_socket.default_value = 0
 			atom_name_rotation_socket.min_value = -2147483648
 			atom_name_rotation_socket.max_value = 2147483647
+			atom_name_rotation_socket.subtype = 'NONE'
 			atom_name_rotation_socket.attribute_domain = 'POINT'
 			
 			#Socket atom_name axis
 			atom_name_axis_socket = _mn_utils_rotate_res.interface.new_socket(name = "atom_name axis", in_out='INPUT', socket_type = 'NodeSocketInt')
-			atom_name_axis_socket.subtype = 'NONE'
 			atom_name_axis_socket.default_value = 2
 			atom_name_axis_socket.min_value = -2147483648
 			atom_name_axis_socket.max_value = 2147483647
+			atom_name_axis_socket.subtype = 'NONE'
 			atom_name_axis_socket.attribute_domain = 'POINT'
 			
 			#Socket Scale b_factor
 			scale_b_factor_socket = _mn_utils_rotate_res.interface.new_socket(name = "Scale b_factor", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_b_factor_socket.subtype = 'FACTOR'
 			scale_b_factor_socket.default_value = 0.0
 			scale_b_factor_socket.min_value = -3.4028234663852886e+38
 			scale_b_factor_socket.max_value = 3.4028234663852886e+38
+			scale_b_factor_socket.subtype = 'FACTOR'
 			scale_b_factor_socket.attribute_domain = 'POINT'
 			
 			#Socket Amplitude
 			amplitude_socket_1 = _mn_utils_rotate_res.interface.new_socket(name = "Amplitude", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			amplitude_socket_1.subtype = 'NONE'
 			amplitude_socket_1.default_value = 1.0
 			amplitude_socket_1.min_value = 0.0
 			amplitude_socket_1.max_value = 10.0
+			amplitude_socket_1.subtype = 'NONE'
 			amplitude_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Amp. Axis
 			amp__axis_socket = _mn_utils_rotate_res.interface.new_socket(name = "Amp. Axis", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			amp__axis_socket.subtype = 'NONE'
 			amp__axis_socket.default_value = 1.0
 			amp__axis_socket.min_value = -10000.0
 			amp__axis_socket.max_value = 10000.0
+			amp__axis_socket.subtype = 'NONE'
 			amp__axis_socket.attribute_domain = 'POINT'
 			
 			#Socket Amp. Euler
 			amp__euler_socket = _mn_utils_rotate_res.interface.new_socket(name = "Amp. Euler", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			amp__euler_socket.subtype = 'NONE'
 			amp__euler_socket.default_value = 1.0
 			amp__euler_socket.min_value = -10000.0
 			amp__euler_socket.max_value = 10000.0
+			amp__euler_socket.subtype = 'NONE'
 			amp__euler_socket.attribute_domain = 'POINT'
 			
 			#Socket Speed
 			speed_socket_1 = _mn_utils_rotate_res.interface.new_socket(name = "Speed", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			speed_socket_1.subtype = 'NONE'
 			speed_socket_1.default_value = 10.0
 			speed_socket_1.min_value = -10000.0
 			speed_socket_1.max_value = 10000.0
+			speed_socket_1.subtype = 'NONE'
 			speed_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Animate 0..1
 			animate_0__1_socket_1 = _mn_utils_rotate_res.interface.new_socket(name = "Animate 0..1", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			animate_0__1_socket_1.subtype = 'NONE'
 			animate_0__1_socket_1.default_value = 0.5
 			animate_0__1_socket_1.min_value = -10000.0
 			animate_0__1_socket_1.max_value = 10000.0
+			animate_0__1_socket_1.subtype = 'NONE'
 			animate_0__1_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -2102,111 +2120,133 @@ class Animate_Wiggle(bpy.types.Operator):
 			#_mn_select_res_name_peptide interface
 			#Socket Selection
 			selection_socket_4 = _mn_select_res_name_peptide.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_4.default_value = False
 			selection_socket_4.attribute_domain = 'POINT'
 			selection_socket_4.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket_1 = _mn_select_res_name_peptide.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_1.default_value = False
 			inverted_socket_1.attribute_domain = 'POINT'
 			inverted_socket_1.description = "The inverse of the calculated selection"
 			
 			#Socket ALA
 			ala_socket = _mn_select_res_name_peptide.interface.new_socket(name = "ALA", in_out='INPUT', socket_type = 'NodeSocketBool')
+			ala_socket.default_value = False
 			ala_socket.attribute_domain = 'POINT'
 			ala_socket.description = "Select the AA residue ALA"
 			
 			#Socket ARG
 			arg_socket = _mn_select_res_name_peptide.interface.new_socket(name = "ARG", in_out='INPUT', socket_type = 'NodeSocketBool')
+			arg_socket.default_value = False
 			arg_socket.attribute_domain = 'POINT'
 			arg_socket.description = "Select the AA residue ARG"
 			
 			#Socket ASN
 			asn_socket = _mn_select_res_name_peptide.interface.new_socket(name = "ASN", in_out='INPUT', socket_type = 'NodeSocketBool')
+			asn_socket.default_value = False
 			asn_socket.attribute_domain = 'POINT'
 			asn_socket.description = "Select the AA residue ASN"
 			
 			#Socket ASP
 			asp_socket = _mn_select_res_name_peptide.interface.new_socket(name = "ASP", in_out='INPUT', socket_type = 'NodeSocketBool')
+			asp_socket.default_value = False
 			asp_socket.attribute_domain = 'POINT'
 			asp_socket.description = "Select the AA residue ASP"
 			
 			#Socket CYS
 			cys_socket = _mn_select_res_name_peptide.interface.new_socket(name = "CYS", in_out='INPUT', socket_type = 'NodeSocketBool')
+			cys_socket.default_value = False
 			cys_socket.attribute_domain = 'POINT'
 			cys_socket.description = "Select the AA residue CYS"
 			
 			#Socket GLU
 			glu_socket = _mn_select_res_name_peptide.interface.new_socket(name = "GLU", in_out='INPUT', socket_type = 'NodeSocketBool')
+			glu_socket.default_value = False
 			glu_socket.attribute_domain = 'POINT'
 			glu_socket.description = "Select the AA residue GLU"
 			
 			#Socket GLN
 			gln_socket = _mn_select_res_name_peptide.interface.new_socket(name = "GLN", in_out='INPUT', socket_type = 'NodeSocketBool')
+			gln_socket.default_value = False
 			gln_socket.attribute_domain = 'POINT'
 			gln_socket.description = "Select the AA residue GLN"
 			
 			#Socket GLY
 			gly_socket = _mn_select_res_name_peptide.interface.new_socket(name = "GLY", in_out='INPUT', socket_type = 'NodeSocketBool')
+			gly_socket.default_value = False
 			gly_socket.attribute_domain = 'POINT'
 			gly_socket.description = "Select the AA residue GLY"
 			
 			#Socket HIS
 			his_socket = _mn_select_res_name_peptide.interface.new_socket(name = "HIS", in_out='INPUT', socket_type = 'NodeSocketBool')
+			his_socket.default_value = False
 			his_socket.attribute_domain = 'POINT'
 			his_socket.description = "Select the AA residue HIS"
 			
 			#Socket ILE
 			ile_socket = _mn_select_res_name_peptide.interface.new_socket(name = "ILE", in_out='INPUT', socket_type = 'NodeSocketBool')
+			ile_socket.default_value = False
 			ile_socket.attribute_domain = 'POINT'
 			ile_socket.description = "Select the AA residue ILE"
 			
 			#Socket LEU
 			leu_socket = _mn_select_res_name_peptide.interface.new_socket(name = "LEU", in_out='INPUT', socket_type = 'NodeSocketBool')
+			leu_socket.default_value = False
 			leu_socket.attribute_domain = 'POINT'
 			leu_socket.description = "Select the AA residue LEU"
 			
 			#Socket LYS
 			lys_socket = _mn_select_res_name_peptide.interface.new_socket(name = "LYS", in_out='INPUT', socket_type = 'NodeSocketBool')
+			lys_socket.default_value = False
 			lys_socket.attribute_domain = 'POINT'
 			lys_socket.description = "Select the AA residue LYS"
 			
 			#Socket MET
 			met_socket = _mn_select_res_name_peptide.interface.new_socket(name = "MET", in_out='INPUT', socket_type = 'NodeSocketBool')
+			met_socket.default_value = False
 			met_socket.attribute_domain = 'POINT'
 			met_socket.description = "Select the AA residue MET"
 			
 			#Socket PHE
 			phe_socket = _mn_select_res_name_peptide.interface.new_socket(name = "PHE", in_out='INPUT', socket_type = 'NodeSocketBool')
+			phe_socket.default_value = False
 			phe_socket.attribute_domain = 'POINT'
 			phe_socket.description = "Select the AA residue PHE"
 			
 			#Socket PRO
 			pro_socket = _mn_select_res_name_peptide.interface.new_socket(name = "PRO", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pro_socket.default_value = False
 			pro_socket.attribute_domain = 'POINT'
 			pro_socket.description = "Select the AA residue PRO"
 			
 			#Socket SER
 			ser_socket = _mn_select_res_name_peptide.interface.new_socket(name = "SER", in_out='INPUT', socket_type = 'NodeSocketBool')
+			ser_socket.default_value = False
 			ser_socket.attribute_domain = 'POINT'
 			ser_socket.description = "Select the AA residue SER"
 			
 			#Socket THR
 			thr_socket = _mn_select_res_name_peptide.interface.new_socket(name = "THR", in_out='INPUT', socket_type = 'NodeSocketBool')
+			thr_socket.default_value = False
 			thr_socket.attribute_domain = 'POINT'
 			thr_socket.description = "Select the AA residue THR"
 			
 			#Socket TRP
 			trp_socket = _mn_select_res_name_peptide.interface.new_socket(name = "TRP", in_out='INPUT', socket_type = 'NodeSocketBool')
+			trp_socket.default_value = False
 			trp_socket.attribute_domain = 'POINT'
 			trp_socket.description = "Select the AA residue TRP"
 			
 			#Socket TYR
 			tyr_socket = _mn_select_res_name_peptide.interface.new_socket(name = "TYR", in_out='INPUT', socket_type = 'NodeSocketBool')
+			tyr_socket.default_value = False
 			tyr_socket.attribute_domain = 'POINT'
 			tyr_socket.description = "Select the AA residue TYR"
 			
 			#Socket VAL
 			val_socket = _mn_select_res_name_peptide.interface.new_socket(name = "VAL", in_out='INPUT', socket_type = 'NodeSocketBool')
+			val_socket.default_value = False
 			val_socket.attribute_domain = 'POINT'
 			val_socket.description = "Select the AA residue VAL"
 			
@@ -2347,14 +2387,15 @@ class Animate_Wiggle(bpy.types.Operator):
 			#_mn_animate_wiggle_mask_res interface
 			#Socket Result
 			result_socket_1 = _mn_animate_wiggle_mask_res.interface.new_socket(name = "Result", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			result_socket_1.default_value = False
 			result_socket_1.attribute_domain = 'POINT'
 			
 			#Socket A
 			a_socket_1 = _mn_animate_wiggle_mask_res.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketInt')
-			a_socket_1.subtype = 'NONE'
 			a_socket_1.default_value = 0
 			a_socket_1.min_value = -2147483648
 			a_socket_1.max_value = 2147483647
+			a_socket_1.subtype = 'NONE'
 			a_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -2668,61 +2709,62 @@ class Animate_Wiggle(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_5 = animate_wiggle.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_5.default_value = True
 			selection_socket_5.attribute_domain = 'POINT'
 			selection_socket_5.hide_value = True
 			selection_socket_5.description = "Selection of atoms to apply this node to"
 			
 			#Socket b_factor
 			b_factor_socket_1 = animate_wiggle.interface.new_socket(name = "b_factor", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			b_factor_socket_1.subtype = 'FACTOR'
 			b_factor_socket_1.default_value = 1.0
 			b_factor_socket_1.min_value = 0.0
 			b_factor_socket_1.max_value = 1.0
+			b_factor_socket_1.subtype = 'FACTOR'
 			b_factor_socket_1.attribute_domain = 'POINT'
 			b_factor_socket_1.description = "Amount that `b_factor` changeds the amplitude of wiggling"
 			
 			#Socket Amplitude
 			amplitude_socket_2 = animate_wiggle.interface.new_socket(name = "Amplitude", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			amplitude_socket_2.subtype = 'NONE'
 			amplitude_socket_2.default_value = 1.0
 			amplitude_socket_2.min_value = 0.0
 			amplitude_socket_2.max_value = 10.0
+			amplitude_socket_2.subtype = 'NONE'
 			amplitude_socket_2.attribute_domain = 'POINT'
 			amplitude_socket_2.description = "Overall amplitude of the wiggling"
 			
 			#Socket Amp. Axis
 			amp__axis_socket_1 = animate_wiggle.interface.new_socket(name = "Amp. Axis", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			amp__axis_socket_1.subtype = 'NONE'
 			amp__axis_socket_1.default_value = 1.0
 			amp__axis_socket_1.min_value = -10000.0
 			amp__axis_socket_1.max_value = 10000.0
+			amp__axis_socket_1.subtype = 'NONE'
 			amp__axis_socket_1.attribute_domain = 'POINT'
 			amp__axis_socket_1.description = "Aplitude for the rotation around the bond axes"
 			
 			#Socket Amp. Euler
 			amp__euler_socket_1 = animate_wiggle.interface.new_socket(name = "Amp. Euler", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			amp__euler_socket_1.subtype = 'NONE'
 			amp__euler_socket_1.default_value = 0.4000000059604645
 			amp__euler_socket_1.min_value = -10000.0
 			amp__euler_socket_1.max_value = 10000.0
+			amp__euler_socket_1.subtype = 'NONE'
 			amp__euler_socket_1.attribute_domain = 'POINT'
 			amp__euler_socket_1.description = "Amplitude for applying euler rotations separate to the axis"
 			
 			#Socket Speed
 			speed_socket_2 = animate_wiggle.interface.new_socket(name = "Speed", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			speed_socket_2.subtype = 'NONE'
 			speed_socket_2.default_value = 3.0
 			speed_socket_2.min_value = -10000.0
 			speed_socket_2.max_value = 10000.0
+			speed_socket_2.subtype = 'NONE'
 			speed_socket_2.attribute_domain = 'POINT'
 			speed_socket_2.description = "Speed at which the wiggle is applied, 3 will repeat 3 times"
 			
 			#Socket Animate
 			animate_socket = animate_wiggle.interface.new_socket(name = "Animate", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			animate_socket.subtype = 'NONE'
 			animate_socket.default_value = 0.0
 			animate_socket.min_value = -10000.0
 			animate_socket.max_value = 10000.0
+			animate_socket.subtype = 'NONE'
 			animate_socket.attribute_domain = 'POINT'
 			animate_socket.description = "Controls the animation of the wiggle, repeating every `1.00`"
 			

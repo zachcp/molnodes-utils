@@ -28,14 +28,17 @@ class Fallback_Color(bpy.types.Operator):
 			#fallback_color interface
 			#Socket Color
 			color_socket = fallback_color.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 1.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket = fallback_color.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = "Color"
 			name_socket.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket = fallback_color.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketColor')
+			fallback_socket.default_value = (0.07164950668811798, 0.29542478919029236, 0.23565927147865295, 1.0)
 			fallback_socket.attribute_domain = 'POINT'
 			fallback_socket.description = "Fallback value if Field is 0"
 			

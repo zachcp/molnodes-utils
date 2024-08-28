@@ -28,10 +28,12 @@ class MN_select_nucleic_type(bpy.types.Operator):
 			#mn_select_nucleic_type interface
 			#Socket is_purine
 			is_purine_socket = mn_select_nucleic_type.interface.new_socket(name = "is_purine", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_purine_socket.default_value = False
 			is_purine_socket.attribute_domain = 'POINT'
 			
 			#Socket is_pyrimidine
 			is_pyrimidine_socket = mn_select_nucleic_type.interface.new_socket(name = "is_pyrimidine", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_pyrimidine_socket.default_value = False
 			is_pyrimidine_socket.attribute_domain = 'POINT'
 			
 			

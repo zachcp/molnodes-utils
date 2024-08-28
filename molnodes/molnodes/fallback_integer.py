@@ -28,22 +28,23 @@ class Fallback_Integer(bpy.types.Operator):
 			#fallback_integer interface
 			#Socket Integer
 			integer_socket = fallback_integer.interface.new_socket(name = "Integer", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			integer_socket.subtype = 'NONE'
 			integer_socket.default_value = 0
 			integer_socket.min_value = -2147483648
 			integer_socket.max_value = 2147483647
+			integer_socket.subtype = 'NONE'
 			integer_socket.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket = fallback_integer.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = ""
 			name_socket.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket = fallback_integer.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketInt')
-			fallback_socket.subtype = 'NONE'
 			fallback_socket.default_value = 0
 			fallback_socket.min_value = -2147483648
 			fallback_socket.max_value = 2147483647
+			fallback_socket.subtype = 'NONE'
 			fallback_socket.attribute_domain = 'POINT'
 			fallback_socket.description = "Fallback value if Field is 0"
 			

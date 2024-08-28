@@ -1,9 +1,11 @@
 (ns molnodes
-  "Utilitis for workign with Moecular Nodes via basilisp-repl"
-  (:import bpy math pathlib)
+  "Utilities for working with Molecular Nodes via basilisp-repl"
+  (:import bpy mathutils pathlib
+           [bpy.types :as types]
+           [bpy.props :as props])
+           
   (:require
    [basilisp.string :as string]))
-
 
 (def molecular-node-types
   ; from: for groups in bpy.data.node_groups: print(groups.name)
@@ -82,7 +84,8 @@
    :sample-atom-value ".SampleAtomValue"
    :sec-struct-counter ".sec_struct_counter"
    :selective-scale ".selective_scale"
-   :seperate-polymers "Separate Polymers"
+   :seperate-polymers "Separate Polymers"})
+   
 ;;    Offset Boolean
 ;;    Offset Color
 ;;    Offset Float
@@ -154,8 +157,7 @@
 ;;    Style Spheres
 ;;    Style Sticks
 ;;    Style Surface
-   })
-
+   
 
 (defn- locate-molnodes-file []
   "locate the molecularnodes blenderfile"
@@ -180,10 +182,14 @@
 
 
 (defn load-pdb [code]
-  "primary way to load a PDB file"
+  "primary way to load a PDB file. uses MN builtin function. Ultimately uses 
+   https://github.com/BradyAJohnston/MolecularNodes/blob/bb35110ebf781021448f6f2294ef300768972650/molecularnodes/entities/molecule/molecule.py#L126 
+   and https://github.com/BradyAJohnston/MolecularNodes/blob/bb35110ebf781021448f6f2294ef300768972650/molecularnodes/blender/nodes.py#L521
+   "
   (do
     (set! (.. bpy/context -scene -MN_pdb_code) code)
     (set! (.. bpy/context -scene -MN_import_style) "cartoon")
+    (set! (.. bpy/context -scene -MN_import_centre) true)
     (bpy.ops.mn/import_wwpdb)))
 
 
@@ -196,52 +202,128 @@
   (-> (bpy.data.objects/get name) .-modifiers .-active .-node-group))
   
 
+(defn get-camera-location []
+  (let [camera (.. bpy/context -scene -camera)
+        location (.-location camera)]
+    location))
+
+
+(defn set-camera! [distance]
+  ;; Set camera position
+  (let [camera (.. bpy/context -scene -camera)] 
+    (set! (.-location camera) (new mathutils.Vector [distance 0 0]))
+
+    ;; Calculate rotation to look at origin
+    (let [direction (new mathutils.Vector [1 0 0])
+          _ (.normalize direction)
+          up (new mathutils.Vector [0 0 1])
+          rotation (.to_track_quat direction "Z" "Y")]
+      (set! (.-rotation_euler camera) (.to_euler rotation)))
+
+    ;; Update the view
+    (.. bpy/context -view_layer update)))
+
+
+(defn bounding-box-center [obj-name]
+ "add the bounding box vectors and average them"
+  (let [obj (.. bpy -data -objects (get obj-name))
+        bound-box (map #(new mathutils.Vector %) (.-bound_box obj))
+        combined_vec (reduce + bound-box)] 
+    (/ combined_vec 8)))
+
+
+(defn center-object-on-origin! [obj-name]
+  "center the object  on the middle of the bounding box"
+  (let [obj (.. bpy -data -objects (get obj-name))
+        objcenter (bounding-box-center obj-name)]
+    (set! (.-location obj) (- objcenter))))
+
+
+
+  (defn create-subdivided-cube  []
+    "minimal example of adding Geometry Nodes to a Mesh"
+    (let [_     (.. bpy -ops -mesh (primitive_cube_add ** :size 2 :enter_editmode false :location [0 0 0]))
+          cube  (.. bpy -context -active_object)
+          modifier (..  cube -modifiers  (new ** :name "GeometryNodes" :type "NODES"))
+          node_tree (.. bpy -data -node_groups (new ** :name "SubdivideSetup" :type "GeometryNodeTree"))
+          nodes  (.-nodes node_tree)]
+          ;; attach the ndoe tree to the cube modifiers
+      (set! (.-node_group modifier) node_tree)
+          ;; node-level setup 
+      (let [input-node (.new nodes "NodeGroupInput")
+            output-node (.new nodes "NodeGroupOutput")
+            subdivide-node (.new nodes "GeometryNodeSubdivisionSurface")
+            links (.-links node_tree)]
+  
+        (.. node_tree -interface (new_socket ** :name  "Geometry" :in_out "INPUT" :socket_type "NodeSocketGeometry"))
+        (.. node_tree -interface (new_socket ** :name  "Geometry" :in_out "OUTPUT" :socket_type "NodeSocketGeometry"))
+        (set! (.. subdivide-node -inputs  (get "Level") -default-value) 2)
+        (.. links (new (.. input-node -outputs (get "Geometry")) (.. subdivide-node -inputs (get "Mesh"))))
+        (.. links (new (.. subdivide-node -outputs (get "Mesh")) (.. output-node -inputs (get "Geometry")))) 
+        nil )))
 
 
 
 (comment
-  ;; (.register molnodes)
 
   ; initialize the classes we ned to add additional Geom Nodes
   (load-node-groups)
 
  ;; Works
   (load-pdb "1FAP")
+  (set-camera! 3)
+  (center-object-on-origin! "1FAP")
+
+
   (load-pdb "7VDV")
   (mol-by-name "1FAP")
   (geom-node-by-name "1FAP")
 
-  (let [fap (mol-by-name "1FAP")
-        fap-geo (geom-node-by-name "1FAP")
-        fap-geom-nodes (.-nodes fap-geo)
-        to-keep #{"Group Input" "Group Output"}]
-    ;; (print fap)
-    ;; (print fap-geo)
-    ;; (print fap-geom-nodes)å
-    (doseq [node fap-geom-nodes]
-      (print node)
-      (set! context.active_node)
-      ;; (if (contains? to-keep (.-name node))
-      ;;   (print (.-name node))
-      ;;   (do 
-      ;;     (set! ()))
-      ;;   (bpy.ops.object/delete node)
-      ;;   )
-      ;; )
-      ))
 
-  (bpy.ops.node/add_node (molecular-node-types :seperate-polyerms))
+  ;; Example creation of cube and subnodes
+  (create-subdivided-cube)
 
-  (def fap (mol-by-name "1FAP"))
-  (def exampletree (geom-node-by-name "1FAP"))
+
+ 
+  (load-pdb "1FAP")
+  (def fap (mol-by-name "1FAP"))  ; GeometryNode
+  (def exampletree (geom-node-by-name "1FAP")) ; GeometryNodeTree
+  
+
+  
+  ;; #Create a new Group node in the main tree
+  ;; group_node = main_tree.nodes.new ("GeometryNodeGroup")
+  ;; group_node.node_tree = group
+
+  ;; print out the Molecular Nodes within the Tree.
+  (let [exampletree (geom-node-by-name "1FAP")
+        nodes (.-nodes exampletree)
+        group (bpy.data.node_groups/get "Separate Polymers")
+        group-node (.new nodes "GeometryNodeGroup")
+        ]
+    (set! (.-node_tree group-node) group)
+  
+    ;; .MN_constants_atom_name_peptide
+    (doseq [node nodes]
+      (println node)))
+  
+  
+  ;; <bpy_struct, NodeGroupInput("Group Input") at 0x3438e6e58>                <-- Keep
+  ;; <bpy_struct, NodeGroupOutput("Group Output") at 0x3438e6b78>              <-- Keep
+  ;; <bpy_struct, GeometryNodeGroup("Style Cartoon") at 0x3438e8328>           <-- Keep
+  ;; <bpy_struct, GeometryNodeGroup("Set Color") at 0x34905ccd8>               <-- Keep
+  ;; <bpy_struct, GeometryNodeGroup("Color Common") at 0x354fb2758>            <-- Keep
+  ;; <bpy_struct, GeometryNodeGroup("Color Attribute Random") at 0x34901cdb8>  <-- Keep
+
 
  ;; Nodes need to be added to the workspace before they can be used
   (molecular-node-types :mn-dna-double-helix)
   (molecular-node-types :separate-polymers)
   (def blendfile "/Users/zcpowers/Library/Application Support/Blender/4.2/extensions/blender_org/molecularnodes/assets/MN_data_file_4.2.blend")
 
+  
   ;; todo:
   ;; Function to add node to a NodeGroup
   ;; Function to delete nodes from a NodeGroup
   ;; Function to build up NodegroupCombinations
-  )  
+    

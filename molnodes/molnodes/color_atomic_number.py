@@ -28,18 +28,20 @@ class Color_Atomic_Number(bpy.types.Operator):
 			#color_atomic_number interface
 			#Socket Color
 			color_socket = color_atomic_number.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket atomic_number
 			atomic_number_socket = color_atomic_number.interface.new_socket(name = "atomic_number", in_out='INPUT', socket_type = 'NodeSocketInt')
-			atomic_number_socket.subtype = 'NONE'
 			atomic_number_socket.default_value = 6
 			atomic_number_socket.min_value = 1
 			atomic_number_socket.max_value = 140
+			atomic_number_socket.subtype = 'NONE'
 			atomic_number_socket.attribute_domain = 'POINT'
 			
 			#Socket Color
 			color_socket_1 = color_atomic_number.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor')
+			color_socket_1.default_value = (0.800000011920929, 0.800000011920929, 0.800000011920929, 1.0)
 			color_socket_1.attribute_domain = 'POINT'
 			
 			

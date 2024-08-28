@@ -28,36 +28,38 @@ class Topology_DSSP(bpy.types.Operator):
 			#boolean_run_mask interface
 			#Socket Boolean
 			boolean_socket = boolean_run_mask.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Boolean
 			boolean_socket_1 = boolean_run_mask.interface.new_socket(name = "Boolean", in_out='INPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_1.default_value = False
 			boolean_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Lag Start
 			lag_start_socket = boolean_run_mask.interface.new_socket(name = "Lag Start", in_out='INPUT', socket_type = 'NodeSocketInt')
-			lag_start_socket.subtype = 'NONE'
 			lag_start_socket.default_value = 0
 			lag_start_socket.min_value = 0
 			lag_start_socket.max_value = 2147483647
+			lag_start_socket.subtype = 'NONE'
 			lag_start_socket.attribute_domain = 'POINT'
 			lag_start_socket.description = "The first N values in a run are made to be false"
 			
 			#Socket Min Length
 			min_length_socket = boolean_run_mask.interface.new_socket(name = "Min Length", in_out='INPUT', socket_type = 'NodeSocketInt')
-			min_length_socket.subtype = 'NONE'
 			min_length_socket.default_value = 0
 			min_length_socket.min_value = 0
 			min_length_socket.max_value = 2147483647
+			min_length_socket.subtype = 'NONE'
 			min_length_socket.attribute_domain = 'POINT'
 			min_length_socket.description = "Run is only valid if it contains at least N values"
 			
 			#Socket Trim End
 			trim_end_socket = boolean_run_mask.interface.new_socket(name = "Trim End", in_out='INPUT', socket_type = 'NodeSocketInt')
-			trim_end_socket.subtype = 'NONE'
 			trim_end_socket.default_value = 0
 			trim_end_socket.min_value = -2147483648
 			trim_end_socket.max_value = 2147483647
+			trim_end_socket.subtype = 'NONE'
 			trim_end_socket.attribute_domain = 'POINT'
 			
 			
@@ -235,10 +237,10 @@ class Topology_DSSP(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -289,18 +291,18 @@ class Topology_DSSP(bpy.types.Operator):
 			#world_to_angstrom interface
 			#Socket Angstrom
 			angstrom_socket = world_to_angstrom.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket World
 			world_socket = world_to_angstrom.interface.new_socket(name = "World", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			world_socket.subtype = 'NONE'
 			world_socket.default_value = 0.5
 			world_socket.min_value = -10000.0
 			world_socket.max_value = 10000.0
+			world_socket.subtype = 'NONE'
 			world_socket.attribute_domain = 'POINT'
 			
 			
@@ -362,26 +364,26 @@ class Topology_DSSP(bpy.types.Operator):
 			#nodegroup_001 interface
 			#Socket Value
 			value_socket = nodegroup_001.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.0
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Vector
 			vector_socket = nodegroup_001.interface.new_socket(name = "Vector", in_out='INPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -10000.0
 			vector_socket.max_value = 10000.0
+			vector_socket.subtype = 'NONE'
 			vector_socket.attribute_domain = 'POINT'
 			
 			#Socket Vector
 			vector_socket_1 = nodegroup_001.interface.new_socket(name = "Vector", in_out='INPUT', socket_type = 'NodeSocketVector')
-			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.default_value = (0.0, 0.0, 0.0)
 			vector_socket_1.min_value = -10000.0
 			vector_socket_1.max_value = 10000.0
+			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -456,54 +458,55 @@ class Topology_DSSP(bpy.types.Operator):
 			#hbond_energy interface
 			#Socket Is Bonded
 			is_bonded_socket = hbond_energy.interface.new_socket(name = "Is Bonded", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_bonded_socket.default_value = False
 			is_bonded_socket.attribute_domain = 'POINT'
 			
 			#Socket Bond Energy
 			bond_energy_socket = hbond_energy.interface.new_socket(name = "Bond Energy", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			bond_energy_socket.subtype = 'NONE'
 			bond_energy_socket.default_value = 0.0
 			bond_energy_socket.min_value = -3.4028234663852886e+38
 			bond_energy_socket.max_value = 3.4028234663852886e+38
+			bond_energy_socket.subtype = 'NONE'
 			bond_energy_socket.attribute_domain = 'POINT'
 			
 			#Socket Bond Vector
 			bond_vector_socket = hbond_energy.interface.new_socket(name = "Bond Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			bond_vector_socket.subtype = 'NONE'
 			bond_vector_socket.default_value = (0.0, 0.0, 0.0)
 			bond_vector_socket.min_value = -3.4028234663852886e+38
 			bond_vector_socket.max_value = 3.4028234663852886e+38
+			bond_vector_socket.subtype = 'NONE'
 			bond_vector_socket.attribute_domain = 'POINT'
 			
 			#Socket O
 			o_socket = hbond_energy.interface.new_socket(name = "O", in_out='INPUT', socket_type = 'NodeSocketVector')
-			o_socket.subtype = 'NONE'
 			o_socket.default_value = (0.0, 0.0, 0.0)
 			o_socket.min_value = -3.4028234663852886e+38
 			o_socket.max_value = 3.4028234663852886e+38
+			o_socket.subtype = 'NONE'
 			o_socket.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket = hbond_energy.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketVector')
-			c_socket.subtype = 'NONE'
 			c_socket.default_value = (0.0, 0.0, 0.0)
 			c_socket.min_value = -3.4028234663852886e+38
 			c_socket.max_value = 3.4028234663852886e+38
+			c_socket.subtype = 'NONE'
 			c_socket.attribute_domain = 'POINT'
 			
 			#Socket N
 			n_socket = hbond_energy.interface.new_socket(name = "N", in_out='INPUT', socket_type = 'NodeSocketVector')
-			n_socket.subtype = 'NONE'
 			n_socket.default_value = (0.0, 0.0, 0.0)
 			n_socket.min_value = -3.4028234663852886e+38
 			n_socket.max_value = 3.4028234663852886e+38
+			n_socket.subtype = 'NONE'
 			n_socket.attribute_domain = 'POINT'
 			
 			#Socket H
 			h_socket = hbond_energy.interface.new_socket(name = "H", in_out='INPUT', socket_type = 'NodeSocketVector')
-			h_socket.subtype = 'NONE'
 			h_socket.default_value = (0.0, 0.0, 0.0)
 			h_socket.min_value = -3.4028234663852886e+38
 			h_socket.max_value = 3.4028234663852886e+38
+			h_socket.subtype = 'NONE'
 			h_socket.attribute_domain = 'POINT'
 			
 			
@@ -708,35 +711,35 @@ class Topology_DSSP(bpy.types.Operator):
 			#offset_vector interface
 			#Socket Value
 			value_socket_1 = offset_vector.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			value_socket_1.subtype = 'NONE'
 			value_socket_1.default_value = (0.0, 0.0, 0.0)
 			value_socket_1.min_value = -3.4028234663852886e+38
 			value_socket_1.max_value = 3.4028234663852886e+38
+			value_socket_1.subtype = 'NONE'
 			value_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket = offset_vector.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = 0
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			
 			#Socket Position
 			position_socket = offset_vector.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			position_socket.hide_value = True
 			
 			#Socket Offset
 			offset_socket = offset_vector.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 0
 			offset_socket.min_value = -2147483647
 			offset_socket.max_value = 2147483647
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -803,26 +806,26 @@ class Topology_DSSP(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket_1 = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket_1.subtype = 'NONE'
 			angstrom_socket_1.default_value = 0.0
 			angstrom_socket_1.min_value = -3.4028234663852886e+38
 			angstrom_socket_1.max_value = 3.4028234663852886e+38
+			angstrom_socket_1.subtype = 'NONE'
 			angstrom_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_2 = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_2.subtype = 'NONE'
 			value_socket_2.default_value = 3.0
 			value_socket_2.min_value = -10000.0
 			value_socket_2.max_value = 10000.0
+			value_socket_2.subtype = 'NONE'
 			value_socket_2.attribute_domain = 'POINT'
 			value_socket_2.description = "A value which will be scaled appropriately for the world"
 			
@@ -899,18 +902,18 @@ class Topology_DSSP(bpy.types.Operator):
 			#backbone_nh interface
 			#Socket H
 			h_socket_1 = backbone_nh.interface.new_socket(name = "H", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			h_socket_1.subtype = 'NONE'
 			h_socket_1.default_value = (0.0, 0.0, 0.0)
 			h_socket_1.min_value = -3.4028234663852886e+38
 			h_socket_1.max_value = 3.4028234663852886e+38
+			h_socket_1.subtype = 'NONE'
 			h_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_3 = backbone_nh.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_3.subtype = 'NONE'
 			value_socket_3.default_value = 1.0
 			value_socket_3.min_value = -10000.0
 			value_socket_3.max_value = 10000.0
+			value_socket_3.subtype = 'NONE'
 			value_socket_3.attribute_domain = 'POINT'
 			
 			
@@ -1084,50 +1087,50 @@ class Topology_DSSP(bpy.types.Operator):
 			#mn_topo_backbone interface
 			#Socket O
 			o_socket_1 = mn_topo_backbone.interface.new_socket(name = "O", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			o_socket_1.subtype = 'NONE'
 			o_socket_1.default_value = (0.0, 0.0, 0.0)
 			o_socket_1.min_value = -3.4028234663852886e+38
 			o_socket_1.max_value = 3.4028234663852886e+38
+			o_socket_1.subtype = 'NONE'
 			o_socket_1.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket_1 = mn_topo_backbone.interface.new_socket(name = "C", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			c_socket_1.subtype = 'NONE'
 			c_socket_1.default_value = (0.0, 0.0, 0.0)
 			c_socket_1.min_value = -3.4028234663852886e+38
 			c_socket_1.max_value = 3.4028234663852886e+38
+			c_socket_1.subtype = 'NONE'
 			c_socket_1.attribute_domain = 'POINT'
 			
 			#Socket CA
 			ca_socket = mn_topo_backbone.interface.new_socket(name = "CA", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			ca_socket.subtype = 'NONE'
 			ca_socket.default_value = (0.0, 0.0, 0.0)
 			ca_socket.min_value = -3.4028234663852886e+38
 			ca_socket.max_value = 3.4028234663852886e+38
+			ca_socket.subtype = 'NONE'
 			ca_socket.attribute_domain = 'POINT'
 			
 			#Socket N
 			n_socket_1 = mn_topo_backbone.interface.new_socket(name = "N", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			n_socket_1.subtype = 'NONE'
 			n_socket_1.default_value = (0.0, 0.0, 0.0)
 			n_socket_1.min_value = -3.4028234663852886e+38
 			n_socket_1.max_value = 3.4028234663852886e+38
+			n_socket_1.subtype = 'NONE'
 			n_socket_1.attribute_domain = 'POINT'
 			
 			#Socket NH
 			nh_socket = mn_topo_backbone.interface.new_socket(name = "NH", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			nh_socket.subtype = 'NONE'
 			nh_socket.default_value = (0.0, 0.0, 0.0)
 			nh_socket.min_value = -3.4028234663852886e+38
 			nh_socket.max_value = 3.4028234663852886e+38
+			nh_socket.subtype = 'NONE'
 			nh_socket.attribute_domain = 'POINT'
 			
 			#Socket Offset
 			offset_socket_1 = mn_topo_backbone.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.default_value = 0
 			offset_socket_1.min_value = -2147483648
 			offset_socket_1.max_value = 2147483647
+			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -1339,40 +1342,41 @@ class Topology_DSSP(bpy.types.Operator):
 			#hbond_backbone_check interface
 			#Socket Is Bonded
 			is_bonded_socket_1 = hbond_backbone_check.interface.new_socket(name = "Is Bonded", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_bonded_socket_1.default_value = False
 			is_bonded_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Bond Energy
 			bond_energy_socket_1 = hbond_backbone_check.interface.new_socket(name = "Bond Energy", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			bond_energy_socket_1.subtype = 'NONE'
 			bond_energy_socket_1.default_value = 0.0
 			bond_energy_socket_1.min_value = -3.4028234663852886e+38
 			bond_energy_socket_1.max_value = 3.4028234663852886e+38
+			bond_energy_socket_1.subtype = 'NONE'
 			bond_energy_socket_1.attribute_domain = 'POINT'
 			
 			#Socket H->O
 			h__o_socket = hbond_backbone_check.interface.new_socket(name = "H->O", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			h__o_socket.subtype = 'NONE'
 			h__o_socket.default_value = (0.0, 0.0, 0.0)
 			h__o_socket.min_value = -3.4028234663852886e+38
 			h__o_socket.max_value = 3.4028234663852886e+38
+			h__o_socket.subtype = 'NONE'
 			h__o_socket.attribute_domain = 'POINT'
 			
 			#Panel CO
 			co_panel = hbond_backbone_check.interface.new_panel("CO")
 			#Socket CO Index
 			co_index_socket = hbond_backbone_check.interface.new_socket(name = "CO Index", in_out='INPUT', socket_type = 'NodeSocketInt', parent = co_panel)
-			co_index_socket.subtype = 'NONE'
 			co_index_socket.default_value = 0
 			co_index_socket.min_value = 0
 			co_index_socket.max_value = 2147483647
+			co_index_socket.subtype = 'NONE'
 			co_index_socket.attribute_domain = 'POINT'
 			
 			#Socket CO Offset
 			co_offset_socket = hbond_backbone_check.interface.new_socket(name = "CO Offset", in_out='INPUT', socket_type = 'NodeSocketInt', parent = co_panel)
-			co_offset_socket.subtype = 'NONE'
 			co_offset_socket.default_value = 0
 			co_offset_socket.min_value = -2147483648
 			co_offset_socket.max_value = 2147483647
+			co_offset_socket.subtype = 'NONE'
 			co_offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -1380,18 +1384,18 @@ class Topology_DSSP(bpy.types.Operator):
 			nh_panel = hbond_backbone_check.interface.new_panel("NH")
 			#Socket NH Index
 			nh_index_socket = hbond_backbone_check.interface.new_socket(name = "NH Index", in_out='INPUT', socket_type = 'NodeSocketInt', parent = nh_panel)
-			nh_index_socket.subtype = 'NONE'
 			nh_index_socket.default_value = 0
 			nh_index_socket.min_value = 0
 			nh_index_socket.max_value = 2147483647
+			nh_index_socket.subtype = 'NONE'
 			nh_index_socket.attribute_domain = 'POINT'
 			
 			#Socket NH Offset
 			nh_offset_socket = hbond_backbone_check.interface.new_socket(name = "NH Offset", in_out='INPUT', socket_type = 'NodeSocketInt', parent = nh_panel)
-			nh_offset_socket.subtype = 'NONE'
 			nh_offset_socket.default_value = 0
 			nh_offset_socket.min_value = -2147483648
 			nh_offset_socket.max_value = 2147483647
+			nh_offset_socket.subtype = 'NONE'
 			nh_offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -1635,19 +1639,21 @@ class Topology_DSSP(bpy.types.Operator):
 			#boolean_run_fill interface
 			#Socket Boolean
 			boolean_socket_2 = boolean_run_fill.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_2.default_value = False
 			boolean_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Boolean
 			boolean_socket_3 = boolean_run_fill.interface.new_socket(name = "Boolean", in_out='INPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_3.default_value = False
 			boolean_socket_3.attribute_domain = 'POINT'
 			boolean_socket_3.description = "Boolean array to fill runs of False"
 			
 			#Socket Fill Size
 			fill_size_socket = boolean_run_fill.interface.new_socket(name = "Fill Size", in_out='INPUT', socket_type = 'NodeSocketInt')
-			fill_size_socket.subtype = 'NONE'
 			fill_size_socket.default_value = 3
 			fill_size_socket.min_value = -2147483648
 			fill_size_socket.max_value = 2147483647
+			fill_size_socket.subtype = 'NONE'
 			fill_size_socket.attribute_domain = 'POINT'
 			fill_size_socket.description = "Set a run of False to True if length equal or less than Fill Size"
 			
@@ -1791,27 +1797,29 @@ class Topology_DSSP(bpy.types.Operator):
 			#offset_boolean interface
 			#Socket Boolean
 			boolean_socket_4 = offset_boolean.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_4.default_value = False
 			boolean_socket_4.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket_1 = offset_boolean.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket_1.subtype = 'NONE'
 			index_socket_1.default_value = 0
 			index_socket_1.min_value = 0
 			index_socket_1.max_value = 2147483647
+			index_socket_1.subtype = 'NONE'
 			index_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Boolean
 			boolean_socket_5 = offset_boolean.interface.new_socket(name = "Boolean", in_out='INPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_5.default_value = False
 			boolean_socket_5.attribute_domain = 'POINT'
 			boolean_socket_5.hide_value = True
 			
 			#Socket Offset
 			offset_socket_2 = offset_boolean.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_2.subtype = 'NONE'
 			offset_socket_2.default_value = 0
 			offset_socket_2.min_value = -2147483647
 			offset_socket_2.max_value = 2147483647
+			offset_socket_2.subtype = 'NONE'
 			offset_socket_2.attribute_domain = 'POINT'
 			
 			
@@ -1878,27 +1886,27 @@ class Topology_DSSP(bpy.types.Operator):
 			#vector_angle interface
 			#Socket Angle
 			angle_socket = vector_angle.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket.subtype = 'ANGLE'
 			angle_socket.default_value = 0.0
 			angle_socket.min_value = -3.4028234663852886e+38
 			angle_socket.max_value = 3.4028234663852886e+38
+			angle_socket.subtype = 'ANGLE'
 			angle_socket.attribute_domain = 'POINT'
 			angle_socket.description = "Angle between the two given vectors in radians"
 			
 			#Socket A
 			a_socket = vector_angle.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketVector')
-			a_socket.subtype = 'NONE'
 			a_socket.default_value = (0.0, 0.0, 0.0)
 			a_socket.min_value = -10000.0
 			a_socket.max_value = 10000.0
+			a_socket.subtype = 'NONE'
 			a_socket.attribute_domain = 'POINT'
 			
 			#Socket B
 			b_socket = vector_angle.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketVector')
-			b_socket.subtype = 'NONE'
 			b_socket.default_value = (0.0, 0.0, 0.0)
 			b_socket.min_value = -10000.0
 			b_socket.max_value = 10000.0
+			b_socket.subtype = 'NONE'
 			b_socket.attribute_domain = 'POINT'
 			
 			
@@ -1980,73 +1988,73 @@ class Topology_DSSP(bpy.types.Operator):
 			#dihedral_angle interface
 			#Socket Angle
 			angle_socket_1 = dihedral_angle.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket_1.subtype = 'ANGLE'
 			angle_socket_1.default_value = 0.0
 			angle_socket_1.min_value = -3.4028234663852886e+38
 			angle_socket_1.max_value = 3.4028234663852886e+38
+			angle_socket_1.subtype = 'ANGLE'
 			angle_socket_1.attribute_domain = 'POINT'
 			angle_socket_1.description = "The angle between the vectors AB and CD, when made perpendicular to BC."
 			
 			#Socket BA⟂(BC)
 			ba__bc__socket = dihedral_angle.interface.new_socket(name = "BA⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			ba__bc__socket.subtype = 'NONE'
 			ba__bc__socket.default_value = (0.0, 0.0, 0.0)
 			ba__bc__socket.min_value = -3.4028234663852886e+38
 			ba__bc__socket.max_value = 3.4028234663852886e+38
+			ba__bc__socket.subtype = 'NONE'
 			ba__bc__socket.attribute_domain = 'POINT'
 			ba__bc__socket.description = "The vector BA when made perpendicular to  the axis BC"
 			
 			#Socket CD⟂(BC)
 			cd__bc__socket = dihedral_angle.interface.new_socket(name = "CD⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			cd__bc__socket.subtype = 'NONE'
 			cd__bc__socket.default_value = (0.0, 0.0, 0.0)
 			cd__bc__socket.min_value = -3.4028234663852886e+38
 			cd__bc__socket.max_value = 3.4028234663852886e+38
+			cd__bc__socket.subtype = 'NONE'
 			cd__bc__socket.attribute_domain = 'POINT'
 			cd__bc__socket.description = "The Vector CD when makde perpendicular to the axis BC"
 			
 			#Socket BC
 			bc_socket = dihedral_angle.interface.new_socket(name = "BC", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			bc_socket.subtype = 'NONE'
 			bc_socket.default_value = (0.0, 0.0, 0.0)
 			bc_socket.min_value = -3.4028234663852886e+38
 			bc_socket.max_value = 3.4028234663852886e+38
+			bc_socket.subtype = 'NONE'
 			bc_socket.attribute_domain = 'POINT'
 			bc_socket.description = "The axis vector BC"
 			
 			#Socket A
 			a_socket_1 = dihedral_angle.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketVector')
-			a_socket_1.subtype = 'NONE'
 			a_socket_1.default_value = (0.0, 0.0, 0.0)
 			a_socket_1.min_value = -3.4028234663852886e+38
 			a_socket_1.max_value = 3.4028234663852886e+38
+			a_socket_1.subtype = 'NONE'
 			a_socket_1.attribute_domain = 'POINT'
 			a_socket_1.description = "First vector for the calculation, which draws a line to B"
 			
 			#Socket B
 			b_socket_1 = dihedral_angle.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketVector')
-			b_socket_1.subtype = 'NONE'
 			b_socket_1.default_value = (0.0, 0.0, 0.0)
 			b_socket_1.min_value = -3.4028234663852886e+38
 			b_socket_1.max_value = 3.4028234663852886e+38
+			b_socket_1.subtype = 'NONE'
 			b_socket_1.attribute_domain = 'POINT'
 			b_socket_1.description = "Second vector for the calculation, which receives a line from A and draws a line to C"
 			
 			#Socket C
 			c_socket_2 = dihedral_angle.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketVector')
-			c_socket_2.subtype = 'NONE'
 			c_socket_2.default_value = (0.0, 0.0, 0.0)
 			c_socket_2.min_value = -3.4028234663852886e+38
 			c_socket_2.max_value = 3.4028234663852886e+38
+			c_socket_2.subtype = 'NONE'
 			c_socket_2.attribute_domain = 'POINT'
 			c_socket_2.description = "Third vector for the calculation, which receives a line from B and draws a line to D"
 			
 			#Socket D
 			d_socket = dihedral_angle.interface.new_socket(name = "D", in_out='INPUT', socket_type = 'NodeSocketVector')
-			d_socket.subtype = 'NONE'
 			d_socket.default_value = (0.0, 0.0, 0.0)
 			d_socket.min_value = -3.4028234663852886e+38
 			d_socket.max_value = 3.4028234663852886e+38
+			d_socket.subtype = 'NONE'
 			d_socket.attribute_domain = 'POINT'
 			d_socket.description = "Last vector for the calculation, which is the end point of the line from D"
 			
@@ -2284,70 +2292,71 @@ class Topology_DSSP(bpy.types.Operator):
 			#_mn_topo_phi_psi interface
 			#Socket Angle
 			angle_socket_2 = _mn_topo_phi_psi.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket_2.subtype = 'ANGLE'
 			angle_socket_2.default_value = 0.0
 			angle_socket_2.min_value = -3.4028234663852886e+38
 			angle_socket_2.max_value = 3.4028234663852886e+38
+			angle_socket_2.subtype = 'ANGLE'
 			angle_socket_2.attribute_domain = 'POINT'
 			
 			#Socket BA⟂(BC)
 			ba__bc__socket_1 = _mn_topo_phi_psi.interface.new_socket(name = "BA⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			ba__bc__socket_1.subtype = 'NONE'
 			ba__bc__socket_1.default_value = (0.0, 0.0, 0.0)
 			ba__bc__socket_1.min_value = -3.4028234663852886e+38
 			ba__bc__socket_1.max_value = 3.4028234663852886e+38
+			ba__bc__socket_1.subtype = 'NONE'
 			ba__bc__socket_1.attribute_domain = 'POINT'
 			
 			#Socket CD⟂(BC)
 			cd__bc__socket_1 = _mn_topo_phi_psi.interface.new_socket(name = "CD⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			cd__bc__socket_1.subtype = 'NONE'
 			cd__bc__socket_1.default_value = (0.0, 0.0, 0.0)
 			cd__bc__socket_1.min_value = -3.4028234663852886e+38
 			cd__bc__socket_1.max_value = 3.4028234663852886e+38
+			cd__bc__socket_1.subtype = 'NONE'
 			cd__bc__socket_1.attribute_domain = 'POINT'
 			
 			#Socket BC
 			bc_socket_1 = _mn_topo_phi_psi.interface.new_socket(name = "BC", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			bc_socket_1.subtype = 'NONE'
 			bc_socket_1.default_value = (0.0, 0.0, 0.0)
 			bc_socket_1.min_value = -3.4028234663852886e+38
 			bc_socket_1.max_value = 3.4028234663852886e+38
+			bc_socket_1.subtype = 'NONE'
 			bc_socket_1.attribute_domain = 'POINT'
 			
 			#Socket A
 			a_socket_2 = _mn_topo_phi_psi.interface.new_socket(name = "A", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			a_socket_2.subtype = 'NONE'
 			a_socket_2.default_value = (0.0, 0.0, 0.0)
 			a_socket_2.min_value = -3.4028234663852886e+38
 			a_socket_2.max_value = 3.4028234663852886e+38
+			a_socket_2.subtype = 'NONE'
 			a_socket_2.attribute_domain = 'POINT'
 			
 			#Socket B
 			b_socket_2 = _mn_topo_phi_psi.interface.new_socket(name = "B", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			b_socket_2.subtype = 'NONE'
 			b_socket_2.default_value = (0.0, 0.0, 0.0)
 			b_socket_2.min_value = -3.4028234663852886e+38
 			b_socket_2.max_value = 3.4028234663852886e+38
+			b_socket_2.subtype = 'NONE'
 			b_socket_2.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket_3 = _mn_topo_phi_psi.interface.new_socket(name = "C", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			c_socket_3.subtype = 'NONE'
 			c_socket_3.default_value = (0.0, 0.0, 0.0)
 			c_socket_3.min_value = -3.4028234663852886e+38
 			c_socket_3.max_value = 3.4028234663852886e+38
+			c_socket_3.subtype = 'NONE'
 			c_socket_3.attribute_domain = 'POINT'
 			
 			#Socket D
 			d_socket_1 = _mn_topo_phi_psi.interface.new_socket(name = "D", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			d_socket_1.subtype = 'NONE'
 			d_socket_1.default_value = (0.0, 0.0, 0.0)
 			d_socket_1.min_value = -3.4028234663852886e+38
 			d_socket_1.max_value = 3.4028234663852886e+38
+			d_socket_1.subtype = 'NONE'
 			d_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Menu
 			menu_socket = _mn_topo_phi_psi.interface.new_socket(name = "Menu", in_out='INPUT', socket_type = 'NodeSocketMenu')
+			menu_socket.default_value = "Phi"
 			menu_socket.attribute_domain = 'POINT'
 			
 			
@@ -2513,30 +2522,31 @@ class Topology_DSSP(bpy.types.Operator):
 			#between_float interface
 			#Socket Boolean
 			boolean_socket_6 = between_float.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_6.default_value = False
 			boolean_socket_6.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_4 = between_float.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_4.subtype = 'NONE'
 			value_socket_4.default_value = 0.0
 			value_socket_4.min_value = -3.4028234663852886e+38
 			value_socket_4.max_value = 3.4028234663852886e+38
+			value_socket_4.subtype = 'NONE'
 			value_socket_4.attribute_domain = 'POINT'
 			
 			#Socket Lower
 			lower_socket = between_float.interface.new_socket(name = "Lower", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			lower_socket.subtype = 'NONE'
 			lower_socket.default_value = 0.0
 			lower_socket.min_value = -3.4028234663852886e+38
 			lower_socket.max_value = 3.4028234663852886e+38
+			lower_socket.subtype = 'NONE'
 			lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Upper
 			upper_socket = between_float.interface.new_socket(name = "Upper", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			upper_socket.subtype = 'NONE'
 			upper_socket.default_value = 0.0
 			upper_socket.min_value = -3.4028234663852886e+38
 			upper_socket.max_value = 3.4028234663852886e+38
+			upper_socket.subtype = 'NONE'
 			upper_socket.attribute_domain = 'POINT'
 			
 			
@@ -2624,14 +2634,15 @@ class Topology_DSSP(bpy.types.Operator):
 			#helix_detect interface
 			#Socket Boolean
 			boolean_socket_7 = helix_detect.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_7.default_value = False
 			boolean_socket_7.attribute_domain = 'POINT'
 			
 			#Socket Helix Size
 			helix_size_socket = helix_detect.interface.new_socket(name = "Helix Size", in_out='INPUT', socket_type = 'NodeSocketInt')
-			helix_size_socket.subtype = 'NONE'
 			helix_size_socket.default_value = 3
 			helix_size_socket.min_value = -2147483648
 			helix_size_socket.max_value = 2147483647
+			helix_size_socket.subtype = 'NONE'
 			helix_size_socket.attribute_domain = 'POINT'
 			
 			
@@ -2902,35 +2913,35 @@ class Topology_DSSP(bpy.types.Operator):
 			#offset_integer interface
 			#Socket Value
 			value_socket_5 = offset_integer.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			value_socket_5.subtype = 'NONE'
 			value_socket_5.default_value = 0
 			value_socket_5.min_value = -2147483648
 			value_socket_5.max_value = 2147483647
+			value_socket_5.subtype = 'NONE'
 			value_socket_5.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket_2 = offset_integer.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket_2.subtype = 'NONE'
 			index_socket_2.default_value = 0
 			index_socket_2.min_value = 0
 			index_socket_2.max_value = 2147483647
+			index_socket_2.subtype = 'NONE'
 			index_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_6 = offset_integer.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketInt')
-			value_socket_6.subtype = 'NONE'
 			value_socket_6.default_value = 0
 			value_socket_6.min_value = -2147483648
 			value_socket_6.max_value = 2147483647
+			value_socket_6.subtype = 'NONE'
 			value_socket_6.attribute_domain = 'POINT'
 			value_socket_6.hide_value = True
 			
 			#Socket Offset
 			offset_socket_3 = offset_integer.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_3.subtype = 'NONE'
 			offset_socket_3.default_value = 0
 			offset_socket_3.min_value = -2147483648
 			offset_socket_3.max_value = 2147483647
+			offset_socket_3.subtype = 'NONE'
 			offset_socket_3.attribute_domain = 'POINT'
 			
 			
@@ -2997,14 +3008,15 @@ class Topology_DSSP(bpy.types.Operator):
 			#_mn_topo_calc_helix interface
 			#Socket Is Helix
 			is_helix_socket = _mn_topo_calc_helix.interface.new_socket(name = "Is Helix", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_helix_socket.default_value = False
 			is_helix_socket.attribute_domain = 'POINT'
 			
 			#Socket Bonded Index
 			bonded_index_socket = _mn_topo_calc_helix.interface.new_socket(name = "Bonded Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			bonded_index_socket.subtype = 'NONE'
 			bonded_index_socket.default_value = 0
 			bonded_index_socket.min_value = -2147483648
 			bonded_index_socket.max_value = 2147483647
+			bonded_index_socket.subtype = 'NONE'
 			bonded_index_socket.attribute_domain = 'POINT'
 			
 			
@@ -3208,10 +3220,10 @@ class Topology_DSSP(bpy.types.Operator):
 			#self_sample_proximity interface
 			#Socket Closest Index
 			closest_index_socket = self_sample_proximity.interface.new_socket(name = "Closest Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			closest_index_socket.subtype = 'NONE'
 			closest_index_socket.default_value = 0
 			closest_index_socket.min_value = -2147483648
 			closest_index_socket.max_value = 2147483647
+			closest_index_socket.subtype = 'NONE'
 			closest_index_socket.attribute_domain = 'POINT'
 			
 			#Socket Input
@@ -3220,18 +3232,18 @@ class Topology_DSSP(bpy.types.Operator):
 			
 			#Socket Target Position
 			target_position_socket = self_sample_proximity.interface.new_socket(name = "Target Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			target_position_socket.subtype = 'NONE'
 			target_position_socket.default_value = (0.0, 0.0, 0.0)
 			target_position_socket.min_value = -3.4028234663852886e+38
 			target_position_socket.max_value = 3.4028234663852886e+38
+			target_position_socket.subtype = 'NONE'
 			target_position_socket.attribute_domain = 'POINT'
 			
 			#Socket Self Position
 			self_position_socket = self_sample_proximity.interface.new_socket(name = "Self Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			self_position_socket.subtype = 'NONE'
 			self_position_socket.default_value = (0.0, 0.0, 0.0)
 			self_position_socket.min_value = -3.4028234663852886e+38
 			self_position_socket.max_value = 3.4028234663852886e+38
+			self_position_socket.subtype = 'NONE'
 			self_position_socket.attribute_domain = 'POINT'
 			
 			
@@ -3299,40 +3311,41 @@ class Topology_DSSP(bpy.types.Operator):
 			#hbond_backbone_check_backup interface
 			#Socket Is Bonded
 			is_bonded_socket_2 = hbond_backbone_check_backup.interface.new_socket(name = "Is Bonded", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_bonded_socket_2.default_value = False
 			is_bonded_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Bond Energy
 			bond_energy_socket_2 = hbond_backbone_check_backup.interface.new_socket(name = "Bond Energy", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			bond_energy_socket_2.subtype = 'NONE'
 			bond_energy_socket_2.default_value = 0.0
 			bond_energy_socket_2.min_value = -3.4028234663852886e+38
 			bond_energy_socket_2.max_value = 3.4028234663852886e+38
+			bond_energy_socket_2.subtype = 'NONE'
 			bond_energy_socket_2.attribute_domain = 'POINT'
 			
 			#Socket H->O
 			h__o_socket_1 = hbond_backbone_check_backup.interface.new_socket(name = "H->O", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			h__o_socket_1.subtype = 'NONE'
 			h__o_socket_1.default_value = (0.0, 0.0, 0.0)
 			h__o_socket_1.min_value = -3.4028234663852886e+38
 			h__o_socket_1.max_value = 3.4028234663852886e+38
+			h__o_socket_1.subtype = 'NONE'
 			h__o_socket_1.attribute_domain = 'POINT'
 			
 			#Panel CO
 			co_panel_1 = hbond_backbone_check_backup.interface.new_panel("CO")
 			#Socket CO Index
 			co_index_socket_1 = hbond_backbone_check_backup.interface.new_socket(name = "CO Index", in_out='INPUT', socket_type = 'NodeSocketInt', parent = co_panel_1)
-			co_index_socket_1.subtype = 'NONE'
 			co_index_socket_1.default_value = 0
 			co_index_socket_1.min_value = 0
 			co_index_socket_1.max_value = 2147483647
+			co_index_socket_1.subtype = 'NONE'
 			co_index_socket_1.attribute_domain = 'POINT'
 			
 			#Socket CO Offset
 			co_offset_socket_1 = hbond_backbone_check_backup.interface.new_socket(name = "CO Offset", in_out='INPUT', socket_type = 'NodeSocketInt', parent = co_panel_1)
-			co_offset_socket_1.subtype = 'NONE'
 			co_offset_socket_1.default_value = 0
 			co_offset_socket_1.min_value = -2147483648
 			co_offset_socket_1.max_value = 2147483647
+			co_offset_socket_1.subtype = 'NONE'
 			co_offset_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -3340,18 +3353,18 @@ class Topology_DSSP(bpy.types.Operator):
 			nh_panel_1 = hbond_backbone_check_backup.interface.new_panel("NH")
 			#Socket NH Index
 			nh_index_socket_1 = hbond_backbone_check_backup.interface.new_socket(name = "NH Index", in_out='INPUT', socket_type = 'NodeSocketInt', parent = nh_panel_1)
-			nh_index_socket_1.subtype = 'NONE'
 			nh_index_socket_1.default_value = 0
 			nh_index_socket_1.min_value = 0
 			nh_index_socket_1.max_value = 2147483647
+			nh_index_socket_1.subtype = 'NONE'
 			nh_index_socket_1.attribute_domain = 'POINT'
 			
 			#Socket NH Offset
 			nh_offset_socket_1 = hbond_backbone_check_backup.interface.new_socket(name = "NH Offset", in_out='INPUT', socket_type = 'NodeSocketInt', parent = nh_panel_1)
-			nh_offset_socket_1.subtype = 'NONE'
 			nh_offset_socket_1.default_value = 0
 			nh_offset_socket_1.min_value = -2147483648
 			nh_offset_socket_1.max_value = 2147483647
+			nh_offset_socket_1.subtype = 'NONE'
 			nh_offset_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -3595,23 +3608,24 @@ class Topology_DSSP(bpy.types.Operator):
 			#_hbond_i__j__and_hbond_j__i_ interface
 			#Socket Boolean
 			boolean_socket_8 = _hbond_i__j__and_hbond_j__i_.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_8.default_value = False
 			boolean_socket_8.attribute_domain = 'POINT'
 			
 			#Socket i
 			i_socket = _hbond_i__j__and_hbond_j__i_.interface.new_socket(name = "i", in_out='INPUT', socket_type = 'NodeSocketInt')
-			i_socket.subtype = 'NONE'
 			i_socket.default_value = 0
 			i_socket.min_value = 0
 			i_socket.max_value = 2147483647
+			i_socket.subtype = 'NONE'
 			i_socket.attribute_domain = 'POINT'
 			i_socket.hide_value = True
 			
 			#Socket j
 			j_socket = _hbond_i__j__and_hbond_j__i_.interface.new_socket(name = "j", in_out='INPUT', socket_type = 'NodeSocketInt')
-			j_socket.subtype = 'NONE'
 			j_socket.default_value = 0
 			j_socket.min_value = 0
 			j_socket.max_value = 2147483647
+			j_socket.subtype = 'NONE'
 			j_socket.attribute_domain = 'POINT'
 			j_socket.hide_value = True
 			
@@ -3732,23 +3746,24 @@ class Topology_DSSP(bpy.types.Operator):
 			#_hbond_i___1__j___1__and_hbond_j___1__i___1_ interface
 			#Socket Boolean
 			boolean_socket_9 = _hbond_i___1__j___1__and_hbond_j___1__i___1_.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_9.default_value = False
 			boolean_socket_9.attribute_domain = 'POINT'
 			
 			#Socket i
 			i_socket_1 = _hbond_i___1__j___1__and_hbond_j___1__i___1_.interface.new_socket(name = "i", in_out='INPUT', socket_type = 'NodeSocketInt')
-			i_socket_1.subtype = 'NONE'
 			i_socket_1.default_value = 0
 			i_socket_1.min_value = 0
 			i_socket_1.max_value = 2147483647
+			i_socket_1.subtype = 'NONE'
 			i_socket_1.attribute_domain = 'POINT'
 			i_socket_1.hide_value = True
 			
 			#Socket j
 			j_socket_1 = _hbond_i___1__j___1__and_hbond_j___1__i___1_.interface.new_socket(name = "j", in_out='INPUT', socket_type = 'NodeSocketInt')
-			j_socket_1.subtype = 'NONE'
 			j_socket_1.default_value = 0
 			j_socket_1.min_value = 0
 			j_socket_1.max_value = 2147483647
+			j_socket_1.subtype = 'NONE'
 			j_socket_1.attribute_domain = 'POINT'
 			j_socket_1.hide_value = True
 			
@@ -3854,23 +3869,24 @@ class Topology_DSSP(bpy.types.Operator):
 			#_hbond_i___1_j__and_hbond_j_i___1_ interface
 			#Socket Boolean
 			boolean_socket_10 = _hbond_i___1_j__and_hbond_j_i___1_.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_10.default_value = False
 			boolean_socket_10.attribute_domain = 'POINT'
 			
 			#Socket i
 			i_socket_2 = _hbond_i___1_j__and_hbond_j_i___1_.interface.new_socket(name = "i", in_out='INPUT', socket_type = 'NodeSocketInt')
-			i_socket_2.subtype = 'NONE'
 			i_socket_2.default_value = 0
 			i_socket_2.min_value = 0
 			i_socket_2.max_value = 2147483647
+			i_socket_2.subtype = 'NONE'
 			i_socket_2.attribute_domain = 'POINT'
 			i_socket_2.hide_value = True
 			
 			#Socket j
 			j_socket_2 = _hbond_i___1_j__and_hbond_j_i___1_.interface.new_socket(name = "j", in_out='INPUT', socket_type = 'NodeSocketInt')
-			j_socket_2.subtype = 'NONE'
 			j_socket_2.default_value = 0
 			j_socket_2.min_value = 0
 			j_socket_2.max_value = 2147483647
+			j_socket_2.subtype = 'NONE'
 			j_socket_2.attribute_domain = 'POINT'
 			j_socket_2.hide_value = True
 			
@@ -3976,23 +3992,24 @@ class Topology_DSSP(bpy.types.Operator):
 			#_hbond_j___1_i_and_hbond_i_j___1_ interface
 			#Socket Boolean
 			boolean_socket_11 = _hbond_j___1_i_and_hbond_i_j___1_.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_11.default_value = False
 			boolean_socket_11.attribute_domain = 'POINT'
 			
 			#Socket i
 			i_socket_3 = _hbond_j___1_i_and_hbond_i_j___1_.interface.new_socket(name = "i", in_out='INPUT', socket_type = 'NodeSocketInt')
-			i_socket_3.subtype = 'NONE'
 			i_socket_3.default_value = 0
 			i_socket_3.min_value = 0
 			i_socket_3.max_value = 2147483647
+			i_socket_3.subtype = 'NONE'
 			i_socket_3.attribute_domain = 'POINT'
 			i_socket_3.hide_value = True
 			
 			#Socket j
 			j_socket_3 = _hbond_j___1_i_and_hbond_i_j___1_.interface.new_socket(name = "j", in_out='INPUT', socket_type = 'NodeSocketInt')
-			j_socket_3.subtype = 'NONE'
 			j_socket_3.default_value = 0
 			j_socket_3.min_value = 0
 			j_socket_3.max_value = 2147483647
+			j_socket_3.subtype = 'NONE'
 			j_socket_3.attribute_domain = 'POINT'
 			j_socket_3.hide_value = True
 			
@@ -4098,31 +4115,32 @@ class Topology_DSSP(bpy.types.Operator):
 			#_dssp_sheet_checks interface
 			#Socket Boolean
 			boolean_socket_12 = _dssp_sheet_checks.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_12.default_value = False
 			boolean_socket_12.attribute_domain = 'POINT'
 			
 			#Socket j
 			j_socket_4 = _dssp_sheet_checks.interface.new_socket(name = "j", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			j_socket_4.subtype = 'NONE'
 			j_socket_4.default_value = 0
 			j_socket_4.min_value = -2147483648
 			j_socket_4.max_value = 2147483647
+			j_socket_4.subtype = 'NONE'
 			j_socket_4.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket_3 = _dssp_sheet_checks.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket_3.subtype = 'NONE'
 			index_socket_3.default_value = 0
 			index_socket_3.min_value = 0
 			index_socket_3.max_value = 2147483647
+			index_socket_3.subtype = 'NONE'
 			index_socket_3.attribute_domain = 'POINT'
 			index_socket_3.hide_value = True
 			
 			#Socket j
 			j_socket_5 = _dssp_sheet_checks.interface.new_socket(name = "j", in_out='INPUT', socket_type = 'NodeSocketInt')
-			j_socket_5.subtype = 'NONE'
 			j_socket_5.default_value = 0
 			j_socket_5.min_value = -2147483648
 			j_socket_5.max_value = 2147483647
+			j_socket_5.subtype = 'NONE'
 			j_socket_5.attribute_domain = 'POINT'
 			
 			
@@ -4273,6 +4291,7 @@ class Topology_DSSP(bpy.types.Operator):
 			
 			#Socket Attribute
 			attribute_socket = _mn_topo_calc_sheet.interface.new_socket(name = "Attribute", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			attribute_socket.default_value = False
 			attribute_socket.attribute_domain = 'POINT'
 			
 			#Socket Geometry
@@ -4794,30 +4813,32 @@ class Topology_DSSP(bpy.types.Operator):
 			#group_pick interface
 			#Socket Is Valid
 			is_valid_socket = group_pick.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket.default_value = True
 			is_valid_socket.attribute_domain = 'POINT'
 			is_valid_socket.description = "Whether the pick is valid. Pick is only valid if a single item is picked in the Group ID"
 			
 			#Socket Index
 			index_socket_4 = group_pick.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket_4.subtype = 'NONE'
 			index_socket_4.default_value = 0
 			index_socket_4.min_value = 0
 			index_socket_4.max_value = 2147483647
+			index_socket_4.subtype = 'NONE'
 			index_socket_4.attribute_domain = 'POINT'
 			index_socket_4.description = "Index of picked item. Returns -1 if not a valid pick."
 			
 			#Socket Pick
 			pick_socket = group_pick.interface.new_socket(name = "Pick", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pick_socket.default_value = False
 			pick_socket.attribute_domain = 'POINT'
 			pick_socket.hide_value = True
 			pick_socket.description = "True for the item to pick from the group. If number of picks is 0 or more than 1, not a valid pick"
 			
 			#Socket Group ID
 			group_id_socket = group_pick.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket.subtype = 'NONE'
 			group_id_socket.default_value = 0
 			group_id_socket.min_value = -2147483648
 			group_id_socket.max_value = 2147483647
+			group_id_socket.subtype = 'NONE'
 			group_id_socket.attribute_domain = 'POINT'
 			group_id_socket.description = "Group ID inside which to pick the item"
 			
@@ -4946,46 +4967,48 @@ class Topology_DSSP(bpy.types.Operator):
 			#group_pick_vector interface
 			#Socket Is Valid
 			is_valid_socket_1 = group_pick_vector.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket_1.default_value = False
 			is_valid_socket_1.attribute_domain = 'POINT'
 			is_valid_socket_1.description = "The pick for this group is valid"
 			
 			#Socket Index
 			index_socket_5 = group_pick_vector.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket_5.subtype = 'NONE'
 			index_socket_5.default_value = 0
 			index_socket_5.min_value = -2147483648
 			index_socket_5.max_value = 2147483647
+			index_socket_5.subtype = 'NONE'
 			index_socket_5.attribute_domain = 'POINT'
 			index_socket_5.description = "Picked Index for the Group"
 			
 			#Socket Vector
 			vector_socket_2 = group_pick_vector.interface.new_socket(name = "Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector_socket_2.subtype = 'NONE'
 			vector_socket_2.default_value = (0.0, 0.0, 0.0)
 			vector_socket_2.min_value = -3.4028234663852886e+38
 			vector_socket_2.max_value = 3.4028234663852886e+38
+			vector_socket_2.subtype = 'NONE'
 			vector_socket_2.attribute_domain = 'POINT'
 			vector_socket_2.description = "Picked vector for the group"
 			
 			#Socket Pick
 			pick_socket_1 = group_pick_vector.interface.new_socket(name = "Pick", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pick_socket_1.default_value = False
 			pick_socket_1.attribute_domain = 'POINT'
 			pick_socket_1.hide_value = True
 			
 			#Socket Group ID
 			group_id_socket_1 = group_pick_vector.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_1.subtype = 'NONE'
 			group_id_socket_1.default_value = 0
 			group_id_socket_1.min_value = -2147483648
 			group_id_socket_1.max_value = 2147483647
+			group_id_socket_1.subtype = 'NONE'
 			group_id_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Position
 			position_socket_1 = group_pick_vector.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket_1.subtype = 'NONE'
 			position_socket_1.default_value = (0.0, 0.0, 0.0)
 			position_socket_1.min_value = -3.4028234663852886e+38
 			position_socket_1.max_value = 3.4028234663852886e+38
+			position_socket_1.subtype = 'NONE'
 			position_socket_1.attribute_domain = 'POINT'
 			position_socket_1.description = "Vector field to pick vlaue for, defaults to Position"
 			
@@ -5069,10 +5092,10 @@ class Topology_DSSP(bpy.types.Operator):
 			#res_group_id interface
 			#Socket Unique Group ID
 			unique_group_id_socket = res_group_id.interface.new_socket(name = "Unique Group ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			unique_group_id_socket.subtype = 'NONE'
 			unique_group_id_socket.default_value = 0
 			unique_group_id_socket.min_value = -2147483648
 			unique_group_id_socket.max_value = 2147483647
+			unique_group_id_socket.subtype = 'NONE'
 			unique_group_id_socket.attribute_domain = 'POINT'
 			unique_group_id_socket.description = "A unique Group ID for eash residue"
 			
@@ -5244,55 +5267,57 @@ class Topology_DSSP(bpy.types.Operator):
 			#residue_mask interface
 			#Socket Is Valid
 			is_valid_socket_2 = residue_mask.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket_2.default_value = False
 			is_valid_socket_2.attribute_domain = 'POINT'
 			is_valid_socket_2.description = "Group contains only one occurrance of the selected atom. None or more than one returns False"
 			
 			#Socket Index
 			index_socket_6 = residue_mask.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket_6.subtype = 'NONE'
 			index_socket_6.default_value = 0
 			index_socket_6.min_value = -2147483648
 			index_socket_6.max_value = 2147483647
+			index_socket_6.subtype = 'NONE'
 			index_socket_6.attribute_domain = 'POINT'
 			index_socket_6.description = "Index for the group's atom with specified name, returns -1 if not valid"
 			
 			#Socket Position
 			position_socket_2 = residue_mask.interface.new_socket(name = "Position", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			position_socket_2.subtype = 'NONE'
 			position_socket_2.default_value = (0.0, 0.0, 0.0)
 			position_socket_2.min_value = -3.4028234663852886e+38
 			position_socket_2.max_value = 3.4028234663852886e+38
+			position_socket_2.subtype = 'NONE'
 			position_socket_2.attribute_domain = 'POINT'
 			position_socket_2.description = "Position of the picked point in the group, returns (0, 0, 0) if not valid"
 			
 			#Socket Group ID
 			group_id_socket_2 = residue_mask.interface.new_socket(name = "Group ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_2.subtype = 'NONE'
 			group_id_socket_2.default_value = 0
 			group_id_socket_2.min_value = -2147483648
 			group_id_socket_2.max_value = 2147483647
+			group_id_socket_2.subtype = 'NONE'
 			group_id_socket_2.attribute_domain = 'POINT'
 			
 			#Socket atom_name
 			atom_name_socket = residue_mask.interface.new_socket(name = "atom_name", in_out='INPUT', socket_type = 'NodeSocketInt')
-			atom_name_socket.subtype = 'NONE'
 			atom_name_socket.default_value = 1
 			atom_name_socket.min_value = 2
 			atom_name_socket.max_value = 2147483647
+			atom_name_socket.subtype = 'NONE'
 			atom_name_socket.attribute_domain = 'POINT'
 			atom_name_socket.description = "Atom to pick from the group"
 			
 			#Socket Use Fallback
 			use_fallback_socket = residue_mask.interface.new_socket(name = "Use Fallback", in_out='INPUT', socket_type = 'NodeSocketBool')
+			use_fallback_socket.default_value = True
 			use_fallback_socket.attribute_domain = 'POINT'
 			use_fallback_socket.description = "Uses a calculated Unique Group ID as a fallback. Disabling can increase performance if pre-computing a Group ID for multiple nodes"
 			
 			#Socket Group ID
 			group_id_socket_3 = residue_mask.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_3.subtype = 'NONE'
 			group_id_socket_3.default_value = 0
 			group_id_socket_3.min_value = -2147483648
 			group_id_socket_3.max_value = 2147483647
+			group_id_socket_3.subtype = 'NONE'
 			group_id_socket_3.attribute_domain = 'POINT'
 			
 			
@@ -5396,14 +5421,17 @@ class Topology_DSSP(bpy.types.Operator):
 			#fallback_boolean interface
 			#Socket Boolean
 			boolean_socket_13 = fallback_boolean.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_13.default_value = False
 			boolean_socket_13.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket = fallback_boolean.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = ""
 			name_socket.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket = fallback_boolean.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketBool')
+			fallback_socket.default_value = False
 			fallback_socket.attribute_domain = 'POINT'
 			
 			
@@ -5468,42 +5496,42 @@ class Topology_DSSP(bpy.types.Operator):
 			#_mn_constants_atom_name_peptide interface
 			#Socket Backbone Lower
 			backbone_lower_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Backbone Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.default_value = 0
 			backbone_lower_socket.min_value = -2147483648
 			backbone_lower_socket.max_value = 2147483647
+			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Upper
 			backbone_upper_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Backbone Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.default_value = 0
 			backbone_upper_socket.min_value = -2147483648
 			backbone_upper_socket.max_value = 2147483647
+			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Lower
 			side_chain_lower_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Side Chain Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.default_value = 0
 			side_chain_lower_socket.min_value = -2147483648
 			side_chain_lower_socket.max_value = 2147483647
+			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Upper
 			side_chain_upper_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Side Chain Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.default_value = 0
 			side_chain_upper_socket.min_value = -2147483648
 			side_chain_upper_socket.max_value = 2147483647
+			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Alpha Carbon
 			alpha_carbon_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Alpha Carbon", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			alpha_carbon_socket.subtype = 'NONE'
 			alpha_carbon_socket.default_value = 0
 			alpha_carbon_socket.min_value = -2147483648
 			alpha_carbon_socket.max_value = 2147483647
+			alpha_carbon_socket.subtype = 'NONE'
 			alpha_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -5589,18 +5617,22 @@ class Topology_DSSP(bpy.types.Operator):
 			#_mn_select_peptide interface
 			#Socket Is Backbone
 			is_backbone_socket = _mn_select_peptide.interface.new_socket(name = "Is Backbone", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_backbone_socket.default_value = False
 			is_backbone_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Side Chain
 			is_side_chain_socket = _mn_select_peptide.interface.new_socket(name = "Is Side Chain", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_side_chain_socket.default_value = False
 			is_side_chain_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Peptide
 			is_peptide_socket = _mn_select_peptide.interface.new_socket(name = "Is Peptide", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_peptide_socket.default_value = False
 			is_peptide_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Alpha Carbon
 			is_alpha_carbon_socket = _mn_select_peptide.interface.new_socket(name = "Is Alpha Carbon", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_alpha_carbon_socket.default_value = False
 			is_alpha_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -5800,20 +5832,24 @@ class Topology_DSSP(bpy.types.Operator):
 			#is_alpha_carbon interface
 			#Socket Selection
 			selection_socket = is_alpha_carbon.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "True if atom is an alpha carbon of an amino acid"
 			
 			#Socket Inverted
 			inverted_socket = is_alpha_carbon.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket = is_alpha_carbon.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = is_alpha_carbon.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
@@ -5915,10 +5951,10 @@ class Topology_DSSP(bpy.types.Operator):
 			
 			#Socket Unique Group ID
 			unique_group_id_socket_1 = _mn_topo_assign_backbone.interface.new_socket(name = "Unique Group ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			unique_group_id_socket_1.subtype = 'NONE'
 			unique_group_id_socket_1.default_value = 0
 			unique_group_id_socket_1.min_value = -2147483648
 			unique_group_id_socket_1.max_value = 2147483647
+			unique_group_id_socket_1.subtype = 'NONE'
 			unique_group_id_socket_1.attribute_domain = 'POINT'
 			
 			#Socket CA Atoms
@@ -6173,6 +6209,7 @@ class Topology_DSSP(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_1 = topology_dssp.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = True
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.hide_value = True
 			

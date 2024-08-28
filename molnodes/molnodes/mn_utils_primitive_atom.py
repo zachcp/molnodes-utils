@@ -33,66 +33,70 @@ class MN_utils_primitive_atom(bpy.types.Operator):
 			
 			#Socket Position
 			position_socket = mn_utils_primitive_atom.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			
 			#Socket vdw_radii
 			vdw_radii_socket = mn_utils_primitive_atom.interface.new_socket(name = "vdw_radii", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			vdw_radii_socket.subtype = 'DISTANCE'
 			vdw_radii_socket.default_value = 0.10000000149011612
 			vdw_radii_socket.min_value = 0.0
 			vdw_radii_socket.max_value = 3.4028234663852886e+38
+			vdw_radii_socket.subtype = 'DISTANCE'
 			vdw_radii_socket.attribute_domain = 'POINT'
 			
 			#Socket b_factor
 			b_factor_socket = mn_utils_primitive_atom.interface.new_socket(name = "b_factor", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			b_factor_socket.subtype = 'NONE'
 			b_factor_socket.default_value = 0.0
 			b_factor_socket.min_value = -3.4028234663852886e+38
 			b_factor_socket.max_value = 3.4028234663852886e+38
+			b_factor_socket.subtype = 'NONE'
 			b_factor_socket.attribute_domain = 'POINT'
 			
 			#Socket atomic_number
 			atomic_number_socket = mn_utils_primitive_atom.interface.new_socket(name = "atomic_number", in_out='INPUT', socket_type = 'NodeSocketInt')
-			atomic_number_socket.subtype = 'NONE'
 			atomic_number_socket.default_value = 0
 			atomic_number_socket.min_value = -2147483648
 			atomic_number_socket.max_value = 2147483647
+			atomic_number_socket.subtype = 'NONE'
 			atomic_number_socket.attribute_domain = 'POINT'
 			
 			#Socket res_name
 			res_name_socket = mn_utils_primitive_atom.interface.new_socket(name = "res_name", in_out='INPUT', socket_type = 'NodeSocketInt')
-			res_name_socket.subtype = 'NONE'
 			res_name_socket.default_value = 0
 			res_name_socket.min_value = -2147483648
 			res_name_socket.max_value = 2147483647
+			res_name_socket.subtype = 'NONE'
 			res_name_socket.attribute_domain = 'POINT'
 			
 			#Socket res_id
 			res_id_socket = mn_utils_primitive_atom.interface.new_socket(name = "res_id", in_out='INPUT', socket_type = 'NodeSocketInt')
-			res_id_socket.subtype = 'NONE'
 			res_id_socket.default_value = 0
 			res_id_socket.min_value = -2147483648
 			res_id_socket.max_value = 2147483647
+			res_id_socket.subtype = 'NONE'
 			res_id_socket.attribute_domain = 'POINT'
 			
 			#Socket is_backbone
 			is_backbone_socket = mn_utils_primitive_atom.interface.new_socket(name = "is_backbone", in_out='INPUT', socket_type = 'NodeSocketBool')
+			is_backbone_socket.default_value = False
 			is_backbone_socket.attribute_domain = 'POINT'
 			
 			#Socket is_peptide
 			is_peptide_socket = mn_utils_primitive_atom.interface.new_socket(name = "is_peptide", in_out='INPUT', socket_type = 'NodeSocketBool')
+			is_peptide_socket.default_value = False
 			is_peptide_socket.attribute_domain = 'POINT'
 			
 			#Socket is_alpha_carbon
 			is_alpha_carbon_socket = mn_utils_primitive_atom.interface.new_socket(name = "is_alpha_carbon", in_out='INPUT', socket_type = 'NodeSocketBool')
+			is_alpha_carbon_socket.default_value = False
 			is_alpha_carbon_socket.attribute_domain = 'POINT'
 			
 			#Socket is_nucleic
 			is_nucleic_socket = mn_utils_primitive_atom.interface.new_socket(name = "is_nucleic", in_out='INPUT', socket_type = 'NodeSocketBool')
+			is_nucleic_socket.default_value = False
 			is_nucleic_socket.attribute_domain = 'POINT'
 			
 			

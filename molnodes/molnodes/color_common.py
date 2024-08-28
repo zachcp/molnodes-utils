@@ -28,36 +28,43 @@ class Color_Common(bpy.types.Operator):
 			#color_common interface
 			#Socket Color
 			color_socket = color_common.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			color_socket.description = "The output colors for the common elements"
 			
 			#Socket Hydrogen
 			hydrogen_socket = color_common.interface.new_socket(name = "Hydrogen", in_out='INPUT', socket_type = 'NodeSocketColor')
+			hydrogen_socket.default_value = (1.0, 1.0, 1.0, 1.0)
 			hydrogen_socket.attribute_domain = 'POINT'
 			hydrogen_socket.description = "Color to set for the element Hydrogen"
 			
 			#Socket Carbon
 			carbon_socket = color_common.interface.new_socket(name = "Carbon", in_out='INPUT', socket_type = 'NodeSocketColor')
+			carbon_socket.default_value = (0.20190106332302094, 0.20190106332302094, 0.20190106332302094, 1.0)
 			carbon_socket.attribute_domain = 'POINT'
 			carbon_socket.description = "Color to set for the element Carbon"
 			
 			#Socket Nitrogen
 			nitrogen_socket = color_common.interface.new_socket(name = "Nitrogen", in_out='INPUT', socket_type = 'NodeSocketColor')
+			nitrogen_socket.default_value = (0.1599999964237213, 0.2333349734544754, 0.800000011920929, 1.0)
 			nitrogen_socket.attribute_domain = 'POINT'
 			nitrogen_socket.description = "Color to set for the element Nitrogen"
 			
 			#Socket Oxygen
 			oxygen_socket = color_common.interface.new_socket(name = "Oxygen", in_out='INPUT', socket_type = 'NodeSocketColor')
+			oxygen_socket.default_value = (0.800000011920929, 0.16102071106433868, 0.1599999964237213, 1.0)
 			oxygen_socket.attribute_domain = 'POINT'
 			oxygen_socket.description = "Color to set for the element Oxygen"
 			
 			#Socket Phosphorous
 			phosphorous_socket = color_common.interface.new_socket(name = "Phosphorous", in_out='INPUT', socket_type = 'NodeSocketColor')
+			phosphorous_socket.default_value = (0.8000000715255737, 0.1718127280473709, 0.525249719619751, 1.0)
 			phosphorous_socket.attribute_domain = 'POINT'
 			phosphorous_socket.description = "Color to set for the element Phosphorous"
 			
 			#Socket Sulfur
 			sulfur_socket = color_common.interface.new_socket(name = "Sulfur", in_out='INPUT', socket_type = 'NodeSocketColor')
+			sulfur_socket.default_value = (0.8000000715255737, 0.7220579385757446, 0.051990706473588943, 1.0)
 			sulfur_socket.attribute_domain = 'POINT'
 			sulfur_socket.description = "Color to set for the element Sulfur"
 			

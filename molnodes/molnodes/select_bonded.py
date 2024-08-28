@@ -28,26 +28,29 @@ class Select_Bonded(bpy.types.Operator):
 			#select_bonded interface
 			#Socket Selection
 			selection_socket = select_bonded.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "Expanded selection that includes the original selection"
 			
 			#Socket Bonded
 			bonded_socket = select_bonded.interface.new_socket(name = "Bonded", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			bonded_socket.default_value = False
 			bonded_socket.attribute_domain = 'POINT'
 			bonded_socket.description = "Expanded Selection that excludes the original selection"
 			
 			#Socket Selection
 			selection_socket_1 = select_bonded.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = False
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.hide_value = True
 			selection_socket_1.description = "Selection of atoms to apply this node to"
 			
 			#Socket Depth
 			depth_socket = select_bonded.interface.new_socket(name = "Depth", in_out='INPUT', socket_type = 'NodeSocketInt')
-			depth_socket.subtype = 'NONE'
 			depth_socket.default_value = 1
 			depth_socket.min_value = 0
 			depth_socket.max_value = 2147483647
+			depth_socket.subtype = 'NONE'
 			depth_socket.attribute_domain = 'POINT'
 			depth_socket.description = "Number of bonds to expand the selection by"
 			

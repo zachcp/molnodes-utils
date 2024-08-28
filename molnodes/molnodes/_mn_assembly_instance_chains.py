@@ -37,26 +37,26 @@ class _MN_assembly_instance_chains(bpy.types.Operator):
 			
 			#Socket Rotation
 			rotation_socket = _mn_assembly_instance_chains.interface.new_socket(name = "Rotation", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			rotation_socket.subtype = 'FACTOR'
 			rotation_socket.default_value = 1.0
 			rotation_socket.min_value = 0.0
 			rotation_socket.max_value = 1.0
+			rotation_socket.subtype = 'FACTOR'
 			rotation_socket.attribute_domain = 'POINT'
 			
 			#Socket Translation
 			translation_socket = _mn_assembly_instance_chains.interface.new_socket(name = "Translation", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			translation_socket.subtype = 'FACTOR'
 			translation_socket.default_value = 1.0
 			translation_socket.min_value = 0.0
 			translation_socket.max_value = 1.0
+			translation_socket.subtype = 'FACTOR'
 			translation_socket.attribute_domain = 'POINT'
 			
 			#Socket assembly_id
 			assembly_id_socket = _mn_assembly_instance_chains.interface.new_socket(name = "assembly_id", in_out='INPUT', socket_type = 'NodeSocketInt')
-			assembly_id_socket.subtype = 'NONE'
 			assembly_id_socket.default_value = 0
 			assembly_id_socket.min_value = -2147483648
 			assembly_id_socket.max_value = 2147483647
+			assembly_id_socket.subtype = 'NONE'
 			assembly_id_socket.attribute_domain = 'POINT'
 			
 			#Socket data_object

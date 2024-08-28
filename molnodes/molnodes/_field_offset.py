@@ -28,70 +28,72 @@ class _field_offset(bpy.types.Operator):
 			#_field_offset interface
 			#Socket Field
 			field_socket = _field_offset.interface.new_socket(name = "Field", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			field_socket.subtype = 'NONE'
 			field_socket.default_value = (0.0, 0.0, 0.0)
 			field_socket.min_value = -3.4028234663852886e+38
 			field_socket.max_value = 3.4028234663852886e+38
+			field_socket.subtype = 'NONE'
 			field_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = _field_offset.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			value_socket.default_value = False
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Field
 			field_socket_1 = _field_offset.interface.new_socket(name = "Field", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			field_socket_1.subtype = 'NONE'
 			field_socket_1.default_value = 0
 			field_socket_1.min_value = -2147483648
 			field_socket_1.max_value = 2147483647
+			field_socket_1.subtype = 'NONE'
 			field_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Field
 			field_socket_2 = _field_offset.interface.new_socket(name = "Field", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			field_socket_2.subtype = 'NONE'
 			field_socket_2.default_value = 0.0
 			field_socket_2.min_value = -3.4028234663852886e+38
 			field_socket_2.max_value = 3.4028234663852886e+38
+			field_socket_2.subtype = 'NONE'
 			field_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Field
 			field_socket_3 = _field_offset.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketVector')
-			field_socket_3.subtype = 'NONE'
 			field_socket_3.default_value = (0.0, 0.0, 0.0)
 			field_socket_3.min_value = -3.4028234663852886e+38
 			field_socket_3.max_value = 3.4028234663852886e+38
+			field_socket_3.subtype = 'NONE'
 			field_socket_3.attribute_domain = 'POINT'
 			field_socket_3.hide_value = True
 			
 			#Socket Value
 			value_socket_1 = _field_offset.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketBool')
+			value_socket_1.default_value = False
 			value_socket_1.attribute_domain = 'POINT'
 			value_socket_1.hide_value = True
 			
 			#Socket Field
 			field_socket_4 = _field_offset.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketInt')
-			field_socket_4.subtype = 'NONE'
 			field_socket_4.default_value = 0
 			field_socket_4.min_value = -2147483648
 			field_socket_4.max_value = 2147483647
+			field_socket_4.subtype = 'NONE'
 			field_socket_4.attribute_domain = 'POINT'
 			field_socket_4.hide_value = True
 			
 			#Socket Field
 			field_socket_5 = _field_offset.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			field_socket_5.subtype = 'NONE'
 			field_socket_5.default_value = 0.0
 			field_socket_5.min_value = -3.4028234663852886e+38
 			field_socket_5.max_value = 3.4028234663852886e+38
+			field_socket_5.subtype = 'NONE'
 			field_socket_5.attribute_domain = 'POINT'
 			field_socket_5.hide_value = True
 			
 			#Socket Offset
 			offset_socket = _field_offset.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 0
 			offset_socket.min_value = -2147483648
 			offset_socket.max_value = 2147483647
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			

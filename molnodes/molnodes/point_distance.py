@@ -28,28 +28,28 @@ class Point_Distance(bpy.types.Operator):
 			#point_distance interface
 			#Socket Vector
 			vector_socket = point_distance.interface.new_socket(name = "Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -3.4028234663852886e+38
 			vector_socket.max_value = 3.4028234663852886e+38
+			vector_socket.subtype = 'NONE'
 			vector_socket.attribute_domain = 'POINT'
 			vector_socket.description = "Vector from the current point to the indexed point"
 			
 			#Socket Distance
 			distance_socket = point_distance.interface.new_socket(name = "Distance", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			distance_socket.subtype = 'NONE'
 			distance_socket.default_value = 0.0
 			distance_socket.min_value = -3.4028234663852886e+38
 			distance_socket.max_value = 3.4028234663852886e+38
+			distance_socket.subtype = 'NONE'
 			distance_socket.attribute_domain = 'POINT'
 			distance_socket.description = "Distance from the current point to the indexed point"
 			
 			#Socket Index
 			index_socket = point_distance.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 100
 			index_socket.min_value = 0
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			index_socket.description = "Index for the selected point to measure to"
 			

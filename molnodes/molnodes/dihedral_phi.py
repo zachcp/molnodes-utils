@@ -28,27 +28,27 @@ class Dihedral_Phi(bpy.types.Operator):
 			#vector_angle interface
 			#Socket Angle
 			angle_socket = vector_angle.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket.subtype = 'ANGLE'
 			angle_socket.default_value = 0.0
 			angle_socket.min_value = -3.4028234663852886e+38
 			angle_socket.max_value = 3.4028234663852886e+38
+			angle_socket.subtype = 'ANGLE'
 			angle_socket.attribute_domain = 'POINT'
 			angle_socket.description = "Angle between the two given vectors in radians"
 			
 			#Socket A
 			a_socket = vector_angle.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketVector')
-			a_socket.subtype = 'NONE'
 			a_socket.default_value = (0.0, 0.0, 0.0)
 			a_socket.min_value = -10000.0
 			a_socket.max_value = 10000.0
+			a_socket.subtype = 'NONE'
 			a_socket.attribute_domain = 'POINT'
 			
 			#Socket B
 			b_socket = vector_angle.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketVector')
-			b_socket.subtype = 'NONE'
 			b_socket.default_value = (0.0, 0.0, 0.0)
 			b_socket.min_value = -10000.0
 			b_socket.max_value = 10000.0
+			b_socket.subtype = 'NONE'
 			b_socket.attribute_domain = 'POINT'
 			
 			
@@ -130,73 +130,73 @@ class Dihedral_Phi(bpy.types.Operator):
 			#dihedral_angle interface
 			#Socket Angle
 			angle_socket_1 = dihedral_angle.interface.new_socket(name = "Angle", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angle_socket_1.subtype = 'ANGLE'
 			angle_socket_1.default_value = 0.0
 			angle_socket_1.min_value = -3.4028234663852886e+38
 			angle_socket_1.max_value = 3.4028234663852886e+38
+			angle_socket_1.subtype = 'ANGLE'
 			angle_socket_1.attribute_domain = 'POINT'
 			angle_socket_1.description = "The angle between the vectors AB and CD, when made perpendicular to BC."
 			
 			#Socket BA⟂(BC)
 			ba__bc__socket = dihedral_angle.interface.new_socket(name = "BA⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			ba__bc__socket.subtype = 'NONE'
 			ba__bc__socket.default_value = (0.0, 0.0, 0.0)
 			ba__bc__socket.min_value = -3.4028234663852886e+38
 			ba__bc__socket.max_value = 3.4028234663852886e+38
+			ba__bc__socket.subtype = 'NONE'
 			ba__bc__socket.attribute_domain = 'POINT'
 			ba__bc__socket.description = "The vector BA when made perpendicular to  the axis BC"
 			
 			#Socket CD⟂(BC)
 			cd__bc__socket = dihedral_angle.interface.new_socket(name = "CD⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			cd__bc__socket.subtype = 'NONE'
 			cd__bc__socket.default_value = (0.0, 0.0, 0.0)
 			cd__bc__socket.min_value = -3.4028234663852886e+38
 			cd__bc__socket.max_value = 3.4028234663852886e+38
+			cd__bc__socket.subtype = 'NONE'
 			cd__bc__socket.attribute_domain = 'POINT'
 			cd__bc__socket.description = "The Vector CD when makde perpendicular to the axis BC"
 			
 			#Socket BC
 			bc_socket = dihedral_angle.interface.new_socket(name = "BC", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			bc_socket.subtype = 'NONE'
 			bc_socket.default_value = (0.0, 0.0, 0.0)
 			bc_socket.min_value = -3.4028234663852886e+38
 			bc_socket.max_value = 3.4028234663852886e+38
+			bc_socket.subtype = 'NONE'
 			bc_socket.attribute_domain = 'POINT'
 			bc_socket.description = "The axis vector BC"
 			
 			#Socket A
 			a_socket_1 = dihedral_angle.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketVector')
-			a_socket_1.subtype = 'NONE'
 			a_socket_1.default_value = (0.0, 0.0, 0.0)
 			a_socket_1.min_value = -3.4028234663852886e+38
 			a_socket_1.max_value = 3.4028234663852886e+38
+			a_socket_1.subtype = 'NONE'
 			a_socket_1.attribute_domain = 'POINT'
 			a_socket_1.description = "First vector for the calculation, which draws a line to B"
 			
 			#Socket B
 			b_socket_1 = dihedral_angle.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketVector')
-			b_socket_1.subtype = 'NONE'
 			b_socket_1.default_value = (0.0, 0.0, 0.0)
 			b_socket_1.min_value = -3.4028234663852886e+38
 			b_socket_1.max_value = 3.4028234663852886e+38
+			b_socket_1.subtype = 'NONE'
 			b_socket_1.attribute_domain = 'POINT'
 			b_socket_1.description = "Second vector for the calculation, which receives a line from A and draws a line to C"
 			
 			#Socket C
 			c_socket = dihedral_angle.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketVector')
-			c_socket.subtype = 'NONE'
 			c_socket.default_value = (0.0, 0.0, 0.0)
 			c_socket.min_value = -3.4028234663852886e+38
 			c_socket.max_value = 3.4028234663852886e+38
+			c_socket.subtype = 'NONE'
 			c_socket.attribute_domain = 'POINT'
 			c_socket.description = "Third vector for the calculation, which receives a line from B and draws a line to D"
 			
 			#Socket D
 			d_socket = dihedral_angle.interface.new_socket(name = "D", in_out='INPUT', socket_type = 'NodeSocketVector')
-			d_socket.subtype = 'NONE'
 			d_socket.default_value = (0.0, 0.0, 0.0)
 			d_socket.min_value = -3.4028234663852886e+38
 			d_socket.max_value = 3.4028234663852886e+38
+			d_socket.subtype = 'NONE'
 			d_socket.attribute_domain = 'POINT'
 			d_socket.description = "Last vector for the calculation, which is the end point of the line from D"
 			
@@ -434,30 +434,32 @@ class Dihedral_Phi(bpy.types.Operator):
 			#group_pick interface
 			#Socket Is Valid
 			is_valid_socket = group_pick.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket.default_value = True
 			is_valid_socket.attribute_domain = 'POINT'
 			is_valid_socket.description = "Whether the pick is valid. Pick is only valid if a single item is picked in the Group ID"
 			
 			#Socket Index
 			index_socket = group_pick.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = 0
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			index_socket.description = "Index of picked item. Returns -1 if not a valid pick."
 			
 			#Socket Pick
 			pick_socket = group_pick.interface.new_socket(name = "Pick", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pick_socket.default_value = False
 			pick_socket.attribute_domain = 'POINT'
 			pick_socket.hide_value = True
 			pick_socket.description = "True for the item to pick from the group. If number of picks is 0 or more than 1, not a valid pick"
 			
 			#Socket Group ID
 			group_id_socket = group_pick.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket.subtype = 'NONE'
 			group_id_socket.default_value = 0
 			group_id_socket.min_value = -2147483648
 			group_id_socket.max_value = 2147483647
+			group_id_socket.subtype = 'NONE'
 			group_id_socket.attribute_domain = 'POINT'
 			group_id_socket.description = "Group ID inside which to pick the item"
 			
@@ -586,46 +588,48 @@ class Dihedral_Phi(bpy.types.Operator):
 			#group_pick_vector interface
 			#Socket Is Valid
 			is_valid_socket_1 = group_pick_vector.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket_1.default_value = False
 			is_valid_socket_1.attribute_domain = 'POINT'
 			is_valid_socket_1.description = "The pick for this group is valid"
 			
 			#Socket Index
 			index_socket_1 = group_pick_vector.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket_1.subtype = 'NONE'
 			index_socket_1.default_value = 0
 			index_socket_1.min_value = -2147483648
 			index_socket_1.max_value = 2147483647
+			index_socket_1.subtype = 'NONE'
 			index_socket_1.attribute_domain = 'POINT'
 			index_socket_1.description = "Picked Index for the Group"
 			
 			#Socket Vector
 			vector_socket = group_pick_vector.interface.new_socket(name = "Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -3.4028234663852886e+38
 			vector_socket.max_value = 3.4028234663852886e+38
+			vector_socket.subtype = 'NONE'
 			vector_socket.attribute_domain = 'POINT'
 			vector_socket.description = "Picked vector for the group"
 			
 			#Socket Pick
 			pick_socket_1 = group_pick_vector.interface.new_socket(name = "Pick", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pick_socket_1.default_value = False
 			pick_socket_1.attribute_domain = 'POINT'
 			pick_socket_1.hide_value = True
 			
 			#Socket Group ID
 			group_id_socket_1 = group_pick_vector.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_1.subtype = 'NONE'
 			group_id_socket_1.default_value = 0
 			group_id_socket_1.min_value = -2147483648
 			group_id_socket_1.max_value = 2147483647
+			group_id_socket_1.subtype = 'NONE'
 			group_id_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Position
 			position_socket = group_pick_vector.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			position_socket.description = "Vector field to pick vlaue for, defaults to Position"
 			
@@ -709,35 +713,35 @@ class Dihedral_Phi(bpy.types.Operator):
 			#offset_integer interface
 			#Socket Value
 			value_socket = offset_integer.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0
 			value_socket.min_value = -2147483648
 			value_socket.max_value = 2147483647
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket_2 = offset_integer.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket_2.subtype = 'NONE'
 			index_socket_2.default_value = 0
 			index_socket_2.min_value = 0
 			index_socket_2.max_value = 2147483647
+			index_socket_2.subtype = 'NONE'
 			index_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_1 = offset_integer.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketInt')
-			value_socket_1.subtype = 'NONE'
 			value_socket_1.default_value = 0
 			value_socket_1.min_value = -2147483648
 			value_socket_1.max_value = 2147483647
+			value_socket_1.subtype = 'NONE'
 			value_socket_1.attribute_domain = 'POINT'
 			value_socket_1.hide_value = True
 			
 			#Socket Offset
 			offset_socket = offset_integer.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 0
 			offset_socket.min_value = -2147483648
 			offset_socket.max_value = 2147483647
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			
@@ -804,10 +808,10 @@ class Dihedral_Phi(bpy.types.Operator):
 			#res_group_id interface
 			#Socket Unique Group ID
 			unique_group_id_socket = res_group_id.interface.new_socket(name = "Unique Group ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			unique_group_id_socket.subtype = 'NONE'
 			unique_group_id_socket.default_value = 0
 			unique_group_id_socket.min_value = -2147483648
 			unique_group_id_socket.max_value = 2147483647
+			unique_group_id_socket.subtype = 'NONE'
 			unique_group_id_socket.attribute_domain = 'POINT'
 			unique_group_id_socket.description = "A unique Group ID for eash residue"
 			
@@ -979,55 +983,57 @@ class Dihedral_Phi(bpy.types.Operator):
 			#residue_mask interface
 			#Socket Is Valid
 			is_valid_socket_2 = residue_mask.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket_2.default_value = False
 			is_valid_socket_2.attribute_domain = 'POINT'
 			is_valid_socket_2.description = "Group contains only one occurrance of the selected atom. None or more than one returns False"
 			
 			#Socket Index
 			index_socket_3 = residue_mask.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket_3.subtype = 'NONE'
 			index_socket_3.default_value = 0
 			index_socket_3.min_value = -2147483648
 			index_socket_3.max_value = 2147483647
+			index_socket_3.subtype = 'NONE'
 			index_socket_3.attribute_domain = 'POINT'
 			index_socket_3.description = "Index for the group's atom with specified name, returns -1 if not valid"
 			
 			#Socket Position
 			position_socket_1 = residue_mask.interface.new_socket(name = "Position", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			position_socket_1.subtype = 'NONE'
 			position_socket_1.default_value = (0.0, 0.0, 0.0)
 			position_socket_1.min_value = -3.4028234663852886e+38
 			position_socket_1.max_value = 3.4028234663852886e+38
+			position_socket_1.subtype = 'NONE'
 			position_socket_1.attribute_domain = 'POINT'
 			position_socket_1.description = "Position of the picked point in the group, returns (0, 0, 0) if not valid"
 			
 			#Socket Group ID
 			group_id_socket_2 = residue_mask.interface.new_socket(name = "Group ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_2.subtype = 'NONE'
 			group_id_socket_2.default_value = 0
 			group_id_socket_2.min_value = -2147483648
 			group_id_socket_2.max_value = 2147483647
+			group_id_socket_2.subtype = 'NONE'
 			group_id_socket_2.attribute_domain = 'POINT'
 			
 			#Socket atom_name
 			atom_name_socket = residue_mask.interface.new_socket(name = "atom_name", in_out='INPUT', socket_type = 'NodeSocketInt')
-			atom_name_socket.subtype = 'NONE'
 			atom_name_socket.default_value = 1
 			atom_name_socket.min_value = 2
 			atom_name_socket.max_value = 2147483647
+			atom_name_socket.subtype = 'NONE'
 			atom_name_socket.attribute_domain = 'POINT'
 			atom_name_socket.description = "Atom to pick from the group"
 			
 			#Socket Use Fallback
 			use_fallback_socket = residue_mask.interface.new_socket(name = "Use Fallback", in_out='INPUT', socket_type = 'NodeSocketBool')
+			use_fallback_socket.default_value = True
 			use_fallback_socket.attribute_domain = 'POINT'
 			use_fallback_socket.description = "Uses a calculated Unique Group ID as a fallback. Disabling can increase performance if pre-computing a Group ID for multiple nodes"
 			
 			#Socket Group ID
 			group_id_socket_3 = residue_mask.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_3.subtype = 'NONE'
 			group_id_socket_3.default_value = 0
 			group_id_socket_3.min_value = -2147483648
 			group_id_socket_3.max_value = 2147483647
+			group_id_socket_3.subtype = 'NONE'
 			group_id_socket_3.attribute_domain = 'POINT'
 			
 			
@@ -1131,22 +1137,23 @@ class Dihedral_Phi(bpy.types.Operator):
 			#fallback_vector interface
 			#Socket Output
 			output_socket = fallback_vector.interface.new_socket(name = "Output", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			output_socket.subtype = 'NONE'
 			output_socket.default_value = (0.0, 0.0, 0.0)
 			output_socket.min_value = -3.4028234663852886e+38
 			output_socket.max_value = 3.4028234663852886e+38
+			output_socket.subtype = 'NONE'
 			output_socket.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket = fallback_vector.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = ""
 			name_socket.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket = fallback_vector.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketVector')
-			fallback_socket.subtype = 'NONE'
 			fallback_socket.default_value = (0.0, 0.0, 0.0)
 			fallback_socket.min_value = -3.4028234663852886e+38
 			fallback_socket.max_value = 3.4028234663852886e+38
+			fallback_socket.subtype = 'NONE'
 			fallback_socket.attribute_domain = 'POINT'
 			
 			
@@ -1211,35 +1218,35 @@ class Dihedral_Phi(bpy.types.Operator):
 			#offset_vector interface
 			#Socket Value
 			value_socket_2 = offset_vector.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			value_socket_2.subtype = 'NONE'
 			value_socket_2.default_value = (0.0, 0.0, 0.0)
 			value_socket_2.min_value = -3.4028234663852886e+38
 			value_socket_2.max_value = 3.4028234663852886e+38
+			value_socket_2.subtype = 'NONE'
 			value_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket_4 = offset_vector.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket_4.subtype = 'NONE'
 			index_socket_4.default_value = 0
 			index_socket_4.min_value = 0
 			index_socket_4.max_value = 2147483647
+			index_socket_4.subtype = 'NONE'
 			index_socket_4.attribute_domain = 'POINT'
 			
 			#Socket Position
 			position_socket_2 = offset_vector.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket_2.subtype = 'NONE'
 			position_socket_2.default_value = (0.0, 0.0, 0.0)
 			position_socket_2.min_value = -3.4028234663852886e+38
 			position_socket_2.max_value = 3.4028234663852886e+38
+			position_socket_2.subtype = 'NONE'
 			position_socket_2.attribute_domain = 'POINT'
 			position_socket_2.hide_value = True
 			
 			#Socket Offset
 			offset_socket_1 = offset_vector.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.default_value = 0
 			offset_socket_1.min_value = -2147483647
 			offset_socket_1.max_value = 2147483647
+			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -1306,45 +1313,45 @@ class Dihedral_Phi(bpy.types.Operator):
 			#group_info interface
 			#Socket First Index
 			first_index_socket = group_info.interface.new_socket(name = "First Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			first_index_socket.subtype = 'NONE'
 			first_index_socket.default_value = 0
 			first_index_socket.min_value = -2147483648
 			first_index_socket.max_value = 2147483647
+			first_index_socket.subtype = 'NONE'
 			first_index_socket.attribute_domain = 'POINT'
 			first_index_socket.description = "Index of the first point in the group"
 			
 			#Socket Last Index
 			last_index_socket = group_info.interface.new_socket(name = "Last Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			last_index_socket.subtype = 'NONE'
 			last_index_socket.default_value = 0
 			last_index_socket.min_value = -2147483648
 			last_index_socket.max_value = 2147483647
+			last_index_socket.subtype = 'NONE'
 			last_index_socket.attribute_domain = 'POINT'
 			last_index_socket.description = "Index of the last point in the group"
 			
 			#Socket Index in Group
 			index_in_group_socket = group_info.interface.new_socket(name = "Index in Group", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_in_group_socket.subtype = 'NONE'
 			index_in_group_socket.default_value = 0
 			index_in_group_socket.min_value = -2147483648
 			index_in_group_socket.max_value = 2147483647
+			index_in_group_socket.subtype = 'NONE'
 			index_in_group_socket.attribute_domain = 'POINT'
 			
 			#Socket Size
 			size_socket = group_info.interface.new_socket(name = "Size", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			size_socket.subtype = 'NONE'
 			size_socket.default_value = 0
 			size_socket.min_value = -2147483648
 			size_socket.max_value = 2147483647
+			size_socket.subtype = 'NONE'
 			size_socket.attribute_domain = 'POINT'
 			size_socket.description = "Number of points in the group"
 			
 			#Socket Group ID
 			group_id_socket_4 = group_info.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_4.subtype = 'NONE'
 			group_id_socket_4.default_value = 0
 			group_id_socket_4.min_value = -2147483648
 			group_id_socket_4.max_value = 2147483647
+			group_id_socket_4.subtype = 'NONE'
 			group_id_socket_4.attribute_domain = 'POINT'
 			
 			
@@ -1505,31 +1512,32 @@ class Dihedral_Phi(bpy.types.Operator):
 			#backbone_position interface
 			#Socket Position
 			position_socket_3 = backbone_position.interface.new_socket(name = "Position", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			position_socket_3.subtype = 'NONE'
 			position_socket_3.default_value = (0.0, 0.0, 0.0)
 			position_socket_3.min_value = -3.4028234663852886e+38
 			position_socket_3.max_value = 3.4028234663852886e+38
+			position_socket_3.subtype = 'NONE'
 			position_socket_3.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket_5 = backbone_position.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket_5.subtype = 'NONE'
 			index_socket_5.default_value = 0
 			index_socket_5.min_value = 0
 			index_socket_5.max_value = 2147483647
+			index_socket_5.subtype = 'NONE'
 			index_socket_5.attribute_domain = 'POINT'
 			index_socket_5.hide_value = True
 			
 			#Socket Menu
 			menu_socket = backbone_position.interface.new_socket(name = "Menu", in_out='INPUT', socket_type = 'NodeSocketMenu')
+			menu_socket.default_value = "backbone_N"
 			menu_socket.attribute_domain = 'POINT'
 			
 			#Socket Offset
 			offset_socket_2 = backbone_position.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_2.subtype = 'NONE'
 			offset_socket_2.default_value = 0
 			offset_socket_2.min_value = -1
 			offset_socket_2.max_value = 1
+			offset_socket_2.subtype = 'NONE'
 			offset_socket_2.attribute_domain = 'POINT'
 			
 			
@@ -1693,22 +1701,23 @@ class Dihedral_Phi(bpy.types.Operator):
 			#fallback_float interface
 			#Socket Value
 			value_socket_3 = fallback_float.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			value_socket_3.subtype = 'NONE'
 			value_socket_3.default_value = 0.0
 			value_socket_3.min_value = -3.4028234663852886e+38
 			value_socket_3.max_value = 3.4028234663852886e+38
+			value_socket_3.subtype = 'NONE'
 			value_socket_3.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket_1 = fallback_float.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket_1.default_value = ""
 			name_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket_1 = fallback_float.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			fallback_socket_1.subtype = 'NONE'
 			fallback_socket_1.default_value = 0.0
 			fallback_socket_1.min_value = -3.4028234663852886e+38
 			fallback_socket_1.max_value = 3.4028234663852886e+38
+			fallback_socket_1.subtype = 'NONE'
 			fallback_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -1773,34 +1782,34 @@ class Dihedral_Phi(bpy.types.Operator):
 			#dihedral_phi interface
 			#Socket Phi
 			phi_socket = dihedral_phi.interface.new_socket(name = "Phi", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			phi_socket.subtype = 'ANGLE'
 			phi_socket.default_value = 0.0
 			phi_socket.min_value = -3.4028234663852886e+38
 			phi_socket.max_value = 3.4028234663852886e+38
+			phi_socket.subtype = 'ANGLE'
 			phi_socket.attribute_domain = 'POINT'
 			
 			#Socket BA⟂(BC)
 			ba__bc__socket_1 = dihedral_phi.interface.new_socket(name = "BA⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			ba__bc__socket_1.subtype = 'NONE'
 			ba__bc__socket_1.default_value = (0.0, 0.0, 0.0)
 			ba__bc__socket_1.min_value = -3.4028234663852886e+38
 			ba__bc__socket_1.max_value = 3.4028234663852886e+38
+			ba__bc__socket_1.subtype = 'NONE'
 			ba__bc__socket_1.attribute_domain = 'POINT'
 			
 			#Socket CD⟂(BC)
 			cd__bc__socket_1 = dihedral_phi.interface.new_socket(name = "CD⟂(BC)", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			cd__bc__socket_1.subtype = 'NONE'
 			cd__bc__socket_1.default_value = (0.0, 0.0, 0.0)
 			cd__bc__socket_1.min_value = -3.4028234663852886e+38
 			cd__bc__socket_1.max_value = 3.4028234663852886e+38
+			cd__bc__socket_1.subtype = 'NONE'
 			cd__bc__socket_1.attribute_domain = 'POINT'
 			
 			#Socket BC
 			bc_socket_1 = dihedral_phi.interface.new_socket(name = "BC", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			bc_socket_1.subtype = 'NONE'
 			bc_socket_1.default_value = (0.0, 0.0, 0.0)
 			bc_socket_1.min_value = -3.4028234663852886e+38
 			bc_socket_1.max_value = 3.4028234663852886e+38
+			bc_socket_1.subtype = 'NONE'
 			bc_socket_1.attribute_domain = 'POINT'
 			
 			

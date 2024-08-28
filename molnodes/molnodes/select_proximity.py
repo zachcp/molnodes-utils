@@ -28,10 +28,10 @@ class Select_Proximity(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,26 +82,26 @@ class Select_Proximity(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 3.0
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "A value which will be scaled appropriately for the world"
 			
@@ -178,17 +178,20 @@ class Select_Proximity(bpy.types.Operator):
 			#select_res_whole interface
 			#Socket Selection
 			selection_socket = select_res_whole.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Selection
 			selection_socket_1 = select_res_whole.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = False
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.hide_value = True
 			selection_socket_1.description = "Selection of atoms to apply this node to"
 			
 			#Socket Expand
 			expand_socket = select_res_whole.interface.new_socket(name = "Expand", in_out='INPUT', socket_type = 'NodeSocketBool')
+			expand_socket.default_value = True
 			expand_socket.attribute_domain = 'POINT'
 			expand_socket.description = "Whether to expand the selection to the whole residue if at least one atom is selected"
 			
@@ -336,11 +339,13 @@ class Select_Proximity(bpy.types.Operator):
 			#select_proximity interface
 			#Socket Selection
 			selection_socket_2 = select_proximity.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_2.default_value = False
 			selection_socket_2.attribute_domain = 'POINT'
 			selection_socket_2.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = select_proximity.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			inverted_socket.description = "The inverse of the calculated selection"
 			
@@ -351,21 +356,23 @@ class Select_Proximity(bpy.types.Operator):
 			
 			#Socket Subset
 			subset_socket = select_proximity.interface.new_socket(name = "Subset", in_out='INPUT', socket_type = 'NodeSocketBool')
+			subset_socket.default_value = True
 			subset_socket.attribute_domain = 'POINT'
 			subset_socket.hide_value = True
 			subset_socket.description = "Subset of input atoms to use for proximity calculation"
 			
 			#Socket Expand
 			expand_socket_1 = select_proximity.interface.new_socket(name = "Expand", in_out='INPUT', socket_type = 'NodeSocketBool')
+			expand_socket_1.default_value = False
 			expand_socket_1.attribute_domain = 'POINT'
 			expand_socket_1.description = "Whether to expand selection to entire residue if single atom is selected"
 			
 			#Socket Distance (A)
 			distance__a__socket = select_proximity.interface.new_socket(name = "Distance (A)", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			distance__a__socket.subtype = 'NONE'
 			distance__a__socket.default_value = 5.0
 			distance__a__socket.min_value = 0.0
 			distance__a__socket.max_value = 10000.0
+			distance__a__socket.subtype = 'NONE'
 			distance__a__socket.attribute_domain = 'POINT'
 			distance__a__socket.description = "Cutoff distance for the selection in Angstroms"
 			

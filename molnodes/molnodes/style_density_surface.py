@@ -37,29 +37,31 @@ class Style_Density_Surface(bpy.types.Operator):
 			
 			#Socket Threshold
 			threshold_socket = style_density_surface.interface.new_socket(name = "Threshold", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			threshold_socket.subtype = 'NONE'
 			threshold_socket.default_value = 0.800000011920929
 			threshold_socket.min_value = -3.4028234663852886e+38
 			threshold_socket.max_value = 3.4028234663852886e+38
+			threshold_socket.subtype = 'NONE'
 			threshold_socket.attribute_domain = 'POINT'
 			
 			#Socket Shade Smooth
 			shade_smooth_socket = style_density_surface.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool')
+			shade_smooth_socket.default_value = True
 			shade_smooth_socket.attribute_domain = 'POINT'
 			shade_smooth_socket.description = "Apply smooth shading to the created geometry"
 			
 			#Socket Hide Dust
 			hide_dust_socket = style_density_surface.interface.new_socket(name = "Hide Dust", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			hide_dust_socket.subtype = 'NONE'
 			hide_dust_socket.default_value = 0.0
 			hide_dust_socket.min_value = -10000.0
 			hide_dust_socket.max_value = 10000.0
+			hide_dust_socket.subtype = 'NONE'
 			hide_dust_socket.attribute_domain = 'POINT'
 			
 			#Panel Material
 			material_panel = style_density_surface.interface.new_panel("Material")
 			#Socket Color
 			color_socket = style_density_surface.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor', parent = material_panel)
+			color_socket.default_value = (0.1994359940290451, 0.5091630220413208, 0.13218000531196594, 1.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket Material

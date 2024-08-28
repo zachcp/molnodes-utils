@@ -28,26 +28,31 @@ class Select_Entity_(bpy.types.Operator):
 			#select_entity_ interface
 			#Socket Selection
 			selection_socket = select_entity_.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = select_entity_.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			inverted_socket.description = "The inverse of the calculated selection"
 			
 			#Socket Entity A
 			entity_a_socket = select_entity_.interface.new_socket(name = "Entity A", in_out='INPUT', socket_type = 'NodeSocketBool')
+			entity_a_socket.default_value = True
 			entity_a_socket.attribute_domain = 'POINT'
 			entity_a_socket.description = "Select the atoms in Entity A"
 			
 			#Socket Entity B
 			entity_b_socket = select_entity_.interface.new_socket(name = "Entity B", in_out='INPUT', socket_type = 'NodeSocketBool')
+			entity_b_socket.default_value = True
 			entity_b_socket.attribute_domain = 'POINT'
 			entity_b_socket.description = "Select the atoms in Entity B"
 			
 			#Socket Entity ...
 			entity_____socket = select_entity_.interface.new_socket(name = "Entity ...", in_out='INPUT', socket_type = 'NodeSocketBool')
+			entity_____socket.default_value = True
 			entity_____socket.attribute_domain = 'POINT'
 			entity_____socket.description = "Select the atoms in Entity ..."
 			

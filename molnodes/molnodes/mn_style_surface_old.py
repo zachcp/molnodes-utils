@@ -37,14 +37,15 @@ class MN_style_surface_old(bpy.types.Operator):
 			
 			#Socket Blur Iterations
 			blur_iterations_socket = _surface_blur_color.interface.new_socket(name = "Blur Iterations", in_out='INPUT', socket_type = 'NodeSocketInt')
-			blur_iterations_socket.subtype = 'NONE'
 			blur_iterations_socket.default_value = 0
 			blur_iterations_socket.min_value = -2147483648
 			blur_iterations_socket.max_value = 2147483647
+			blur_iterations_socket.subtype = 'NONE'
 			blur_iterations_socket.attribute_domain = 'POINT'
 			
 			#Socket Color
 			color_socket = _surface_blur_color.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			color_socket.hide_value = True
 			
@@ -192,6 +193,7 @@ class MN_style_surface_old(bpy.types.Operator):
 			#_surface_sample_color interface
 			#Socket Color
 			color_socket_1 = _surface_sample_color.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket_1.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Atoms
@@ -201,6 +203,7 @@ class MN_style_surface_old(bpy.types.Operator):
 			
 			#Socket Sample CA
 			sample_ca_socket = _surface_sample_color.interface.new_socket(name = "Sample CA", in_out='INPUT', socket_type = 'NodeSocketBool')
+			sample_ca_socket.default_value = False
 			sample_ca_socket.attribute_domain = 'POINT'
 			
 			
@@ -360,10 +363,10 @@ class MN_style_surface_old(bpy.types.Operator):
 			
 			#Socket Iterations
 			iterations_socket = _surface_blur_postion.interface.new_socket(name = "Iterations", in_out='INPUT', socket_type = 'NodeSocketInt')
-			iterations_socket.subtype = 'NONE'
 			iterations_socket.default_value = 2
 			iterations_socket.min_value = 0
 			iterations_socket.max_value = 2147483647
+			iterations_socket.subtype = 'NONE'
 			iterations_socket.attribute_domain = 'POINT'
 			
 			
@@ -586,6 +589,7 @@ class MN_style_surface_old(bpy.types.Operator):
 			#_surface_compute_density_from_points interface
 			#Socket Result
 			result_socket = _surface_compute_density_from_points.interface.new_socket(name = "Result", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			result_socket.default_value = False
 			result_socket.attribute_domain = 'POINT'
 			
 			#Socket Atoms
@@ -595,18 +599,18 @@ class MN_style_surface_old(bpy.types.Operator):
 			
 			#Socket Scale Radius
 			scale_radius_socket = _surface_compute_density_from_points.interface.new_socket(name = "Scale Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_radius_socket.subtype = 'NONE'
 			scale_radius_socket.default_value = 1.0
 			scale_radius_socket.min_value = -10000.0
 			scale_radius_socket.max_value = 10000.0
+			scale_radius_socket.subtype = 'NONE'
 			scale_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Probe Size
 			probe_size_socket = _surface_compute_density_from_points.interface.new_socket(name = "Probe Size", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			probe_size_socket.subtype = 'NONE'
 			probe_size_socket.default_value = 0.0
 			probe_size_socket.min_value = 0.0
 			probe_size_socket.max_value = 10000.0
+			probe_size_socket.subtype = 'NONE'
 			probe_size_socket.attribute_domain = 'POINT'
 			
 			
@@ -842,42 +846,42 @@ class MN_style_surface_old(bpy.types.Operator):
 			#_utils_bounding_box interface
 			#Socket Min
 			min_socket = _utils_bounding_box.interface.new_socket(name = "Min", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			min_socket.subtype = 'NONE'
 			min_socket.default_value = (0.0, 0.0, 0.0)
 			min_socket.min_value = -3.4028234663852886e+38
 			min_socket.max_value = 3.4028234663852886e+38
+			min_socket.subtype = 'NONE'
 			min_socket.attribute_domain = 'POINT'
 			
 			#Socket Max
 			max_socket = _utils_bounding_box.interface.new_socket(name = "Max", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			max_socket.subtype = 'NONE'
 			max_socket.default_value = (0.0, 0.0, 0.0)
 			max_socket.min_value = -3.4028234663852886e+38
 			max_socket.max_value = 3.4028234663852886e+38
+			max_socket.subtype = 'NONE'
 			max_socket.attribute_domain = 'POINT'
 			
 			#Socket X
 			x_socket = _utils_bounding_box.interface.new_socket(name = "X", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			x_socket.subtype = 'NONE'
 			x_socket.default_value = 0
 			x_socket.min_value = -2147483648
 			x_socket.max_value = 2147483647
+			x_socket.subtype = 'NONE'
 			x_socket.attribute_domain = 'POINT'
 			
 			#Socket Y
 			y_socket = _utils_bounding_box.interface.new_socket(name = "Y", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			y_socket.subtype = 'NONE'
 			y_socket.default_value = 0
 			y_socket.min_value = -2147483648
 			y_socket.max_value = 2147483647
+			y_socket.subtype = 'NONE'
 			y_socket.attribute_domain = 'POINT'
 			
 			#Socket Z
 			z_socket = _utils_bounding_box.interface.new_socket(name = "Z", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			z_socket.subtype = 'NONE'
 			z_socket.default_value = 0
 			z_socket.min_value = -2147483648
 			z_socket.max_value = 2147483647
+			z_socket.subtype = 'NONE'
 			z_socket.attribute_domain = 'POINT'
 			
 			#Socket Geometry
@@ -886,10 +890,10 @@ class MN_style_surface_old(bpy.types.Operator):
 			
 			#Socket Subdivisions
 			subdivisions_socket = _utils_bounding_box.interface.new_socket(name = "Subdivisions", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			subdivisions_socket.subtype = 'NONE'
 			subdivisions_socket.default_value = 16.700000762939453
 			subdivisions_socket.min_value = -10000.0
 			subdivisions_socket.max_value = 10000.0
+			subdivisions_socket.subtype = 'NONE'
 			subdivisions_socket.attribute_domain = 'POINT'
 			
 			
@@ -1115,56 +1119,59 @@ class MN_style_surface_old(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = _mn_utils_style_surface_old.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Quality
 			quality_socket = _mn_utils_style_surface_old.interface.new_socket(name = "Quality", in_out='INPUT', socket_type = 'NodeSocketInt')
-			quality_socket.subtype = 'NONE'
 			quality_socket.default_value = 12
 			quality_socket.min_value = 1
 			quality_socket.max_value = 15
+			quality_socket.subtype = 'NONE'
 			quality_socket.attribute_domain = 'POINT'
 			
 			#Socket Scale Radii
 			scale_radii_socket = _mn_utils_style_surface_old.interface.new_socket(name = "Scale Radii", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_radii_socket.subtype = 'NONE'
 			scale_radii_socket.default_value = 1.0
 			scale_radii_socket.min_value = 0.0
 			scale_radii_socket.max_value = 10.0
+			scale_radii_socket.subtype = 'NONE'
 			scale_radii_socket.attribute_domain = 'POINT'
 			
 			#Socket Probe Size
 			probe_size_socket_1 = _mn_utils_style_surface_old.interface.new_socket(name = "Probe Size", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			probe_size_socket_1.subtype = 'NONE'
 			probe_size_socket_1.default_value = 0.6000000238418579
 			probe_size_socket_1.min_value = 0.0
 			probe_size_socket_1.max_value = 10000.0
+			probe_size_socket_1.subtype = 'NONE'
 			probe_size_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Surface Smoothing
 			surface_smoothing_socket = _mn_utils_style_surface_old.interface.new_socket(name = "Surface Smoothing", in_out='INPUT', socket_type = 'NodeSocketInt')
-			surface_smoothing_socket.subtype = 'NONE'
 			surface_smoothing_socket.default_value = 2
 			surface_smoothing_socket.min_value = 0
 			surface_smoothing_socket.max_value = 20
+			surface_smoothing_socket.subtype = 'NONE'
 			surface_smoothing_socket.attribute_domain = 'POINT'
 			
 			#Socket Color by CA
 			color_by_ca_socket = _mn_utils_style_surface_old.interface.new_socket(name = "Color by CA", in_out='INPUT', socket_type = 'NodeSocketBool')
+			color_by_ca_socket.default_value = True
 			color_by_ca_socket.attribute_domain = 'POINT'
 			
 			#Socket Interpolate Color
 			interpolate_color_socket = _mn_utils_style_surface_old.interface.new_socket(name = "Interpolate Color", in_out='INPUT', socket_type = 'NodeSocketInt')
-			interpolate_color_socket.subtype = 'NONE'
 			interpolate_color_socket.default_value = 1
 			interpolate_color_socket.min_value = 0
 			interpolate_color_socket.max_value = 20
+			interpolate_color_socket.subtype = 'NONE'
 			interpolate_color_socket.attribute_domain = 'POINT'
 			
 			#Socket Shade Smooth
 			shade_smooth_socket = _mn_utils_style_surface_old.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool')
+			shade_smooth_socket.default_value = True
 			shade_smooth_socket.attribute_domain = 'POINT'
 			shade_smooth_socket.description = "Apply smooth shading to the created geometry"
 			
@@ -1568,16 +1575,17 @@ class MN_style_surface_old(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_1 = mn_style_surface_old.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = True
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.hide_value = True
 			selection_socket_1.description = "Selection of atoms to apply this node to"
 			
 			#Socket Quality
 			quality_socket_1 = mn_style_surface_old.interface.new_socket(name = "Quality", in_out='INPUT', socket_type = 'NodeSocketInt')
-			quality_socket_1.subtype = 'NONE'
 			quality_socket_1.default_value = 2
 			quality_socket_1.min_value = 0
 			quality_socket_1.max_value = 5
+			quality_socket_1.subtype = 'NONE'
 			quality_socket_1.attribute_domain = 'POINT'
 			quality_socket_1.description = "Quailty of the surface to generate"
 			
@@ -1585,29 +1593,31 @@ class MN_style_surface_old(bpy.types.Operator):
 			surface_panel = mn_style_surface_old.interface.new_panel("Surface", default_closed=True)
 			#Socket Scale Radii
 			scale_radii_socket_1 = mn_style_surface_old.interface.new_socket(name = "Scale Radii", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = surface_panel)
-			scale_radii_socket_1.subtype = 'NONE'
 			scale_radii_socket_1.default_value = 1.0
 			scale_radii_socket_1.min_value = 0.0
 			scale_radii_socket_1.max_value = 10.0
+			scale_radii_socket_1.subtype = 'NONE'
 			scale_radii_socket_1.attribute_domain = 'POINT'
 			scale_radii_socket_1.description = "Scale the VDW radii of the atoms when creating the surface"
 			
 			#Socket Probe Size
 			probe_size_socket_2 = mn_style_surface_old.interface.new_socket(name = "Probe Size", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = surface_panel)
-			probe_size_socket_2.subtype = 'NONE'
 			probe_size_socket_2.default_value = 0.800000011920929
 			probe_size_socket_2.min_value = 0.0
 			probe_size_socket_2.max_value = 10000.0
+			probe_size_socket_2.subtype = 'NONE'
 			probe_size_socket_2.attribute_domain = 'POINT'
 			probe_size_socket_2.description = "Scale the probe that is used to check for solvent accessibility"
 			
 			#Socket Separate
 			separate_socket = mn_style_surface_old.interface.new_socket(name = "Separate", in_out='INPUT', socket_type = 'NodeSocketBool', parent = surface_panel)
+			separate_socket.default_value = True
 			separate_socket.attribute_domain = 'POINT'
 			separate_socket.description = "Whether to create separate surfaces, based on the 'Attribute' name"
 			
 			#Socket Attribute
 			attribute_socket = mn_style_surface_old.interface.new_socket(name = "Attribute", in_out='INPUT', socket_type = 'NodeSocketString', parent = surface_panel)
+			attribute_socket.default_value = "chain_id"
 			attribute_socket.attribute_domain = 'POINT'
 			attribute_socket.description = "Attribute to separate the surface by"
 			
@@ -1616,15 +1626,16 @@ class MN_style_surface_old(bpy.types.Operator):
 			color_panel = mn_style_surface_old.interface.new_panel("Color", default_closed=True)
 			#Socket Color by CA
 			color_by_ca_socket_1 = mn_style_surface_old.interface.new_socket(name = "Color by CA", in_out='INPUT', socket_type = 'NodeSocketBool', parent = color_panel)
+			color_by_ca_socket_1.default_value = True
 			color_by_ca_socket_1.attribute_domain = 'POINT'
 			color_by_ca_socket_1.description = "Only take colors from CA atoms (or similar in nucleic acids)"
 			
 			#Socket Color Blur
 			color_blur_socket = mn_style_surface_old.interface.new_socket(name = "Color Blur", in_out='INPUT', socket_type = 'NodeSocketInt', parent = color_panel)
-			color_blur_socket.subtype = 'NONE'
 			color_blur_socket.default_value = 2
 			color_blur_socket.min_value = 0
 			color_blur_socket.max_value = 20
+			color_blur_socket.subtype = 'NONE'
 			color_blur_socket.attribute_domain = 'POINT'
 			color_blur_socket.description = "When coloring the surface, blur colors from nearby atoms"
 			
@@ -1633,6 +1644,7 @@ class MN_style_surface_old(bpy.types.Operator):
 			material_panel = mn_style_surface_old.interface.new_panel("Material", default_closed=True)
 			#Socket Shade Smooth
 			shade_smooth_socket_1 = mn_style_surface_old.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool', parent = material_panel)
+			shade_smooth_socket_1.default_value = True
 			shade_smooth_socket_1.attribute_domain = 'POINT'
 			shade_smooth_socket_1.description = "Apply smooth shading to the created geometry"
 			

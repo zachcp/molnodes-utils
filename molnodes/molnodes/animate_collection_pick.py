@@ -40,14 +40,15 @@ class Animate_Collection_Pick(bpy.types.Operator):
 			
 			#Socket Realize Instances
 			realize_instances_socket = animate_collection_pick.interface.new_socket(name = "Realize Instances", in_out='INPUT', socket_type = 'NodeSocketBool')
+			realize_instances_socket.default_value = True
 			realize_instances_socket.attribute_domain = 'POINT'
 			
 			#Socket Item
 			item_socket = animate_collection_pick.interface.new_socket(name = "Item", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			item_socket.subtype = 'NONE'
 			item_socket.default_value = 1.0
 			item_socket.min_value = 0.0
 			item_socket.max_value = 10000.0
+			item_socket.subtype = 'NONE'
 			item_socket.attribute_domain = 'POINT'
 			
 			

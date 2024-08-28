@@ -28,10 +28,10 @@ class Animate_Trails(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,26 +82,26 @@ class Animate_Trails(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 3.0
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "A value which will be scaled appropriately for the world"
 			
@@ -186,15 +186,16 @@ class Animate_Trails(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = _mn_point_curve_trails.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			
 			#Socket Count
 			count_socket = _mn_point_curve_trails.interface.new_socket(name = "Count", in_out='INPUT', socket_type = 'NodeSocketInt')
-			count_socket.subtype = 'NONE'
 			count_socket.default_value = 5
 			count_socket.min_value = 1
 			count_socket.max_value = 100000
+			count_socket.subtype = 'NONE'
 			count_socket.attribute_domain = 'POINT'
 			
 			
@@ -458,6 +459,7 @@ class Animate_Trails(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_1 = animate_trails.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = True
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.hide_value = True
 			selection_socket_1.description = "Selection of atoms to apply this node to"
@@ -466,43 +468,43 @@ class Animate_Trails(bpy.types.Operator):
 			trail_panel = animate_trails.interface.new_panel("Trail")
 			#Socket Trail Frames
 			trail_frames_socket = animate_trails.interface.new_socket(name = "Trail Frames", in_out='INPUT', socket_type = 'NodeSocketInt', parent = trail_panel)
-			trail_frames_socket.subtype = 'NONE'
 			trail_frames_socket.default_value = 5
 			trail_frames_socket.min_value = 1
 			trail_frames_socket.max_value = 100000
+			trail_frames_socket.subtype = 'NONE'
 			trail_frames_socket.attribute_domain = 'POINT'
 			trail_frames_socket.description = "Number of previous frames from the trajectory to display"
 			
 			#Socket Trail Radius
 			trail_radius_socket = animate_trails.interface.new_socket(name = "Trail Radius", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = trail_panel)
-			trail_radius_socket.subtype = 'NONE'
 			trail_radius_socket.default_value = 1.0
 			trail_radius_socket.min_value = 0.0
 			trail_radius_socket.max_value = 10000.0
+			trail_radius_socket.subtype = 'NONE'
 			trail_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Trail Cutoff (A)
 			trail_cutoff__a__socket = animate_trails.interface.new_socket(name = "Trail Cutoff (A)", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = trail_panel)
-			trail_cutoff__a__socket.subtype = 'NONE'
 			trail_cutoff__a__socket.default_value = 10.0
 			trail_cutoff__a__socket.min_value = 0.0
 			trail_cutoff__a__socket.max_value = 10000.0
+			trail_cutoff__a__socket.subtype = 'NONE'
 			trail_cutoff__a__socket.attribute_domain = 'POINT'
 			
 			#Socket Trail Subdivisions
 			trail_subdivisions_socket = animate_trails.interface.new_socket(name = "Trail Subdivisions", in_out='INPUT', socket_type = 'NodeSocketInt', parent = trail_panel)
-			trail_subdivisions_socket.subtype = 'NONE'
 			trail_subdivisions_socket.default_value = 6
 			trail_subdivisions_socket.min_value = 1
 			trail_subdivisions_socket.max_value = 16
+			trail_subdivisions_socket.subtype = 'NONE'
 			trail_subdivisions_socket.attribute_domain = 'POINT'
 			
 			#Socket Trail Resolution
 			trail_resolution_socket = animate_trails.interface.new_socket(name = "Trail Resolution", in_out='INPUT', socket_type = 'NodeSocketInt', parent = trail_panel)
-			trail_resolution_socket.subtype = 'NONE'
 			trail_resolution_socket.default_value = 6
 			trail_resolution_socket.min_value = 3
 			trail_resolution_socket.max_value = 32
+			trail_resolution_socket.subtype = 'NONE'
 			trail_resolution_socket.attribute_domain = 'POINT'
 			trail_resolution_socket.description = "Tail radial resolution"
 			
@@ -511,6 +513,7 @@ class Animate_Trails(bpy.types.Operator):
 			material_panel = animate_trails.interface.new_panel("Material")
 			#Socket Shade Smooth
 			shade_smooth_socket = animate_trails.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool', parent = material_panel)
+			shade_smooth_socket.default_value = True
 			shade_smooth_socket.attribute_domain = 'POINT'
 			
 			#Socket Material
@@ -709,7 +712,7 @@ class Animate_Trails(bpy.types.Operator):
 			set_handle_type = animate_trails.nodes.new("GeometryNodeCurveSetHandles")
 			set_handle_type.name = "Set Handle Type"
 			set_handle_type.handle_type = 'AUTO'
-			set_handle_type.mode = {'RIGHT', 'LEFT'}
+			set_handle_type.mode = {'LEFT', 'RIGHT'}
 			#Selection
 			set_handle_type.inputs[1].default_value = True
 			

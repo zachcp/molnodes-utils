@@ -39,10 +39,10 @@ class Separate_Atoms(bpy.types.Operator):
 			
 			#Socket Index
 			index_socket = separate_atoms.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = -2147483648
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			index_socket.description = "Index of the atoms before they were separated"
 			
@@ -53,6 +53,7 @@ class Separate_Atoms(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = separate_atoms.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection field for which atoms to separate"

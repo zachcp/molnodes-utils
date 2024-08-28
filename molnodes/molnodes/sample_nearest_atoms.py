@@ -28,46 +28,47 @@ class Sample_Nearest_Atoms(bpy.types.Operator):
 			#sample_nearest_atoms interface
 			#Socket Color
 			color_socket = sample_nearest_atoms.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket b_factor
 			b_factor_socket = sample_nearest_atoms.interface.new_socket(name = "b_factor", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			b_factor_socket.subtype = 'NONE'
 			b_factor_socket.default_value = 0.0
 			b_factor_socket.min_value = -3.4028234663852886e+38
 			b_factor_socket.max_value = 3.4028234663852886e+38
+			b_factor_socket.subtype = 'NONE'
 			b_factor_socket.attribute_domain = 'POINT'
 			
 			#Socket atomic_number
 			atomic_number_socket = sample_nearest_atoms.interface.new_socket(name = "atomic_number", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			atomic_number_socket.subtype = 'NONE'
 			atomic_number_socket.default_value = 0
 			atomic_number_socket.min_value = -2147483648
 			atomic_number_socket.max_value = 2147483647
+			atomic_number_socket.subtype = 'NONE'
 			atomic_number_socket.attribute_domain = 'POINT'
 			
 			#Socket chain_number
 			chain_number_socket = sample_nearest_atoms.interface.new_socket(name = "chain_number", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			chain_number_socket.subtype = 'NONE'
 			chain_number_socket.default_value = 0
 			chain_number_socket.min_value = -2147483648
 			chain_number_socket.max_value = 2147483647
+			chain_number_socket.subtype = 'NONE'
 			chain_number_socket.attribute_domain = 'POINT'
 			
 			#Socket res_id
 			res_id_socket = sample_nearest_atoms.interface.new_socket(name = "res_id", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			res_id_socket.subtype = 'NONE'
 			res_id_socket.default_value = 0
 			res_id_socket.min_value = -2147483648
 			res_id_socket.max_value = 2147483647
+			res_id_socket.subtype = 'NONE'
 			res_id_socket.attribute_domain = 'POINT'
 			
 			#Socket res_name
 			res_name_socket = sample_nearest_atoms.interface.new_socket(name = "res_name", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			res_name_socket.subtype = 'NONE'
 			res_name_socket.default_value = 0
 			res_name_socket.min_value = -2147483648
 			res_name_socket.max_value = 2147483647
+			res_name_socket.subtype = 'NONE'
 			res_name_socket.attribute_domain = 'POINT'
 			
 			#Socket Atoms

@@ -37,35 +37,35 @@ class _DEBUG_arrows(bpy.types.Operator):
 			
 			#Socket Position
 			position_socket = _debug_arrows.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			position_socket.hide_value = True
 			
 			#Socket Offset
 			offset_socket = _debug_arrows.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketVector')
-			offset_socket.subtype = 'TRANSLATION'
 			offset_socket.default_value = (0.0, 0.0, 0.0)
 			offset_socket.min_value = -3.4028234663852886e+38
 			offset_socket.max_value = 3.4028234663852886e+38
+			offset_socket.subtype = 'TRANSLATION'
 			offset_socket.attribute_domain = 'POINT'
 			
 			#Socket Rotation
 			rotation_socket = _debug_arrows.interface.new_socket(name = "Rotation", in_out='INPUT', socket_type = 'NodeSocketVector')
-			rotation_socket.subtype = 'EULER'
 			rotation_socket.default_value = (0.0, 0.0, 0.0)
 			rotation_socket.min_value = -3.4028234663852886e+38
 			rotation_socket.max_value = 3.4028234663852886e+38
+			rotation_socket.subtype = 'EULER'
 			rotation_socket.attribute_domain = 'POINT'
 			
 			#Socket Scale
 			scale_socket = _debug_arrows.interface.new_socket(name = "Scale", in_out='INPUT', socket_type = 'NodeSocketVector')
-			scale_socket.subtype = 'XYZ'
 			scale_socket.default_value = (0.33000001311302185, 0.36000001430511475, 0.75)
 			scale_socket.min_value = -3.4028234663852886e+38
 			scale_socket.max_value = 3.4028234663852886e+38
+			scale_socket.subtype = 'XYZ'
 			scale_socket.attribute_domain = 'POINT'
 			
 			

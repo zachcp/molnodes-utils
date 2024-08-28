@@ -1,3 +1,7 @@
 # pixi environments
 .pixi
 *.egg-info
+.calva
+.lsp
+.nrepl-port
+molnodes/molnodes/__pycache__/

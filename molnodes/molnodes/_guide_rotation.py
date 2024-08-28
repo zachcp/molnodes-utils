@@ -28,18 +28,18 @@ class _guide_rotation(bpy.types.Operator):
 			#_guide_rotation interface
 			#Socket Rotation
 			rotation_socket = _guide_rotation.interface.new_socket(name = "Rotation", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			rotation_socket.subtype = 'EULER'
 			rotation_socket.default_value = (0.0, 0.0, 0.0)
 			rotation_socket.min_value = -3.4028234663852886e+38
 			rotation_socket.max_value = 3.4028234663852886e+38
+			rotation_socket.subtype = 'EULER'
 			rotation_socket.attribute_domain = 'POINT'
 			
 			#Socket Angle
 			angle_socket = _guide_rotation.interface.new_socket(name = "Angle", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			angle_socket.subtype = 'ANGLE'
 			angle_socket.default_value = 0.0
 			angle_socket.min_value = -3.4028234663852886e+38
 			angle_socket.max_value = 3.4028234663852886e+38
+			angle_socket.subtype = 'ANGLE'
 			angle_socket.attribute_domain = 'POINT'
 			
 			

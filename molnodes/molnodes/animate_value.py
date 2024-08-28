@@ -28,20 +28,22 @@ class Animate_Value(bpy.types.Operator):
 			#animate_value interface
 			#Socket Value
 			value_socket = animate_value.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.0
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "Animated value that interpolates from min to max over frames"
 			
 			#Socket Smoother Step
 			smoother_step_socket = animate_value.interface.new_socket(name = "Smoother Step", in_out='INPUT', socket_type = 'NodeSocketBool')
+			smoother_step_socket.default_value = False
 			smoother_step_socket.attribute_domain = 'POINT'
 			smoother_step_socket.description = "Ease out and in from the min and max values"
 			
 			#Socket Clamped
 			clamped_socket = animate_value.interface.new_socket(name = "Clamped", in_out='INPUT', socket_type = 'NodeSocketBool')
+			clamped_socket.default_value = False
 			clamped_socket.attribute_domain = 'POINT'
 			clamped_socket.description = "Whether to clamp the interpolated value to the max"
 			
@@ -49,19 +51,19 @@ class Animate_Value(bpy.types.Operator):
 			frame_panel = animate_value.interface.new_panel("Frame")
 			#Socket Frame Start
 			frame_start_socket = animate_value.interface.new_socket(name = "Frame Start", in_out='INPUT', socket_type = 'NodeSocketInt', parent = frame_panel)
-			frame_start_socket.subtype = 'NONE'
 			frame_start_socket.default_value = 1
 			frame_start_socket.min_value = 1
 			frame_start_socket.max_value = 2147483647
+			frame_start_socket.subtype = 'NONE'
 			frame_start_socket.attribute_domain = 'POINT'
 			frame_start_socket.description = "Frame to start the animation on"
 			
 			#Socket Frame End
 			frame_end_socket = animate_value.interface.new_socket(name = "Frame End", in_out='INPUT', socket_type = 'NodeSocketInt', parent = frame_panel)
-			frame_end_socket.subtype = 'NONE'
 			frame_end_socket.default_value = 250
 			frame_end_socket.min_value = 1
 			frame_end_socket.max_value = 2147483647
+			frame_end_socket.subtype = 'NONE'
 			frame_end_socket.attribute_domain = 'POINT'
 			frame_end_socket.description = "Frame to finish the animation on"
 			
@@ -70,19 +72,19 @@ class Animate_Value(bpy.types.Operator):
 			value_panel = animate_value.interface.new_panel("Value")
 			#Socket Value Min
 			value_min_socket = animate_value.interface.new_socket(name = "Value Min", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = value_panel)
-			value_min_socket.subtype = 'NONE'
 			value_min_socket.default_value = 0.0
 			value_min_socket.min_value = -10000.0
 			value_min_socket.max_value = 10000.0
+			value_min_socket.subtype = 'NONE'
 			value_min_socket.attribute_domain = 'POINT'
 			value_min_socket.description = "Value to start animation from"
 			
 			#Socket Value Max
 			value_max_socket = animate_value.interface.new_socket(name = "Value Max", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = value_panel)
-			value_max_socket.subtype = 'NONE'
 			value_max_socket.default_value = 1.0
 			value_max_socket.min_value = -10000.0
 			value_max_socket.max_value = 10000.0
+			value_max_socket.subtype = 'NONE'
 			value_max_socket.attribute_domain = 'POINT'
 			value_max_socket.description = "Value to end animation at"
 			

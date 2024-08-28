@@ -36,6 +36,7 @@ class MN_Starfile_Micrograph(bpy.types.Operator):
 			
 			#Socket Switch
 			switch_socket = mn_starfile_micrograph.interface.new_socket(name = "Switch", in_out='INPUT', socket_type = 'NodeSocketBool')
+			switch_socket.default_value = False
 			switch_socket.attribute_domain = 'POINT'
 			
 			#Socket Image
@@ -44,34 +45,34 @@ class MN_Starfile_Micrograph(bpy.types.Operator):
 			
 			#Socket A
 			a_socket = mn_starfile_micrograph.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			a_socket.subtype = 'NONE'
 			a_socket.default_value = 0.0
 			a_socket.min_value = -10000.0
 			a_socket.max_value = 10000.0
+			a_socket.subtype = 'NONE'
 			a_socket.attribute_domain = 'POINT'
 			
 			#Socket Z
 			z_socket = mn_starfile_micrograph.interface.new_socket(name = "Z", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			z_socket.subtype = 'NONE'
 			z_socket.default_value = 0.0
 			z_socket.min_value = -10000.0
 			z_socket.max_value = 10000.0
+			z_socket.subtype = 'NONE'
 			z_socket.attribute_domain = 'POINT'
 			
 			#Socket Brightness
 			brightness_socket = mn_starfile_micrograph.interface.new_socket(name = "Brightness", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			brightness_socket.subtype = 'NONE'
 			brightness_socket.default_value = 0.0
 			brightness_socket.min_value = -3.4028234663852886e+38
 			brightness_socket.max_value = 3.4028234663852886e+38
+			brightness_socket.subtype = 'NONE'
 			brightness_socket.attribute_domain = 'POINT'
 			
 			#Socket Contrast
 			contrast_socket = mn_starfile_micrograph.interface.new_socket(name = "Contrast", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			contrast_socket.subtype = 'NONE'
 			contrast_socket.default_value = 0.0
 			contrast_socket.min_value = -3.4028234663852886e+38
 			contrast_socket.max_value = 3.4028234663852886e+38
+			contrast_socket.subtype = 'NONE'
 			contrast_socket.attribute_domain = 'POINT'
 			
 			

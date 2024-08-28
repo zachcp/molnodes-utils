@@ -38,29 +38,31 @@ class _MN_utils_style_spheres_icosphere(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = _mn_utils_style_spheres_icosphere.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Radii
 			radii_socket = _mn_utils_style_spheres_icosphere.interface.new_socket(name = "Radii", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radii_socket.subtype = 'NONE'
 			radii_socket.default_value = 0.800000011920929
 			radii_socket.min_value = 0.0
 			radii_socket.max_value = 10000.0
+			radii_socket.subtype = 'NONE'
 			radii_socket.attribute_domain = 'POINT'
 			radii_socket.description = "Scale the VDW radii of the atoms."
 			
 			#Socket Subdivisions
 			subdivisions_socket = _mn_utils_style_spheres_icosphere.interface.new_socket(name = "Subdivisions", in_out='INPUT', socket_type = 'NodeSocketInt')
-			subdivisions_socket.subtype = 'NONE'
 			subdivisions_socket.default_value = 2
 			subdivisions_socket.min_value = 0
 			subdivisions_socket.max_value = 5
+			subdivisions_socket.subtype = 'NONE'
 			subdivisions_socket.attribute_domain = 'POINT'
 			
 			#Socket Shade Smooth
 			shade_smooth_socket = _mn_utils_style_spheres_icosphere.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool')
+			shade_smooth_socket.default_value = True
 			shade_smooth_socket.attribute_domain = 'POINT'
 			shade_smooth_socket.description = "Apply smooth shading to the created geometry"
 			

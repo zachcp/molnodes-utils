@@ -28,10 +28,10 @@ class Style_Sticks(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,26 +82,26 @@ class Style_Sticks(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 3.0
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "A value which will be scaled appropriately for the world"
 			
@@ -188,16 +188,17 @@ class Style_Sticks(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = _mn_utils_style_spheres_points.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Radii
 			radii_socket = _mn_utils_style_spheres_points.interface.new_socket(name = "Radii", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radii_socket.subtype = 'NONE'
 			radii_socket.default_value = 0.800000011920929
 			radii_socket.min_value = 0.0
 			radii_socket.max_value = 10000.0
+			radii_socket.subtype = 'NONE'
 			radii_socket.attribute_domain = 'POINT'
 			
 			#Socket Material
@@ -325,29 +326,31 @@ class Style_Sticks(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_1 = _mn_utils_style_spheres_icosphere.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = True
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.hide_value = True
 			selection_socket_1.description = "Selection of atoms to apply this node to"
 			
 			#Socket Radii
 			radii_socket_1 = _mn_utils_style_spheres_icosphere.interface.new_socket(name = "Radii", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radii_socket_1.subtype = 'NONE'
 			radii_socket_1.default_value = 0.800000011920929
 			radii_socket_1.min_value = 0.0
 			radii_socket_1.max_value = 10000.0
+			radii_socket_1.subtype = 'NONE'
 			radii_socket_1.attribute_domain = 'POINT'
 			radii_socket_1.description = "Scale the VDW radii of the atoms."
 			
 			#Socket Subdivisions
 			subdivisions_socket = _mn_utils_style_spheres_icosphere.interface.new_socket(name = "Subdivisions", in_out='INPUT', socket_type = 'NodeSocketInt')
-			subdivisions_socket.subtype = 'NONE'
 			subdivisions_socket.default_value = 2
 			subdivisions_socket.min_value = 0
 			subdivisions_socket.max_value = 5
+			subdivisions_socket.subtype = 'NONE'
 			subdivisions_socket.attribute_domain = 'POINT'
 			
 			#Socket Shade Smooth
 			shade_smooth_socket = _mn_utils_style_spheres_icosphere.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool')
+			shade_smooth_socket.default_value = True
 			shade_smooth_socket.attribute_domain = 'POINT'
 			shade_smooth_socket.description = "Apply smooth shading to the created geometry"
 			
@@ -707,6 +710,7 @@ class Style_Sticks(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_2 = style_spheres.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_2.default_value = True
 			selection_socket_2.attribute_domain = 'POINT'
 			selection_socket_2.hide_value = True
 			selection_socket_2.description = "Selection of atoms to apply this style to"
@@ -715,24 +719,25 @@ class Style_Sticks(bpy.types.Operator):
 			sphere_panel = style_spheres.interface.new_panel("Sphere")
 			#Socket Sphere As Mesh
 			sphere_as_mesh_socket = style_spheres.interface.new_socket(name = "Sphere As Mesh", in_out='INPUT', socket_type = 'NodeSocketBool', parent = sphere_panel)
+			sphere_as_mesh_socket.default_value = False
 			sphere_as_mesh_socket.attribute_domain = 'POINT'
 			sphere_as_mesh_socket.description = "Use Eevee or Cycles compatible atoms."
 			
 			#Socket Sphere Radii
 			sphere_radii_socket = style_spheres.interface.new_socket(name = "Sphere Radii", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = sphere_panel)
-			sphere_radii_socket.subtype = 'NONE'
 			sphere_radii_socket.default_value = 0.800000011920929
 			sphere_radii_socket.min_value = 0.0
 			sphere_radii_socket.max_value = 2.0
+			sphere_radii_socket.subtype = 'NONE'
 			sphere_radii_socket.attribute_domain = 'POINT'
 			sphere_radii_socket.description = "Scale the `vdw_radii` of the atoms."
 			
 			#Socket Sphere Subdivisions
 			sphere_subdivisions_socket = style_spheres.interface.new_socket(name = "Sphere Subdivisions", in_out='INPUT', socket_type = 'NodeSocketInt', parent = sphere_panel)
-			sphere_subdivisions_socket.subtype = 'NONE'
 			sphere_subdivisions_socket.default_value = 2
 			sphere_subdivisions_socket.min_value = 0
 			sphere_subdivisions_socket.max_value = 5
+			sphere_subdivisions_socket.subtype = 'NONE'
 			sphere_subdivisions_socket.attribute_domain = 'POINT'
 			sphere_subdivisions_socket.description = "Subdivisions for Eevee compatible atoms."
 			
@@ -741,6 +746,7 @@ class Style_Sticks(bpy.types.Operator):
 			material_panel = style_spheres.interface.new_panel("Material", default_closed=True)
 			#Socket Shade Smooth
 			shade_smooth_socket_1 = style_spheres.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool', parent = material_panel)
+			shade_smooth_socket_1.default_value = True
 			shade_smooth_socket_1.attribute_domain = 'POINT'
 			shade_smooth_socket_1.description = "Apply smooth shading to the created geometry"
 			
@@ -869,41 +875,45 @@ class Style_Sticks(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_3 = _mn_utils_style_sticks.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_3.default_value = True
 			selection_socket_3.attribute_domain = 'POINT'
 			selection_socket_3.hide_value = True
 			selection_socket_3.description = "Selection of atoms to apply this node to"
 			
 			#Socket Radius
 			radius_socket = _mn_utils_style_sticks.interface.new_socket(name = "Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radius_socket.subtype = 'NONE'
 			radius_socket.default_value = 0.30000001192092896
 			radius_socket.min_value = 0.0
 			radius_socket.max_value = 1.0
+			radius_socket.subtype = 'NONE'
 			radius_socket.attribute_domain = 'POINT'
 			radius_socket.description = "Radius of the bond mesh."
 			
 			#Socket Resolution
 			resolution_socket = _mn_utils_style_sticks.interface.new_socket(name = "Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			resolution_socket.subtype = 'NONE'
 			resolution_socket.default_value = 6
 			resolution_socket.min_value = 3
 			resolution_socket.max_value = 512
+			resolution_socket.subtype = 'NONE'
 			resolution_socket.attribute_domain = 'POINT'
 			resolution_socket.description = "Resolution of the created bond cylinders."
 			
 			#Socket Fill Caps
 			fill_caps_socket = _mn_utils_style_sticks.interface.new_socket(name = "Fill Caps", in_out='INPUT', socket_type = 'NodeSocketBool')
+			fill_caps_socket.default_value = False
 			fill_caps_socket.attribute_domain = 'POINT'
 			fill_caps_socket.description = "Fill the caps at each end of the bonds."
 			
 			#Socket Interpolate Color
 			interpolate_color_socket = _mn_utils_style_sticks.interface.new_socket(name = "Interpolate Color", in_out='INPUT', socket_type = 'NodeSocketBool')
+			interpolate_color_socket.default_value = False
 			interpolate_color_socket.attribute_domain = 'POINT'
 			
 			#Panel Material
 			material_panel_1 = _mn_utils_style_sticks.interface.new_panel("Material")
 			#Socket Shade Smooth
 			shade_smooth_socket_2 = _mn_utils_style_sticks.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool', parent = material_panel_1)
+			shade_smooth_socket_2.default_value = True
 			shade_smooth_socket_2.attribute_domain = 'POINT'
 			shade_smooth_socket_2.description = "Apply smooth shading to the created geometry"
 			
@@ -1366,34 +1376,37 @@ class Style_Sticks(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_4 = style_sticks.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_4.default_value = True
 			selection_socket_4.attribute_domain = 'POINT'
 			selection_socket_4.hide_value = True
 			selection_socket_4.description = "Selection of atoms to apply this style to"
 			
 			#Socket Quality
 			quality_socket = style_sticks.interface.new_socket(name = "Quality", in_out='INPUT', socket_type = 'NodeSocketInt')
-			quality_socket.subtype = 'NONE'
 			quality_socket.default_value = 2
 			quality_socket.min_value = 0
 			quality_socket.max_value = 5
+			quality_socket.subtype = 'NONE'
 			quality_socket.attribute_domain = 'POINT'
 			
 			#Socket Radius
 			radius_socket_1 = style_sticks.interface.new_socket(name = "Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radius_socket_1.subtype = 'NONE'
 			radius_socket_1.default_value = 0.20000000298023224
 			radius_socket_1.min_value = 0.0
 			radius_socket_1.max_value = 1.0
+			radius_socket_1.subtype = 'NONE'
 			radius_socket_1.attribute_domain = 'POINT'
 			
 			#Panel Material
 			material_panel_2 = style_sticks.interface.new_panel("Material", default_closed=True)
 			#Socket Color Blur
 			color_blur_socket = style_sticks.interface.new_socket(name = "Color Blur", in_out='INPUT', socket_type = 'NodeSocketBool', parent = material_panel_2)
+			color_blur_socket.default_value = False
 			color_blur_socket.attribute_domain = 'POINT'
 			
 			#Socket Shade Smooth
 			shade_smooth_socket_3 = style_sticks.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool', parent = material_panel_2)
+			shade_smooth_socket_3.default_value = True
 			shade_smooth_socket_3.attribute_domain = 'POINT'
 			shade_smooth_socket_3.description = "Apply smooth shading to the created geometry"
 			

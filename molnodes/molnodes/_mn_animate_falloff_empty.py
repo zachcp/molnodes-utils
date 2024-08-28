@@ -28,18 +28,18 @@ class _MN_animate_falloff_empty(bpy.types.Operator):
 			#_mn_animate_falloff_empty interface
 			#Socket Falloff
 			falloff_socket = _mn_animate_falloff_empty.interface.new_socket(name = "Falloff", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			falloff_socket.subtype = 'NONE'
 			falloff_socket.default_value = 0.0
 			falloff_socket.min_value = -3.4028234663852886e+38
 			falloff_socket.max_value = 3.4028234663852886e+38
+			falloff_socket.subtype = 'NONE'
 			falloff_socket.attribute_domain = 'POINT'
 			
 			#Socket Distance
 			distance_socket = _mn_animate_falloff_empty.interface.new_socket(name = "Distance", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			distance_socket.subtype = 'NONE'
 			distance_socket.default_value = 0.0
 			distance_socket.min_value = -3.4028234663852886e+38
 			distance_socket.max_value = 3.4028234663852886e+38
+			distance_socket.subtype = 'NONE'
 			distance_socket.attribute_domain = 'POINT'
 			
 			#Socket Object
@@ -48,38 +48,39 @@ class _MN_animate_falloff_empty(bpy.types.Operator):
 			
 			#Socket Smoother Step
 			smoother_step_socket = _mn_animate_falloff_empty.interface.new_socket(name = "Smoother Step", in_out='INPUT', socket_type = 'NodeSocketBool')
+			smoother_step_socket.default_value = False
 			smoother_step_socket.attribute_domain = 'POINT'
 			
 			#Socket From Min
 			from_min_socket = _mn_animate_falloff_empty.interface.new_socket(name = "From Min", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			from_min_socket.subtype = 'NONE'
 			from_min_socket.default_value = 0.0
 			from_min_socket.min_value = -10000.0
 			from_min_socket.max_value = 10000.0
+			from_min_socket.subtype = 'NONE'
 			from_min_socket.attribute_domain = 'POINT'
 			
 			#Socket From Max
 			from_max_socket = _mn_animate_falloff_empty.interface.new_socket(name = "From Max", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			from_max_socket.subtype = 'NONE'
 			from_max_socket.default_value = 1.0
 			from_max_socket.min_value = -10000.0
 			from_max_socket.max_value = 10000.0
+			from_max_socket.subtype = 'NONE'
 			from_max_socket.attribute_domain = 'POINT'
 			
 			#Socket To Min
 			to_min_socket = _mn_animate_falloff_empty.interface.new_socket(name = "To Min", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			to_min_socket.subtype = 'NONE'
 			to_min_socket.default_value = 0.0
 			to_min_socket.min_value = -10000.0
 			to_min_socket.max_value = 10000.0
+			to_min_socket.subtype = 'NONE'
 			to_min_socket.attribute_domain = 'POINT'
 			
 			#Socket To Max
 			to_max_socket = _mn_animate_falloff_empty.interface.new_socket(name = "To Max", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			to_max_socket.subtype = 'NONE'
 			to_max_socket.default_value = 1.0
 			to_max_socket.min_value = -10000.0
 			to_max_socket.max_value = 10000.0
+			to_max_socket.subtype = 'NONE'
 			to_max_socket.attribute_domain = 'POINT'
 			
 			

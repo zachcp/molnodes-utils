@@ -28,38 +28,39 @@ class _cartoon_arrows_scale(bpy.types.Operator):
 			#_cartoon_arrows_scale interface
 			#Socket Result
 			result_socket = _cartoon_arrows_scale.interface.new_socket(name = "Result", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			result_socket.default_value = False
 			result_socket.attribute_domain = 'POINT'
 			
 			#Socket Output
 			output_socket = _cartoon_arrows_scale.interface.new_socket(name = "Output", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			output_socket.subtype = 'NONE'
 			output_socket.default_value = 0.0
 			output_socket.min_value = -3.4028234663852886e+38
 			output_socket.max_value = 3.4028234663852886e+38
+			output_socket.subtype = 'NONE'
 			output_socket.attribute_domain = 'POINT'
 			
 			#Socket Input
 			input_socket = _cartoon_arrows_scale.interface.new_socket(name = "Input", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			input_socket.subtype = 'NONE'
 			input_socket.default_value = 0.0
 			input_socket.min_value = -3.4028234663852886e+38
 			input_socket.max_value = 3.4028234663852886e+38
+			input_socket.subtype = 'NONE'
 			input_socket.attribute_domain = 'POINT'
 			
 			#Socket Input
 			input_socket_1 = _cartoon_arrows_scale.interface.new_socket(name = "Input", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			input_socket_1.subtype = 'NONE'
 			input_socket_1.default_value = 0.0
 			input_socket_1.min_value = -3.4028234663852886e+38
 			input_socket_1.max_value = 3.4028234663852886e+38
+			input_socket_1.subtype = 'NONE'
 			input_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = _cartoon_arrows_scale.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 2.8499999046325684
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			

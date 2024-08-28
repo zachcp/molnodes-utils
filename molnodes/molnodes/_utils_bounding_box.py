@@ -28,42 +28,42 @@ class _utils_bounding_box(bpy.types.Operator):
 			#_utils_bounding_box interface
 			#Socket Min
 			min_socket = _utils_bounding_box.interface.new_socket(name = "Min", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			min_socket.subtype = 'NONE'
 			min_socket.default_value = (0.0, 0.0, 0.0)
 			min_socket.min_value = -3.4028234663852886e+38
 			min_socket.max_value = 3.4028234663852886e+38
+			min_socket.subtype = 'NONE'
 			min_socket.attribute_domain = 'POINT'
 			
 			#Socket Max
 			max_socket = _utils_bounding_box.interface.new_socket(name = "Max", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			max_socket.subtype = 'NONE'
 			max_socket.default_value = (0.0, 0.0, 0.0)
 			max_socket.min_value = -3.4028234663852886e+38
 			max_socket.max_value = 3.4028234663852886e+38
+			max_socket.subtype = 'NONE'
 			max_socket.attribute_domain = 'POINT'
 			
 			#Socket X
 			x_socket = _utils_bounding_box.interface.new_socket(name = "X", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			x_socket.subtype = 'NONE'
 			x_socket.default_value = 0
 			x_socket.min_value = -2147483648
 			x_socket.max_value = 2147483647
+			x_socket.subtype = 'NONE'
 			x_socket.attribute_domain = 'POINT'
 			
 			#Socket Y
 			y_socket = _utils_bounding_box.interface.new_socket(name = "Y", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			y_socket.subtype = 'NONE'
 			y_socket.default_value = 0
 			y_socket.min_value = -2147483648
 			y_socket.max_value = 2147483647
+			y_socket.subtype = 'NONE'
 			y_socket.attribute_domain = 'POINT'
 			
 			#Socket Z
 			z_socket = _utils_bounding_box.interface.new_socket(name = "Z", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			z_socket.subtype = 'NONE'
 			z_socket.default_value = 0
 			z_socket.min_value = -2147483648
 			z_socket.max_value = 2147483647
+			z_socket.subtype = 'NONE'
 			z_socket.attribute_domain = 'POINT'
 			
 			#Socket Geometry
@@ -72,10 +72,10 @@ class _utils_bounding_box(bpy.types.Operator):
 			
 			#Socket Subdivisions
 			subdivisions_socket = _utils_bounding_box.interface.new_socket(name = "Subdivisions", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			subdivisions_socket.subtype = 'NONE'
 			subdivisions_socket.default_value = 16.700000762939453
 			subdivisions_socket.min_value = -10000.0
 			subdivisions_socket.max_value = 10000.0
+			subdivisions_socket.subtype = 'NONE'
 			subdivisions_socket.attribute_domain = 'POINT'
 			
 			

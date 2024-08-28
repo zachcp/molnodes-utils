@@ -33,50 +33,50 @@ class MN_utils_curve_resample(bpy.types.Operator):
 			
 			#Socket Position
 			position_socket = mn_utils_curve_resample.interface.new_socket(name = "Position", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			
 			#Socket Tangent
 			tangent_socket = mn_utils_curve_resample.interface.new_socket(name = "Tangent", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			tangent_socket.subtype = 'NONE'
 			tangent_socket.default_value = (0.0, 0.0, 0.0)
 			tangent_socket.min_value = -3.4028234663852886e+38
 			tangent_socket.max_value = 3.4028234663852886e+38
+			tangent_socket.subtype = 'NONE'
 			tangent_socket.attribute_domain = 'POINT'
 			
 			#Socket Normal
 			normal_socket = mn_utils_curve_resample.interface.new_socket(name = "Normal", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			normal_socket.subtype = 'NONE'
 			normal_socket.default_value = (0.0, 0.0, 0.0)
 			normal_socket.min_value = -3.4028234663852886e+38
 			normal_socket.max_value = 3.4028234663852886e+38
+			normal_socket.subtype = 'NONE'
 			normal_socket.attribute_domain = 'POINT'
 			
 			#Socket Field Float
 			field_float_socket = mn_utils_curve_resample.interface.new_socket(name = "Field Float", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			field_float_socket.subtype = 'NONE'
 			field_float_socket.default_value = 0.0
 			field_float_socket.min_value = -3.4028234663852886e+38
 			field_float_socket.max_value = 3.4028234663852886e+38
+			field_float_socket.subtype = 'NONE'
 			field_float_socket.attribute_domain = 'POINT'
 			
 			#Socket Field Int
 			field_int_socket = mn_utils_curve_resample.interface.new_socket(name = "Field Int", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			field_int_socket.subtype = 'NONE'
 			field_int_socket.default_value = 0
 			field_int_socket.min_value = -2147483648
 			field_int_socket.max_value = 2147483647
+			field_int_socket.subtype = 'NONE'
 			field_int_socket.attribute_domain = 'POINT'
 			
 			#Socket Field Vec
 			field_vec_socket = mn_utils_curve_resample.interface.new_socket(name = "Field Vec", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			field_vec_socket.subtype = 'NONE'
 			field_vec_socket.default_value = (0.0, 0.0, 0.0)
 			field_vec_socket.min_value = -3.4028234663852886e+38
 			field_vec_socket.max_value = 3.4028234663852886e+38
+			field_vec_socket.subtype = 'NONE'
 			field_vec_socket.attribute_domain = 'POINT'
 			
 			#Socket Geometry
@@ -85,44 +85,44 @@ class MN_utils_curve_resample(bpy.types.Operator):
 			
 			#Socket Offset
 			offset_socket = mn_utils_curve_resample.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			offset_socket.subtype = 'NONE'
 			offset_socket.default_value = 2.299999952316284
 			offset_socket.min_value = -10000.0
 			offset_socket.max_value = 10000.0
+			offset_socket.subtype = 'NONE'
 			offset_socket.attribute_domain = 'POINT'
 			
 			#Socket Length
 			length_socket = mn_utils_curve_resample.interface.new_socket(name = "Length", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			length_socket.subtype = 'DISTANCE'
 			length_socket.default_value = 0.36000001430511475
 			length_socket.min_value = 0.009999999776482582
 			length_socket.max_value = 3.4028234663852886e+38
+			length_socket.subtype = 'DISTANCE'
 			length_socket.attribute_domain = 'POINT'
 			
 			#Socket Field Float
 			field_float_socket_1 = mn_utils_curve_resample.interface.new_socket(name = "Field Float", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			field_float_socket_1.subtype = 'NONE'
 			field_float_socket_1.default_value = 0.0
 			field_float_socket_1.min_value = -3.4028234663852886e+38
 			field_float_socket_1.max_value = 3.4028234663852886e+38
+			field_float_socket_1.subtype = 'NONE'
 			field_float_socket_1.attribute_domain = 'POINT'
 			field_float_socket_1.hide_value = True
 			
 			#Socket Field Int
 			field_int_socket_1 = mn_utils_curve_resample.interface.new_socket(name = "Field Int", in_out='INPUT', socket_type = 'NodeSocketInt')
-			field_int_socket_1.subtype = 'NONE'
 			field_int_socket_1.default_value = 0
 			field_int_socket_1.min_value = -2147483648
 			field_int_socket_1.max_value = 2147483647
+			field_int_socket_1.subtype = 'NONE'
 			field_int_socket_1.attribute_domain = 'POINT'
 			field_int_socket_1.hide_value = True
 			
 			#Socket Field Vec
 			field_vec_socket_1 = mn_utils_curve_resample.interface.new_socket(name = "Field Vec", in_out='INPUT', socket_type = 'NodeSocketVector')
-			field_vec_socket_1.subtype = 'NONE'
 			field_vec_socket_1.default_value = (0.0, 0.0, 0.0)
 			field_vec_socket_1.min_value = -3.4028234663852886e+38
 			field_vec_socket_1.max_value = 3.4028234663852886e+38
+			field_vec_socket_1.subtype = 'NONE'
 			field_vec_socket_1.attribute_domain = 'POINT'
 			field_vec_socket_1.hide_value = True
 			

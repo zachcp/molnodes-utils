@@ -28,18 +28,18 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_guide_rotation interface
 			#Socket Rotation
 			rotation_socket = _guide_rotation.interface.new_socket(name = "Rotation", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			rotation_socket.subtype = 'EULER'
 			rotation_socket.default_value = (0.0, 0.0, 0.0)
 			rotation_socket.min_value = -3.4028234663852886e+38
 			rotation_socket.max_value = 3.4028234663852886e+38
+			rotation_socket.subtype = 'EULER'
 			rotation_socket.attribute_domain = 'POINT'
 			
 			#Socket Angle
 			angle_socket = _guide_rotation.interface.new_socket(name = "Angle", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			angle_socket.subtype = 'ANGLE'
 			angle_socket.default_value = 0.0
 			angle_socket.min_value = -3.4028234663852886e+38
 			angle_socket.max_value = 3.4028234663852886e+38
+			angle_socket.subtype = 'ANGLE'
 			angle_socket.attribute_domain = 'POINT'
 			
 			
@@ -149,29 +149,33 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_mn_select_sec_struct_id interface
 			#Socket Selection
 			selection_socket = _mn_select_sec_struct_id.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = _mn_select_sec_struct_id.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket = _mn_select_sec_struct_id.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket.default_value = True
 			and_socket.attribute_domain = 'POINT'
 			and_socket.hide_value = True
 			
 			#Socket Or
 			or_socket = _mn_select_sec_struct_id.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket.default_value = False
 			or_socket.attribute_domain = 'POINT'
 			or_socket.hide_value = True
 			
 			#Socket id
 			id_socket = _mn_select_sec_struct_id.interface.new_socket(name = "id", in_out='INPUT', socket_type = 'NodeSocketInt')
-			id_socket.subtype = 'NONE'
 			id_socket.default_value = 1
 			id_socket.min_value = -2147483648
 			id_socket.max_value = 2147483647
+			id_socket.subtype = 'NONE'
 			id_socket.attribute_domain = 'POINT'
 			id_socket.description = "Secondary structure component to select"
 			
@@ -270,20 +274,24 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#is_sheet interface
 			#Socket Selection
 			selection_socket_1 = is_sheet.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_1.default_value = False
 			selection_socket_1.attribute_domain = 'POINT'
 			selection_socket_1.description = "Selected atoms form part of a sheet"
 			
 			#Socket Inverted
 			inverted_socket_1 = is_sheet.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_1.default_value = False
 			inverted_socket_1.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_1 = is_sheet.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_1.default_value = True
 			and_socket_1.attribute_domain = 'POINT'
 			and_socket_1.hide_value = True
 			
 			#Socket Or
 			or_socket_1 = is_sheet.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_1.default_value = False
 			or_socket_1.attribute_domain = 'POINT'
 			or_socket_1.hide_value = True
 			
@@ -343,20 +351,24 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#is_loop interface
 			#Socket Selection
 			selection_socket_2 = is_loop.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_2.default_value = False
 			selection_socket_2.attribute_domain = 'POINT'
 			selection_socket_2.description = "Selected atoms form part of a loop, and not part of any secondary structure"
 			
 			#Socket Inverted
 			inverted_socket_2 = is_loop.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_2.default_value = False
 			inverted_socket_2.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_2 = is_loop.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_2.default_value = True
 			and_socket_2.attribute_domain = 'POINT'
 			and_socket_2.hide_value = True
 			
 			#Socket Or
 			or_socket_2 = is_loop.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_2.default_value = False
 			or_socket_2.attribute_domain = 'POINT'
 			or_socket_2.hide_value = True
 			
@@ -416,20 +428,24 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#is_helix interface
 			#Socket Selection
 			selection_socket_3 = is_helix.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_3.default_value = False
 			selection_socket_3.attribute_domain = 'POINT'
 			selection_socket_3.description = "Selected atoms form part of an helix"
 			
 			#Socket Inverted
 			inverted_socket_3 = is_helix.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_3.default_value = False
 			inverted_socket_3.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_3 = is_helix.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_3.default_value = True
 			and_socket_3.attribute_domain = 'POINT'
 			and_socket_3.hide_value = True
 			
 			#Socket Or
 			or_socket_3 = is_helix.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_3.default_value = False
 			or_socket_3.attribute_domain = 'POINT'
 			or_socket_3.hide_value = True
 			
@@ -489,22 +505,27 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_mn_select_sec_struct interface
 			#Socket Is Helix
 			is_helix_socket = _mn_select_sec_struct.interface.new_socket(name = "Is Helix", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_helix_socket.default_value = False
 			is_helix_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Sheet
 			is_sheet_socket = _mn_select_sec_struct.interface.new_socket(name = "Is Sheet", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_sheet_socket.default_value = False
 			is_sheet_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Structured
 			is_structured_socket = _mn_select_sec_struct.interface.new_socket(name = "Is Structured", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_structured_socket.default_value = False
 			is_structured_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Loop
 			is_loop_socket = _mn_select_sec_struct.interface.new_socket(name = "Is Loop", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_loop_socket.default_value = False
 			is_loop_socket.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_4 = _mn_select_sec_struct.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_4.default_value = True
 			and_socket_4.attribute_domain = 'POINT'
 			and_socket_4.hide_value = True
 			
@@ -607,35 +628,35 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Position
 			position_socket = _debug_arrows.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket.subtype = 'NONE'
 			position_socket.default_value = (0.0, 0.0, 0.0)
 			position_socket.min_value = -3.4028234663852886e+38
 			position_socket.max_value = 3.4028234663852886e+38
+			position_socket.subtype = 'NONE'
 			position_socket.attribute_domain = 'POINT'
 			position_socket.hide_value = True
 			
 			#Socket Offset
 			offset_socket = _debug_arrows.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketVector')
-			offset_socket.subtype = 'TRANSLATION'
 			offset_socket.default_value = (0.0, 0.0, 0.0)
 			offset_socket.min_value = -3.4028234663852886e+38
 			offset_socket.max_value = 3.4028234663852886e+38
+			offset_socket.subtype = 'TRANSLATION'
 			offset_socket.attribute_domain = 'POINT'
 			
 			#Socket Rotation
 			rotation_socket_1 = _debug_arrows.interface.new_socket(name = "Rotation", in_out='INPUT', socket_type = 'NodeSocketVector')
-			rotation_socket_1.subtype = 'EULER'
 			rotation_socket_1.default_value = (0.0, 0.0, 0.0)
 			rotation_socket_1.min_value = -3.4028234663852886e+38
 			rotation_socket_1.max_value = 3.4028234663852886e+38
+			rotation_socket_1.subtype = 'EULER'
 			rotation_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Scale
 			scale_socket = _debug_arrows.interface.new_socket(name = "Scale", in_out='INPUT', socket_type = 'NodeSocketVector')
-			scale_socket.subtype = 'XYZ'
 			scale_socket.default_value = (0.33000001311302185, 0.36000001430511475, 0.75)
 			scale_socket.min_value = -3.4028234663852886e+38
 			scale_socket.max_value = 3.4028234663852886e+38
+			scale_socket.subtype = 'XYZ'
 			scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -929,30 +950,31 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_selective_scale interface
 			#Socket Output
 			output_socket = _selective_scale.interface.new_socket(name = "Output", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			output_socket.subtype = 'NONE'
 			output_socket.default_value = 0.0
 			output_socket.min_value = -3.4028234663852886e+38
 			output_socket.max_value = 3.4028234663852886e+38
+			output_socket.subtype = 'NONE'
 			output_socket.attribute_domain = 'POINT'
 			
 			#Socket Switch
 			switch_socket = _selective_scale.interface.new_socket(name = "Switch", in_out='INPUT', socket_type = 'NodeSocketBool')
+			switch_socket.default_value = False
 			switch_socket.attribute_domain = 'POINT'
 			
 			#Socket Input
 			input_socket = _selective_scale.interface.new_socket(name = "Input", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			input_socket.subtype = 'NONE'
 			input_socket.default_value = 0.0
 			input_socket.min_value = -3.4028234663852886e+38
 			input_socket.max_value = 3.4028234663852886e+38
+			input_socket.subtype = 'NONE'
 			input_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = _selective_scale.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0.800000011920929
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			
@@ -1027,10 +1049,10 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -1081,26 +1103,26 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_1 = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_1.subtype = 'NONE'
 			value_socket_1.default_value = 3.0
 			value_socket_1.min_value = -10000.0
 			value_socket_1.max_value = 10000.0
+			value_socket_1.subtype = 'NONE'
 			value_socket_1.attribute_domain = 'POINT'
 			value_socket_1.description = "A value which will be scaled appropriately for the world"
 			
@@ -1177,27 +1199,27 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_field_offset_vec interface
 			#Socket Field
 			field_socket = _field_offset_vec.interface.new_socket(name = "Field", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			field_socket.subtype = 'NONE'
 			field_socket.default_value = (0.0, 0.0, 0.0)
 			field_socket.min_value = -3.4028234663852886e+38
 			field_socket.max_value = 3.4028234663852886e+38
+			field_socket.subtype = 'NONE'
 			field_socket.attribute_domain = 'POINT'
 			
 			#Socket Field
 			field_socket_1 = _field_offset_vec.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketVector')
-			field_socket_1.subtype = 'NONE'
 			field_socket_1.default_value = (0.0, 0.0, 0.0)
 			field_socket_1.min_value = -3.4028234663852886e+38
 			field_socket_1.max_value = 3.4028234663852886e+38
+			field_socket_1.subtype = 'NONE'
 			field_socket_1.attribute_domain = 'POINT'
 			field_socket_1.hide_value = True
 			
 			#Socket Offset
 			offset_socket_1 = _field_offset_vec.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.default_value = 0
 			offset_socket_1.min_value = -2147483648
 			offset_socket_1.max_value = 2147483647
+			offset_socket_1.subtype = 'NONE'
 			offset_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -1279,18 +1301,18 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Distance
 			distance_socket = _curve_ends_adjust_angle.interface.new_socket(name = "Distance", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			distance_socket.subtype = 'NONE'
 			distance_socket.default_value = 3.0
 			distance_socket.min_value = -10000.0
 			distance_socket.max_value = 10000.0
+			distance_socket.subtype = 'NONE'
 			distance_socket.attribute_domain = 'POINT'
 			
 			#Socket Distance
 			distance_socket_1 = _curve_ends_adjust_angle.interface.new_socket(name = "Distance", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			distance_socket_1.subtype = 'NONE'
 			distance_socket_1.default_value = 0.4200000762939453
 			distance_socket_1.min_value = -10000.0
 			distance_socket_1.max_value = 10000.0
+			distance_socket_1.subtype = 'NONE'
 			distance_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -1745,10 +1767,10 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Distance
 			distance_socket_2 = _curve_ends_adjust_position.interface.new_socket(name = "Distance", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			distance_socket_2.subtype = 'NONE'
 			distance_socket_2.default_value = 0.30000001192092896
 			distance_socket_2.min_value = -10000.0
 			distance_socket_2.max_value = 10000.0
+			distance_socket_2.subtype = 'NONE'
 			distance_socket_2.attribute_domain = 'POINT'
 			
 			
@@ -1943,22 +1965,23 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Resolution
 			resolution_socket = _curve_to_mesh.interface.new_socket(name = "Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			resolution_socket.subtype = 'NONE'
 			resolution_socket.default_value = 12
 			resolution_socket.min_value = 3
 			resolution_socket.max_value = 512
+			resolution_socket.subtype = 'NONE'
 			resolution_socket.attribute_domain = 'POINT'
 			
 			#Socket Fill Caps
 			fill_caps_socket = _curve_to_mesh.interface.new_socket(name = "Fill Caps", in_out='INPUT', socket_type = 'NodeSocketBool')
+			fill_caps_socket.default_value = False
 			fill_caps_socket.attribute_domain = 'POINT'
 			
 			#Socket Radius (A)
 			radius__a__socket = _curve_to_mesh.interface.new_socket(name = "Radius (A)", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radius__a__socket.subtype = 'NONE'
 			radius__a__socket.default_value = 0.20000000298023224
 			radius__a__socket.min_value = 0.0
 			radius__a__socket.max_value = 10000.0
+			radius__a__socket.subtype = 'NONE'
 			radius__a__socket.attribute_domain = 'POINT'
 			
 			
@@ -2080,22 +2103,23 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#offset_color interface
 			#Socket Color
 			color_socket = offset_color.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket = offset_color.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket.subtype = 'NONE'
 			index_socket.default_value = 0
 			index_socket.min_value = -2147483648
 			index_socket.max_value = 2147483647
+			index_socket.subtype = 'NONE'
 			index_socket.attribute_domain = 'POINT'
 			
 			#Socket Offset
 			offset_socket_2 = offset_color.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_2.subtype = 'NONE'
 			offset_socket_2.default_value = 0
 			offset_socket_2.min_value = -2147483648
 			offset_socket_2.max_value = 2147483647
+			offset_socket_2.subtype = 'NONE'
 			offset_socket_2.attribute_domain = 'POINT'
 			
 			
@@ -2320,18 +2344,18 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_mn_cartoon_smooth_handles interface
 			#Socket Vector
 			vector_socket = _mn_cartoon_smooth_handles.interface.new_socket(name = "Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -3.4028234663852886e+38
 			vector_socket.max_value = 3.4028234663852886e+38
+			vector_socket.subtype = 'NONE'
 			vector_socket.attribute_domain = 'POINT'
 			
 			#Socket Scale
 			scale_socket_1 = _mn_cartoon_smooth_handles.interface.new_socket(name = "Scale", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_socket_1.subtype = 'NONE'
 			scale_socket_1.default_value = 0.00800000037997961
 			scale_socket_1.min_value = -10000.0
 			scale_socket_1.max_value = 10000.0
+			scale_socket_1.subtype = 'NONE'
 			scale_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -2441,19 +2465,21 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_field_offset_bool interface
 			#Socket Boolean
 			boolean_socket = _field_offset_bool.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Boolean
 			boolean_socket_1 = _field_offset_bool.interface.new_socket(name = "Boolean", in_out='INPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_1.default_value = False
 			boolean_socket_1.attribute_domain = 'POINT'
 			boolean_socket_1.hide_value = True
 			
 			#Socket Offset
 			offset_socket_3 = _field_offset_bool.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_3.subtype = 'NONE'
 			offset_socket_3.default_value = 0
 			offset_socket_3.min_value = -2147483648
 			offset_socket_3.max_value = 2147483647
+			offset_socket_3.subtype = 'NONE'
 			offset_socket_3.attribute_domain = 'POINT'
 			
 			
@@ -2526,38 +2552,39 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_cartoon_arrows_scale interface
 			#Socket Result
 			result_socket = _cartoon_arrows_scale.interface.new_socket(name = "Result", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			result_socket.default_value = False
 			result_socket.attribute_domain = 'POINT'
 			
 			#Socket Output
 			output_socket_1 = _cartoon_arrows_scale.interface.new_socket(name = "Output", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			output_socket_1.subtype = 'NONE'
 			output_socket_1.default_value = 0.0
 			output_socket_1.min_value = -3.4028234663852886e+38
 			output_socket_1.max_value = 3.4028234663852886e+38
+			output_socket_1.subtype = 'NONE'
 			output_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Input
 			input_socket_1 = _cartoon_arrows_scale.interface.new_socket(name = "Input", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			input_socket_1.subtype = 'NONE'
 			input_socket_1.default_value = 0.0
 			input_socket_1.min_value = -3.4028234663852886e+38
 			input_socket_1.max_value = 3.4028234663852886e+38
+			input_socket_1.subtype = 'NONE'
 			input_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Input
 			input_socket_2 = _cartoon_arrows_scale.interface.new_socket(name = "Input", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			input_socket_2.subtype = 'NONE'
 			input_socket_2.default_value = 0.0
 			input_socket_2.min_value = -3.4028234663852886e+38
 			input_socket_2.max_value = 3.4028234663852886e+38
+			input_socket_2.subtype = 'NONE'
 			input_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_2 = _cartoon_arrows_scale.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_2.subtype = 'NONE'
 			value_socket_2.default_value = 2.8499999046325684
 			value_socket_2.min_value = -10000.0
 			value_socket_2.max_value = 10000.0
+			value_socket_2.subtype = 'NONE'
 			value_socket_2.attribute_domain = 'POINT'
 			
 			
@@ -2767,19 +2794,19 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Rotation
 			rotation_socket_2 = _cartoon_arrow_instance.interface.new_socket(name = "Rotation", in_out='INPUT', socket_type = 'NodeSocketVector')
-			rotation_socket_2.subtype = 'EULER'
 			rotation_socket_2.default_value = (0.0, 0.0, 0.0)
 			rotation_socket_2.min_value = -3.4028234663852886e+38
 			rotation_socket_2.max_value = 3.4028234663852886e+38
+			rotation_socket_2.subtype = 'EULER'
 			rotation_socket_2.attribute_domain = 'POINT'
 			rotation_socket_2.hide_value = True
 			
 			#Socket Scale
 			scale_socket_2 = _cartoon_arrow_instance.interface.new_socket(name = "Scale", in_out='INPUT', socket_type = 'NodeSocketVector')
-			scale_socket_2.subtype = 'XYZ'
 			scale_socket_2.default_value = (1.0, 1.0, 1.0)
 			scale_socket_2.min_value = -3.4028234663852886e+38
 			scale_socket_2.max_value = 3.4028234663852886e+38
+			scale_socket_2.subtype = 'XYZ'
 			scale_socket_2.attribute_domain = 'POINT'
 			
 			
@@ -2988,10 +3015,10 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Value
 			value_socket_3 = _cartoon_arrow_primitive.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket_3.subtype = 'NONE'
 			value_socket_3.default_value = 0.5
 			value_socket_3.min_value = -10000.0
 			value_socket_3.max_value = 10000.0
+			value_socket_3.subtype = 'NONE'
 			value_socket_3.attribute_domain = 'POINT'
 			
 			
@@ -3238,26 +3265,26 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Resolution
 			resolution_socket_1 = _curve_profile_backup.interface.new_socket(name = "Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			resolution_socket_1.subtype = 'NONE'
 			resolution_socket_1.default_value = 12
 			resolution_socket_1.min_value = 3
 			resolution_socket_1.max_value = 512
+			resolution_socket_1.subtype = 'NONE'
 			resolution_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Radius
 			radius_socket = _curve_profile_backup.interface.new_socket(name = "Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radius_socket.subtype = 'DISTANCE'
 			radius_socket.default_value = 0.009999999776482582
 			radius_socket.min_value = 0.0
 			radius_socket.max_value = 3.4028234663852886e+38
+			radius_socket.subtype = 'DISTANCE'
 			radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Rotation
 			rotation_socket_3 = _curve_profile_backup.interface.new_socket(name = "Rotation", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			rotation_socket_3.subtype = 'NONE'
 			rotation_socket_3.default_value = 0.0
 			rotation_socket_3.min_value = -10000.0
 			rotation_socket_3.max_value = 10000.0
+			rotation_socket_3.subtype = 'NONE'
 			rotation_socket_3.attribute_domain = 'POINT'
 			
 			
@@ -3399,26 +3426,26 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Profile Resolution
 			profile_resolution_socket = _curve_custom_profile.interface.new_socket(name = "Profile Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			profile_resolution_socket.subtype = 'NONE'
 			profile_resolution_socket.default_value = 4
 			profile_resolution_socket.min_value = 3
 			profile_resolution_socket.max_value = 512
+			profile_resolution_socket.subtype = 'NONE'
 			profile_resolution_socket.attribute_domain = 'POINT'
 			
 			#Socket Profile Radius
 			profile_radius_socket = _curve_custom_profile.interface.new_socket(name = "Profile Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			profile_radius_socket.subtype = 'DISTANCE'
 			profile_radius_socket.default_value = 1.0
 			profile_radius_socket.min_value = 0.0
 			profile_radius_socket.max_value = 3.4028234663852886e+38
+			profile_radius_socket.subtype = 'DISTANCE'
 			profile_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Profile Rotation
 			profile_rotation_socket = _curve_custom_profile.interface.new_socket(name = "Profile Rotation", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			profile_rotation_socket.subtype = 'NONE'
 			profile_rotation_socket.default_value = 0.7853981852531433
 			profile_rotation_socket.min_value = -10000.0
 			profile_rotation_socket.max_value = 10000.0
+			profile_rotation_socket.subtype = 'NONE'
 			profile_rotation_socket.attribute_domain = 'POINT'
 			
 			#Socket Instance
@@ -3427,46 +3454,47 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Rotation X
 			rotation_x_socket = _curve_custom_profile.interface.new_socket(name = "Rotation X", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			rotation_x_socket.subtype = 'ANGLE'
 			rotation_x_socket.default_value = 0.0
 			rotation_x_socket.min_value = -3.4028234663852886e+38
 			rotation_x_socket.max_value = 3.4028234663852886e+38
+			rotation_x_socket.subtype = 'ANGLE'
 			rotation_x_socket.attribute_domain = 'POINT'
 			
 			#Socket Scale
 			scale_socket_3 = _curve_custom_profile.interface.new_socket(name = "Scale", in_out='INPUT', socket_type = 'NodeSocketVector')
-			scale_socket_3.subtype = 'XYZ'
 			scale_socket_3.default_value = (0.33000001311302185, 0.36000001430511475, 0.75)
 			scale_socket_3.min_value = -3.4028234663852886e+38
 			scale_socket_3.max_value = 3.4028234663852886e+38
+			scale_socket_3.subtype = 'XYZ'
 			scale_socket_3.attribute_domain = 'POINT'
 			
 			#Socket Factor
 			factor_socket = _curve_custom_profile.interface.new_socket(name = "Factor", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			factor_socket.subtype = 'FACTOR'
 			factor_socket.default_value = 0.0
 			factor_socket.min_value = 0.0
 			factor_socket.max_value = 1.0
+			factor_socket.subtype = 'FACTOR'
 			factor_socket.attribute_domain = 'POINT'
 			
 			#Socket Radius
 			radius_socket_1 = _curve_custom_profile.interface.new_socket(name = "Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radius_socket_1.subtype = 'DISTANCE'
 			radius_socket_1.default_value = 0.004999999888241291
 			radius_socket_1.min_value = 0.0
 			radius_socket_1.max_value = 3.4028234663852886e+38
+			radius_socket_1.subtype = 'DISTANCE'
 			radius_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Resolution
 			resolution_socket_2 = _curve_custom_profile.interface.new_socket(name = "Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			resolution_socket_2.subtype = 'NONE'
 			resolution_socket_2.default_value = 6
 			resolution_socket_2.min_value = 1
 			resolution_socket_2.max_value = 2147483647
+			resolution_socket_2.subtype = 'NONE'
 			resolution_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Resample
 			resample_socket = _curve_custom_profile.interface.new_socket(name = "Resample", in_out='INPUT', socket_type = 'NodeSocketBool')
+			resample_socket.default_value = False
 			resample_socket.attribute_domain = 'POINT'
 			
 			
@@ -3750,70 +3778,72 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_field_offset interface
 			#Socket Field
 			field_socket_2 = _field_offset.interface.new_socket(name = "Field", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			field_socket_2.subtype = 'NONE'
 			field_socket_2.default_value = (0.0, 0.0, 0.0)
 			field_socket_2.min_value = -3.4028234663852886e+38
 			field_socket_2.max_value = 3.4028234663852886e+38
+			field_socket_2.subtype = 'NONE'
 			field_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_4 = _field_offset.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			value_socket_4.default_value = False
 			value_socket_4.attribute_domain = 'POINT'
 			
 			#Socket Field
 			field_socket_3 = _field_offset.interface.new_socket(name = "Field", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			field_socket_3.subtype = 'NONE'
 			field_socket_3.default_value = 0
 			field_socket_3.min_value = -2147483648
 			field_socket_3.max_value = 2147483647
+			field_socket_3.subtype = 'NONE'
 			field_socket_3.attribute_domain = 'POINT'
 			
 			#Socket Field
 			field_socket_4 = _field_offset.interface.new_socket(name = "Field", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			field_socket_4.subtype = 'NONE'
 			field_socket_4.default_value = 0.0
 			field_socket_4.min_value = -3.4028234663852886e+38
 			field_socket_4.max_value = 3.4028234663852886e+38
+			field_socket_4.subtype = 'NONE'
 			field_socket_4.attribute_domain = 'POINT'
 			
 			#Socket Field
 			field_socket_5 = _field_offset.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketVector')
-			field_socket_5.subtype = 'NONE'
 			field_socket_5.default_value = (0.0, 0.0, 0.0)
 			field_socket_5.min_value = -3.4028234663852886e+38
 			field_socket_5.max_value = 3.4028234663852886e+38
+			field_socket_5.subtype = 'NONE'
 			field_socket_5.attribute_domain = 'POINT'
 			field_socket_5.hide_value = True
 			
 			#Socket Value
 			value_socket_5 = _field_offset.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketBool')
+			value_socket_5.default_value = False
 			value_socket_5.attribute_domain = 'POINT'
 			value_socket_5.hide_value = True
 			
 			#Socket Field
 			field_socket_6 = _field_offset.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketInt')
-			field_socket_6.subtype = 'NONE'
 			field_socket_6.default_value = 0
 			field_socket_6.min_value = -2147483648
 			field_socket_6.max_value = 2147483647
+			field_socket_6.subtype = 'NONE'
 			field_socket_6.attribute_domain = 'POINT'
 			field_socket_6.hide_value = True
 			
 			#Socket Field
 			field_socket_7 = _field_offset.interface.new_socket(name = "Field", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			field_socket_7.subtype = 'NONE'
 			field_socket_7.default_value = 0.0
 			field_socket_7.min_value = -3.4028234663852886e+38
 			field_socket_7.max_value = 3.4028234663852886e+38
+			field_socket_7.subtype = 'NONE'
 			field_socket_7.attribute_domain = 'POINT'
 			field_socket_7.hide_value = True
 			
 			#Socket Offset
 			offset_socket_4 = _field_offset.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_4.subtype = 'NONE'
 			offset_socket_4.default_value = 0
 			offset_socket_4.min_value = -2147483648
 			offset_socket_4.max_value = 2147483647
+			offset_socket_4.subtype = 'NONE'
 			offset_socket_4.attribute_domain = 'POINT'
 			
 			
@@ -3928,30 +3958,31 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_sec_struct_counter interface
 			#Socket Leading
 			leading_socket = _sec_struct_counter.interface.new_socket(name = "Leading", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			leading_socket.subtype = 'NONE'
 			leading_socket.default_value = 0
 			leading_socket.min_value = -2147483648
 			leading_socket.max_value = 2147483647
+			leading_socket.subtype = 'NONE'
 			leading_socket.attribute_domain = 'POINT'
 			
 			#Socket Trailing
 			trailing_socket = _sec_struct_counter.interface.new_socket(name = "Trailing", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			trailing_socket.subtype = 'NONE'
 			trailing_socket.default_value = 0
 			trailing_socket.min_value = -2147483648
 			trailing_socket.max_value = 2147483647
+			trailing_socket.subtype = 'NONE'
 			trailing_socket.attribute_domain = 'POINT'
 			
 			#Socket Total
 			total_socket = _sec_struct_counter.interface.new_socket(name = "Total", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			total_socket.subtype = 'NONE'
 			total_socket.default_value = 0
 			total_socket.min_value = -2147483648
 			total_socket.max_value = 2147483647
+			total_socket.subtype = 'NONE'
 			total_socket.attribute_domain = 'POINT'
 			
 			#Socket Border
 			border_socket = _sec_struct_counter.interface.new_socket(name = "Border", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			border_socket.default_value = False
 			border_socket.attribute_domain = 'POINT'
 			
 			
@@ -4115,18 +4146,18 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Factor
 			factor_socket_1 = _bs_smooth.interface.new_socket(name = "Factor", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			factor_socket_1.subtype = 'FACTOR'
 			factor_socket_1.default_value = 1.0
 			factor_socket_1.min_value = 0.0
 			factor_socket_1.max_value = 1.0
+			factor_socket_1.subtype = 'FACTOR'
 			factor_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Iterations
 			iterations_socket = _bs_smooth.interface.new_socket(name = "Iterations", in_out='INPUT', socket_type = 'NodeSocketInt')
-			iterations_socket.subtype = 'NONE'
 			iterations_socket.default_value = 2
 			iterations_socket.min_value = 0
 			iterations_socket.max_value = 2147483647
+			iterations_socket.subtype = 'NONE'
 			iterations_socket.attribute_domain = 'POINT'
 			
 			
@@ -4277,18 +4308,20 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_expand_selection interface
 			#Socket Boolean
 			boolean_socket_2 = _expand_selection.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_2.default_value = False
 			boolean_socket_2.attribute_domain = 'POINT'
 			
 			#Socket Input
 			input_socket_4 = _expand_selection.interface.new_socket(name = "Input", in_out='INPUT', socket_type = 'NodeSocketBool')
+			input_socket_4.default_value = False
 			input_socket_4.attribute_domain = 'POINT'
 			
 			#Socket Offset
 			offset_socket_5 = _expand_selection.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_5.subtype = 'NONE'
 			offset_socket_5.default_value = 1
 			offset_socket_5.min_value = -2147483648
 			offset_socket_5.max_value = 2147483647
+			offset_socket_5.subtype = 'NONE'
 			offset_socket_5.attribute_domain = 'POINT'
 			
 			
@@ -4399,14 +4432,17 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#fallback_boolean interface
 			#Socket Boolean
 			boolean_socket_3 = fallback_boolean.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_3.default_value = False
 			boolean_socket_3.attribute_domain = 'POINT'
 			
 			#Socket Name
 			name_socket = fallback_boolean.interface.new_socket(name = "Name", in_out='INPUT', socket_type = 'NodeSocketString')
+			name_socket.default_value = ""
 			name_socket.attribute_domain = 'POINT'
 			
 			#Socket Fallback
 			fallback_socket = fallback_boolean.interface.new_socket(name = "Fallback", in_out='INPUT', socket_type = 'NodeSocketBool')
+			fallback_socket.default_value = False
 			fallback_socket.attribute_domain = 'POINT'
 			
 			
@@ -4471,42 +4507,42 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_mn_constants_atom_name_peptide interface
 			#Socket Backbone Lower
 			backbone_lower_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Backbone Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.default_value = 0
 			backbone_lower_socket.min_value = -2147483648
 			backbone_lower_socket.max_value = 2147483647
+			backbone_lower_socket.subtype = 'NONE'
 			backbone_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Backbone Upper
 			backbone_upper_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Backbone Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.default_value = 0
 			backbone_upper_socket.min_value = -2147483648
 			backbone_upper_socket.max_value = 2147483647
+			backbone_upper_socket.subtype = 'NONE'
 			backbone_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Lower
 			side_chain_lower_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Side Chain Lower", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.default_value = 0
 			side_chain_lower_socket.min_value = -2147483648
 			side_chain_lower_socket.max_value = 2147483647
+			side_chain_lower_socket.subtype = 'NONE'
 			side_chain_lower_socket.attribute_domain = 'POINT'
 			
 			#Socket Side Chain Upper
 			side_chain_upper_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Side Chain Upper", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.default_value = 0
 			side_chain_upper_socket.min_value = -2147483648
 			side_chain_upper_socket.max_value = 2147483647
+			side_chain_upper_socket.subtype = 'NONE'
 			side_chain_upper_socket.attribute_domain = 'POINT'
 			
 			#Socket Alpha Carbon
 			alpha_carbon_socket = _mn_constants_atom_name_peptide.interface.new_socket(name = "Alpha Carbon", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			alpha_carbon_socket.subtype = 'NONE'
 			alpha_carbon_socket.default_value = 0
 			alpha_carbon_socket.min_value = -2147483648
 			alpha_carbon_socket.max_value = 2147483647
+			alpha_carbon_socket.subtype = 'NONE'
 			alpha_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -4592,18 +4628,22 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_mn_select_peptide interface
 			#Socket Is Backbone
 			is_backbone_socket = _mn_select_peptide.interface.new_socket(name = "Is Backbone", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_backbone_socket.default_value = False
 			is_backbone_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Side Chain
 			is_side_chain_socket = _mn_select_peptide.interface.new_socket(name = "Is Side Chain", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_side_chain_socket.default_value = False
 			is_side_chain_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Peptide
 			is_peptide_socket = _mn_select_peptide.interface.new_socket(name = "Is Peptide", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_peptide_socket.default_value = False
 			is_peptide_socket.attribute_domain = 'POINT'
 			
 			#Socket Is Alpha Carbon
 			is_alpha_carbon_socket = _mn_select_peptide.interface.new_socket(name = "Is Alpha Carbon", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_alpha_carbon_socket.default_value = False
 			is_alpha_carbon_socket.attribute_domain = 'POINT'
 			
 			
@@ -4803,20 +4843,24 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#is_alpha_carbon interface
 			#Socket Selection
 			selection_socket_4 = is_alpha_carbon.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket_4.default_value = False
 			selection_socket_4.attribute_domain = 'POINT'
 			selection_socket_4.description = "True if atom is an alpha carbon of an amino acid"
 			
 			#Socket Inverted
 			inverted_socket_4 = is_alpha_carbon.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket_4.default_value = False
 			inverted_socket_4.attribute_domain = 'POINT'
 			
 			#Socket And
 			and_socket_5 = is_alpha_carbon.interface.new_socket(name = "And", in_out='INPUT', socket_type = 'NodeSocketBool')
+			and_socket_5.default_value = True
 			and_socket_5.attribute_domain = 'POINT'
 			and_socket_5.hide_value = True
 			
 			#Socket Or
 			or_socket_4 = is_alpha_carbon.interface.new_socket(name = "Or", in_out='INPUT', socket_type = 'NodeSocketBool')
+			or_socket_4.default_value = False
 			or_socket_4.attribute_domain = 'POINT'
 			or_socket_4.hide_value = True
 			
@@ -4914,30 +4958,32 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#group_pick interface
 			#Socket Is Valid
 			is_valid_socket = group_pick.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket.default_value = True
 			is_valid_socket.attribute_domain = 'POINT'
 			is_valid_socket.description = "Whether the pick is valid. Pick is only valid if a single item is picked in the Group ID"
 			
 			#Socket Index
 			index_socket_1 = group_pick.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket_1.subtype = 'NONE'
 			index_socket_1.default_value = 0
 			index_socket_1.min_value = 0
 			index_socket_1.max_value = 2147483647
+			index_socket_1.subtype = 'NONE'
 			index_socket_1.attribute_domain = 'POINT'
 			index_socket_1.description = "Index of picked item. Returns -1 if not a valid pick."
 			
 			#Socket Pick
 			pick_socket = group_pick.interface.new_socket(name = "Pick", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pick_socket.default_value = False
 			pick_socket.attribute_domain = 'POINT'
 			pick_socket.hide_value = True
 			pick_socket.description = "True for the item to pick from the group. If number of picks is 0 or more than 1, not a valid pick"
 			
 			#Socket Group ID
 			group_id_socket = group_pick.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket.subtype = 'NONE'
 			group_id_socket.default_value = 0
 			group_id_socket.min_value = -2147483648
 			group_id_socket.max_value = 2147483647
+			group_id_socket.subtype = 'NONE'
 			group_id_socket.attribute_domain = 'POINT'
 			group_id_socket.description = "Group ID inside which to pick the item"
 			
@@ -5066,46 +5112,48 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#group_pick_vector interface
 			#Socket Is Valid
 			is_valid_socket_1 = group_pick_vector.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket_1.default_value = False
 			is_valid_socket_1.attribute_domain = 'POINT'
 			is_valid_socket_1.description = "The pick for this group is valid"
 			
 			#Socket Index
 			index_socket_2 = group_pick_vector.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket_2.subtype = 'NONE'
 			index_socket_2.default_value = 0
 			index_socket_2.min_value = -2147483648
 			index_socket_2.max_value = 2147483647
+			index_socket_2.subtype = 'NONE'
 			index_socket_2.attribute_domain = 'POINT'
 			index_socket_2.description = "Picked Index for the Group"
 			
 			#Socket Vector
 			vector_socket_1 = group_pick_vector.interface.new_socket(name = "Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.default_value = (0.0, 0.0, 0.0)
 			vector_socket_1.min_value = -3.4028234663852886e+38
 			vector_socket_1.max_value = 3.4028234663852886e+38
+			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.attribute_domain = 'POINT'
 			vector_socket_1.description = "Picked vector for the group"
 			
 			#Socket Pick
 			pick_socket_1 = group_pick_vector.interface.new_socket(name = "Pick", in_out='INPUT', socket_type = 'NodeSocketBool')
+			pick_socket_1.default_value = False
 			pick_socket_1.attribute_domain = 'POINT'
 			pick_socket_1.hide_value = True
 			
 			#Socket Group ID
 			group_id_socket_1 = group_pick_vector.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_1.subtype = 'NONE'
 			group_id_socket_1.default_value = 0
 			group_id_socket_1.min_value = -2147483648
 			group_id_socket_1.max_value = 2147483647
+			group_id_socket_1.subtype = 'NONE'
 			group_id_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Position
 			position_socket_1 = group_pick_vector.interface.new_socket(name = "Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			position_socket_1.subtype = 'NONE'
 			position_socket_1.default_value = (0.0, 0.0, 0.0)
 			position_socket_1.min_value = -3.4028234663852886e+38
 			position_socket_1.max_value = 3.4028234663852886e+38
+			position_socket_1.subtype = 'NONE'
 			position_socket_1.attribute_domain = 'POINT'
 			position_socket_1.description = "Vector field to pick vlaue for, defaults to Position"
 			
@@ -5189,35 +5237,35 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#offset_integer interface
 			#Socket Value
 			value_socket_6 = offset_integer.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			value_socket_6.subtype = 'NONE'
 			value_socket_6.default_value = 0
 			value_socket_6.min_value = -2147483648
 			value_socket_6.max_value = 2147483647
+			value_socket_6.subtype = 'NONE'
 			value_socket_6.attribute_domain = 'POINT'
 			
 			#Socket Index
 			index_socket_3 = offset_integer.interface.new_socket(name = "Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			index_socket_3.subtype = 'NONE'
 			index_socket_3.default_value = 0
 			index_socket_3.min_value = 0
 			index_socket_3.max_value = 2147483647
+			index_socket_3.subtype = 'NONE'
 			index_socket_3.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_7 = offset_integer.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketInt')
-			value_socket_7.subtype = 'NONE'
 			value_socket_7.default_value = 0
 			value_socket_7.min_value = -2147483648
 			value_socket_7.max_value = 2147483647
+			value_socket_7.subtype = 'NONE'
 			value_socket_7.attribute_domain = 'POINT'
 			value_socket_7.hide_value = True
 			
 			#Socket Offset
 			offset_socket_6 = offset_integer.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
-			offset_socket_6.subtype = 'NONE'
 			offset_socket_6.default_value = 0
 			offset_socket_6.min_value = -2147483648
 			offset_socket_6.max_value = 2147483647
+			offset_socket_6.subtype = 'NONE'
 			offset_socket_6.attribute_domain = 'POINT'
 			
 			
@@ -5284,10 +5332,10 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#res_group_id interface
 			#Socket Unique Group ID
 			unique_group_id_socket = res_group_id.interface.new_socket(name = "Unique Group ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			unique_group_id_socket.subtype = 'NONE'
 			unique_group_id_socket.default_value = 0
 			unique_group_id_socket.min_value = -2147483648
 			unique_group_id_socket.max_value = 2147483647
+			unique_group_id_socket.subtype = 'NONE'
 			unique_group_id_socket.attribute_domain = 'POINT'
 			unique_group_id_socket.description = "A unique Group ID for eash residue"
 			
@@ -5459,55 +5507,57 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#residue_mask interface
 			#Socket Is Valid
 			is_valid_socket_2 = residue_mask.interface.new_socket(name = "Is Valid", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_valid_socket_2.default_value = False
 			is_valid_socket_2.attribute_domain = 'POINT'
 			is_valid_socket_2.description = "Group contains only one occurrance of the selected atom. None or more than one returns False"
 			
 			#Socket Index
 			index_socket_4 = residue_mask.interface.new_socket(name = "Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			index_socket_4.subtype = 'NONE'
 			index_socket_4.default_value = 0
 			index_socket_4.min_value = -2147483648
 			index_socket_4.max_value = 2147483647
+			index_socket_4.subtype = 'NONE'
 			index_socket_4.attribute_domain = 'POINT'
 			index_socket_4.description = "Index for the group's atom with specified name, returns -1 if not valid"
 			
 			#Socket Position
 			position_socket_2 = residue_mask.interface.new_socket(name = "Position", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			position_socket_2.subtype = 'NONE'
 			position_socket_2.default_value = (0.0, 0.0, 0.0)
 			position_socket_2.min_value = -3.4028234663852886e+38
 			position_socket_2.max_value = 3.4028234663852886e+38
+			position_socket_2.subtype = 'NONE'
 			position_socket_2.attribute_domain = 'POINT'
 			position_socket_2.description = "Position of the picked point in the group, returns (0, 0, 0) if not valid"
 			
 			#Socket Group ID
 			group_id_socket_2 = residue_mask.interface.new_socket(name = "Group ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_2.subtype = 'NONE'
 			group_id_socket_2.default_value = 0
 			group_id_socket_2.min_value = -2147483648
 			group_id_socket_2.max_value = 2147483647
+			group_id_socket_2.subtype = 'NONE'
 			group_id_socket_2.attribute_domain = 'POINT'
 			
 			#Socket atom_name
 			atom_name_socket = residue_mask.interface.new_socket(name = "atom_name", in_out='INPUT', socket_type = 'NodeSocketInt')
-			atom_name_socket.subtype = 'NONE'
 			atom_name_socket.default_value = 1
 			atom_name_socket.min_value = 2
 			atom_name_socket.max_value = 2147483647
+			atom_name_socket.subtype = 'NONE'
 			atom_name_socket.attribute_domain = 'POINT'
 			atom_name_socket.description = "Atom to pick from the group"
 			
 			#Socket Use Fallback
 			use_fallback_socket = residue_mask.interface.new_socket(name = "Use Fallback", in_out='INPUT', socket_type = 'NodeSocketBool')
+			use_fallback_socket.default_value = True
 			use_fallback_socket.attribute_domain = 'POINT'
 			use_fallback_socket.description = "Uses a calculated Unique Group ID as a fallback. Disabling can increase performance if pre-computing a Group ID for multiple nodes"
 			
 			#Socket Group ID
 			group_id_socket_3 = residue_mask.interface.new_socket(name = "Group ID", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_id_socket_3.subtype = 'NONE'
 			group_id_socket_3.default_value = 0
 			group_id_socket_3.min_value = -2147483648
 			group_id_socket_3.max_value = 2147483647
+			group_id_socket_3.subtype = 'NONE'
 			group_id_socket_3.attribute_domain = 'POINT'
 			
 			
@@ -5615,10 +5665,10 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Unique Group ID
 			unique_group_id_socket_1 = _mn_topo_assign_backbone.interface.new_socket(name = "Unique Group ID", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			unique_group_id_socket_1.subtype = 'NONE'
 			unique_group_id_socket_1.default_value = 0
 			unique_group_id_socket_1.min_value = -2147483648
 			unique_group_id_socket_1.max_value = 2147483647
+			unique_group_id_socket_1.subtype = 'NONE'
 			unique_group_id_socket_1.attribute_domain = 'POINT'
 			
 			#Socket CA Atoms
@@ -5865,18 +5915,20 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_is_odd interface
 			#Socket is_even
 			is_even_socket = _is_odd.interface.new_socket(name = "is_even", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_even_socket.default_value = False
 			is_even_socket.attribute_domain = 'POINT'
 			
 			#Socket is_odd
 			is_odd_socket = _is_odd.interface.new_socket(name = "is_odd", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_odd_socket.default_value = False
 			is_odd_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_8 = _is_odd.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketInt')
-			value_socket_8.subtype = 'NONE'
 			value_socket_8.default_value = 0
 			value_socket_8.min_value = -2147483648
 			value_socket_8.max_value = 2147483647
+			value_socket_8.subtype = 'NONE'
 			value_socket_8.attribute_domain = 'POINT'
 			
 			
@@ -5957,42 +6009,42 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			#_mn_cartoon_bs_alternate_axis interface
 			#Socket Z Vector for Euler
 			z_vector_for_euler_socket = _mn_cartoon_bs_alternate_axis.interface.new_socket(name = "Z Vector for Euler", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			z_vector_for_euler_socket.subtype = 'NONE'
 			z_vector_for_euler_socket.default_value = (0.0, 0.0, 0.0)
 			z_vector_for_euler_socket.min_value = -3.4028234663852886e+38
 			z_vector_for_euler_socket.max_value = 3.4028234663852886e+38
+			z_vector_for_euler_socket.subtype = 'NONE'
 			z_vector_for_euler_socket.attribute_domain = 'POINT'
 			
 			#Socket X Vector for Euler
 			x_vector_for_euler_socket = _mn_cartoon_bs_alternate_axis.interface.new_socket(name = "X Vector for Euler", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			x_vector_for_euler_socket.subtype = 'NONE'
 			x_vector_for_euler_socket.default_value = (0.0, 0.0, 0.0)
 			x_vector_for_euler_socket.min_value = -3.4028234663852886e+38
 			x_vector_for_euler_socket.max_value = 3.4028234663852886e+38
+			x_vector_for_euler_socket.subtype = 'NONE'
 			x_vector_for_euler_socket.attribute_domain = 'POINT'
 			
 			#Socket N
 			n_socket = _mn_cartoon_bs_alternate_axis.interface.new_socket(name = "N", in_out='INPUT', socket_type = 'NodeSocketVector')
-			n_socket.subtype = 'NONE'
 			n_socket.default_value = (0.0, 0.0, 0.0)
 			n_socket.min_value = -3.4028234663852886e+38
 			n_socket.max_value = 3.4028234663852886e+38
+			n_socket.subtype = 'NONE'
 			n_socket.attribute_domain = 'POINT'
 			
 			#Socket C
 			c_socket = _mn_cartoon_bs_alternate_axis.interface.new_socket(name = "C", in_out='INPUT', socket_type = 'NodeSocketVector')
-			c_socket.subtype = 'NONE'
 			c_socket.default_value = (0.0, 0.0, 0.0)
 			c_socket.min_value = -3.4028234663852886e+38
 			c_socket.max_value = 3.4028234663852886e+38
+			c_socket.subtype = 'NONE'
 			c_socket.attribute_domain = 'POINT'
 			
 			#Socket O
 			o_socket = _mn_cartoon_bs_alternate_axis.interface.new_socket(name = "O", in_out='INPUT', socket_type = 'NodeSocketVector')
-			o_socket.subtype = 'NONE'
 			o_socket.default_value = (0.0, 0.0, 0.0)
 			o_socket.min_value = -3.4028234663852886e+38
 			o_socket.max_value = 3.4028234663852886e+38
+			o_socket.subtype = 'NONE'
 			o_socket.attribute_domain = 'POINT'
 			
 			
@@ -6291,16 +6343,17 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_5 = _atoms_to_curves.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_5.default_value = True
 			selection_socket_5.attribute_domain = 'POINT'
 			selection_socket_5.hide_value = True
 			selection_socket_5.description = "Selection of atoms to apply this node to"
 			
 			#Socket BS Smoothing
 			bs_smoothing_socket = _atoms_to_curves.interface.new_socket(name = "BS Smoothing", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			bs_smoothing_socket.subtype = 'FACTOR'
 			bs_smoothing_socket.default_value = 1.0
 			bs_smoothing_socket.min_value = 0.0
 			bs_smoothing_socket.max_value = 1.0
+			bs_smoothing_socket.subtype = 'FACTOR'
 			bs_smoothing_socket.attribute_domain = 'POINT'
 			
 			
@@ -7145,17 +7198,20 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket_6 = _mn_utils_style_cartoon.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket_6.default_value = True
 			selection_socket_6.attribute_domain = 'POINT'
 			selection_socket_6.hide_value = True
 			selection_socket_6.description = "Selection of atoms to apply this node to"
 			
 			#Socket Shade Smooth
 			shade_smooth_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Shade Smooth", in_out='INPUT', socket_type = 'NodeSocketBool')
+			shade_smooth_socket.default_value = True
 			shade_smooth_socket.attribute_domain = 'POINT'
 			shade_smooth_socket.description = "Apply smooth shading to the created geometry"
 			
 			#Socket Interpolate Color
 			interpolate_color_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Interpolate Color", in_out='INPUT', socket_type = 'NodeSocketBool')
+			interpolate_color_socket.default_value = True
 			interpolate_color_socket.attribute_domain = 'POINT'
 			interpolate_color_socket.description = "Interpolate between distinct color selections"
 			
@@ -7168,31 +7224,34 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			arrows_panel = _mn_utils_style_cartoon.interface.new_panel("Arrows")
 			#Socket As Arrows
 			as_arrows_socket = _mn_utils_style_cartoon.interface.new_socket(name = "As Arrows", in_out='INPUT', socket_type = 'NodeSocketBool', parent = arrows_panel)
+			as_arrows_socket.default_value = False
 			as_arrows_socket.attribute_domain = 'POINT'
 			as_arrows_socket.description = "Render beta-strands with directional arrows."
 			
 			#Socket Arrows Sharp
 			arrows_sharp_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Arrows Sharp", in_out='INPUT', socket_type = 'NodeSocketBool', parent = arrows_panel)
+			arrows_sharp_socket.default_value = False
 			arrows_sharp_socket.attribute_domain = 'POINT'
 			
 			#Socket Arrows Point
 			arrows_point_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Arrows Point", in_out='INPUT', socket_type = 'NodeSocketBool', parent = arrows_panel)
+			arrows_point_socket.default_value = False
 			arrows_point_socket.attribute_domain = 'POINT'
 			
 			#Socket Arrow Thickness Scale
 			arrow_thickness_scale_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Arrow Thickness Scale", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = arrows_panel)
-			arrow_thickness_scale_socket.subtype = 'NONE'
 			arrow_thickness_scale_socket.default_value = 1.0
 			arrow_thickness_scale_socket.min_value = 0.0
 			arrow_thickness_scale_socket.max_value = 10000.0
+			arrow_thickness_scale_socket.subtype = 'NONE'
 			arrow_thickness_scale_socket.attribute_domain = 'POINT'
 			
 			#Socket Arrow Width Scale
 			arrow_width_scale_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Arrow Width Scale", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = arrows_panel)
-			arrow_width_scale_socket.subtype = 'NONE'
 			arrow_width_scale_socket.default_value = 1.0
 			arrow_width_scale_socket.min_value = -10000.0
 			arrow_width_scale_socket.max_value = 10000.0
+			arrow_width_scale_socket.subtype = 'NONE'
 			arrow_width_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -7205,10 +7264,10 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			
 			#Socket Profile Resolution
 			profile_resolution_socket_1 = _mn_utils_style_cartoon.interface.new_socket(name = "Profile Resolution", in_out='INPUT', socket_type = 'NodeSocketInt', parent = profile_panel)
-			profile_resolution_socket_1.subtype = 'NONE'
 			profile_resolution_socket_1.default_value = 4
 			profile_resolution_socket_1.min_value = 4
 			profile_resolution_socket_1.max_value = 100
+			profile_resolution_socket_1.subtype = 'NONE'
 			profile_resolution_socket_1.attribute_domain = 'POINT'
 			
 			
@@ -7216,42 +7275,42 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			sheet_panel = _mn_utils_style_cartoon.interface.new_panel("Sheet")
 			#Socket Sheet Rotate
 			sheet_rotate_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Sheet Rotate", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = sheet_panel)
-			sheet_rotate_socket.subtype = 'NONE'
 			sheet_rotate_socket.default_value = 0.0
 			sheet_rotate_socket.min_value = -3.4028234663852886e+38
 			sheet_rotate_socket.max_value = 3.4028234663852886e+38
+			sheet_rotate_socket.subtype = 'NONE'
 			sheet_rotate_socket.attribute_domain = 'POINT'
 			
 			#Socket Sheet Thickness
 			sheet_thickness_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Sheet Thickness", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = sheet_panel)
-			sheet_thickness_socket.subtype = 'NONE'
 			sheet_thickness_socket.default_value = 0.5
 			sheet_thickness_socket.min_value = 0.0
 			sheet_thickness_socket.max_value = 3.4028234663852886e+38
+			sheet_thickness_socket.subtype = 'NONE'
 			sheet_thickness_socket.attribute_domain = 'POINT'
 			
 			#Socket Sheet Width
 			sheet_width_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Sheet Width", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = sheet_panel)
-			sheet_width_socket.subtype = 'NONE'
 			sheet_width_socket.default_value = 2.0
 			sheet_width_socket.min_value = 0.0
 			sheet_width_socket.max_value = 10000.0
+			sheet_width_socket.subtype = 'NONE'
 			sheet_width_socket.attribute_domain = 'POINT'
 			
 			#Socket Sheet Smoothing
 			sheet_smoothing_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Sheet Smoothing", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = sheet_panel)
-			sheet_smoothing_socket.subtype = 'NONE'
 			sheet_smoothing_socket.default_value = 1.0
 			sheet_smoothing_socket.min_value = 0.0
 			sheet_smoothing_socket.max_value = 1.0
+			sheet_smoothing_socket.subtype = 'NONE'
 			sheet_smoothing_socket.attribute_domain = 'POINT'
 			
 			#Socket Sheet Subdivision
 			sheet_subdivision_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Sheet Subdivision", in_out='INPUT', socket_type = 'NodeSocketInt', parent = sheet_panel)
-			sheet_subdivision_socket.subtype = 'NONE'
 			sheet_subdivision_socket.default_value = 3
 			sheet_subdivision_socket.min_value = 1
 			sheet_subdivision_socket.max_value = 20
+			sheet_subdivision_socket.subtype = 'NONE'
 			sheet_subdivision_socket.attribute_domain = 'POINT'
 			
 			
@@ -7259,34 +7318,36 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			cylinder_panel = _mn_utils_style_cartoon.interface.new_panel("Cylinder")
 			#Socket As Cylinders
 			as_cylinders_socket = _mn_utils_style_cartoon.interface.new_socket(name = "As Cylinders", in_out='INPUT', socket_type = 'NodeSocketBool', parent = cylinder_panel)
+			as_cylinders_socket.default_value = False
 			as_cylinders_socket.attribute_domain = 'POINT'
 			
 			#Socket Cylinder Curved
 			cylinder_curved_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Cylinder Curved", in_out='INPUT', socket_type = 'NodeSocketBool', parent = cylinder_panel)
+			cylinder_curved_socket.default_value = True
 			cylinder_curved_socket.attribute_domain = 'POINT'
 			
 			#Socket Cylinder Radius
 			cylinder_radius_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Cylinder Radius", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = cylinder_panel)
-			cylinder_radius_socket.subtype = 'NONE'
 			cylinder_radius_socket.default_value = 2.0
 			cylinder_radius_socket.min_value = 0.0
 			cylinder_radius_socket.max_value = 10000.0
+			cylinder_radius_socket.subtype = 'NONE'
 			cylinder_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Cylinder Resolution
 			cylinder_resolution_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Cylinder Resolution", in_out='INPUT', socket_type = 'NodeSocketInt', parent = cylinder_panel)
-			cylinder_resolution_socket.subtype = 'NONE'
 			cylinder_resolution_socket.default_value = 12
 			cylinder_resolution_socket.min_value = 3
 			cylinder_resolution_socket.max_value = 512
+			cylinder_resolution_socket.subtype = 'NONE'
 			cylinder_resolution_socket.attribute_domain = 'POINT'
 			
 			#Socket Cylinder Subdivisions
 			cylinder_subdivisions_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Cylinder Subdivisions", in_out='INPUT', socket_type = 'NodeSocketInt', parent = cylinder_panel)
-			cylinder_subdivisions_socket.subtype = 'NONE'
 			cylinder_subdivisions_socket.default_value = 5
 			cylinder_subdivisions_socket.min_value = 1
 			cylinder_subdivisions_socket.max_value = 2147483647
+			cylinder_subdivisions_socket.subtype = 'NONE'
 			cylinder_subdivisions_socket.attribute_domain = 'POINT'
 			
 			
@@ -7294,38 +7355,39 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			helix_panel = _mn_utils_style_cartoon.interface.new_panel("Helix")
 			#Socket Helix Rotate
 			helix_rotate_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Helix Rotate", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = helix_panel)
-			helix_rotate_socket.subtype = 'NONE'
 			helix_rotate_socket.default_value = 0.0
 			helix_rotate_socket.min_value = -3.4028234663852886e+38
 			helix_rotate_socket.max_value = 3.4028234663852886e+38
+			helix_rotate_socket.subtype = 'NONE'
 			helix_rotate_socket.attribute_domain = 'POINT'
 			
 			#Socket Helix Thickness
 			helix_thickness_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Helix Thickness", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = helix_panel)
-			helix_thickness_socket.subtype = 'NONE'
 			helix_thickness_socket.default_value = 0.5
 			helix_thickness_socket.min_value = 0.0
 			helix_thickness_socket.max_value = 10000.0
+			helix_thickness_socket.subtype = 'NONE'
 			helix_thickness_socket.attribute_domain = 'POINT'
 			
 			#Socket Helix Width
 			helix_width_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Helix Width", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = helix_panel)
-			helix_width_socket.subtype = 'NONE'
 			helix_width_socket.default_value = 2.0
 			helix_width_socket.min_value = -3.4028234663852886e+38
 			helix_width_socket.max_value = 3.4028234663852886e+38
+			helix_width_socket.subtype = 'NONE'
 			helix_width_socket.attribute_domain = 'POINT'
 			
 			#Socket Helix Subdivisions
 			helix_subdivisions_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Helix Subdivisions", in_out='INPUT', socket_type = 'NodeSocketInt', parent = helix_panel)
-			helix_subdivisions_socket.subtype = 'NONE'
 			helix_subdivisions_socket.default_value = 5
 			helix_subdivisions_socket.min_value = 1
 			helix_subdivisions_socket.max_value = 20
+			helix_subdivisions_socket.subtype = 'NONE'
 			helix_subdivisions_socket.attribute_domain = 'POINT'
 			
 			#Socket Helix smoothing
 			helix_smoothing_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Helix smoothing", in_out='INPUT', socket_type = 'NodeSocketBool', parent = helix_panel)
+			helix_smoothing_socket.default_value = True
 			helix_smoothing_socket.attribute_domain = 'POINT'
 			helix_smoothing_socket.description = "Smoothen out AH to be more cylindrical."
 			
@@ -7334,26 +7396,26 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			loop_panel = _mn_utils_style_cartoon.interface.new_panel("Loop")
 			#Socket Loop Subdivisions
 			loop_subdivisions_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Loop Subdivisions", in_out='INPUT', socket_type = 'NodeSocketInt', parent = loop_panel)
-			loop_subdivisions_socket.subtype = 'NONE'
 			loop_subdivisions_socket.default_value = 6
 			loop_subdivisions_socket.min_value = 1
 			loop_subdivisions_socket.max_value = 2147483647
+			loop_subdivisions_socket.subtype = 'NONE'
 			loop_subdivisions_socket.attribute_domain = 'POINT'
 			
 			#Socket Loop Radius
 			loop_radius_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Loop Radius", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = loop_panel)
-			loop_radius_socket.subtype = 'NONE'
 			loop_radius_socket.default_value = 0.30000001192092896
 			loop_radius_socket.min_value = 0.0
 			loop_radius_socket.max_value = 3.0
+			loop_radius_socket.subtype = 'NONE'
 			loop_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Loop Resolution
 			loop_resolution_socket = _mn_utils_style_cartoon.interface.new_socket(name = "Loop Resolution", in_out='INPUT', socket_type = 'NodeSocketInt', parent = loop_panel)
-			loop_resolution_socket.subtype = 'NONE'
 			loop_resolution_socket.default_value = 8
 			loop_resolution_socket.min_value = 3
 			loop_resolution_socket.max_value = 512
+			loop_resolution_socket.subtype = 'NONE'
 			loop_resolution_socket.attribute_domain = 'POINT'
 			
 			
@@ -7547,7 +7609,7 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			set_handle_type_002 = _mn_utils_style_cartoon.nodes.new("GeometryNodeCurveSetHandles")
 			set_handle_type_002.name = "Set Handle Type.002"
 			set_handle_type_002.handle_type = 'AUTO'
-			set_handle_type_002.mode = {'RIGHT', 'LEFT'}
+			set_handle_type_002.mode = {'LEFT', 'RIGHT'}
 			#Selection
 			set_handle_type_002.inputs[1].default_value = True
 			
@@ -7655,7 +7717,7 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			set_handle_type = _mn_utils_style_cartoon.nodes.new("GeometryNodeCurveSetHandles")
 			set_handle_type.name = "Set Handle Type"
 			set_handle_type.handle_type = 'AUTO'
-			set_handle_type.mode = {'RIGHT', 'LEFT'}
+			set_handle_type.mode = {'LEFT', 'RIGHT'}
 			#Selection
 			set_handle_type.inputs[1].default_value = True
 			
@@ -7905,7 +7967,7 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			set_handle_type_003 = _mn_utils_style_cartoon.nodes.new("GeometryNodeCurveSetHandles")
 			set_handle_type_003.name = "Set Handle Type.003"
 			set_handle_type_003.handle_type = 'AUTO'
-			set_handle_type_003.mode = {'RIGHT', 'LEFT'}
+			set_handle_type_003.mode = {'LEFT', 'RIGHT'}
 			#Selection
 			set_handle_type_003.inputs[1].default_value = True
 			
@@ -8076,7 +8138,7 @@ class _MN_utils_style_cartoon(bpy.types.Operator):
 			set_handle_type_001 = _mn_utils_style_cartoon.nodes.new("GeometryNodeCurveSetHandles")
 			set_handle_type_001.name = "Set Handle Type.001"
 			set_handle_type_001.handle_type = 'AUTO'
-			set_handle_type_001.mode = {'RIGHT', 'LEFT'}
+			set_handle_type_001.mode = {'LEFT', 'RIGHT'}
 			#Selection
 			set_handle_type_001.inputs[1].default_value = True
 			

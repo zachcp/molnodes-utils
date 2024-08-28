@@ -28,10 +28,10 @@ class _curve_custom_profile(bpy.types.Operator):
 			#_mn_world_scale interface
 			#Socket world_scale
 			world_scale_socket = _mn_world_scale.interface.new_socket(name = "world_scale", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.default_value = 0.009999999776482582
 			world_scale_socket.min_value = -3.4028234663852886e+38
 			world_scale_socket.max_value = 3.4028234663852886e+38
+			world_scale_socket.subtype = 'NONE'
 			world_scale_socket.attribute_domain = 'POINT'
 			
 			
@@ -82,26 +82,26 @@ class _curve_custom_profile(bpy.types.Operator):
 			#mn_units interface
 			#Socket Angstrom
 			angstrom_socket = mn_units.interface.new_socket(name = "Angstrom", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.default_value = 0.0
 			angstrom_socket.min_value = -3.4028234663852886e+38
 			angstrom_socket.max_value = 3.4028234663852886e+38
+			angstrom_socket.subtype = 'NONE'
 			angstrom_socket.attribute_domain = 'POINT'
 			
 			#Socket Nanometre
 			nanometre_socket = mn_units.interface.new_socket(name = "Nanometre", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.default_value = 0.0
 			nanometre_socket.min_value = -3.4028234663852886e+38
 			nanometre_socket.max_value = 3.4028234663852886e+38
+			nanometre_socket.subtype = 'NONE'
 			nanometre_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = mn_units.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 3.0
 			value_socket.min_value = -10000.0
 			value_socket.max_value = 10000.0
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			value_socket.description = "A value which will be scaled appropriately for the world"
 			
@@ -187,26 +187,26 @@ class _curve_custom_profile(bpy.types.Operator):
 			
 			#Socket Resolution
 			resolution_socket = _curve_profile_backup.interface.new_socket(name = "Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			resolution_socket.subtype = 'NONE'
 			resolution_socket.default_value = 12
 			resolution_socket.min_value = 3
 			resolution_socket.max_value = 512
+			resolution_socket.subtype = 'NONE'
 			resolution_socket.attribute_domain = 'POINT'
 			
 			#Socket Radius
 			radius_socket = _curve_profile_backup.interface.new_socket(name = "Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radius_socket.subtype = 'DISTANCE'
 			radius_socket.default_value = 0.009999999776482582
 			radius_socket.min_value = 0.0
 			radius_socket.max_value = 3.4028234663852886e+38
+			radius_socket.subtype = 'DISTANCE'
 			radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Rotation
 			rotation_socket = _curve_profile_backup.interface.new_socket(name = "Rotation", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			rotation_socket.subtype = 'NONE'
 			rotation_socket.default_value = 0.0
 			rotation_socket.min_value = -10000.0
 			rotation_socket.max_value = 10000.0
+			rotation_socket.subtype = 'NONE'
 			rotation_socket.attribute_domain = 'POINT'
 			
 			
@@ -339,18 +339,18 @@ class _curve_custom_profile(bpy.types.Operator):
 			#_guide_rotation interface
 			#Socket Rotation
 			rotation_socket_1 = _guide_rotation.interface.new_socket(name = "Rotation", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			rotation_socket_1.subtype = 'EULER'
 			rotation_socket_1.default_value = (0.0, 0.0, 0.0)
 			rotation_socket_1.min_value = -3.4028234663852886e+38
 			rotation_socket_1.max_value = 3.4028234663852886e+38
+			rotation_socket_1.subtype = 'EULER'
 			rotation_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Angle
 			angle_socket = _guide_rotation.interface.new_socket(name = "Angle", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			angle_socket.subtype = 'ANGLE'
 			angle_socket.default_value = 0.0
 			angle_socket.min_value = -3.4028234663852886e+38
 			angle_socket.max_value = 3.4028234663852886e+38
+			angle_socket.subtype = 'ANGLE'
 			angle_socket.attribute_domain = 'POINT'
 			
 			
@@ -469,26 +469,26 @@ class _curve_custom_profile(bpy.types.Operator):
 			
 			#Socket Profile Resolution
 			profile_resolution_socket = _curve_custom_profile.interface.new_socket(name = "Profile Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			profile_resolution_socket.subtype = 'NONE'
 			profile_resolution_socket.default_value = 4
 			profile_resolution_socket.min_value = 3
 			profile_resolution_socket.max_value = 512
+			profile_resolution_socket.subtype = 'NONE'
 			profile_resolution_socket.attribute_domain = 'POINT'
 			
 			#Socket Profile Radius
 			profile_radius_socket = _curve_custom_profile.interface.new_socket(name = "Profile Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			profile_radius_socket.subtype = 'DISTANCE'
 			profile_radius_socket.default_value = 1.0
 			profile_radius_socket.min_value = 0.0
 			profile_radius_socket.max_value = 3.4028234663852886e+38
+			profile_radius_socket.subtype = 'DISTANCE'
 			profile_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Profile Rotation
 			profile_rotation_socket = _curve_custom_profile.interface.new_socket(name = "Profile Rotation", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			profile_rotation_socket.subtype = 'NONE'
 			profile_rotation_socket.default_value = 0.7853981852531433
 			profile_rotation_socket.min_value = -10000.0
 			profile_rotation_socket.max_value = 10000.0
+			profile_rotation_socket.subtype = 'NONE'
 			profile_rotation_socket.attribute_domain = 'POINT'
 			
 			#Socket Instance
@@ -497,46 +497,47 @@ class _curve_custom_profile(bpy.types.Operator):
 			
 			#Socket Rotation X
 			rotation_x_socket = _curve_custom_profile.interface.new_socket(name = "Rotation X", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			rotation_x_socket.subtype = 'ANGLE'
 			rotation_x_socket.default_value = 0.0
 			rotation_x_socket.min_value = -3.4028234663852886e+38
 			rotation_x_socket.max_value = 3.4028234663852886e+38
+			rotation_x_socket.subtype = 'ANGLE'
 			rotation_x_socket.attribute_domain = 'POINT'
 			
 			#Socket Scale
 			scale_socket = _curve_custom_profile.interface.new_socket(name = "Scale", in_out='INPUT', socket_type = 'NodeSocketVector')
-			scale_socket.subtype = 'XYZ'
 			scale_socket.default_value = (0.33000001311302185, 0.36000001430511475, 0.75)
 			scale_socket.min_value = -3.4028234663852886e+38
 			scale_socket.max_value = 3.4028234663852886e+38
+			scale_socket.subtype = 'XYZ'
 			scale_socket.attribute_domain = 'POINT'
 			
 			#Socket Factor
 			factor_socket = _curve_custom_profile.interface.new_socket(name = "Factor", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			factor_socket.subtype = 'FACTOR'
 			factor_socket.default_value = 0.0
 			factor_socket.min_value = 0.0
 			factor_socket.max_value = 1.0
+			factor_socket.subtype = 'FACTOR'
 			factor_socket.attribute_domain = 'POINT'
 			
 			#Socket Radius
 			radius_socket_1 = _curve_custom_profile.interface.new_socket(name = "Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			radius_socket_1.subtype = 'DISTANCE'
 			radius_socket_1.default_value = 0.004999999888241291
 			radius_socket_1.min_value = 0.0
 			radius_socket_1.max_value = 3.4028234663852886e+38
+			radius_socket_1.subtype = 'DISTANCE'
 			radius_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Resolution
 			resolution_socket_1 = _curve_custom_profile.interface.new_socket(name = "Resolution", in_out='INPUT', socket_type = 'NodeSocketInt')
-			resolution_socket_1.subtype = 'NONE'
 			resolution_socket_1.default_value = 6
 			resolution_socket_1.min_value = 1
 			resolution_socket_1.max_value = 2147483647
+			resolution_socket_1.subtype = 'NONE'
 			resolution_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Resample
 			resample_socket = _curve_custom_profile.interface.new_socket(name = "Resample", in_out='INPUT', socket_type = 'NodeSocketBool')
+			resample_socket.default_value = False
 			resample_socket.attribute_domain = 'POINT'
 			
 			

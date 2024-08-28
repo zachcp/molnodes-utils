@@ -2,7 +2,6 @@
 
 Explorations in Blender + Molecular Nodes.
 
-
 Motivation:
 
   - Molecular Nodes is awesome but I'd like to do a bitmore with code.
@@ -23,28 +22,17 @@ Approach:
 
 ```sh
 
-## Examples of Sending Code to the Blender Repl
-# in terminal 1
-pixi run launch-blender-live
-
-# in terminal 2
-pixi run send-to-blender scripts/00_script.py
-pixi run send-to-blender scripts/01_script.py
-pixi run send-to-blender scripts/examples/city-builder.py
-
-
-# alternative using basilsp
-# this will create an nrepl server to your open Blender
-pixi run launch-blender-basilisp
+## Runs Blender with an open basilisp repl
+pixi run repl
 
 ## Build Molecular Node Nodes
 # this will convert each GeometryNode class found in assets/MN_data_file_4.2.blend to a pythonclass
 pixi run convert-MN
 # create a python wheel of MolecularNodes nodes
 pixi run build-wheel
+
+# Example Script
+pixi run python scripts/blendersynth/04_molnodes.py
 ```
 
-from basilisp_blender.nrepl import server_start
-
-shutdown_fn = server_start(nrepl_port_filepath="<project-root-path>/.nrepl-port")
-/Users/zcpowers/Desktop/molnodes/.nrepl-port
+![](outputs/animation/prot_01.gif)

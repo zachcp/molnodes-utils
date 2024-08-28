@@ -37,10 +37,10 @@ class _surface_blur_postion(bpy.types.Operator):
 			
 			#Socket Iterations
 			iterations_socket = _surface_blur_postion.interface.new_socket(name = "Iterations", in_out='INPUT', socket_type = 'NodeSocketInt')
-			iterations_socket.subtype = 'NONE'
 			iterations_socket.default_value = 2
 			iterations_socket.min_value = 0
 			iterations_socket.max_value = 2147483647
+			iterations_socket.subtype = 'NONE'
 			iterations_socket.attribute_domain = 'POINT'
 			
 			

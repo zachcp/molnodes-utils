@@ -28,10 +28,10 @@ class Self_Sample_Proximity(bpy.types.Operator):
 			#self_sample_proximity interface
 			#Socket Closest Index
 			closest_index_socket = self_sample_proximity.interface.new_socket(name = "Closest Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			closest_index_socket.subtype = 'NONE'
 			closest_index_socket.default_value = 0
 			closest_index_socket.min_value = -2147483648
 			closest_index_socket.max_value = 2147483647
+			closest_index_socket.subtype = 'NONE'
 			closest_index_socket.attribute_domain = 'POINT'
 			
 			#Socket Input
@@ -40,18 +40,18 @@ class Self_Sample_Proximity(bpy.types.Operator):
 			
 			#Socket Target Position
 			target_position_socket = self_sample_proximity.interface.new_socket(name = "Target Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			target_position_socket.subtype = 'NONE'
 			target_position_socket.default_value = (0.0, 0.0, 0.0)
 			target_position_socket.min_value = -3.4028234663852886e+38
 			target_position_socket.max_value = 3.4028234663852886e+38
+			target_position_socket.subtype = 'NONE'
 			target_position_socket.attribute_domain = 'POINT'
 			
 			#Socket Self Position
 			self_position_socket = self_sample_proximity.interface.new_socket(name = "Self Position", in_out='INPUT', socket_type = 'NodeSocketVector')
-			self_position_socket.subtype = 'NONE'
 			self_position_socket.default_value = (0.0, 0.0, 0.0)
 			self_position_socket.min_value = -3.4028234663852886e+38
 			self_position_socket.max_value = 3.4028234663852886e+38
+			self_position_socket.subtype = 'NONE'
 			self_position_socket.attribute_domain = 'POINT'
 			
 			

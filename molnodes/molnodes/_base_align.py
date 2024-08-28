@@ -28,10 +28,12 @@ class _Base_align(bpy.types.Operator):
 			#mn_select_nucleic_type interface
 			#Socket is_purine
 			is_purine_socket = mn_select_nucleic_type.interface.new_socket(name = "is_purine", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_purine_socket.default_value = False
 			is_purine_socket.attribute_domain = 'POINT'
 			
 			#Socket is_pyrimidine
 			is_pyrimidine_socket = mn_select_nucleic_type.interface.new_socket(name = "is_pyrimidine", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_pyrimidine_socket.default_value = False
 			is_pyrimidine_socket.attribute_domain = 'POINT'
 			
 			
@@ -267,14 +269,15 @@ class _Base_align(bpy.types.Operator):
 			
 			#Socket Value
 			value_socket = _sampleatomvalue.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = (0.0, 0.0, 0.0)
 			value_socket.min_value = -3.4028234663852886e+38
 			value_socket.max_value = 3.4028234663852886e+38
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket_1 = _sampleatomvalue.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			value_socket_1.default_value = (0.0, 0.0, 0.0, 0.0)
 			value_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Geometry
@@ -283,10 +286,10 @@ class _Base_align(bpy.types.Operator):
 			
 			#Socket B
 			b_socket = _sampleatomvalue.interface.new_socket(name = "B", in_out='INPUT', socket_type = 'NodeSocketInt')
-			b_socket.subtype = 'NONE'
 			b_socket.default_value = 57
 			b_socket.min_value = -2147483648
 			b_socket.max_value = 2147483647
+			b_socket.subtype = 'NONE'
 			b_socket.attribute_domain = 'POINT'
 			
 			
@@ -417,34 +420,34 @@ class _Base_align(bpy.types.Operator):
 			#_base_align interface
 			#Socket Base Interface
 			base_interface_socket = _base_align.interface.new_socket(name = "Base Interface", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			base_interface_socket.subtype = 'NONE'
 			base_interface_socket.default_value = (0.0, 0.0, 0.0)
 			base_interface_socket.min_value = -3.4028234663852886e+38
 			base_interface_socket.max_value = 3.4028234663852886e+38
+			base_interface_socket.subtype = 'NONE'
 			base_interface_socket.attribute_domain = 'POINT'
 			
 			#Socket Base Pivot
 			base_pivot_socket = _base_align.interface.new_socket(name = "Base Pivot", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			base_pivot_socket.subtype = 'NONE'
 			base_pivot_socket.default_value = (0.0, 0.0, 0.0)
 			base_pivot_socket.min_value = -3.4028234663852886e+38
 			base_pivot_socket.max_value = 3.4028234663852886e+38
+			base_pivot_socket.subtype = 'NONE'
 			base_pivot_socket.attribute_domain = 'POINT'
 			
 			#Socket Align Vertical
 			align_vertical_socket = _base_align.interface.new_socket(name = "Align Vertical", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			align_vertical_socket.subtype = 'NONE'
 			align_vertical_socket.default_value = (0.0, 0.0, 0.0)
 			align_vertical_socket.min_value = -3.4028234663852886e+38
 			align_vertical_socket.max_value = 3.4028234663852886e+38
+			align_vertical_socket.subtype = 'NONE'
 			align_vertical_socket.attribute_domain = 'POINT'
 			
 			#Socket Align Horizontal
 			align_horizontal_socket = _base_align.interface.new_socket(name = "Align Horizontal", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			align_horizontal_socket.subtype = 'NONE'
 			align_horizontal_socket.default_value = (0.0, 0.0, 0.0)
 			align_horizontal_socket.min_value = -3.4028234663852886e+38
 			align_horizontal_socket.max_value = 3.4028234663852886e+38
+			align_horizontal_socket.subtype = 'NONE'
 			align_horizontal_socket.attribute_domain = 'POINT'
 			
 			#Socket Input

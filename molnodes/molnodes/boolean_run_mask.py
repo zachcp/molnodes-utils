@@ -28,36 +28,38 @@ class Boolean_Run_Mask(bpy.types.Operator):
 			#boolean_run_mask interface
 			#Socket Boolean
 			boolean_socket = boolean_run_mask.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Boolean
 			boolean_socket_1 = boolean_run_mask.interface.new_socket(name = "Boolean", in_out='INPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_1.default_value = False
 			boolean_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Lag Start
 			lag_start_socket = boolean_run_mask.interface.new_socket(name = "Lag Start", in_out='INPUT', socket_type = 'NodeSocketInt')
-			lag_start_socket.subtype = 'NONE'
 			lag_start_socket.default_value = 0
 			lag_start_socket.min_value = 0
 			lag_start_socket.max_value = 2147483647
+			lag_start_socket.subtype = 'NONE'
 			lag_start_socket.attribute_domain = 'POINT'
 			lag_start_socket.description = "The first N values in a run are made to be false"
 			
 			#Socket Min Length
 			min_length_socket = boolean_run_mask.interface.new_socket(name = "Min Length", in_out='INPUT', socket_type = 'NodeSocketInt')
-			min_length_socket.subtype = 'NONE'
 			min_length_socket.default_value = 0
 			min_length_socket.min_value = 0
 			min_length_socket.max_value = 2147483647
+			min_length_socket.subtype = 'NONE'
 			min_length_socket.attribute_domain = 'POINT'
 			min_length_socket.description = "Run is only valid if it contains at least N values"
 			
 			#Socket Trim End
 			trim_end_socket = boolean_run_mask.interface.new_socket(name = "Trim End", in_out='INPUT', socket_type = 'NodeSocketInt')
-			trim_end_socket.subtype = 'NONE'
 			trim_end_socket.default_value = 0
 			trim_end_socket.min_value = -2147483648
 			trim_end_socket.max_value = 2147483647
+			trim_end_socket.subtype = 'NONE'
 			trim_end_socket.attribute_domain = 'POINT'
 			
 			

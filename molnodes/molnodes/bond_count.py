@@ -28,14 +28,15 @@ class Bond_Count(bpy.types.Operator):
 			#bond_count interface
 			#Socket Is Bonded
 			is_bonded_socket = bond_count.interface.new_socket(name = "Is Bonded", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_bonded_socket.default_value = False
 			is_bonded_socket.attribute_domain = 'POINT'
 			
 			#Socket Bonds
 			bonds_socket = bond_count.interface.new_socket(name = "Bonds", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			bonds_socket.subtype = 'NONE'
 			bonds_socket.default_value = 0
 			bonds_socket.min_value = -2147483648
 			bonds_socket.max_value = 2147483647
+			bonds_socket.subtype = 'NONE'
 			bonds_socket.attribute_domain = 'POINT'
 			bonds_socket.description = "The number of bonds or edges that a point has"
 			

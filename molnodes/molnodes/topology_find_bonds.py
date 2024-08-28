@@ -38,16 +38,17 @@ class Topology_Find_Bonds(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = topology_find_bonds.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Scale
 			scale_socket = topology_find_bonds.interface.new_socket(name = "Scale", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			scale_socket.subtype = 'NONE'
 			scale_socket.default_value = 1.0
 			scale_socket.min_value = 0.0
 			scale_socket.max_value = 10000.0
+			scale_socket.subtype = 'NONE'
 			scale_socket.attribute_domain = 'POINT'
 			scale_socket.description = "Scale the VDW radii of the atoms when searching for bonds"
 			

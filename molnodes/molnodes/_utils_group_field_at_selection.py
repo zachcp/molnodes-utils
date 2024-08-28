@@ -28,91 +28,96 @@ class _utils_group_field_at_selection(bpy.types.Operator):
 			#_utils_group_field_at_selection interface
 			#Socket Group Index
 			group_index_socket = _utils_group_field_at_selection.interface.new_socket(name = "Group Index", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			group_index_socket.subtype = 'NONE'
 			group_index_socket.default_value = 0
 			group_index_socket.min_value = -2147483648
 			group_index_socket.max_value = 2147483647
+			group_index_socket.subtype = 'NONE'
 			group_index_socket.attribute_domain = 'POINT'
 			
 			#Socket Float
 			float_socket = _utils_group_field_at_selection.interface.new_socket(name = "Float", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
-			float_socket.subtype = 'NONE'
 			float_socket.default_value = 0.0
 			float_socket.min_value = -3.4028234663852886e+38
 			float_socket.max_value = 3.4028234663852886e+38
+			float_socket.subtype = 'NONE'
 			float_socket.attribute_domain = 'POINT'
 			
 			#Socket Vector
 			vector_socket = _utils_group_field_at_selection.interface.new_socket(name = "Vector", in_out='OUTPUT', socket_type = 'NodeSocketVector')
-			vector_socket.subtype = 'NONE'
 			vector_socket.default_value = (0.0, 0.0, 0.0)
 			vector_socket.min_value = -3.4028234663852886e+38
 			vector_socket.max_value = 3.4028234663852886e+38
+			vector_socket.subtype = 'NONE'
 			vector_socket.attribute_domain = 'POINT'
 			
 			#Socket Boolean
 			boolean_socket = _utils_group_field_at_selection.interface.new_socket(name = "Boolean", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			boolean_socket.default_value = False
 			boolean_socket.attribute_domain = 'POINT'
 			
 			#Socket Color
 			color_socket = _utils_group_field_at_selection.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket Integer
 			integer_socket = _utils_group_field_at_selection.interface.new_socket(name = "Integer", in_out='OUTPUT', socket_type = 'NodeSocketInt')
-			integer_socket.subtype = 'NONE'
 			integer_socket.default_value = 0
 			integer_socket.min_value = -2147483648
 			integer_socket.max_value = 2147483647
+			integer_socket.subtype = 'NONE'
 			integer_socket.attribute_domain = 'POINT'
 			
 			#Socket Selection
 			selection_socket = _utils_group_field_at_selection.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "Selection of atoms to apply this node to"
 			
 			#Socket Group Index
 			group_index_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Group Index", in_out='INPUT', socket_type = 'NodeSocketInt')
-			group_index_socket_1.subtype = 'NONE'
 			group_index_socket_1.default_value = 0
 			group_index_socket_1.min_value = -2147483648
 			group_index_socket_1.max_value = 2147483647
+			group_index_socket_1.subtype = 'NONE'
 			group_index_socket_1.attribute_domain = 'POINT'
 			
 			#Socket Float
 			float_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Float", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			float_socket_1.subtype = 'NONE'
 			float_socket_1.default_value = 0.0
 			float_socket_1.min_value = -3.4028234663852886e+38
 			float_socket_1.max_value = 3.4028234663852886e+38
+			float_socket_1.subtype = 'NONE'
 			float_socket_1.attribute_domain = 'POINT'
 			float_socket_1.hide_value = True
 			
 			#Socket Vector
 			vector_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Vector", in_out='INPUT', socket_type = 'NodeSocketVector')
-			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.default_value = (0.0, 0.0, 0.0)
 			vector_socket_1.min_value = -3.4028234663852886e+38
 			vector_socket_1.max_value = 3.4028234663852886e+38
+			vector_socket_1.subtype = 'NONE'
 			vector_socket_1.attribute_domain = 'POINT'
 			vector_socket_1.hide_value = True
 			
 			#Socket Boolean
 			boolean_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Boolean", in_out='INPUT', socket_type = 'NodeSocketBool')
+			boolean_socket_1.default_value = False
 			boolean_socket_1.attribute_domain = 'POINT'
 			boolean_socket_1.hide_value = True
 			
 			#Socket Color
 			color_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor')
+			color_socket_1.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket_1.attribute_domain = 'POINT'
 			color_socket_1.hide_value = True
 			
 			#Socket Integer
 			integer_socket_1 = _utils_group_field_at_selection.interface.new_socket(name = "Integer", in_out='INPUT', socket_type = 'NodeSocketInt')
-			integer_socket_1.subtype = 'NONE'
 			integer_socket_1.default_value = 0
 			integer_socket_1.min_value = -2147483648
 			integer_socket_1.max_value = 2147483647
+			integer_socket_1.subtype = 'NONE'
 			integer_socket_1.attribute_domain = 'POINT'
 			integer_socket_1.hide_value = True
 			

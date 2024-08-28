@@ -28,26 +28,31 @@ class Select_Chain_(bpy.types.Operator):
 			#select_chain_ interface
 			#Socket Selection
 			selection_socket = select_chain_.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = select_chain_.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			inverted_socket.description = "The inverse of the calculated selection"
 			
 			#Socket Chain A
 			chain_a_socket = select_chain_.interface.new_socket(name = "Chain A", in_out='INPUT', socket_type = 'NodeSocketBool')
+			chain_a_socket.default_value = True
 			chain_a_socket.attribute_domain = 'POINT'
 			chain_a_socket.description = "Select the atoms in Chain A"
 			
 			#Socket Chain B
 			chain_b_socket = select_chain_.interface.new_socket(name = "Chain B", in_out='INPUT', socket_type = 'NodeSocketBool')
+			chain_b_socket.default_value = True
 			chain_b_socket.attribute_domain = 'POINT'
 			chain_b_socket.description = "Select the atoms in Chain B"
 			
 			#Socket Chain ...
 			chain_____socket = select_chain_.interface.new_socket(name = "Chain ...", in_out='INPUT', socket_type = 'NodeSocketBool')
+			chain_____socket.default_value = True
 			chain_____socket.attribute_domain = 'POINT'
 			chain_____socket.description = "Select the atoms in Chain ..."
 			

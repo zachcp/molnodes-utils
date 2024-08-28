@@ -28,30 +28,31 @@ class Starfile_Instances(bpy.types.Operator):
 			#utils_zyz_to_rotation interface
 			#Socket Rotation
 			rotation_socket = utils_zyz_to_rotation.interface.new_socket(name = "Rotation", in_out='OUTPUT', socket_type = 'NodeSocketRotation')
+			rotation_socket.default_value = (0.0, 0.0, 0.0)
 			rotation_socket.attribute_domain = 'POINT'
 			
 			#Socket Phi
 			phi_socket = utils_zyz_to_rotation.interface.new_socket(name = "Phi", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			phi_socket.subtype = 'NONE'
 			phi_socket.default_value = 0.5
 			phi_socket.min_value = -10000.0
 			phi_socket.max_value = 10000.0
+			phi_socket.subtype = 'NONE'
 			phi_socket.attribute_domain = 'POINT'
 			
 			#Socket Theta
 			theta_socket = utils_zyz_to_rotation.interface.new_socket(name = "Theta", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			theta_socket.subtype = 'NONE'
 			theta_socket.default_value = 0.5
 			theta_socket.min_value = -10000.0
 			theta_socket.max_value = 10000.0
+			theta_socket.subtype = 'NONE'
 			theta_socket.attribute_domain = 'POINT'
 			
 			#Socket Psi
 			psi_socket = utils_zyz_to_rotation.interface.new_socket(name = "Psi", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			psi_socket.subtype = 'NONE'
 			psi_socket.default_value = 0.5
 			psi_socket.min_value = -10000.0
 			psi_socket.max_value = 10000.0
+			psi_socket.subtype = 'NONE'
 			psi_socket.attribute_domain = 'POINT'
 			
 			
@@ -254,6 +255,7 @@ class Starfile_Instances(bpy.types.Operator):
 			
 			#Socket Switch
 			switch_socket = mn_starfile_micrograph.interface.new_socket(name = "Switch", in_out='INPUT', socket_type = 'NodeSocketBool')
+			switch_socket.default_value = False
 			switch_socket.attribute_domain = 'POINT'
 			
 			#Socket Image
@@ -262,34 +264,34 @@ class Starfile_Instances(bpy.types.Operator):
 			
 			#Socket A
 			a_socket = mn_starfile_micrograph.interface.new_socket(name = "A", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			a_socket.subtype = 'NONE'
 			a_socket.default_value = 0.0
 			a_socket.min_value = -10000.0
 			a_socket.max_value = 10000.0
+			a_socket.subtype = 'NONE'
 			a_socket.attribute_domain = 'POINT'
 			
 			#Socket Z
 			z_socket = mn_starfile_micrograph.interface.new_socket(name = "Z", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			z_socket.subtype = 'NONE'
 			z_socket.default_value = 0.0
 			z_socket.min_value = -10000.0
 			z_socket.max_value = 10000.0
+			z_socket.subtype = 'NONE'
 			z_socket.attribute_domain = 'POINT'
 			
 			#Socket Brightness
 			brightness_socket = mn_starfile_micrograph.interface.new_socket(name = "Brightness", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			brightness_socket.subtype = 'NONE'
 			brightness_socket.default_value = 0.0
 			brightness_socket.min_value = -3.4028234663852886e+38
 			brightness_socket.max_value = 3.4028234663852886e+38
+			brightness_socket.subtype = 'NONE'
 			brightness_socket.attribute_domain = 'POINT'
 			
 			#Socket Contrast
 			contrast_socket = mn_starfile_micrograph.interface.new_socket(name = "Contrast", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			contrast_socket.subtype = 'NONE'
 			contrast_socket.default_value = 0.0
 			contrast_socket.min_value = -3.4028234663852886e+38
 			contrast_socket.max_value = 3.4028234663852886e+38
+			contrast_socket.subtype = 'NONE'
 			contrast_socket.attribute_domain = 'POINT'
 			
 			
@@ -592,20 +594,22 @@ class Starfile_Instances(bpy.types.Operator):
 			
 			#Socket Image
 			image_socket_1 = starfile_instances.interface.new_socket(name = "Image", in_out='INPUT', socket_type = 'NodeSocketInt')
-			image_socket_1.subtype = 'NONE'
 			image_socket_1.default_value = 1
 			image_socket_1.min_value = 1
 			image_socket_1.max_value = 2147483647
+			image_socket_1.subtype = 'NONE'
 			image_socket_1.attribute_domain = 'POINT'
 			image_socket_1.description = "The ID of the image that should be shown"
 			
 			#Socket Simplify
 			simplify_socket = starfile_instances.interface.new_socket(name = "Simplify", in_out='INPUT', socket_type = 'NodeSocketBool')
+			simplify_socket.default_value = False
 			simplify_socket.attribute_domain = 'POINT'
 			simplify_socket.description = "Place axes instead of Molecule on each instance"
 			
 			#Socket Show Micrograph
 			show_micrograph_socket = starfile_instances.interface.new_socket(name = "Show Micrograph", in_out='INPUT', socket_type = 'NodeSocketBool')
+			show_micrograph_socket.default_value = False
 			show_micrograph_socket.attribute_domain = 'POINT'
 			show_micrograph_socket.description = "Show the micrograph in addition to the instances"
 			
@@ -618,37 +622,37 @@ class Starfile_Instances(bpy.types.Operator):
 			
 			#Socket Micrograph Pixelsize
 			micrograph_pixelsize_socket = starfile_instances.interface.new_socket(name = "Micrograph Pixelsize", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = micrograph_options_panel)
-			micrograph_pixelsize_socket.subtype = 'NONE'
 			micrograph_pixelsize_socket.default_value = -1.0
 			micrograph_pixelsize_socket.min_value = -3.4028234663852886e+38
 			micrograph_pixelsize_socket.max_value = 3.4028234663852886e+38
+			micrograph_pixelsize_socket.subtype = 'NONE'
 			micrograph_pixelsize_socket.attribute_domain = 'POINT'
 			micrograph_pixelsize_socket.description = "Pixelsize of the micrograph (enter a negative number to use value from starfile)"
 			
 			#Socket Micrograph Z
 			micrograph_z_socket = starfile_instances.interface.new_socket(name = "Micrograph Z", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = micrograph_options_panel)
-			micrograph_z_socket.subtype = 'NONE'
 			micrograph_z_socket.default_value = -10.0
 			micrograph_z_socket.min_value = -3.4028234663852886e+38
 			micrograph_z_socket.max_value = 3.4028234663852886e+38
+			micrograph_z_socket.subtype = 'NONE'
 			micrograph_z_socket.attribute_domain = 'POINT'
 			micrograph_z_socket.description = "Position of the micrograph along the Z axis"
 			
 			#Socket Brightness
 			brightness_socket_1 = starfile_instances.interface.new_socket(name = "Brightness", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = micrograph_options_panel)
-			brightness_socket_1.subtype = 'NONE'
 			brightness_socket_1.default_value = 0.5
 			brightness_socket_1.min_value = 0.0
 			brightness_socket_1.max_value = 1.0
+			brightness_socket_1.subtype = 'NONE'
 			brightness_socket_1.attribute_domain = 'POINT'
 			brightness_socket_1.description = "Adjust micrograph brightness"
 			
 			#Socket Contrast
 			contrast_socket_1 = starfile_instances.interface.new_socket(name = "Contrast", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = micrograph_options_panel)
-			contrast_socket_1.subtype = 'NONE'
 			contrast_socket_1.default_value = 1.0
 			contrast_socket_1.min_value = -3.4028234663852886e+38
 			contrast_socket_1.max_value = 3.4028234663852886e+38
+			contrast_socket_1.subtype = 'NONE'
 			contrast_socket_1.attribute_domain = 'POINT'
 			contrast_socket_1.description = "Adjust micrograph contrast"
 			

@@ -37,6 +37,7 @@ class Ensemble_Instance(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = ensemble_instance.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			selection_socket.description = "Selection of atoms to apply this node to"
@@ -47,14 +48,15 @@ class Ensemble_Instance(bpy.types.Operator):
 			
 			#Socket Fraction
 			fraction_socket = ensemble_instance.interface.new_socket(name = "Fraction", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			fraction_socket.subtype = 'FACTOR'
 			fraction_socket.default_value = 1.0
 			fraction_socket.min_value = 0.0
 			fraction_socket.max_value = 1.0
+			fraction_socket.subtype = 'FACTOR'
 			fraction_socket.attribute_domain = 'POINT'
 			
 			#Socket As Points
 			as_points_socket = ensemble_instance.interface.new_socket(name = "As Points", in_out='INPUT', socket_type = 'NodeSocketBool')
+			as_points_socket.default_value = True
 			as_points_socket.attribute_domain = 'POINT'
 			
 			#Panel Point
@@ -62,10 +64,10 @@ class Ensemble_Instance(bpy.types.Operator):
 			point_panel.description = "Points"
 			#Socket Point Radius
 			point_radius_socket = ensemble_instance.interface.new_socket(name = "Point Radius", in_out='INPUT', socket_type = 'NodeSocketFloat', parent = point_panel)
-			point_radius_socket.subtype = 'DISTANCE'
 			point_radius_socket.default_value = 0.10000000149011612
 			point_radius_socket.min_value = 0.0
 			point_radius_socket.max_value = 3.4028234663852886e+38
+			point_radius_socket.subtype = 'DISTANCE'
 			point_radius_socket.attribute_domain = 'POINT'
 			
 			#Socket Point Material

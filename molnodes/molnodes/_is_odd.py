@@ -28,18 +28,20 @@ class _is_odd(bpy.types.Operator):
 			#_is_odd interface
 			#Socket is_even
 			is_even_socket = _is_odd.interface.new_socket(name = "is_even", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_even_socket.default_value = False
 			is_even_socket.attribute_domain = 'POINT'
 			
 			#Socket is_odd
 			is_odd_socket = _is_odd.interface.new_socket(name = "is_odd", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			is_odd_socket.default_value = False
 			is_odd_socket.attribute_domain = 'POINT'
 			
 			#Socket Value
 			value_socket = _is_odd.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketInt')
-			value_socket.subtype = 'NONE'
 			value_socket.default_value = 0
 			value_socket.min_value = -2147483648
 			value_socket.max_value = 2147483647
+			value_socket.subtype = 'NONE'
 			value_socket.attribute_domain = 'POINT'
 			
 			

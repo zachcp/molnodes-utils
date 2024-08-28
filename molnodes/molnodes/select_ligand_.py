@@ -28,26 +28,31 @@ class Select_Ligand_(bpy.types.Operator):
 			#select_ligand_ interface
 			#Socket Selection
 			selection_socket = select_ligand_.interface.new_socket(name = "Selection", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = False
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.description = "The calculated selection"
 			
 			#Socket Inverted
 			inverted_socket = select_ligand_.interface.new_socket(name = "Inverted", in_out='OUTPUT', socket_type = 'NodeSocketBool')
+			inverted_socket.default_value = False
 			inverted_socket.attribute_domain = 'POINT'
 			inverted_socket.description = "The inverse of the calculated selection"
 			
 			#Socket Ligand A
 			ligand_a_socket = select_ligand_.interface.new_socket(name = "Ligand A", in_out='INPUT', socket_type = 'NodeSocketBool')
+			ligand_a_socket.default_value = True
 			ligand_a_socket.attribute_domain = 'POINT'
 			ligand_a_socket.description = "Select the atoms in Ligand A"
 			
 			#Socket Ligand B
 			ligand_b_socket = select_ligand_.interface.new_socket(name = "Ligand B", in_out='INPUT', socket_type = 'NodeSocketBool')
+			ligand_b_socket.default_value = True
 			ligand_b_socket.attribute_domain = 'POINT'
 			ligand_b_socket.description = "Select the atoms in Ligand B"
 			
 			#Socket Ligand ...
 			ligand_____socket = select_ligand_.interface.new_socket(name = "Ligand ...", in_out='INPUT', socket_type = 'NodeSocketBool')
+			ligand_____socket.default_value = True
 			ligand_____socket.attribute_domain = 'POINT'
 			ligand_____socket.description = "Select the atoms in Ligand ..."
 			

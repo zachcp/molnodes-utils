@@ -36,15 +36,16 @@ class _MN_point_curve_trails(bpy.types.Operator):
 			
 			#Socket Selection
 			selection_socket = _mn_point_curve_trails.interface.new_socket(name = "Selection", in_out='INPUT', socket_type = 'NodeSocketBool')
+			selection_socket.default_value = True
 			selection_socket.attribute_domain = 'POINT'
 			selection_socket.hide_value = True
 			
 			#Socket Count
 			count_socket = _mn_point_curve_trails.interface.new_socket(name = "Count", in_out='INPUT', socket_type = 'NodeSocketInt')
-			count_socket.subtype = 'NONE'
 			count_socket.default_value = 5
 			count_socket.min_value = 1
 			count_socket.max_value = 100000
+			count_socket.subtype = 'NONE'
 			count_socket.attribute_domain = 'POINT'
 			
 			

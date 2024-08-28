@@ -28,24 +28,27 @@ class Color_Goodsell(bpy.types.Operator):
 			#color_goodsell interface
 			#Socket Color
 			color_socket = color_goodsell.interface.new_socket(name = "Color", in_out='OUTPUT', socket_type = 'NodeSocketColor')
+			color_socket.default_value = (0.0, 0.0, 0.0, 0.0)
 			color_socket.attribute_domain = 'POINT'
 			
 			#Socket Invert
 			invert_socket = color_goodsell.interface.new_socket(name = "Invert", in_out='INPUT', socket_type = 'NodeSocketBool')
+			invert_socket.default_value = False
 			invert_socket.attribute_domain = 'POINT'
 			invert_socket.description = "Whether to invert the darkening of the colors"
 			
 			#Socket Factor
 			factor_socket = color_goodsell.interface.new_socket(name = "Factor", in_out='INPUT', socket_type = 'NodeSocketFloat')
-			factor_socket.subtype = 'FACTOR'
 			factor_socket.default_value = 0.5
 			factor_socket.min_value = 0.0
 			factor_socket.max_value = 1.0
+			factor_socket.subtype = 'FACTOR'
 			factor_socket.attribute_domain = 'POINT'
 			factor_socket.description = "Amount to apply the 'Goodsell Style' coloring to"
 			
 			#Socket Color
 			color_socket_1 = color_goodsell.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor')
+			color_socket_1.default_value = (0.5, 0.5, 0.5, 1.0)
 			color_socket_1.attribute_domain = 'POINT'
 			color_socket_1.description = "Color to apply 'Goodsell' style colors to"
 			
